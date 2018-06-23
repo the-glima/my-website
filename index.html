@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>String Custom IndexOf</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="app/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>String.prototype.<strong>customIndexOf</strong></h1>
+
+      <div class="intro">
+        <p>
+          This shows the same result as Javascript's
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf" target="_blank">String.prototype.indexOf method</a>.
+        </p>
+        <blockquote>The indexOf() method returns the index within the calling String object of the <br>first occurrence of the specified value, starting the search at fromIndex. <br>Returns -1 if the value is not found. The fromIndex param is optional.</blockquote>
+      </div>
+
+      <p class="search-string">
+        "<span id="string">White Blue GREEN red Black ABC 123 XXX  Qwerty [] {} new Function ... !@#$%ˆ&*()</span>"
+      </p>
+
+      <div class="form">
+        <div class="form-field">
+          <div class="form-group">
+            <input id="search-value" type="text" placeholder="Search value">
+            <span>,</span>
+            <input id="from-index" class="from-index" type="text" placeholder="Index">
+          </div>
+        </div>
+        <div class="form-field">
+          <button id="run-tests">Find index</button>
+        </div>
+      </div>
+
+      <p id="result" class="result"></p>
+    </div>
+
+    <script src="app/app.js"></script>
+  </body>
+</html>
