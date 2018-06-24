@@ -1,12 +1,4 @@
-var inputSearch = document.getElementById('search-value');
-var buttonTests = document.getElementById('run-tests');
-var fromIndex = document.getElementById('from-index');
-var string = document.getElementById('string');
-var result = document.getElementById('result');
-
-window.myApp = window.myApp || {};
-
-String.prototype.customIndexOf = function(searchValue, fromIndex) {
+export default function customIndexOf(searchValue, fromIndex) {
   var notfound = -1;
 
   // Validating param: fromIndex
@@ -22,7 +14,7 @@ String.prototype.customIndexOf = function(searchValue, fromIndex) {
   // For fromIndex values lower than 0 or greater than str.length,
   // the search starts at index 0 and str.length respectively.
   if (!fromIndex || fromIndex < 0) {
-    fromIndex =  0;
+    fromIndex = 0;
   } else if (fromIndex > this.length) {
     fromIndex = this.length;
   }
@@ -59,7 +51,7 @@ String.prototype.customIndexOf = function(searchValue, fromIndex) {
 
   for (var i = 0; i <= stringLength - searchValueLength; i++) {
     for (var j = 0; j < searchValueLength; j++) {
-      if (this[j+i] === searchValue[j]) {
+      if (this[j + i] === searchValue[j]) {
         count++;
         if (count === searchValueLength && i >= fromIndex) {
           return i;
@@ -71,37 +63,4 @@ String.prototype.customIndexOf = function(searchValue, fromIndex) {
     }
   }
   return notfound;
-};
-
-// Compare String.indexOf result and String.customIndexOf
-window.myApp.assertMethods = function(string, searchValue, fromIndex) {
-  var indexOf = string.indexOf(searchValue, fromIndex);
-  var customIndexOf = string.customIndexOf(searchValue, fromIndex);
-  if (indexOf === customIndexOf) {
-    return {
-      type: 'success',
-      responseText: 'Success: the index is '+ indexOf
-    };
-  } else {
-    return {
-      type: 'error',
-      responseText: 'Error: String.indexOf is '+ indexOf +' and customIndexOf is '+customIndexOf
-    };
-  }
-};
-
-window.myApp.runTests = function(string, searchValue, fromIndex, callback) {
-  callback(window.myApp.assertMethods(string, searchValue, fromIndex));
-};
-
-document.addEventListener('DOMContentLoaded', function () {
-  buttonTests.addEventListener('click', function() {
-    window.myApp.runTests(string.innerText, inputSearch.value, fromIndex.value, function(value) {
-      result.innerText = value.responseText;
-
-      if (!result.classList.contains(value.type)) {
-        result.classList.add(value.type);
-      }
-    });
-  });
-});
+}
