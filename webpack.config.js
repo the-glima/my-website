@@ -16,14 +16,16 @@ module.exports = {
         query: {
           presets: ['es2015']
         }
-      }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+        ]
+      },
     ]
   },
   stats: { colors: true },
-  devtool: 'source-map',
-  devServer: {
-    port: process.env.PORT || 8080,
-    contentBase: './',
-    historyApiFallback: true
-  }
+  devtool: 'source-map'
 };

@@ -1,9 +1,14 @@
-import customIndexOf from 'custom-index-of';
+import customIndexOf from './custom-index-of';
 
 String.prototype.customIndexOf = customIndexOf;
 
 describe('App', function () {
   var sampleString = 'White Blue GREEN red Black ABC 123 XXX Qwerty [] {} new Function ... !@#$%ˆ&*()';
+
+
+  beforeEach(function(){
+    spyOn(document, 'addEventListener');
+  });
 
   it('should return the index of a certain value', function () {
     expect(sampleString.customIndexOf('W')).toEqual(0);

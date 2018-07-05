@@ -1,3 +1,4 @@
+import '../assets/style.css';
 import customIndexOf from './custom-index-of/custom-index-of';
 
 String.prototype.customIndexOf = customIndexOf;
