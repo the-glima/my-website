@@ -1,10 +1,10 @@
-import customIndexOf from './custom-index-of';
+import StringCustomIndexOf from './custom-index-of';
 
-String.prototype.customIndexOf = customIndexOf;
+const stringCustomIndexOf = new StringCustomIndexOf();
+String.prototype.customIndexOf = stringCustomIndexOf.customIndexOf;
 
 describe('App', function () {
   var sampleString = 'White Blue GREEN red Black ABC 123 XXX Qwerty [] {} new Function ... !@#$%ˆ&*()';
-
 
   beforeEach(function(){
     spyOn(document, 'addEventListener');

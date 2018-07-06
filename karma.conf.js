@@ -15,6 +15,13 @@ module.exports = function (config) {
       'karma-html2js-preprocessor',
       'karma-webpack'
     ],
+    client:{
+      clearContext: false // leave Jasmine Spec Runner output visible in browser
+    },
+    coverageIstanbulReporter: {
+      reports: [ 'html', 'lcovonly' ],
+      fixWebpackSourcePaths: true
+    },
     files: [
       'src/app/**/*.js',
       'src/spec/fixtures/*.fixture.html',

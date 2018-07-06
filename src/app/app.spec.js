@@ -1,4 +1,4 @@
-xdescribe('App', function () {
+describe('App', function () {
   beforeEach(function(){
     this.fixture = fixture.load('app.fixture.html');
     this.buttonEl = fixture.el.querySelector('button');
