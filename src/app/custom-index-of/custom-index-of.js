@@ -68,9 +68,9 @@ export default class StringCustomIndexOf {
   }
 
   // Comparing String.indexOf and String.customIndexOf
-  compareMethods(string, searchValue, fromIndex) {
-    const indexOf = string.indexOf(searchValue, fromIndex);
-    const customIndexOf = string.customIndexOf(searchValue, fromIndex);
+  compareMethods(valueObj) {
+    const indexOf = valueObj.string.indexOf(valueObj.value, valueObj.index);
+    const customIndexOf = valueObj.string.customIndexOf(valueObj.value, valueObj.index);
 
     if (indexOf === customIndexOf) {
       return {
@@ -85,7 +85,7 @@ export default class StringCustomIndexOf {
     }
   }
 
-  runTests(string, searchValue, fromIndex, callback) {
-    callback(this.compareMethods(string, searchValue, fromIndex));
+  runTests(valueObj, callback) {
+    callback(this.compareMethods(valueObj));
   }
 }

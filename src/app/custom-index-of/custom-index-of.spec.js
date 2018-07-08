@@ -3,12 +3,8 @@ import StringCustomIndexOf from './custom-index-of';
 const stringCustomIndexOf = new StringCustomIndexOf();
 String.prototype.customIndexOf = stringCustomIndexOf.customIndexOf;
 
-describe('App', function () {
-  var sampleString = 'White Blue GREEN red Black ABC 123 XXX Qwerty [] {} new Function ... !@#$%ˆ&*()';
-
-  beforeEach(function(){
-    spyOn(document, 'addEventListener');
-  });
+describe('String Custom IndexOf Method', function () {
+  const sampleString = 'White Blue GREEN red Black ABC 123 XXX Qwerty [] {} new Function ... !@#$%ˆ&*()';
 
   it('should return the index of a certain value', function () {
     expect(sampleString.customIndexOf('W')).toEqual(0);

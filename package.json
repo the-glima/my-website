@@ -1,7 +1,7 @@
 {
   "name": "string-custom-indexof",
   "version": "1.0.0",
-  "description": "",
+  "description": "An app that uses a custom method to compare and shows the same result as Javascript's String.prototype.indexOf method.",
   "author": "Gabriel Lima",
   "license": "MIT",
   "scripts": {

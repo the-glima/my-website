@@ -25,10 +25,10 @@ module.exports = function (config) {
     files: [
       'src/app/**/*.js',
       'src/spec/fixtures/*.fixture.html',
-      'karma-fixture.conf.js',
+      'karma-fixture.conf.js'
     ],
     preprocessors: {
-      'src/spec/*.html': ['html2js'],
+      'src/spec/fixtures/*.fixture.html': ['html2js'],
       'src/app/**/*.js': ['webpack']
     },
     webpack: webpackConfig,
