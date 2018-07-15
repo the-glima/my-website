@@ -1,6 +1,6 @@
 # String.prototype.customIndexOf
 
-> This shows the same result as Javascript's String.prototype.indexOf method.
+> This shows the same result as Javascript's [String.prototype.indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf) method.
 
 The indexOf() method returns the index within the calling String object of the
 first occurrence of the specified value, starting the search at fromIndex.
