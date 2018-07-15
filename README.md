@@ -1,4 +1,4 @@
-# String.prototype.customIndexOf
+# String.prototype.customIndexOf ![Build Status](https://travis-ci.org/gabrihellmateus/string-custom-indexOf.svg?branch=master)
 
 > This shows the same result as Javascript's [String.prototype.indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf) method.
 
