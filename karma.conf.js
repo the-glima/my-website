@@ -37,11 +37,11 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['Chrome', 'Chrome_without_security'],
     customLaunchers: {
       Chrome_without_security: {
-        base: 'ChromeHeadless',
-        flags: ['--no-sandbox']
+        base: 'Chrome',
+        flags: ['--disable-web-security', '--no-sandbox']
       }
     },
     concurrency: Infinity
