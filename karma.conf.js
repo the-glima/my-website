@@ -4,7 +4,7 @@
 var webpackConfig = require('./webpack.config.js');
 
 module.exports = function (config) {
-  config.set({
+  var configuration = {
     basePath: '',
     frameworks: ['jasmine', 'fixture'],
     plugins: [
@@ -37,13 +37,20 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessNoSandbox'],
+    singleRun: true,
+    browsers: ['Chrome'],
     customLaunchers: {
-      ChromeHeadlessNoSandbox: {
-        base: 'ChromeHeadless',
+      Chrome_travis_ci: {
+        base: 'Chrome',
         flags: ['--no-sandbox']
       }
     },
     concurrency: Infinity
-  });
+  };
+
+  if(process.env.TRAVIS) {
+    configuration.browsers = ['Chrome_travis_ci'];
+  }
+
+  config.set(configuration);
 };
