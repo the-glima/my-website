@@ -1,6 +1,6 @@
 # Website
 My personal website
 
-# Font Awesome
+## Thanks to
 
-This project uses SVGs from [Font Awesome](https://fontawesome.com/license/free)
+- Font Awesome - using some SVGs from [Font Awesome](https://fontawesome.com/license/free)

@@ -1,6 +1,6 @@
-(() => {
-  'use strict'
+'use strict';
 
+(() => {
   const updateSubTitle = () => {
     const subiTtle = document.getElementById('subtitle');
     const subTitleOptions = [
@@ -15,16 +15,15 @@
       'UI Developer',
       '10x Enginner *',
       'JS-Framework Developer'
-    ]
-  
-    const randomness = Math.floor(Math.random() * subTitleOptions.length)
-    
-    subiTtle.textContent = subTitleOptions[randomness]
-  }
+    ];
+
+    const randomness = Math.floor(Math.random() * subTitleOptions.length);
+
+    subiTtle.textContent = subTitleOptions[randomness];
+  };
 
   // Init
   (() => {
-    updateSubTitle()
-  })()
-
-})()
+    updateSubTitle();
+  })();
+})();
