@@ -14,7 +14,8 @@
   },
   "scripts": {
     "format": "npx prettier --write assets/javascript/**/*.js",
-    "lint": "npx eslint assets/javascript/**/*.js"
+    "lint": "npx eslint assets/javascript/**/*.js",
+    "build": "npm run format && npm run lint"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
