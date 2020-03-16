@@ -1,0 +1,26 @@
+// Mixin - Breakpoint
+// --------------------------------------------
+
+// Breakpoint
+@mixin breakpoint($feature, $value, $feature2: null, $value2: null) {
+  $media: only screen;
+
+  @if $feature2 {
+    @media #{$media} and ($feature: $value) and ($feature2: $value2) {
+      @content;
+    }
+  } @else {
+    @media #{$media} and ($feature: $value) {
+      @content;
+    }
+  }
+}
+
+// Breakpoint Media
+@function bp-media($media) {
+  @if not map-has-key($breakpoints, $media) {
+    @warn "No breakpoint found for `#{$media}` in $breakpoint map. Property omitted.";
+  }
+
+  @return map-get($breakpoints, $media);
+}

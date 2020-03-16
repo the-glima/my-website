@@ -1,0 +1,119 @@
+name: CI CD
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  repository_dispatch:
+    types: [manual-trigger]
+
+jobs:
+  build:
+    name: Build
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run Unit Tests
+        if: success()
+        run: yarn test
+      
+      - name: Run Build
+        if: success()
+        run: yarn build
+
+      - name: Upload Build Artifact
+        if: success()
+        uses: actions/upload-artifact@v1
+        with:
+          name: build.artifact
+          path: dist
+
+  release:
+    name: Release
+    needs: build
+    if: github.ref == 'refs/heads/master' && !contains(github.event.head_commit.message, '[skip ci]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      
+      - name: Release
+        run: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create release.json
+        run: |
+          RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
+          echo '{ "version": "'${RELEASE_VERSION}'" }' > .release.json
+
+      - name: Upload Version Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: release-json.artifact
+          path: .release.json
+
+  deploy:
+    name: Deploy to GH-Pages
+    needs: release
+    if: github.ref == 'refs/heads/master' && !contains(github.event.head_commit.message, '[skip ci]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+
+      - name: Get Current Version
+        run: |
+          VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
+          echo "::set-env name=CURRENT_VERSION::${VERSION}"
+          
+      - name: Download Version Artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: release-json.artifact
+          path: .
+
+      - name: Get Release Version
+        run: |
+          RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
+          SHOULD_UPDATE=false
+          [[ ${{ env.CURRENT_VERSION }} != ${RELEASE_VERSION} ]]; SHOULD_UPDATE=true || SHOULD_UPDATE=false
+          echo "::set-env name=SHOULD_UPDATE::${SHOULD_UPDATE}"
+          echo "::set-env name=VERSION::${RELEASE_VERSION}"
+
+      - name: Show Off
+        run: |
+          echo "CURRENT_VERSION: ${{ env.CURRENT_VERSION }}"
+          echo "VERSION: ${{ env.VERSION }}"
+          echo "SHOULD_UPDATE: ${{ env.SHOULD_UPDATE }}"
+
+      - name: Download Build Artifact
+        if: env.SHOULD_UPDATE == 'true'
+        uses: actions/download-artifact@v1
+        with:
+          name: build.artifact
+          path: .
+
+      - name: Set Git User
+        if: env.SHOULD_UPDATE == 'true'
+        run: |
+          git config --local user.email "email.gabriel.lima@gmail.com"
+          git config --local user.name "Gabriel Lima"
+
+      - name: Git Commit and Push
+        if: env.SHOULD_UPDATE == 'true'
+        run: |
+          git add .
+          git commit -m "chore(release): v${{ env.VERSION }} [skip-ci]"
+          git push -f
+      
