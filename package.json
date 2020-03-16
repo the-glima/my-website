@@ -1,0 +1,27 @@
+{
+  "name": "@gabriel-lima/my-website",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "author": { 
+    "name" : "Gabriel Lima",
+    "email" : "me@gabriel-lima.com",
+    "url" : "https://github.com/the-glima/my-website"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-glima/my-website.git"
+  },
+  "scripts": {
+    "format": "npx prettier --write assets/javascript/**/*.js",
+    "lint": "npx eslint assets/javascript/**/*.js"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "prettier": "^1.19.1",
+    "husky": "^3.0.1",
+    "lint-staged": "^10.0.4",
+    "jest": "^24.8.0"
+  }
+}
