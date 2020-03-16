@@ -1,0 +1,131 @@
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}td:not([align]),th:not([align]){text-align:left}
+
+/* --- Custom --- */
+:root {
+  --default-color: #0C0C0C;
+  --white-color: #FFFFFF;
+  --font-family-comfortaa: 'Comfortaa', cursive;
+  --font-family-roboto: 'Roboto', sans-serif;
+  --font-family-fallback: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
+}
+
+*, 
+*::before, 
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 16px;
+  min-width: 300px;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  overflow-x: hidden;
+  background-color: var(--white-color);
+  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  color: var(--default-color);
+  font-size: 1em;
+  font-family: var(--font-family-roboto), var(--font-family-fallback);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+a,
+a:hover,
+a:focus {
+  color: var(--default-color);
+  text-decoration: none;
+  outline: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.8;
+  font-family: var(--font-family-comfortaa);
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.picture {
+  width: 150px;
+  border-radius: 100%;
+}
+
+.bio {
+  margin: 0 auto;
+  padding-top: 3rem;
+  max-width: 500px;
+  font-size: 1.1rem;
+}
+
+.social-links { 
+  display: flex;
+  justify-content: space-between;
+  max-width: 270px;
+  margin: 0 auto;
+  padding-top: 4rem;
+}
+
+.social-links a { 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  opacity: .8;
+  transition: .06s;
+}
+
+.social-links a:hover {  opacity: 1; }
+
+.social-links span { 
+  display: block;
+  font-size: .6rem;
+  font-family: var(--font-family-comfortaa);
+  font-weight: 600;
+}
+
+.social-links img { 
+  width: 40px;
+  height: 40px;
+}
+
+footer { 
+  margin-top: 4rem;
+  font-size: .7rem;
+}
+
+footer img {
+  margin: 0 .2rem;
+  width: 14px;
+  vertical-align: text-top;
+}
+
+@media screen and (min-width: 768px) {
+  html,
+  body,
+  .wrapper {
+    height: 100%
+  } 
+}
