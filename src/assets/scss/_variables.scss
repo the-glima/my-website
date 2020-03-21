@@ -1,0 +1,83 @@
+// Variables
+// -------------------------------------
+
+// Colors
+$theme-colors: (
+  'primary': (
+    'base': #213d8f // cobalt
+  ),
+  'secondary': (
+    'base': #8ec03f // avocado
+  ),
+  'accent': (
+    'base': #1db9de // topaz
+  ),
+  'success': (
+    'base': #8ec03f // avocado
+  ),
+  'danger': (
+    'base': #c03f3f // avocado
+  ),
+  'white': (
+    'base': #fff // greyish-brown
+  ),
+  'grey': (
+    'light': #f6f7fb, // pale-grey
+    'base': #e8ebf3, // pale-grey-two
+    'dark': darken(#e8ebf3, 10%)
+  ),
+  'contrast': (
+    '100': transparentize(#000, .9),
+    '200': transparentize(#000, .8),
+    '300': transparentize(#000, .7),
+    '400': transparentize(#000, .6),
+    '500': transparentize(#000, .5),
+    '600': transparentize(#000, .4),
+    '700': transparentize(#000, .3),
+    '800': transparentize(#000, .2),
+    '900': transparentize(#000, .1)
+  ),
+  'text': (
+    'base': #4a4a4a // greyish-brown
+  ),
+  'bg': (
+    'base': #080809 // pale-grey-two
+  ),
+) !default;
+
+// Text
+$base-font-size: 14px !default;
+$base-line-height: 18px !default;
+$font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+$font-sans-pro: 'Source Sans Pro' !default;
+$base-font-family: $font-sans-pro, $font-system !default;
+
+// Utils
+$transition: .06s !default;
+$border-radius: 2px !default;
+
+// Breakpoints
+$breakpoints: (
+  'xs': 320px,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'mobile': 992px
+) !default;
+
+// Zindex
+$zindex: (
+  belowLayer   : -1,
+  defaultLayer : 0,
+  firstLayer   : 1000,
+  secondLayer  : 2000,
+  thirdLayer   : 3000,
+  fourthLayer  : 4000,
+  fifthLayer   : 5000,
+  sixthLayer   : 6000,
+  seventhLayer : 7000,
+  eighthLayer  : 8000,
+  ninthLayer   : 9000,
+  tenthLayer   : 10000
+) !default;
