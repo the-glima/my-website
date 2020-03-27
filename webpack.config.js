@@ -6,6 +6,8 @@ const TerserPlugin = require('terser-webpack-plugin');
 const ImageMinPlugin = require('imagemin-webpack-plugin').default;
 const getHTMLPluginConfig = require('./webpack/html-plugin.webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
 const paths = {
   src: 'src',
@@ -17,15 +19,13 @@ const paths = {
 };
 
 const config = {
+  context: path.join(__dirname, './'),
   entry: {
-    home: [
-      path.resolve(__dirname + `/${paths.components}/home/home.ts`),
-      path.resolve(__dirname + `/${paths.src}/main.scss`)
-    ]
+    main: [`./${paths.components}/home/home.ts`, `./${paths.src}/styles.scss`]
   },
   output: {
-    filename: 'main.min.js',
-    path: path.resolve(__dirname, paths.dist)
+    filename: 'javascript.min.js',
+    path: path.join(__dirname, paths.dist)
   },
   devtool: 'inline-source-map',
   resolve: {
@@ -50,11 +50,6 @@ const config = {
       {
         test: /\.(png|jpg|svg|gif)$/,
         loader: 'file-loader'
-      },
-      {
-        test: /\.html$/,
-        exclude: /node_modules/,
-        use: {loader: 'html-loader'}
       }
     ]
   },
@@ -64,21 +59,37 @@ const config = {
       verbose: true
     }),
     new MiniCssExtractPlugin({
-      filename: 'main.min.css'
+      filename: 'stylesheets.min.css'
     }),
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, `${paths.images}/me.jpg`),
         to: path.resolve(__dirname, 'dist'),
         toType: 'dir'
+      },
+      {
+        from: path.resolve(__dirname, `${paths.images}/*.{jpg,jpeg,png,gif,svg}`),
+        to: path.resolve(__dirname, 'dist/assets/images'),
+        toType: 'dir'
       }
     ]),
-    new ImageMinPlugin({test: /\.(jpg|jpeg|png|gif|svg)$/i})
-  ].concat(
-    getHTMLPluginConfig({
-      favicon: `${paths.images}/favicon.png`
-    })
-  ),
+    new ImageMinPlugin({test: /\.(jpg|jpeg|png|gif|svg)$/i}),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: path.join(__dirname, './index.html')
+    }),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/components/intro/intro.html')
+      },
+      {
+        path: path.join(__dirname, './src/components/social-links/social-links.html')
+      },
+      {
+        path: path.join(__dirname, './src/components/footer/footer.html')
+      }
+    ])
+  ],
   optimization: {
     minimizer: [
       new TerserPlugin({
