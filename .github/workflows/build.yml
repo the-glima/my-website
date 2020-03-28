@@ -12,3 +12,5 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn test
       - run: yarn build
+      - run: yarn deploy
+        if: github.ref == 'refs/heads/master'

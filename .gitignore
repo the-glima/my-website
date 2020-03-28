@@ -39,8 +39,8 @@ typings/
 .cache/
 
 # compiled output
-/dist
-/tmp
+dist/
+tmp/
 /out-tsc
 
 # IDE - VSCode
