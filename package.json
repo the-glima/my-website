@@ -15,7 +15,7 @@
   "scripts": {
     "dev": "webpack-dev-server --color",
     "build": "cross-env NODE_ENV=production webpack --mode=production",
-    "format": "prettier --write \"{app,test}/**/*.ts\"",
+    "format": "prettier --write \"{src,test}/**/*.ts\"",
     "lint": "tslint -p . -t stylish",
     "test": "jest --runInBand --passWithNoTests"
   },
