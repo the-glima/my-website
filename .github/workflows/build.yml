@@ -1,16 +1,14 @@
 name: My Website [CI/CD]
+
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-env:
-  poll: production
-  mainBranch: 'refs/heads/master'
 
-jobs:
+    jobs:
   build:
-    runs-on: ${{ env.poll }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
@@ -21,7 +19,7 @@ jobs:
         run: yarn build
   deploy:
     needs: build
-    runs-on: ${{ env.poll }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Set Git User
@@ -30,4 +28,4 @@ jobs:
           git config --local user.name "Gabriel Lima"
       - name: Deploy to gh-pages
         run: yarn deploy
-        if: github.ref == ${{ env.mainBranch }}
+        if: github.ref == 'refs/heads/master'
