@@ -10,7 +10,7 @@ env:
 
 jobs:
   build:
-    runs-on: $poll
+    runs-on: ${{ env.poll }}
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
@@ -21,7 +21,7 @@ jobs:
         run: yarn build
   deploy:
     needs: build
-    runs-on: $poll
+    runs-on: ${{ env.poll }}
     steps:
       - uses: actions/checkout@v2
       - name: Set Git User
@@ -30,4 +30,4 @@ jobs:
           git config --local user.name "Gabriel Lima"
       - name: Deploy to gh-pages
         run: yarn deploy
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == ${{ env.mainBranch }}
