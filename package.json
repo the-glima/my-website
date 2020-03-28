@@ -18,7 +18,7 @@
     "format": "prettier --write \"{src,test}/**/*.ts\"",
     "lint": "tslint -p . -t stylish",
     "test": "jest --runInBand --passWithNoTests",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --verbose"
+    "deploy": "push-dir --dir=dist --branch=gh-pages --verbose --force --message=\"Release commit\""
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
