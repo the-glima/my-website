@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install dependencies
+      - name: Install Dependencies
         run: yarn install --frozen-lockfile
       - name: Run Unit Tests
         run: yarn test
@@ -27,14 +27,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set Git User
-        run: |
-          git config --local user.email "email.gabriel.lima@gmail.com"
-          git config --local user.name "Gabriel Lima"
       - name: Download build Artifact
         uses: actions/download-artifact@v1
         with:
           name: dist-artifact
-      - name: Deploy to gh-pages
-        run: yarn deploy
-        if: github.ref == 'refs/heads/master'
+      - name: Set Git User
+        run: |
+          git config --local user.email "email.gabriel.lima@gmail.com"
+          git config --local user.name "Gabriel Lima"
+      - name: Checkout GH-Pages Branch
+        run: git checkout gh-pages
+      - run: ls path/to/artifact
