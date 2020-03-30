@@ -27,6 +27,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+      - run: ls
       - name: Download build Artifact
         uses: actions/download-artifact@v1
         with:
@@ -35,6 +38,3 @@ jobs:
         run: |
           git config --local user.email "email.gabriel.lima@gmail.com"
           git config --local user.name "Gabriel Lima"
-      - name: Checkout GH-Pages Branch
-        run: git checkout gh-pages
-      - run: ls path/to/artifact
