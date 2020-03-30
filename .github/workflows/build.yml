@@ -33,6 +33,7 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: dist-artifact
+          path: .
       - name: Set Git User
         run: |
           git config --local user.email "email.gabriel.lima@gmail.com"
@@ -40,5 +41,5 @@ jobs:
       - name: Git Commit/Push
         run: |
           git add .
-          git commit -m 'Release ${{ github.run_number }}'
+          git commit -m 'Release "::set-output name=date::$(date +'%Y.%m.%d')":${{ github.run_number }}'
           git push -f
