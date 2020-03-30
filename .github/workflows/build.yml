@@ -37,4 +37,8 @@ jobs:
         run: |
           git config --local user.email "email.gabriel.lima@gmail.com"
           git config --local user.name "Gabriel Lima"
-      - run: ls
+      - name: Git Commit/Push
+        run: |
+          git add .
+          git commit -m 'Release ${{ github.run_number }}'
+          git push -f
