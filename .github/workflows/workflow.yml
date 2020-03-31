@@ -43,7 +43,7 @@ jobs:
 
       - name: Set date var
         id: date
-        run: echo "::set-output name=date::$(date +'%y-%m-%d')"
+        run: echo "::set-output name=date::$(date +'%y.%m.%d')"
 
       - name: Set Git User
         run: |
@@ -53,6 +53,6 @@ jobs:
       - name: Git Commit/Push
         run: |
           git add .
-          git commit -m 'Release ${{ steps.date.outputs.date }}:${{ github.sha }}'
+          git commit -m 'Release Build v1-0.0:${{ steps.date.outputs.date }}'
           git push -f
         shell: bash 
