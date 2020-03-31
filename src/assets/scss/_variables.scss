@@ -4,26 +4,26 @@
 // Colors
 $theme-colors: (
   'primary': (
-    'base': #213d8f // cobalt
+    'base': #213d8f
   ),
   'secondary': (
-    'base': #8ec03f // avocado
+    'base': #8ec03f
   ),
   'accent': (
-    'base': #1db9de // topaz
+    'base': #1db9de
   ),
   'success': (
-    'base': #8ec03f // avocado
+    'base': #8ec03f
   ),
   'danger': (
-    'base': #c03f3f // avocado
+    'base': #c03f3f
   ),
   'white': (
-    'base': #fff // greyish-brown
+    'base': #fff
   ),
   'grey': (
-    'light': #f6f7fb, // pale-grey
-    'base': #e8ebf3, // pale-grey-two
+    'light': #f6f7fb, 
+    'base': #e8ebf3,
     'dark': darken(#e8ebf3, 10%)
   ),
   'contrast': (
@@ -41,7 +41,7 @@ $theme-colors: (
     'base': #0C0C0C
   ),
   'bg': (
-    'base': #ffffff // pale-grey-two
+    'base': #ffffff
   ),
 ) !default;
 
