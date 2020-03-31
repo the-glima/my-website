@@ -1,6 +1,7 @@
 {
   "name": "@gabriel-lima/my-website",
   "version": "1.0.0",
+  "private": true,
   "description": "My personal website",
   "author": {
     "name": "Gabriel Lima",
