@@ -16,12 +16,9 @@ jobs:
         uses: ajilraju/actions-date@v0.0.2
         with:
           args: date +%y.%m.%d
-        run: echo "##[set-output name=date;]"
       - name: Print the datetime
         run: |
-          echo with args ${{ steps.with.args }}
-          echo args date ${{ steps.with.args.date }}
-          echo 1 ${{ steps.get_datetime.outputs.date }}
+          echo 1 ${{ steps.get_datetime.outputs.args }}
           echo 3 ${{ steps.get_datetime.outputs }}
         shell: bash
       # - name: Install Dependencies
