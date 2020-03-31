@@ -14,8 +14,8 @@ jobs:
       - name: Get the datetime
         id: get_datetime
         uses: ajilraju/actions-date@v0.0.2
-          with:
-            args: date +%y.%m.%d
+        with:
+          args: date +%y.%m.%d
       - name: Print the datetime
         run: |
           echo ${{ steps.get_datetime.outputs.datetime_str }}
