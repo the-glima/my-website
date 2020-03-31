@@ -42,7 +42,7 @@ jobs:
           git config --local user.name "Gabriel Lima"
       - name: Date Actions
         uses: ajilraju/actions-date@v0.0.2
-          args: date '+%y.%m.%d'
+          args: date '+%B %d'
         run: |
           echo ${{ steps.with.args }}
           echo ${{ steps.with.args.date }}
