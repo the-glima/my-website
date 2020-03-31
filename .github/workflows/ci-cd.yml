@@ -18,7 +18,7 @@ jobs:
           args: date +%y.%m.%d
       - name: Print the datetime
         run: |
-          echo ${{ steps.get_datetime.outputs.datetime_str }}
+          echo ${{ steps.get_datetime.outputs }}
         shell: bash
       # - name: Install Dependencies
       #   run: yarn install --frozen-lockfile
