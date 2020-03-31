@@ -40,12 +40,13 @@ jobs:
         run: |
           git config --local user.email "email.gabriel.lima@gmail.com"
           git config --local user.name "Gabriel Lima"
-      - uses: ajilraju/action-date@v0.0.1
-        with:
-          args: date +%F
+      - name: Get the datetime
+        id: get_datetime
+        uses: ccccmagicboy/get_datetime@master
+      - name: Print the datetime
         run: |
-          echo ${{ steps.with.args }}
-          echo ${{ steps.with.args.date }}
+          echo ${{ steps.get_datetime.outputs.datetime_str }}
+        shell: bash
       - name: Git Commit/Push
         run: |
           git add .
