@@ -35,9 +35,9 @@ jobs:
           args: date +%F
       - name: Download build Artifact
         uses: actions/download-artifact@v1
-        with:
-          name: dist-artifact
-          path: .
+          with:
+            name: dist-artifact
+            path: .
       - name: Set Git User
         run: |
           git config --local user.email "email.gabriel.lima@gmail.com"
