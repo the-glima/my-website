@@ -27,15 +27,14 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: ajilraju/actions-date@v0.0.2
-        with:
-          args: date +%F
       - uses: actions/checkout@v2
         with:
-          ref: gh-pages
+        ref: gh-pages
+      - uses: ajilraju/actions-date@v0.0.2
+        with:
+        args: date +%F
       - name: Download build Artifact
         uses: actions/download-artifact@v1
-        if: {{ github.ref == 'ref/head/master' }}
         with:
           name: dist-artifact
           path: .
