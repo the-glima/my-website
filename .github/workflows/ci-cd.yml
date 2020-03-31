@@ -22,9 +22,11 @@ jobs:
         with:
           name: dist-artifact
           path: dist
+          
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    if: {{ github.ref == 'ref/head/master' }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -38,8 +40,14 @@ jobs:
         run: |
           git config --local user.email "email.gabriel.lima@gmail.com"
           git config --local user.name "Gabriel Lima"
+      - name: Date Actions
+        uses: ajilraju/actions-date@v0.0.2
+          args: date +%y.%m.%d
+        run: |
+          echo ${{ steps.with.args }}
+          echo ${{ steps.with.args.date }}
       - name: Git Commit/Push
         run: |
           git add .
-          git commit -m 'Release "::set-output name=date::$(date +'%Y.%m.%d')":${{ github.run_number }}'
+          git commit -m 'Release ${{ steps.with.args }}:${{ github.run_number }}'
           git push -f
