@@ -41,8 +41,8 @@ jobs:
           git config --local user.email "email.gabriel.lima@gmail.com"
           git config --local user.name "Gabriel Lima"
       - uses: ajilraju/action-date@v0.0.1
-          with:
-            args: date +%F
+        with:
+          args: date +%F
         run: |
           echo ${{ steps.with.args }}
           echo ${{ steps.with.args.date }}
