@@ -18,10 +18,16 @@ const paths = {
   components: 'src/components'
 };
 
+const entry = [
+  `${path.join(__dirname, paths.components)}/home/home.ts`, 
+  `${path.join(__dirname, paths.components)}/gists/gists.ts`, 
+  `${path.join(__dirname, paths.src)}/styles.scss`
+]
+
 const config = {
   context: path.join(__dirname, './'),
   entry: {
-    main: [`${path.join(__dirname, paths.components)}/home/home.ts`, `${path.join(__dirname, paths.src)}/styles.scss`]
+    main: [...entry]
   },
   output: {
     filename: 'javascript.min.js',
@@ -73,6 +79,7 @@ const config = {
     new HtmlWebpackPartialsPlugin([
       {path: `${path.join(__dirname, paths.components)}/intro/intro.html`},
       {path: `${path.join(__dirname, paths.components)}/social-links/social-links.html`},
+      {path: `${path.join(__dirname, paths.components)}/gists/gists.html`},
       {path: `${path.join(__dirname, paths.components)}/footer/footer.html`}
     ])
   ],
