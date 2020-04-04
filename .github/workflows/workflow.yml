@@ -50,7 +50,7 @@ jobs:
           git config --local user.email "email.gabriel.lima@gmail.com"
           git config --local user.name "Gabriel Lima"
       
-      - name: Git Commit and ,mmmmmmPush
+      - name: Git Commit and Push
         run: |
           git add .
           git commit -m 'Release v1.0.0 (${{ steps.date.outputs.date }})'
