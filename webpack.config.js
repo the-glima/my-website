@@ -18,19 +18,16 @@ const paths = {
   components: 'src/components'
 };
 
-const entry = [
-  `${path.join(__dirname, paths.components)}/home/home.ts`, 
-  `${path.join(__dirname, paths.components)}/gists/gists.ts`, 
-  `${path.join(__dirname, paths.src)}/styles.scss`
-]
-
 const config = {
   context: path.join(__dirname, './'),
   entry: {
-    main: [...entry]
+    app: [
+      `${path.join(__dirname, paths.src)}/app.ts`, 
+      `${path.join(__dirname, paths.src)}/app.scss`
+    ]
   },
   output: {
-    filename: 'javascript.min.js',
+    filename: '[name].min.js',
     path: path.join(__dirname, paths.dist)
   },
   devtool: 'inline-source-map',
@@ -61,11 +58,11 @@ const config = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({filename: 'stylesheets.min.css'}),
+    new MiniCssExtractPlugin({filename: '[name].min.css'}),
     new CopyWebpackPlugin([
       {
         context: 'src/',
-        from: path.join(__dirname, `${paths.images}/*.{jpg,jpeg,png,gif,svg}`),
+        from: path.join(__dirname, `${paths.images}/**/*.{jpg,jpeg,png,gif,svg}`),
         to: path.join(__dirname, paths.dist),
         toType: 'dir',
         force: true
@@ -77,10 +74,10 @@ const config = {
       template: path.join(__dirname, `${paths.root}/index.html`)
     }),
     new HtmlWebpackPartialsPlugin([
-      {path: `${path.join(__dirname, paths.components)}/intro/intro.html`},
-      {path: `${path.join(__dirname, paths.components)}/social-links/social-links.html`},
-      {path: `${path.join(__dirname, paths.components)}/gists/gists.html`},
-      {path: `${path.join(__dirname, paths.components)}/footer/footer.html`}
+      {path: `${path.join(__dirname, paths.components)}/intro/intro.component.html`},
+      {path: `${path.join(__dirname, paths.components)}/social-links/social-links.component.html`},
+      {path: `${path.join(__dirname, paths.components)}/gists/gists.component.html`},
+      {path: `${path.join(__dirname, paths.components)}/footer/footer.component.html`}
     ])
   ],
   optimization: {

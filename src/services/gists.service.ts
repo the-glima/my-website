@@ -1,9 +1,10 @@
 import axios from 'axios';
-import {settings} from '../../settings';
-import {GistFilesModel, GistModel, GistResponseModel} from './model';
+import {GistLanguages} from '../enums/gist-languages.enum';
+import {GistFilesModel, GistModel, GistResponseModel} from '../models/gists.model';
+import {settings} from '../settings';
 
-export const gistsService = {
-  getUrl: (params = settings.urlParams): string => `${params.url}/${params.user}/gists`,
+export const GistsService = {
+  getUrl: (params = settings.urlParams): string => `${params.url}/${params.user}/gists?page=1&per_page=${params.limit}`,
 
   getGists: async function(): Promise<GistResponseModel> {
     const url = this.getUrl();
@@ -28,8 +29,8 @@ export const gistsService = {
         id: gist.id,
         url: gist.html_url,
         files: files,
-        title: gist.description,
-        language: files[0].language
+        title: gist.description || settings.gist.title,
+        language: files[0].language || GistLanguages.github
       };
     });
   }

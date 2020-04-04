@@ -1,0 +1,77 @@
+.section-gists {
+  background-color: theme-color('grey', 'light');
+}
+
+.gists-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 3.5rem auto;
+  justify-content: space-between;
+
+  @include breakpoint(min-width, bp-media('md')) {
+    display: flex;
+    flex-direction: row;
+  }
+
+  li {
+    flex-basis: 48%;
+    min-width: 0;
+    margin-top: 1.7rem;
+  }
+}
+
+.gist-link {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  
+  &:hover {
+    .gist-logo { opacity: 1; }
+
+    .gist-title {
+      color: theme-color('accent', 'base');
+      border-bottom-color: theme-color('accent', 'base');
+    }
+  }
+}
+
+.gist-logo { 
+  width: 30px;
+
+  @media (hover: hover) {
+    opacity: .88;
+    transition: .06s;
+  }
+}
+
+.gist-title { 
+  align-self: flex-end;
+  margin-left: .6rem; 
+  padding-bottom: .1rem;
+  min-width: 0;
+  font-size: .9rem;
+  border-bottom: 1px solid transparent;
+  transition: .06s;
+  
+  @include breakpoint(min-width, bp-media('md')) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.gist-section-link {
+  a {
+    @extend .gist-title;
+    font-family: "Comfortaa", cursive;
+    font-size: 1rem;
+    text-align: center;
+  
+    &:hover {
+      color: theme-color('accent', 'base');
+      border-bottom-color: theme-color('accent', 'base');
+    }
+  }
+}
