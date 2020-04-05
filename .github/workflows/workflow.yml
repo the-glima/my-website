@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Build
-    if: github.ref == 'refs/heads/master'
+    # if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -54,7 +54,7 @@ jobs:
       - name: Upload Version Artifact
         uses: actions/upload-artifact@v1
         with:
-          name: ReleaseJSON
+          name: release-json-artifact
           path: .release.json
 
   deploy:
@@ -76,7 +76,7 @@ jobs:
       - name: Download Version Artifact
         uses: actions/download-artifact@v1
         with:
-          name: ReleaseJSON
+          name: release-json-artifact
           path: .
 
       - name: Set Git User
