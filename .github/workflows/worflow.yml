@@ -42,7 +42,7 @@ jobs:
       - name: Update release version and changelog
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run release:local
+        run: npm run release
 
       - name: Create version.txt
         run: |
@@ -87,6 +87,6 @@ jobs:
           
           git add .
           git commit -m "chore(release): v${PACKAGE_VERSION}"
-          # git push -f
+          git push -f
         shell: bash 
       
