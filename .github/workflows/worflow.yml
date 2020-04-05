@@ -35,7 +35,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-        - name: Install Dependencies
+      - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
       - name: Update release version and changelog
