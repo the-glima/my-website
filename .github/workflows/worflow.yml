@@ -56,7 +56,7 @@ jobs:
   deploy:
     name: Deploy to GH-Pages
     needs: release
-    if: github.ref == 'refs/heads/develop'
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -82,9 +82,10 @@ jobs:
       
       - name: Git Commit and Push
         run: |
-          # git add .
-          # git push -f
           PACKAGE_VERSION=$(cat version.txt)
-          echo "chore(release): ${PACKAGE_VERSION}"
+          
+          git add .
+          git commit -m "chore(release): v${PACKAGE_VERSION}"
+          # git push -f
         shell: bash 
       
