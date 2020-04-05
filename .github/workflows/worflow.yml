@@ -20,34 +20,40 @@ jobs:
       
   #     - name: Run Build
   #       run: yarn build
-      
+
   #     - name: Upload Artifact
   #       uses: actions/upload-artifact@v1
   #       with:
   #         name: dist-artifact
   #         path: dist
 
-  # release:
-  #   name: Release
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v1
-  #     - name: Setup Node.js
-  #       uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 12
-  #     - name: Install Dependencies
-  #       run: yarn install --frozen-lockfile
-  #     - name: Update release version and changelog
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #       run: npm run release:local
+  release:
+    name: Release
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      # - name: Setup Node.js
+        # uses: actions/setup-node@v1
+        # with:
+          # node-version: 12
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+      - name: Update release version and changelog
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run release:local
+
+      - name: Upload Version Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: version
+          path: version.txt
 
   deploy:
     name: Deploy to GH-Pages
-    # needs: release
+    needs: release
     if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     steps:
@@ -61,6 +67,12 @@ jobs:
       #     name: dist-artifact
       #     path: .
 
+      - name: Download Version Artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: version
+          path: .
+
       - name: Set Git User
         run: |
           git config --local user.email "email.gabriel.lima@gmail.com"
@@ -70,7 +82,7 @@ jobs:
         run: |
           # git add .
           # git push -f
-          PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]')
+          PACKAGE_VERSION=$(cat version.txt)
           echo 'chore(release): ${PACKAGE_VERSION}'
         shell: bash 
       
