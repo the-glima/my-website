@@ -7,73 +7,72 @@ on:
     branches: [ develop ]
 
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+  # build:
+  #   name: Build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Install Dependencies
+  #       run: yarn install --frozen-lockfile
 
-      - name: Run Unit Tests
-        run: yarn test
+  #     - name: Run Unit Tests
+  #       run: yarn test
       
-      - name: Run Build
-        run: yarn build
+  #     - name: Run Build
+  #       run: yarn build
       
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: dist-artifact
-          path: dist
+  #     - name: Upload Artifact
+  #       uses: actions/upload-artifact@v1
+  #       with:
+  #         name: dist-artifact
+  #         path: dist
 
-  release:
-    name: Release
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - name: Install Dependencies
-        run: yarn install --frozen-lockfile
-      - name: Ship it!
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run release:local
+  # release:
+  #   name: Release
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v1
+  #     - name: Setup Node.js
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 12
+  #     - name: Install Dependencies
+  #       run: yarn install --frozen-lockfile
+  #     - name: Ship it!
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       run: npm run release:local
 
   deploy:
     name: Deploy to GH-Pages
     needs: release
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           ref: gh-pages
         
-      - name: Download build Artifact
-        uses: actions/download-artifact@v1
-        with:
-          name: dist-artifact
-          path: .
+      # - name: Download build Artifact
+      #   uses: actions/download-artifact@v1
+      #   with:
+      #     name: dist-artifact
+      #     path: .
 
-      - name: Set date var
-        id: date
-        run: echo "::set-output name=date::$(date +'%y.%m.%d')"
+      - name: get-npm-version
+        uses: martinbeentjes/npm-get-version-action@v1
 
       - name: Set Git User
         run: |
           git config --local user.email "email.gabriel.lima@gmail.com"
           git config --local user.name "Gabriel Lima"
       
-      # - name: Git Commit and Push
-      #   run: |
-      #     git add .
-      #     git commit -m 'Release v1.0.0 (${{ steps.date.outputs.date }})'
-      #     git push -f
-      #   shell: bash 
+      - name: Git Commit and Push
+        run: |
+          # git add .
+          # git push -f
+          echo 'chore(release): ${{ steps.get-npm-version.outputs.current-version}}'
+        shell: bash 
       
