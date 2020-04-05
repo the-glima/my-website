@@ -1,0 +1,35 @@
+name: Deploy
+on:
+  push:
+    branches: 
+      - develop
+jobs:
+  deploy:
+    name: Deploy to GH-Pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+        
+      - name: Download build Artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: dist-artifact
+          path: .
+
+      - name: Set date var
+        id: date
+        run: echo "::set-output name=date::$(date +'%y.%m.%d')"
+
+      - name: Set Git User
+        run: |
+          git config --local user.email "email.gabriel.lima@gmail.com"
+          git config --local user.name "Gabriel Lima"
+      
+      # - name: Git Commit and Push
+      #   run: |
+      #     git add .
+      #     git commit -m 'Release v1.0.0 (${{ steps.date.outputs.date }})'
+      #     git push -f
+      #   shell: bash 
