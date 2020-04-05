@@ -47,7 +47,7 @@ jobs:
 
   deploy:
     name: Deploy to GH-Pages
-    needs: release
+    # needs: release
     if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     steps:
