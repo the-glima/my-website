@@ -62,25 +62,6 @@
     "webpack-cli": "^3.3.4",
     "webpack-dev-server": "^3.7.2"
   },
-  "release": {
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/npm",
-      "@semantic-release/changelog",
-      [
-        "@semantic-release/git",
-        {
-          "assets": [
-            "package.json",
-            "CHANGELOG.md"
-          ],
-          "message": "chore(release): ${nextRelease.version} \n\n${nextRelease.notes}"
-        }
-      ]
-    ],
-    "branch": "develop"
-  },
   "scripts": {
     "dev": "webpack-dev-server --color",
     "build": "cross-env NODE_ENV=production webpack --mode=production",
@@ -88,7 +69,7 @@
     "lint": "tslint -p . -t stylish",
     "test": "jest --runInBand --passWithNoTests",
     "release": "semantic-release",
-    "release:local": "semantic-release --no-ci",
+    "release:local": "semantic-release --no-ci --dry-run",
     "package:version": "node -p process.env.npm_package_version"
   }
 }
