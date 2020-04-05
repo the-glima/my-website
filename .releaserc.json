@@ -15,5 +15,5 @@
       }
     ]
   ],
-  "branch": "develop"
+  "branches": ["develop"]
 }

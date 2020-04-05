@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  CI:
+  ci:
     name: CI
     runs-on: ubuntu-latest
     steps:
@@ -27,7 +27,7 @@ jobs:
           name: dist-artifact
           path: dist
           
-  CD:
+  cd:
     name: CD
     needs: ci
     if: github.ref == 'refs/heads/master'
