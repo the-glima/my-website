@@ -88,8 +88,9 @@ jobs:
         run: |
           PACKAGE_VERSION=$(bash ./scripts/get-json-value.sh version release.json)
           
-          git add .
-          git commit -m "chore(release): v${PACKAGE_VERSION}"
-          git push -f
+          # git add .
+          # git commit -m 
+          echo "chore(release): v${PACKAGE_VERSION}"
+          # git push -f
         shell: bash 
       
