@@ -2,13 +2,14 @@ name: CI CD
 
 on:
   push:
-    branches: [ master ]
+    branches: [ develop ]
   pull_request:
-    branches: [ master ]
+    branches: [ develop ]
 
 jobs:
   build:
     name: Build
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -29,8 +30,8 @@ jobs:
 
   release:
     name: Release
-    needs: build
-    if: github.ref == 'refs/heads/master'
+    # needs: build
+    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -44,20 +45,22 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run release
 
-      - name: Create version.txt
+      - name: Create release.json
         run: |
-          echo $(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]') > version.txt
+          PACKAGE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
+          
+          echo '{ "version": "${PACKAGE_VERSION}" }' > .release.json
 
       - name: Upload Version Artifact
         uses: actions/upload-artifact@v1
         with:
-          name: version
-          path: version.txt
+          name: ReleaseJSON
+          path: .release.json
 
   deploy:
     name: Deploy to GH-Pages
     needs: release
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -73,7 +76,7 @@ jobs:
       - name: Download Version Artifact
         uses: actions/download-artifact@v1
         with:
-          name: version
+          name: ReleaseJSON
           path: .
 
       - name: Set Git User
@@ -83,7 +86,7 @@ jobs:
       
       - name: Git Commit and Push
         run: |
-          PACKAGE_VERSION=$(cat version.txt)
+          PACKAGE_VERSION=$(bash ./scripts/get-json-value.sh version release.json)
           
           git add .
           git commit -m "chore(release): v${PACKAGE_VERSION}"

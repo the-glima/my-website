@@ -11,7 +11,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/the-glima/my-website.git"
+    "url": "https://github.com/the-glima/my-website.git"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",

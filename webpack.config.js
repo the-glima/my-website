@@ -15,7 +15,8 @@ const paths = {
   assets: 'src/assets',
   scss: 'src/assets/scss',
   images: 'src/assets/images',
-  components: 'src/components'
+  components: 'src/components',
+  scripts: 'scripts'
 };
 
 const config = {
@@ -63,6 +64,12 @@ const config = {
       {
         context: 'src/',
         from: path.join(__dirname, `${paths.images}/**/*.{jpg,jpeg,png,gif,svg}`),
+        to: path.join(__dirname, paths.dist),
+        toType: 'dir',
+        force: true
+      },
+      {
+        from: path.join(__dirname, `${paths.scripts}/**/*.sh`),
         to: path.join(__dirname, paths.dist),
         toType: 'dir',
         force: true
