@@ -27,9 +27,27 @@ jobs:
           name: dist-artifact
           path: dist
 
+  release:
+    name: Release
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+      - name: Ship it!
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run release:local
+
   deploy:
     name: Deploy to GH-Pages
-    needs: ci
+    needs: release
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
@@ -59,20 +77,3 @@ jobs:
       #     git push -f
       #   shell: bash 
       
-  release:
-    name: Release
-    needs: ci
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - name: Install Dependencies
-        run: yarn install --frozen-lockfile
-      - name: Ship it!
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run release:local
