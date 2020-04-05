@@ -40,10 +40,15 @@ jobs:
           # node-version: 12
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
+
       - name: Update release version and changelog
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run release:local
+
+      - name: Create version.txt
+        run: |
+          echo $(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]') > version.txt
 
       - name: Upload Version Artifact
         uses: actions/upload-artifact@v1
