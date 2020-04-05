@@ -75,7 +75,7 @@ const config = {
         force: true
       }
     ]),
-    new ImageMinPlugin({test: /\.(jpg|jpeg|png|gif|svg)$/i}),
+    new ImageMinPlugin({ test: /\.(jpg|jpeg|png|gif|svg)$/i }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.join(__dirname, `${paths.root}/index.html`)
