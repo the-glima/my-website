@@ -40,7 +40,7 @@ jobs:
   #         node-version: 12
   #     - name: Install Dependencies
   #       run: yarn install --frozen-lockfile
-  #     - name: Ship it!
+  #     - name: Update release version and changelog
   #       env:
   #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   #       run: npm run release:local
@@ -61,9 +61,6 @@ jobs:
       #     name: dist-artifact
       #     path: .
 
-      - name: get-npm-version
-        uses: martinbeentjes/npm-get-version-action@v1
-
       - name: Set Git User
         run: |
           git config --local user.email "email.gabriel.lima@gmail.com"
@@ -73,6 +70,7 @@ jobs:
         run: |
           # git add .
           # git push -f
-          echo 'chore(release): ${{ steps.get-npm-version.outputs.current-version}}'
+          PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]')
+          echo 'chore(release): ${PACKAGE_VERSION}'
         shell: bash 
       
