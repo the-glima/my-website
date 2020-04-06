@@ -30,7 +30,7 @@ jobs:
 
   release:
     name: Release
-    # needs: build
+    needs: build
     # if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     steps:
