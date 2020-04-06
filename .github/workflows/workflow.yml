@@ -78,25 +78,12 @@ jobs:
           name: release-json-artifact
           path: .
 
-      # - name: Set Git User
-      #   run: |
-      #     git config --local user.email "email.gabriel.lima@gmail.com"
-      #     git config --local user.name "Gabriel Lima"
-
       - name: Git Commit and Push
         run: |
-          # DIFF_CHANGES=$(bash ./scripts/commit-diff.sh)
+          PACKAGE_VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
 
-          # if [[ -n "${DIFF_CHANGES}" ]]; then
-            PACKAGE_VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
-
-            git add .
-            git commit -m 
-            echo "chore(release): v${PACKAGE_VERSION}"
-            git log --name-status HEAD^..HEAD
-            # git push -f
-          # else
-            echo "Nothing to do here"
-          # fi
+          git add .
+          git commit -m"chore(release): v${PACKAGE_VERSION}"
+          git push -f
         shell: bash 
       
