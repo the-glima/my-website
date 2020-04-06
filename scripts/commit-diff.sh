@@ -4,7 +4,7 @@ RUN_COMMAND=$1
 DIFF_PATH=$2
 
 function commitDiff() {
-  local RESULT=$(git diff HEAD~1 --name-only > /dev/null 2>&1)
+  local RESULT=$(git diff HEAD~0 --name-only > /dev/null 2>&1)
 
   if [[ -n "${RESULT}" ]]; then
     echo "${RESULT}"
