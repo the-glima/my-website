@@ -15,5 +15,5 @@
       }
     ]
   ],
-  "branches": ["develop"]
+  "branches": ["ci/add-release-job", "develop"]
 }

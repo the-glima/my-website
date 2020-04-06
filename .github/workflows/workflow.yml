@@ -85,9 +85,9 @@ jobs:
 
       - name: Git Commit and Push
         run: |
-          DIFF_CHANGES=$(bash ./scripts/commit-diff.sh)
+          # DIFF_CHANGES=$(bash ./scripts/commit-diff.sh)
 
-          if [[ -n "${DIFF_CHANGES}" ]]; then
+          # if [[ -n "${DIFF_CHANGES}" ]]; then
             PACKAGE_VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
 
             git add .
@@ -95,8 +95,8 @@ jobs:
             echo "chore(release): v${PACKAGE_VERSION}"
             git log --name-status HEAD^..HEAD
             # git push -f
-          else
+          # else
             echo "Nothing to do here"
-          fi
+          # fi
         shell: bash 
       
