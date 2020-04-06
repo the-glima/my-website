@@ -49,7 +49,7 @@ jobs:
         run: |
           PACKAGE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
           
-          echo '{ "version": "${PACKAGE_VERSION}" }' > .release.json
+          echo { "version": "${PACKAGE_VERSION}" } > .release.json
           ls -la
 
       - name: Upload Version Artifact
