@@ -31,7 +31,7 @@ jobs:
   release:
     name: Release
     needs: build
-    # if: github.ref == 'refs/heads/develop'
+    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -59,7 +59,7 @@ jobs:
   deploy:
     name: Deploy to GH-Pages
     needs: release
-    # if: github.ref == 'refs/heads/develop'
+    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -77,6 +77,11 @@ jobs:
         with:
           name: release-json-artifact
           path: .
+
+      - name: Set Git User
+        run: |
+          git config --local user.email "email.gabriel.lima@gmail.com"
+          git config --local user.name "Gabriel Lima"
 
       - name: Git Commit and Push
         run: |
