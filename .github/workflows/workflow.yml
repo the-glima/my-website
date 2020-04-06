@@ -50,7 +50,7 @@ jobs:
           PACKAGE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
           
           echo '{ "version": "${PACKAGE_VERSION}" }' > .release.json
-          ll
+          ls -l
 
       - name: Upload Version Artifact
         uses: actions/upload-artifact@v1
@@ -89,7 +89,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          ll
+          ls -l
           git config --local user.name
           PACKAGE_VERSION=$(bash scripts/get-json-value.sh version .release.json)
           
