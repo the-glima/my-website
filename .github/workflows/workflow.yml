@@ -84,11 +84,12 @@ jobs:
       #   run: |
       #     git config --local user.email "email.gabriel.lima@gmail.com"
       #     git config --local user.name "Gabriel Lima"
-      - name: Git Commit and Push
+      - name: test
         run: |
           ls -la
           cat .release.json
           ls -la scripts
+          git config user.name
 
       - name: Git Commit and Push
         run: |
