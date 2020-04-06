@@ -86,12 +86,9 @@ jobs:
       #     git config --local user.name "Gabriel Lima"
       
       - name: Git Commit and Push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ls -la
-          git config --local user.name
-          PACKAGE_VERSION=$(bash scripts/get-json-value.sh version .release.json)
+          PACKAGE_VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
           
           # git add .
           # git commit -m 
