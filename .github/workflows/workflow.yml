@@ -2,13 +2,14 @@ name: CI CD
 
 on:
   push:
-    branches: [ master ]
+    branches: [ develop ]
   pull_request:
-    branches: [ master ]
+    branches: [ develop ]
 
 jobs:
   build:
     name: Build
+    # if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -21,15 +22,16 @@ jobs:
       - name: Run Build
         run: yarn build
 
-      - name: Upload Artifact
+      - name: Upload Build Artifact
         uses: actions/upload-artifact@v1
         with:
-          name: dist-artifact
+          name: build-artifact
           path: dist
 
   release:
     name: Release
     needs: build
+    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -41,51 +43,52 @@ jobs:
       - name: Update release version and changelog
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run release:local
+        run: npm run release
 
-      - name: Create version.txt
+      - name: Create release.json
         run: |
-          echo $(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]') > version.txt
+          PACKAGE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
+          echo '{ "version": "'${PACKAGE_VERSION}'" }' > .release.json
 
       - name: Upload Version Artifact
         uses: actions/upload-artifact@v1
         with:
-          name: version
-          path: version.txt
+          name: release-json-artifact
+          path: .release.json
 
   deploy:
     name: Deploy to GH-Pages
     needs: release
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           ref: gh-pages
         
-      - name: Download build Artifact
+      - name: Download Build Artifact
         uses: actions/download-artifact@v1
         with:
-          name: dist-artifact
+          name: build-artifact
           path: .
 
       - name: Download Version Artifact
         uses: actions/download-artifact@v1
         with:
-          name: version
+          name: release-json-artifact
           path: .
 
       - name: Set Git User
         run: |
           git config --local user.email "email.gabriel.lima@gmail.com"
           git config --local user.name "Gabriel Lima"
-      
+
       - name: Git Commit and Push
         run: |
-          PACKAGE_VERSION=$(cat version.txt)
-          
+          PACKAGE_VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
+
           git add .
-          git commit -m "chore(release): v${PACKAGE_VERSION}"
-          # git push -f
+          git commit -m"chore(release): v${PACKAGE_VERSION}"
+          git push -f
         shell: bash 
       
