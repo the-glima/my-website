@@ -48,9 +48,7 @@ jobs:
       - name: Create release.json
         run: |
           PACKAGE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
-          
           echo '{ "version": "'${PACKAGE_VERSION}'" }' > .release.json
-          ls -la
 
       - name: Upload Version Artifact
         uses: actions/upload-artifact@v1
@@ -84,22 +82,21 @@ jobs:
       #   run: |
       #     git config --local user.email "email.gabriel.lima@gmail.com"
       #     git config --local user.name "Gabriel Lima"
-      - name: test
-        run: |
-          ls -la
-          cat .release.json
-          ls -la scripts
-          echo $(git config --global user.email)
-          echo $(git config user.email)
 
       - name: Git Commit and Push
         run: |
-          ls -la
-          PACKAGE_VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
-          
-          # git add .
-          # git commit -m 
-          echo "chore(release): v${PACKAGE_VERSION}"
-          # git push -f
+          DIFF_CHANGES=$(bash ./scripts/commit-diff.sh)
+
+          if [[ -n "${DIFF_CHANGES}" ]]; then
+            PACKAGE_VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
+
+            git add .
+            git commit -m 
+            echo "chore(release): v${PACKAGE_VERSION}"
+            git log --name-status HEAD^..HEAD
+            # git push -f
+          else
+            echo "Nothing to do here"
+          fi
         shell: bash 
       
