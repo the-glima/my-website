@@ -49,7 +49,7 @@ jobs:
         run: |
           PACKAGE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
           
-          echo { "version": "${PACKAGE_VERSION}" } > .release.json
+          echo '{ "version": "'${PACKAGE_VERSION}'" }' > .release.json
           ls -la
 
       - name: Upload Version Artifact
@@ -89,7 +89,8 @@ jobs:
           ls -la
           cat .release.json
           ls -la scripts
-          git config user.name
+          echo $(git config --global user.email)
+          echo $(git config user.email)
 
       - name: Git Commit and Push
         run: |
