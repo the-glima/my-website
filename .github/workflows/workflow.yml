@@ -79,14 +79,14 @@ jobs:
           name: release-json-artifact
           path: .
 
-      - name: Set Git User
-        run: |
-          # git config --local user.email "email.gabriel.lima@gmail.com"
-          git config --local user.email
-          # git config --local user.name "Gabriel Lima"
-          git config --local user.name
+      # - name: Set Git User
+      #   run: |
+      #     git config --local user.email "email.gabriel.lima@gmail.com"
+      #     git config --local user.name "Gabriel Lima"
       
       - name: Git Commit and Push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PACKAGE_VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
           
@@ -94,5 +94,6 @@ jobs:
           # git commit -m 
           echo "chore(release): v${PACKAGE_VERSION}"
           # git push -f
+          git config --local user.name
         shell: bash 
       
