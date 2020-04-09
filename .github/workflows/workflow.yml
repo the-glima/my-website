@@ -91,7 +91,7 @@ jobs:
           echo "::set-env name=SHOULD_UPDATE::${SHOULD_UPDATE}"
           echo "::set-env name=VERSION::${RELEASE_VERSION}"
 
-      - name: Show Off
+      - name: Log Variables
         run: |
           echo "CURRENT_VERSION: ${{ env.CURRENT_VERSION }}"
           echo "VERSION: ${{ env.VERSION }}"
@@ -107,8 +107,8 @@ jobs:
       - name: Set Git User
         if: env.SHOULD_UPDATE == 'true'
         run: |
-          git config --local user.email "email.gabriel.lima@gmail.com"
-          git config --local user.name "Gabriel Lima"
+          git config --local user.email "semantic-release-bot@martynus.net"
+          git config --local user.name "semantic-release-bot"
 
       - name: Git Commit and Push
         if: env.SHOULD_UPDATE == 'true'
