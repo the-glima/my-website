@@ -1,0 +1,27 @@
+/* Variables
+------------------------------------- */
+
+:root {
+  --color-primary: #213d8f;
+  --color-secondary: #8ec03f;
+  --color-accent: #4B66F2;
+  --color-success: #8ec03f;
+  --color-error: #c03f3f;
+  --color-grey: #f6f7fb;
+  --color-black: #0C0C0C;
+  --color-white: #ffffff;
+  --font-size: 16px;
+  --font-line-height: 1.6;
+  --font-family-comfortaa: 'Comfortaa', cursive;
+  --font-family-roboto: 'Roboto', sans-serif;
+  --font-family-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-family-base: var(--font-family-roboto), var(--font-family-comfortaa), var(--font-family-system);
+  --transition: .06px;
+  --border-radius: 2px;
+  --breakpoints-xs: 320px;
+  --breakpoints-xs: 320px;
+  --breakpoints-sm: 576px;
+  --breakpoints-md: 768px;
+  --breakpoints-lg: 992px;
+  --breakpoints-xl: 1200px;
+}
