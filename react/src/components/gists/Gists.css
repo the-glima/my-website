@@ -37,6 +37,7 @@
   transition: .06s;
 }
 
+
 .gist-section-link a {
   font-family: "Comfortaa", cursive;
   font-size: 1rem;
@@ -56,15 +57,15 @@
   }
 }
 
-@media only screen and (min-width: var(--breakpoints-sm)) {
+@media only screen and (min-width: 576px) {
   .gists-list {
     display: flex;
     flex-direction: row;
   }
 }
 
-@media only screen and (min-width: var(--breakpoints-md)) {
-  .gists-list:first-child {
+@media only screen and (min-width: 768px) {
+  .gists-list li:first-child {
     margin-top: 1.7rem;
   }
 
@@ -73,4 +74,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  .gist-section-link { margin-top: 3rem; }
 }

@@ -1,4 +1,4 @@
-export interface GistResponseModel {
+export interface GistsResponseModel {
   data: GistModel[];
   status: number;
   statusText: string;

@@ -9,11 +9,12 @@ import scssLogo from './logos/scss.svg'
 import shellLogo from './logos/shell.svg'
 import vscodeLogo from './logos/vscode.svg'
 
+const logoDefault = { name: 'github', src: githubLogo }
+
 const logos = [
   { name: 'angular', src: angularLogo },
   { name: 'css', src: cssLogo },
   { name: 'docker', src: dockerLogo },
-  { name: 'github', src: githubLogo },
   { name: 'html', src: htmlLogo },
   { name: 'javascript', src: javascriptLogo },
   { name: 'markdown', src: markdownLogo },
@@ -23,5 +24,7 @@ const logos = [
 ];
 
 export const logoLoader = (logoName: string) => {
-  return Object.values(logos).find(item => item.name === logoName)?.src;
+  const logo = Object.values(logos).find(item => item.name === logoName)
+
+  return logo ? logo : logoDefault
 }

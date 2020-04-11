@@ -1,13 +1,13 @@
 import React from 'react';
 import './Intro.css';
 
-import {settings} from '../../config/settings';
+import {settings} from '../../settings';
 import profile from '../../assets/images/me.jpg';
 import profile2x from '../../assets/images/me@2x.jpg';
 import profile3x from '../../assets/images/me@3x.jpg';
 import profile4x from '../../assets/images/me@4x.jpg';
 
-function Intro() {
+const Intro = () => {
   const randomizeSubTitle = (): string => {
     const subTitleOptions = settings.intro.subTitleOptions;
     const randomness = Math.floor(Math.random() * subTitleOptions.length);

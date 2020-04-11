@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import './Gists.css';
 
-import {GistDOMModel} from '../../models/gists.model';
-import {GistsService} from '../../services/gists.service';
+import {GistDOMModel} from './GistsModel';
+import {GistsService} from './GistsService';
 import {logoLoader} from '../../assets/images/get-logos'
 
-function Gists() {
+const Gists = () => {
   const [gists, setGists]: any = useState([])
-
+  
   useEffect(() => {
-    (async () => setGists(await GistsService.mapGists()) )();
-  }, [gists]);
+    const fetchGists = async () => {
+      const result = await GistsService.mapGists()
+      setGists(result)
+    };
+
+    fetchGists()
+  }, []);
 
   return (
     <section className="section section-gists">
@@ -23,7 +28,7 @@ function Gists() {
             <a className="gist-link" href={gist.url} title={`Check this gist: ${gist.title}`}>
               <img 
                 className="gist-logo"
-                src={logoLoader(gist.language.toLowerCase())} 
+                src={logoLoader(gist.language.toLowerCase())?.src} 
                 alt={gist.language}
               />
               <span className="gist-title">{gist.title}</span> 
@@ -33,10 +38,9 @@ function Gists() {
       </ul>
 
       <div className="gist-section-link">
-        <a href="https://gist.github.com/the-glima" target="_blank">See More</a>
+        <a href="https://gist.github.com/the-glima">See More</a>
       </div>
     </section>
-
   );
 }
 

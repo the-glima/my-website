@@ -5,7 +5,7 @@ import linkedin from '../../assets/images/logos/linkedin.svg';
 import twitter from '../../assets/images/logos/twitter.svg';
 import github from '../../assets/images/logos/github.svg';
 
-function Social() {
+const Social = () => {
   return (
     <section className="section section-social-links">
       <ul className="social-links-list">

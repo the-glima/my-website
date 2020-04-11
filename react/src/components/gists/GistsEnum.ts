@@ -1,4 +1,4 @@
-export enum GistLanguages {
+export enum GistLanguagesEnum {
   yaml = 'YAML',
   shell = 'Shell',
   markdown = 'Markdown',
