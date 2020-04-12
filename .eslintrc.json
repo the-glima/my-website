@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "eslint:recommended"
+  ],
+  "rules": {
+    "strict": ["warn", "global"],
+    "curly": "warn",
+    "indent": ["warn", 2],
+    "quotes": ["warn", "single"],
+    "semi": ["warn", "never"],
+    "comma-dangle": ["warn", "never"]
+  }
+}
