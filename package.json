@@ -27,24 +27,58 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "husky": "^3.0.1",
-    "prettier": "^1.19.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "semantic-release": "^17.0.4",
     "typescript": "~3.7.2"
   },
-  "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js",
-    "format": "prettier --write \"{src,test}/**/*.ts\"",
-    "lint": "tslint -p . -t stylish",
-    "release": "semantic-release",
-    "release:local": "semantic-release --no-ci --dry-run"
-  },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "max-len": [
+        "warn",
+        {
+          "code": 120,
+          "ignoreUrls": true,
+          "ignoreComments": false,
+          "ignoreRegExpLiterals": true,
+          "ignoreStrings": true,
+          "ignoreTemplateLiterals": false
+        }
+      ],
+      "strict": [
+        "warn",
+        "global"
+      ],
+      "curly": "warn",
+      "indent": [
+        "warn",
+        2
+      ],
+      "quotes": [
+        "warn",
+        "single"
+      ],
+      "semi": [
+        "warn",
+        "never"
+      ],
+      "comma-dangle": [
+        "warn",
+        "never"
+      ]
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts}": "yarn lint:fix"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn lin && yarn test"
+    }
   },
   "browserslist": {
     "production": [
@@ -57,5 +91,20 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build:local": "serve -s build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"{src,test}/**/*.ts\"",
+    "lint": "eslint src/**/*ts",
+    "lint:fix": "eslint --fix src/**/*ts",
+    "release": "semantic-release",
+    "release:local": "semantic-release --no-ci --dry-run"
+  },
+  "devDependencies": {
+    "serve": "^11.3.0"
   }
 }

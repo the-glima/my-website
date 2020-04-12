@@ -20,8 +20,8 @@ const logos = [
   { name: 'markdown', src: markdownLogo },
   { name: 'scss', src: scssLogo },
   { name: 'shell', src: shellLogo },
-  { name: 'vscode', src: vscodeLogo },
-];
+  { name: 'vscode', src: vscodeLogo }
+]
 
 export const gistsGetLogo = (logoName: string) => {
   const logo = Object.values(logos).find(item => item.name === logoName)
