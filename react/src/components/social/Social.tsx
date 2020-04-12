@@ -1,9 +1,9 @@
-import React from 'react';
-import './Social.css';
+import React from 'react'
+import './Social.css'
 
-import linkedin from '../../assets/images/logos/linkedin.svg';
-import twitter from '../../assets/images/logos/twitter.svg';
-import github from '../../assets/images/logos/github.svg';
+import linkedin from '../../assets/images/logos/linkedin.svg'
+import twitter from '../../assets/images/logos/twitter.svg'
+import github from '../../assets/images/logos/github.svg'
 
 const Social = () => {
   return (
@@ -29,7 +29,7 @@ const Social = () => {
         </li>
       </ul>  
     </section>
-  );
+  )
 }
 
-export default Social;
+export default Social

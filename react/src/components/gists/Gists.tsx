@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import './Gists.css';
+import React, { useState, useEffect } from 'react'
+import './Gists.css'
 
-import {GistDOMModel} from './GistsModel';
-import {GistsService} from './GistsService';
-import {logoLoader} from '../../assets/images/get-logos'
+import {GistDOMModel} from './GistsModel'
+import {GistsService} from './GistsService'
+import {gistsGetLogo} from './GistsGetLogo'
 
 const Gists = () => {
   const [gists, setGists]: any = useState([])
@@ -12,10 +12,10 @@ const Gists = () => {
     const fetchGists = async () => {
       const result = await GistsService.mapGists()
       setGists(result)
-    };
+    }
 
     fetchGists()
-  }, []);
+  }, [])
 
   return (
     <section className="section section-gists">
@@ -28,7 +28,7 @@ const Gists = () => {
             <a className="gist-link" href={gist.url} title={`Check this gist: ${gist.title}`}>
               <img 
                 className="gist-logo"
-                src={logoLoader(gist.language.toLowerCase())?.src} 
+                src={gistsGetLogo(gist.language.toLowerCase())?.src} 
                 alt={gist.language}
               />
               <span className="gist-title">{gist.title}</span> 
@@ -41,7 +41,7 @@ const Gists = () => {
         <a href="https://gist.github.com/the-glima">See More</a>
       </div>
     </section>
-  );
+  )
 }
 
-export default Gists;
+export default Gists

@@ -1,0 +1,10 @@
+footer { 
+  padding: 2rem 0;
+  font-size: .7rem;
+}
+
+footer img {
+  margin: 0 .2rem;
+  width: 14px;
+  vertical-align: text-top;
+}
