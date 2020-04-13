@@ -57,7 +57,7 @@ jobs:
 
       - name: Create release.json
         run: |
-          RELEASE_VERSION=$(bash ./.github/get-json-value.sh version package.json)
+          RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
           echo '{ "version": "'${RELEASE_VERSION}'" }' > .release.json
 
       - name: Upload Version Artifact
@@ -65,6 +65,12 @@ jobs:
         with:
           name: release-json.artifact
           path: .release.json
+
+      - name: Upload Scripts Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: scripts.artifact
+          path: scripts
 
   deploy:
     name: Deploy to GH-Pages
@@ -76,9 +82,15 @@ jobs:
         with:
           ref: gh-pages
 
+      - name: Download Version Artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: scripts.artifact
+          path: scripts
+
       - name: Get Current Version
         run: |
-          VERSION=$(bash ./.github/get-json-value.sh version .release.json)
+          VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
           echo "::set-env name=CURRENT_VERSION::${VERSION}"
           
       - name: Download Version Artifact
@@ -89,7 +101,7 @@ jobs:
 
       - name: Get Release Version
         run: |
-          RELEASE_VERSION=$(bash ./.github/get-json-value.sh version .release.json)
+          RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
           SHOULD_UPDATE=false
           [[ ${{ env.CURRENT_VERSION }} != ${RELEASE_VERSION} ]]; SHOULD_UPDATE=true || SHOULD_UPDATE=false
           echo "::set-env name=SHOULD_UPDATE::${SHOULD_UPDATE}"
