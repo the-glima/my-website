@@ -1,4 +1,0 @@
-{
-  "src/**/*.{js,ts}": "npm run format && npm run lint",
-  "test/**/*.{js,ts}": "npm run format && npm run lint"
-}
