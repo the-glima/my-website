@@ -4,7 +4,7 @@
   ],
   "rules": {
     "max-len": [ "warn", {
-      "code": 50,
+      "code": 120,
       "ignoreUrls": true,
       "ignoreComments": false,
       "ignoreRegExpLiterals": true,
