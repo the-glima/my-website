@@ -12,7 +12,7 @@ function App() {
       <Gists />
       <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

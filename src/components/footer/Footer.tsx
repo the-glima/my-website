@@ -9,16 +9,19 @@ import spainFlag from '../../assets/images/flags/spain.svg'
 const Footer = () => {
   return (
     <footer className="flex">
-      <p>© 2020 Gabriel Lima - From 
+      <p>
+        © 2020 Gabriel Lima - From
         <a href={settings.footer.links.brazil} title="Brazil">
           <img src={brazilFlag} alt="Brazil's flag" />
-        </a> then 
+        </a>{' '}
+        then
         <a href={settings.footer.links.ireland} title="Ireland">
           <img src={irelandFlag} alt="Ireland's flag" />
-        </a> currently 
+        </a>{' '}
+        currently
         <a href={settings.footer.links.spain} title="Spain">
           <img src={spainFlag} alt="Spain's flag" />
-        </a> 
+        </a>
       </p>
     </footer>
   )

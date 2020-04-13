@@ -10,7 +10,11 @@ const Social = () => {
     <section className="section section-social-links">
       <ul className="social-links-list">
         <li>
-          <a className="social-link" href="https://www.linkedin.com/in/gabriel--lima/" title="Go to my LinkedIn Profile">
+          <a
+            className="social-link"
+            href="https://www.linkedin.com/in/gabriel--lima/"
+            title="Go to my LinkedIn Profile"
+          >
             <img src={linkedin} alt="Linkedin Logo" />
             <span>LinkedIn</span>
           </a>
@@ -27,7 +31,7 @@ const Social = () => {
             <span>GitHub</span>
           </a>
         </li>
-      </ul>  
+      </ul>
     </section>
   )
 }

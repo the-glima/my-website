@@ -18,6 +18,10 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Run Lint
+        if: success()
+        run: yarn lint
+
       - name: Run Unit Tests
         if: success()
         run: yarn test
@@ -31,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: build.artifact
-          path: dist
+          path: build
 
   release:
     name: Release
@@ -53,7 +57,7 @@ jobs:
 
       - name: Create release.json
         run: |
-          RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
+          RELEASE_VERSION=$(bash ./github/get-json-value.sh version package.json)
           echo '{ "version": "'${RELEASE_VERSION}'" }' > .release.json
 
       - name: Upload Version Artifact
@@ -74,7 +78,7 @@ jobs:
 
       - name: Get Current Version
         run: |
-          VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
+          VERSION=$(bash ./github/get-json-value.sh version .release.json)
           echo "::set-env name=CURRENT_VERSION::${VERSION}"
           
       - name: Download Version Artifact
@@ -85,7 +89,7 @@ jobs:
 
       - name: Get Release Version
         run: |
-          RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
+          RELEASE_VERSION=$(bash ./github/get-json-value.sh version .release.json)
           SHOULD_UPDATE=false
           [[ ${{ env.CURRENT_VERSION }} != ${RELEASE_VERSION} ]]; SHOULD_UPDATE=true || SHOULD_UPDATE=false
           echo "::set-env name=SHOULD_UPDATE::${SHOULD_UPDATE}"

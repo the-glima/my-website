@@ -9,22 +9,22 @@ import scssLogo from '../../assets/images/logos/scss.svg'
 import shellLogo from '../../assets/images/logos/shell.svg'
 import vscodeLogo from '../../assets/images/logos/vscode.svg'
 
-const logoDefault = { name: 'github', src: githubLogo }
+const logoDefault = {name: 'github', src: githubLogo}
 
 const logos = [
-  { name: 'angular', src: angularLogo },
-  { name: 'css', src: cssLogo },
-  { name: 'docker', src: dockerLogo },
-  { name: 'html', src: htmlLogo },
-  { name: 'javascript', src: javascriptLogo },
-  { name: 'markdown', src: markdownLogo },
-  { name: 'scss', src: scssLogo },
-  { name: 'shell', src: shellLogo },
-  { name: 'vscode', src: vscodeLogo }
+  {name: 'angular', src: angularLogo},
+  {name: 'css', src: cssLogo},
+  {name: 'docker', src: dockerLogo},
+  {name: 'html', src: htmlLogo},
+  {name: 'javascript', src: javascriptLogo},
+  {name: 'markdown', src: markdownLogo},
+  {name: 'scss', src: scssLogo},
+  {name: 'shell', src: shellLogo},
+  {name: 'vscode', src: vscodeLogo}
 ]
 
 export const gistsGetLogo = (logoName: string) => {
-  const logo = Object.values(logos).find(item => item.name === logoName)
+  const logo = Object.values(logos).find((item) => item.name === logoName)
 
   return logo ? logo : logoDefault
 }

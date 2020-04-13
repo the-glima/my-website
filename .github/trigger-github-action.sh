@@ -14,5 +14,3 @@ function triggerGithubAction() {
 }
 
 triggerGithubAction 
-
-

@@ -19,7 +19,12 @@ const Intro = () => {
     <section className="section section-intro">
       <header>
         <div className="picture-wrapper">
-          <img className="picture" src={profile} srcSet={`${profile2x} 2x,${profile3x} 3x, ${profile4x} 4x`} alt="Gabriel Lima" />
+          <img
+            className="picture"
+            src={profile}
+            srcSet={`${profile2x} 2x,${profile3x} 3x, ${profile4x} 4x`}
+            alt="Gabriel Lima"
+          />
         </div>
         <h1>Gabriel Lima</h1>
         <h2 id="subtitle">{randomizeSubTitle()}</h2>
