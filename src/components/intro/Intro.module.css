@@ -1,0 +1,61 @@
+.picture {
+  composes: transition from '../../assets/styles/helpers.css';
+  width: 120px;
+  margin-bottom: 1rem;
+  border-radius: 100%;
+  border: 4px solid #5B2C83;
+}
+
+.heading {
+  composes: transition from '../../assets/styles/helpers.css';
+}
+
+.intro {  
+  padding-left: 0.2rem;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.name { 
+  margin-bottom: 0.5rem;
+  padding-top: 1.2rem;
+  font-size: 2.4rem;
+  line-height: 0.95;
+  font-family: var(--font-family-comfortaa);
+}
+
+.title { 
+  padding-left: 0.2rem;
+  font-size: 1.44rem;
+  line-height: 1.5;
+  font-family: var(--font-family-comfortaa);
+}
+
+.bio {
+  margin: 0 auto;
+  padding-top: 3rem;
+  max-width: 500px;
+  font-size: 1.2rem;
+}
+
+@media only screen and (min-width: 576px) {
+  .header {
+    flex-direction: row;
+  }
+
+  .heading {
+    text-align: left;
+  }
+
+  .picture {
+    margin: 0 1rem 0 0;
+  }
+
+  .name { 
+    margin-bottom: 0;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+}

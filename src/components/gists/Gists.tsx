@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import './Gists.css'
+import styles from './Gists.module.css'
 
 import {GistDOMModel} from './GistsModel'
 import {GistsService} from './GistsService'
@@ -18,23 +18,25 @@ const Gists = () => {
   }, [])
 
   return (
-    <section className="section section-gists">
-      <h3>Latest Gists</h3>
-      <h4>No time for blogging, sorry</h4>
+    <section className={`section ${styles['section-gists']} text-center`}>
+      <header className="text-center">
+        <h2>Latest Gists</h2>
+        <h3>Don’t have a blog yet but I have gists</h3>
+      </header>
 
-      <ul className="gists-list">
+      <ul className={styles.list}>
         {gists.map((gist: GistDOMModel, i: number) => (
           <li key={i}>
-            <a className="gist-link" href={gist.url} title={`Check this gist: ${gist.title}`}>
-              <img className="gist-logo" src={gistsGetLogo(gist.language.toLowerCase())?.src} alt={gist.language} />
-              <span className="gist-title">{gist.title}</span>
+            <a className={styles.link} href={gist.url} title={`Check this gist: ${gist.title}`}>
+              <img className={styles.logo} src={gistsGetLogo(gist.language.toLowerCase())?.src} alt={gist.language} />
+              <span className={styles.title}>{gist.title}</span>
             </a>
           </li>
         ))}
       </ul>
 
-      <div className="gist-section-link">
-        <a href="https://gist.github.com/the-glima">See More</a>
+      <div>
+        <a className={styles['section-link']} href="https://gist.github.com/the-glima">See More</a>
       </div>
     </section>
   )

@@ -1,28 +1,10 @@
 import React from 'react'
-import './Footer.css'
-
-import {settings} from '../../settings'
-import brazilFlag from '../../assets/images/flags/brazil.svg'
-import irelandFlag from '../../assets/images/flags/ireland.svg'
-import spainFlag from '../../assets/images/flags/spain.svg'
+import styles from './Footer.module.css'
 
 const Footer = () => {
   return (
-    <footer className="flex">
-      <p>
-        © 2020 Gabriel Lima - From
-        <a href={settings.footer.links.brazil} title="Brazil">
-          <img src={brazilFlag} alt="Brazil's flag" />
-        </a>{' '}
-        then
-        <a href={settings.footer.links.ireland} title="Ireland">
-          <img src={irelandFlag} alt="Ireland's flag" />
-        </a>{' '}
-        currently
-        <a href={settings.footer.links.spain} title="Spain">
-          <img src={spainFlag} alt="Spain's flag" />
-        </a>
-      </p>
+    <footer className="section text-center">
+      <p className={styles.copyright}>© 2020 Gabriel Lima - All Rights Reserved</p>
     </footer>
   )
 }

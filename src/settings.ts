@@ -12,8 +12,6 @@ export const settings = {
     logo: 'GitHub'
   },
   intro: {
-    bio:
-      'Working in web development for almost 8 years with solid experience developing web applications, creating rich UI components, building RESTful APIs and improving development workflow (CI/CD and product infrastructure). Always learning and keeping track of modern technologies and new standards.',
     subTitleOptions: [
       'Front-End Developer',
       'Front-End Engineer',

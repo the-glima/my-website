@@ -1,5 +1,5 @@
 import React from 'react'
-import './Intro.css'
+import styles from './Intro.module.css'
 
 import {settings} from '../../settings'
 import profile from '../../assets/images/photos/me.jpg'
@@ -16,21 +16,26 @@ const Intro = () => {
   }
 
   return (
-    <section className="section section-intro">
-      <header>
-        <div className="picture-wrapper">
+    <section className="section text-center">
+      <header className={`${styles.header} d-flex-inline flex-column align-items-center text-left`}>
+        <div>
           <img
-            className="picture"
+            className={styles.picture}
             src={profile}
             srcSet={`${profile2x} 2x,${profile3x} 3x, ${profile4x} 4x`}
             alt="Gabriel Lima"
           />
         </div>
-        <h1>Gabriel Lima</h1>
-        <h2 id="subtitle">{randomizeSubTitle()}</h2>
+        
+        <h1 className={`${styles.heading} d-flex flex-column text-center`}>
+          <small className={styles.intro}>Hi, my name is</small>
+          <strong className={styles.name}>Gabriel Lima</strong>
+          <span className={styles.title}>{randomizeSubTitle()}</span>
+        </h1>
       </header>
 
-      <p className="bio">{settings.intro.bio}</p>
+      <p className={styles.bio}>I build things for the web and love what I do. Mainly focused on Front-end Development with a good UI/UX taste but always trying different things.
+      </p>
     </section>
   )
 }

@@ -32,40 +32,30 @@ a:focus {
   outline: none;
 }
 
-h1 {
-  font-size: 2.2rem;
-  line-height: 1.8;
-  font-weight: 600;
-  font-family: var(--font-family-comfortaa);
-}
+b,
+strong { font-weight: 600; }
 
 h2 {
-  font-size: 1rem;
-  line-height: 1.3;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-family: var(--font-family-roboto);
-}
-
-h3 {
   font-size: 1.6rem;
   line-height: 1.8;
   font-weight: 600;
   font-family: var(--font-family-comfortaa);
 }
 
-h4 {
+h3 {
   font-size: 1rem;
   line-height: 1.2;
-  font-weight: 600;
+  font-weight: 400;
   font-family: var(--font-family-comfortaa);
 }
 
-.wrapper {
-  height: 100%;
-  text-align: center;
+.section { padding: 2rem 1rem; }
+
+@media only screen and (min-width: 576px) {
+  :root {
+    --font-size: 16px;
+    --font-line-height: 1.6;
+  }
+
+  .section { padding: 2rem; }
 }
-
-.section { padding: 2rem; }
-
-.section + .section { margin-top: 1.6rem; }
