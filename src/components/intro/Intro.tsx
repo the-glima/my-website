@@ -8,12 +8,16 @@ import profile3x from '../../assets/images/photos/me@3x.jpg'
 import profile4x from '../../assets/images/photos/me@4x.jpg'
 
 const Intro = () => {
-  const randomizeSubTitle = (): string => {
-    const subTitleOptions = settings.intro.subTitleOptions
+  const randomizeTitle = (): any => {
+    const titles = Object.values(settings.intro.subTitleOptions)
+    const subTitleOptions = titles.map(item => item.title)
     const randomness = Math.floor(Math.random() * subTitleOptions.length)
+    const defaultTitle = titles.find(item => item.default)
 
-    return subTitleOptions[randomness] || subTitleOptions[0]
+    return titles[randomness] || defaultTitle
   }
+
+  const titleItem = randomizeTitle()
 
   return (
     <section className="section text-center">
@@ -26,15 +30,17 @@ const Intro = () => {
             alt="Gabriel Lima"
           />
         </div>
-        
+
         <h1 className={`${styles.heading} d-flex flex-column text-center`}>
           <small className={styles.intro}>Hi, my name is</small>
           <strong className={styles.name}>Gabriel Lima</strong>
-          <span className={styles.title}>{randomizeSubTitle()}</span>
+          <span className={styles.title} style={titleItem.jsxCss || null}>{titleItem.title}</span>
         </h1>
       </header>
 
-      <p className={styles.bio}>I build things for the web and love what I do. Mainly focused on Front-end Development with a good UI/UX taste but always trying different things.
+      <p className={styles.bio}>
+        I build things for the web and love what I do. Mainly focused on Front-end Development with a good UI/UX taste
+        but always trying different things.
       </p>
     </section>
   )

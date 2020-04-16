@@ -28,7 +28,7 @@ const Gists = () => {
         {gists.map((gist: GistDOMModel, i: number) => (
           <li key={i}>
             <a className={styles.link} href={gist.url} title={`Check this gist: ${gist.title}`}>
-              <img className={styles.logo} src={gistsGetLogo(gist.language.toLowerCase())?.src} alt={gist.language} />
+              <div><img className={styles.logo} src={gistsGetLogo(gist.language.toLowerCase())?.src} alt={gist.language} /></div>
               <span className={styles.title}>{gist.title}</span>
             </a>
           </li>
@@ -36,7 +36,9 @@ const Gists = () => {
       </ul>
 
       <div>
-        <a className={styles['section-link']} href="https://gist.github.com/the-glima">See More</a>
+        <a className={styles['section-link']} href="https://gist.github.com/the-glima">
+          See More
+        </a>
       </div>
     </section>
   )

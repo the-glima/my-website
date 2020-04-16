@@ -13,17 +13,25 @@ export const settings = {
   },
   intro: {
     subTitleOptions: [
-      'Front-End Developer',
-      'Front-End Engineer',
-      'JavaScript Engineer',
-      'JavaScript Developer',
-      'Software Developer',
-      'Software Engineer',
-      'Infrastructure Developer',
-      'Web Designer',
-      'UI Developer',
-      '10x Engineer *',
-      'JS-Framework Developer'
+      {
+        title: 'Front-End Developer',
+        default: true
+      },
+      {title: 'Front-End Engineer'},
+      {title: 'JavaScript Engineer'},
+      {title: 'JavaScript Developer'},
+      {title: 'Software Developer'},
+      {title: 'Software Engineer'},
+      {title: 'Infrastructure Developer'},
+      {title: 'Web Designer'},
+      {title: 'UI Developer'},
+      {title: 'JS-Framework Developer'},
+      {
+        title: '10x Engineer',
+        jsxCss: {
+          textDecoration: 'line-through'
+        }
+      }
     ]
   },
   footer: {

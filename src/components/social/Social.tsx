@@ -36,19 +36,11 @@ const Social = () => {
 
   return (
     <section className="section section-social-links">
-      <ul className={styles.list}>
+      <ul className={`${styles.list} d-flex justify-content-around`}>
         {links.map((link: Link, i: number) => (
-          <li key={i}>
-            <a
-              className={styles.link}
-              href={link.url}
-              title={link.title}
-            >
-              <img 
-                className={styles.logo}
-                src={link.scrImage} 
-                alt={`${link.name} Logo`} 
-              />
+          <li key={i} className="d-flex flex-column justify-content-between">
+            <a className={styles.link} href={link.url} title={link.title}>
+              <img className={styles.logo} src={link.scrImage} alt={`${link.name} Logo`} />
               <span className={styles.name}>{link.name}</span>
             </a>
           </li>
