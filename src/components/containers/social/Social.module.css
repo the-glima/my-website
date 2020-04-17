@@ -25,7 +25,7 @@
 
 @media (hover: hover) {
   .link { 
-    composes: transition from '../../assets/styles/helpers.css';
+    composes: transition from '../../../assets/styles/helpers.css';
     opacity: .88;
   }
 }

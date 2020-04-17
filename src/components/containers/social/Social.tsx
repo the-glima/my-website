@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './Social.module.css'
 
-import linkedin from '../../assets/images/logos/linkedin.svg'
-import twitter from '../../assets/images/logos/twitter.svg'
-import github from '../../assets/images/logos/github.svg'
+import linkedin from '../../../assets/images/logos/linkedin.svg'
+import twitter from '../../../assets/images/logos/twitter.svg'
+import github from '../../../assets/images/logos/github.svg'
 
 interface Link {
   name: string

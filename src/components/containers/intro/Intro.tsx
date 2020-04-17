@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Intro.module.css'
 
 import {settings} from '../../settings'
-import profile from '../../assets/images/photos/me.jpg'
+import profile from '../../../assets/images/photos/me.jpg'
 
 const Intro = () => {
   const randomizeTitle = (): any => {

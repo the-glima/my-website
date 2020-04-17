@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './Jobs.module.css'
 import {JobModel} from './JobModel'
-import Headings from '../headings/Headings'
-import SeeMore from '../see-more/SeeMore'
+import Headings from '../../shared/headings/Headings'
+import SeeMore from '../../shared/see-more/SeeMore'
 
 const Jobs = () => {
   const jobs: JobModel[] = [

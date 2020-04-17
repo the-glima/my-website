@@ -19,7 +19,7 @@
   height: 50px;
   margin-right: 20px;
   box-shadow: var(--box-shadow);
-  background-image: url('../../assets/images/jobs/jobs.jpg');
+  background-image: url('../../../assets/images/jobs/jobs.jpg');
   background-repeat: no-repeat;
   background-size: 150px;
   text-indent: 100%;
@@ -48,7 +48,7 @@
 }
 
 .link {
-  composes: link from '../../assets/styles/helpers.css';
+  composes: link from '../../../assets/styles/helpers.css';
   font-size: 1.1rem;
   font-family: var(--font-family-comfortaa);
   font-weight: 700;
@@ -69,7 +69,7 @@
 }
 
 .section-link {
-  composes: link from '../../assets/styles/helpers.css';
+  composes: link from '../../../assets/styles/helpers.css';
   font-family: var(--font-family-comfortaa);
   font-size: 1rem;
   text-align: center;

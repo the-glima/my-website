@@ -1,5 +1,5 @@
 .picture {
-  composes: transition from '../../assets/styles/helpers.css';
+  composes: transition from '../../../assets/styles/helpers.css';
   width: 120px;
   margin-bottom: 1rem;
   border-radius: 100%;
@@ -7,7 +7,7 @@
 }
 
 .heading {
-  composes: transition from '../../assets/styles/helpers.css';
+  composes: transition from '../../../assets/styles/helpers.css';
 }
 
 .intro {  
