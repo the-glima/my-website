@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Intro.module.css'
 
 import {settings} from '../../settings'
-import profile4x from '../../assets/images/photos/me@4x.jpg'
+import profile from '../../assets/images/photos/me.jpg'
 
 const Intro = () => {
   const randomizeTitle = (): any => {
@@ -20,7 +20,7 @@ const Intro = () => {
     <section className="section text-center">
       <header className={`${styles.header} d-flex-inline flex-column align-items-center text-left`}>
         <div>
-          <img className={styles.picture} src={profile4x} alt="Gabriel Lima" />
+          <img className={styles.picture} src={profile} alt="Gabriel Lima" />
         </div>
 
         <h1 className={`${styles.heading} d-flex flex-column text-center`}>

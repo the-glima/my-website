@@ -47,7 +47,9 @@ const Jobs = () => {
         {jobs.map((job: JobModel, i: number) => (
           <li key={i} className={`${styles['list-item']} text-left`}>
             <div className="d-flex align-items-center">
-              <span className={`${styles.logo} ${styles[`logo-${job.title.toLowerCase().split(' ').join('-')}`]}`}>{job.title}</span>
+              <span className={`${styles.logo} ${styles[`logo-${job.title.toLowerCase().split(' ').join('-')}`]}`}>
+                {job.title}
+              </span>
               <div>
                 <a className={styles.link} href={job.url} title={job.title}>
                   {job.title}
