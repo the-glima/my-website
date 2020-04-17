@@ -1,0 +1,10 @@
+.section-link {
+  composes: link from '../../assets/styles/helpers.css';
+  font-family: var(--font-family-comfortaa);
+  font-size: 1rem;
+  text-align: center;
+}
+
+@media only screen and (min-width: 992px) {
+  .section-link { margin-top: 3rem; }
+}

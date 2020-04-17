@@ -5,9 +5,11 @@
   --color-primary: #213d8f;
   --color-secondary: #8ec03f;
   --color-accent: #4B66F2;
+  --color-accent-lighter: #ccd3f7;
   --color-success: #8ec03f;
   --color-error: #c03f3f;
   --color-grey: #f6f7fb;
+  --color-grey-lighter: #fdfdfd;
   --color-black: #0C0C0C;
   --color-white: #ffffff;
   --font-size: 14px;
@@ -24,4 +26,5 @@
   --breakpoints-md: 768px;
   --breakpoints-lg: 992px;
   --breakpoints-xl: 1200px;
+  --box-shadow: 3px 3px 0 #D3D3D3;
 }

@@ -115,3 +115,14 @@
 .transition {
   transition: .06s;
 }
+
+.link {
+  composes: transition;
+  padding-bottom: 0.1rem;
+  border-bottom: 1px dashed var(--color-accent-lighter);
+}
+
+.link:hover {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}

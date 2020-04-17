@@ -2,17 +2,14 @@ import React from 'react'
 import styles from './Intro.module.css'
 
 import {settings} from '../../settings'
-import profile from '../../assets/images/photos/me.jpg'
-import profile2x from '../../assets/images/photos/me@2x.jpg'
-import profile3x from '../../assets/images/photos/me@3x.jpg'
 import profile4x from '../../assets/images/photos/me@4x.jpg'
 
 const Intro = () => {
   const randomizeTitle = (): any => {
     const titles = Object.values(settings.intro.subTitleOptions)
-    const subTitleOptions = titles.map(item => item.title)
+    const subTitleOptions = titles.map((item) => item.title)
     const randomness = Math.floor(Math.random() * subTitleOptions.length)
-    const defaultTitle = titles.find(item => item.default)
+    const defaultTitle = titles.find((item) => item.default)
 
     return titles[randomness] || defaultTitle
   }
@@ -23,18 +20,15 @@ const Intro = () => {
     <section className="section text-center">
       <header className={`${styles.header} d-flex-inline flex-column align-items-center text-left`}>
         <div>
-          <img
-            className={styles.picture}
-            src={profile}
-            srcSet={`${profile2x} 2x,${profile3x} 3x, ${profile4x} 4x`}
-            alt="Gabriel Lima"
-          />
+          <img className={styles.picture} src={profile4x} alt="Gabriel Lima" />
         </div>
 
         <h1 className={`${styles.heading} d-flex flex-column text-center`}>
           <small className={styles.intro}>Hi, my name is</small>
           <strong className={styles.name}>Gabriel Lima</strong>
-          <span className={styles.title} style={titleItem.jsxCss || null}>{titleItem.title}</span>
+          <span className={styles.title} style={titleItem.jsxCss || null}>
+            {titleItem.title}
+          </span>
         </h1>
       </header>
 
