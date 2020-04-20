@@ -3,7 +3,7 @@ import styles from './SeeMore.module.css'
 
 const SeeMore = (props: any) => {
   return (
-    <div className="text-center">
+    <div className={styles.wrapper}>
       <a className={styles['section-link']} href={props.url}>
         {props.text || 'See More'}
       </a>

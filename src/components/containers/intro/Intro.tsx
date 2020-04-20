@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from './Intro.module.css'
-
+import {IntroModel} from './IntroModel'
 import {settings} from '../../settings'
 import profile from '../../../assets/images/photos/me.jpg'
 
 const Intro = () => {
-  const randomizeTitle = (): any => {
-    const titles = Object.values(settings.intro.subTitleOptions)
+  const randomizePosition = (): IntroModel => {
+    const titles: IntroModel[] = Object.values(settings.intro.positionOptions)
     const subTitleOptions = titles.map((item) => item.title)
     const randomness = Math.floor(Math.random() * subTitleOptions.length)
     const defaultTitle = titles.find((item) => item.default)
@@ -14,28 +14,28 @@ const Intro = () => {
     return titles[randomness] || defaultTitle
   }
 
-  const titleItem = randomizeTitle()
+  const positionItem = randomizePosition()
 
   return (
-    <section className="section text-center">
-      <header className={`${styles.header} d-flex-inline flex-column align-items-center text-left`}>
-        <div>
+    <section className={`section ${styles['section-intro']}`}>
+      <div className="section-content">
+        <header className={styles.header}>
           <img className={styles.picture} src={profile} alt="Gabriel Lima" />
-        </div>
 
-        <h1 className={`${styles.heading} d-flex flex-column text-center`}>
-          <small className={styles.intro}>Hi, my name is</small>
-          <strong className={styles.name}>Gabriel Lima</strong>
-          <span className={styles.title} style={titleItem.jsxCss || null}>
-            {titleItem.title}
-          </span>
-        </h1>
-      </header>
+          <h1 className={`${styles.heading} `}>
+            <div className={styles.intro}>Hi, my name is</div>
+            <div className={styles.name}>Gabriel Lima</div>
+            <div className={styles.position} style={positionItem.jsxCss && positionItem.jsxCss}>
+              {positionItem.title}
+            </div>
+          </h1>
+        </header>
 
-      <p className={styles.bio}>
-        I build things for the web and love what I do. Mainly focused on Front-end Development with a good UI/UX taste
-        but always trying different things.
-      </p>
+        <p className={styles.bio}>
+          I build things for the web and love what I do. Mainly focused on <strong>Front-end Development</strong> with a good <strong>UI/UX</strong> taste
+          but always trying different things.
+        </p>
+      </div>
     </section>
   )
 }

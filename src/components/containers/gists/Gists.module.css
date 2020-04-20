@@ -3,49 +3,47 @@
 .list {
   display: grid;
   grid-template-columns: 1fr;
-  grid-row-gap: 3rem;
+  grid-row-gap: 2rem;
   justify-items: center;
-  margin: 4rem auto;
-  max-width: 1200px;
+  margin: 3rem auto;
 }
 
 .list-item {
-  width: 230px;
+  display: flex;
+  align-items: center;
+  width: 70%;
   justify-items: center;
 }
 
 .link {
   composes: link from '../../../assets/styles/helpers.css';
-  composes: transition from '../../../assets/styles/helpers.css';
   margin-left: .76rem; 
-  font-size: .9rem;
+  transition: var(--transition);
 }
 
 .logo { width: 30px; }
 
 .section-link {
   composes: link from '../../../assets/styles/helpers.css';
-  font-family: var(--font-family-comfortaa);
-  font-size: 1rem;
   text-align: center;
 }
 
 @media only screen and (min-width: 576px) {
   .list {
+    margin: 4rem auto;
     grid-template-columns: 1fr 1fr;
+    justify-items: center;
   }
 
   .list-item {
-    width: 300px;
+    width: 80%;
     justify-items: center;
   }
 }
 
 @media only screen and (min-width: 992px) {
   .list {
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-items: center;
-    max-width: 1200px;
+    max-width: 800px;
   }
 
   .section-link { margin-top: 3rem; }

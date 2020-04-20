@@ -21,20 +21,22 @@ const Gists = () => {
 
   return (
     <section className={`section ${styles['section-gists']}`}>
-      <Headings title="Latest Gists" subtitle="Don’t have a blog yet but I have gists" />
+      <div className="section-content">
+        <Headings title="Latest Gists" subtitle="Don’t have a blog yet but I have gists" />
 
-      <ul className={styles.list}>
-        {gists.map((gist: GistDOMModel, i: number) => (
-          <li key={i} className={`${styles['list-item']} d-flex align-items-center`}>
-            <img className={styles.logo} src={gistsGetLogo(gist.language.toLowerCase())?.src} alt={gist.language} />
-            <a className={styles.link} href={gist.url} title={`Check this gist: ${gist.title}`}>
-              {gist.title}
-            </a>
-          </li>
-        ))}
-      </ul>
+        <ul className={styles.list}>
+          {gists.map((gist: GistDOMModel, i: number) => (
+            <li key={i} className={`${styles['list-item']}`}>
+              <img className={styles.logo} src={gistsGetLogo(gist.language.toLowerCase())?.src} alt={gist.language} />
+              <a className={styles.link} href={gist.url} title={`Check this gist: ${gist.title}`}>
+                {gist.title}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-      <SeeMore url="https://gist.github.com/the-glima" />
+        <SeeMore url="https://gist.github.com/the-glima" />
+      </div>
     </section>
   )
 }

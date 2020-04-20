@@ -1,3 +1,55 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.languages,
+.social,
+.top-wrapper { margin-bottom: 2.2rem; }
+
+.actions {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 270px;
+  justify-content: space-between;
+}
+
+.button {
+  order: 2;
+  composes: button from '../../../assets/styles/helpers.css';
+}
+
+.top-wrapper,
+.bottom-wrapper { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .copyright { 
-  font-size: .88rem;
+  margin-bottom: .5rem;
+  font-size: .9rem;
+  text-align: center;
+}
+
+.covid19 { font-size: .8rem; }
+
+@media only screen and (min-width: 768px) {
+  .top-wrapper,
+  .bottom-wrapper { 
+    flex-direction: row;
+  }
+
+  .languages,
+  .social,
+  .copyright { margin-bottom: 0; }
+
+  .top-wrapper { margin-bottom: 1.5rem; }
+
+  .actions {
+    flex-direction: row;
+  }
 }

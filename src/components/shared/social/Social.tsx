@@ -12,41 +12,38 @@ interface Link {
   title: string
 }
 
-const Social = () => {
+const Social = (props: any) => {
   const links = [
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/gabriel--lima/',
       scrImage: linkedin,
-      title: 'Recruiter, check my LinkedIn Profile'
+      title: 'Check my LinkedIn Profile'
     },
     {
       name: 'Twitter',
       url: 'https://www.linkedin.com/in/gabriel--lima/',
       scrImage: twitter,
-      title: 'Twitter user, follow me if cou can'
+      title: 'Follow me on Twitter'
     },
     {
       name: 'GitHub',
       url: 'https://github.com/the-glima',
       scrImage: github,
-      title: 'Developer, you can judge my code on GitHub'
+      title: 'Judge my code on GitHub'
     }
   ]
 
   return (
-    <section className="section section-social-links">
-      <ul className={`${styles.list} d-flex justify-content-around`}>
-        {links.map((link: Link, i: number) => (
-          <li key={i} className="d-flex flex-column justify-content-between">
-            <a className={styles.link} href={link.url} title={link.title}>
-              <img className={styles.logo} src={link.scrImage} alt={`${link.name} Logo`} />
-              <span className={styles.name}>{link.name}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <ul className={`${props.className} ${styles.list}`}>
+      {links.map((link: Link, i: number) => (
+        <li key={i}>
+          <a className={styles.link} href={link.url} title={link.title}>
+            <img className={styles.logo} src={link.scrImage} alt={`${link.name} Logo`} />
+          </a>
+        </li>
+      ))}
+    </ul>
   )
 }
 

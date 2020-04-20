@@ -5,52 +5,42 @@
   grid-template-columns: 1fr;
   grid-row-gap: 3rem;
   justify-items: center;
-  margin: 4rem auto;
-  max-width: 1200px;
+  margin: 3rem auto;
 }
 
 .list-item {
   width: 230px;
   justify-items: center;
+  text-align: left;
+}
+
+.list-item-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .logo { 
-  width: 50px;
+    width: 50px;
   height: 50px;
   margin-right: 20px;
-  box-shadow: var(--box-shadow);
   background-image: url('../../../assets/images/jobs/jobs.jpg');
   background-repeat: no-repeat;
   background-size: 150px;
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
+  box-shadow: var(--box-shadow);
 }
 
-.logo-webdoctor { 
-  background-position: -50px 0;
-}
-
-.logo-neoway { 
-  background-position: -100px 0;
-}
-
-.logo-div64 { 
-  background-position: 0 -50px;
-}
-
-.logo-elogroup { 
-  background-position: -50px -50px;
-}
-
-.logo-bolt-brasil { 
-  background-position: -100px -50px;
-}
+.logo-webdoctor { background-position: -50px 0; }
+.logo-neoway {  background-position: -100px 0; }
+.logo-div64 {  background-position: 0 -50px; }
+.logo-elogroup {  background-position: -50px -50px; }
+.logo-bolt-brasil {  background-position: -100px -50px; }
 
 .link {
   composes: link from '../../../assets/styles/helpers.css';
   font-size: 1.1rem;
-  font-family: var(--font-family-comfortaa);
   font-weight: 700;
 }
 
@@ -63,20 +53,16 @@
   background-color: var(--color-accent);
 }
 
-.position {
-  padding-top: .3rem;
-  font-size: 0.97rem;
-}
+.position { padding-top: .3rem; }
 
 .section-link {
   composes: link from '../../../assets/styles/helpers.css';
-  font-family: var(--font-family-comfortaa);
-  font-size: 1rem;
   text-align: center;
 }
 
 @media only screen and (min-width: 576px) {
   .list {
+    margin: 4rem auto;
     grid-template-columns: 1fr 1fr;
   }
 }

@@ -3,7 +3,6 @@ import styles from './Repositories.module.css'
 import {RepositoryModel} from './RepositoryModel'
 import Headings from '../../shared/headings/Headings'
 import SeeMore from '../../shared/see-more/SeeMore'
-
 import github from '../../../assets/images/logos/github.svg'
 
 const Repositories = () => {
@@ -30,24 +29,26 @@ const Repositories = () => {
 
   return (
     <section className={`section ${styles['section-repositories']}`}>
-      <Headings title="Repositories" subtitle="I’ve finally finish some side-projects" />
+      <div className="section-content">
+        <Headings title="Repositories" subtitle="I’ve finally finish some side-projects" />
 
-      <ul className={`${styles.list}`}>
-        {repositories.map((repository: RepositoryModel, i: number) => (
-          <li key={i} className={`${styles['list-item']}`}>
-            <a className={`${styles.link} d-flex flex-column`} href={repository.url} title={repository.name}>
-              <span className="d-flex align-items-center">
-                <i className={styles.icon}>{repository.icon}</i>
-                <span className={styles.name}>{repository.name}</span>
-                <img className={styles.github} src={github} alt="GitHub Logo"/>
-              </span>
-              <span className={styles.description}>{repository.description}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
+        <ul className={`${styles.list}`}>
+          {repositories.map((repository: RepositoryModel, i: number) => (
+            <li key={i} className={styles['list-item']}>
+              <a className={styles.link} href={repository.url} title={repository.name}>
+                <span className={styles['link-wrapper']}>
+                  <i className={styles.icon}>{repository.icon}</i>
+                  <span className={styles.name}>{repository.name}</span>
+                  <img className={styles.github} src={github} alt="GitHub Logo" />
+                </span>
+                <span className={styles.description}>{repository.description}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
 
-      <SeeMore url="https://github.com/the-glima" />
+        <SeeMore url="https://github.com/the-glima" />
+      </div>
     </section>
   )
 }

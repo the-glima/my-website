@@ -12,7 +12,7 @@ export const settings = {
     logo: 'GitHub'
   },
   intro: {
-    subTitleOptions: [
+    positionOptions: [
       {
         title: 'Front-End Developer',
         default: true
@@ -31,6 +31,20 @@ export const settings = {
         jsxCss: {
           textDecoration: 'line-through'
         }
+      }
+    ]
+  },
+  languages: {
+    options: [
+      {
+        name: 'English',
+        default: true
+      },
+      {
+        name: 'Portuguese'
+      },
+      {
+        name: 'Spanish'
       }
     ]
   },

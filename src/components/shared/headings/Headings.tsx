@@ -1,10 +1,12 @@
 import React from 'react'
+import styles from './Headings.module.css'
+
 
 const Headings = (props: any) => {
   return (
-    <header className="text-center">
-      <h2>{props.title}</h2>
-      <h3>{props.subtitle}</h3>
+    <header className={styles.header}>
+      <h2 className={styles.title}>{props.title}</h2>
+      <h3 className={styles.subtitle}>{props.subtitle}</h3>
     </header>
   )
 }

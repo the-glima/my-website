@@ -1,0 +1,21 @@
+.list { 
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+}
+
+.link { display: inherit; }
+
+.link,
+.logo { 
+  width: 25px;
+  height: 25px;
+}
+
+@media only screen and (min-width: 768px) {
+  .list {
+    max-width: 120px;
+  }
+}

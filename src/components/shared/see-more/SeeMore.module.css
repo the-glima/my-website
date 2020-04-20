@@ -1,7 +1,8 @@
+.wrapper { text-align: center; }
+
 .section-link {
   composes: link from '../../../assets/styles/helpers.css';
-  font-family: var(--font-family-comfortaa);
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-align: center;
 }
 

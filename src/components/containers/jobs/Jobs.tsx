@@ -40,28 +40,30 @@ const Jobs = () => {
   ]
 
   return (
-    <section className={`section ${styles['section-jobs']} text-center`}>
-      <Headings title="Places that I’ve worked" subtitle="From 3 different countries" />
+    <section className={`section ${styles['section-jobs']}`}>
+      <div className="section-content">
+        <Headings title="Places that I’ve worked" subtitle="From 3 different countries" />
 
-      <ul className={`${styles.list}`}>
-        {jobs.map((job: JobModel, i: number) => (
-          <li key={i} className={`${styles['list-item']} text-left`}>
-            <div className="d-flex align-items-center">
-              <span className={`${styles.logo} ${styles[`logo-${job.title.toLowerCase().split(' ').join('-')}`]}`}>
-                {job.title}
-              </span>
-              <div>
-                <a className={styles.link} href={job.url} title={job.title}>
+        <ul className={`${styles.list}`}>
+          {jobs.map((job: JobModel, i: number) => (
+            <li key={i} className={styles['list-item']}>
+              <div className={styles['list-item-wrapper']}>
+                <span className={`${styles.logo} ${styles[`logo-${job.title.toLowerCase().split(' ').join('-')}`]}`}>
                   {job.title}
-                </a>
-                <div className={styles.position}>{job.position}</div>
+                </span>
+                <div>
+                  <a className={styles.link} href={job.url} title={job.title}>
+                    {job.title}
+                  </a>
+                  <div className={styles.position}>{job.position}</div>
+                </div>
               </div>
-            </div>
-          </li>
-        ))}
-      </ul>
+            </li>
+          ))}
+        </ul>
 
-      <SeeMore url="https://www.linkedin.com/in/gabriel--lima/" text="Check my LinkedIn Profile" />
+        <SeeMore url="https://www.linkedin.com/in/gabriel--lima/" text="Check my LinkedIn Profile" />
+      </div>
     </section>
   )
 }
