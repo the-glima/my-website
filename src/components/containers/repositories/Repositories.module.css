@@ -1,4 +1,4 @@
-.section-repositories { background-color: #f5f5f5; }
+.section-repositories { background-color: var(--color-bg-section); }
 
 .list {
   display: grid;
@@ -10,9 +10,14 @@
 
 .link {
   composes: card from '../../../assets/styles/helpers.css';
+  composes: card-hover from '../../../assets/styles/helpers.css';
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+.link:hover .name {
+  color: var(--color-accent);
 }
 
 .link-wrapper {
@@ -20,19 +25,7 @@
   align-items: center;
 }
 
-.link:hover {
-  transform: scale(1.05);
-  border-color: var(--color-accent);
-  box-shadow: 5px 5px 5px #a7a7a7;
-}
-
-.link:hover .name {
-  color: var(--color-accent);
-}
-
-.icon {
-  font-size: 1.26rem;
-}
+.icon { font-size: 1.26rem; }
 
 .name {
   flex-grow: 1;

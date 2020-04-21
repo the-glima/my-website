@@ -7,18 +7,20 @@ const Languages = (props: any) => {
   const getLanguage = () => Object.values(languages).find((item) => item.default)
 
   const [lang, setLang]: any = useState(getLanguage())
-  
-  const toggleClass = (language: string) => lang.name === language ? `${styles.active}` : ''
+
+  const toggleClass = (language: string) => (lang.name === language ? `${styles.active}` : '')
 
   return (
     <ul className={`${props.className} ${styles.list}`}>
       {languages.map((language: any, i: number) => (
         <li key={i} className={styles['list-item']}>
-          <button className={`${styles.language} ${toggleClass(language.name)}`} onClick={() => setLang(language.name)}>{language.name}</button>
+          <button className={`${styles.language} ${toggleClass(language.name)}`} onClick={() => setLang(language.name)}>
+            {language.name}
+          </button>
         </li>
       ))}
     </ul>
   )
-} 
+}
 
 export default Languages

@@ -1,4 +1,4 @@
-.section-gists { background-color: #f5f5f5; }
+.section-gists { background-color: var(--color-bg-section); }
 
 .list {
   display: grid;

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import styles from './DarkToggle.module.css'
 
-const DarkToggle = (props: any) => {
+const DarkToggle = () => {
   const [theme, setDarkMode]: any = useState(false)
 
   const toggleActive = () => {
@@ -15,7 +15,7 @@ const DarkToggle = (props: any) => {
   })
 
   return (
-    <button className={`${props.className} ${styles.button}`} onClick={toggleActive}>
+    <button className={`${styles.button} ${theme ? styles['button-active'] : ''}`} onClick={toggleActive}>
       {theme ? 'LIGHT THEME' : 'DARK THEME'}
     </button>
   )

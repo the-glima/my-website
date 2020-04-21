@@ -16,11 +16,6 @@
   justify-content: space-between;
 }
 
-.button {
-  order: 2;
-  composes: button from '../../../assets/styles/helpers.css';
-}
-
 .top-wrapper,
 .bottom-wrapper { 
   display: flex;

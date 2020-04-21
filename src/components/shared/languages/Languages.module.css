@@ -17,22 +17,16 @@
   line-height: .9rem;
   border-bottom: 1px solid transparent;
   transition: var(--transition);
-  opacity: .7;
+  opacity: .6;
 }
 
 .language:hover {
-  color: var(--color-black);
-  border-color: var(--color-black);
+  color: var(--color-text);
+  border-color: var(--color-text);
   opacity: 1;
 }
 
 .language.active {
   opacity: 1;
-  border-color: var(--color-black);
+  border-color: var(--color-text);
 }
-
-/* @media only screen and (min-width: 768px) {
-  .list {
-    max-width: 150px;
-  }
-} */

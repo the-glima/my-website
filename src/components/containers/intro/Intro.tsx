@@ -32,8 +32,8 @@ const Intro = () => {
         </header>
 
         <p className={styles.bio}>
-          I build things for the web and love what I do. Mainly focused on <strong>Front-end Development</strong> with a good <strong>UI/UX</strong> taste
-          but always trying different things.
+          I build things for the web and love what I do. Mainly focused on <strong>Front-end Development</strong> with a
+          good <strong>UI/UX</strong> taste but always trying different things.
         </p>
       </div>
     </section>

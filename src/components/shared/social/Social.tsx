@@ -39,7 +39,7 @@ const Social = (props: any) => {
       {links.map((link: Link, i: number) => (
         <li key={i}>
           <a className={styles.link} href={link.url} title={link.title}>
-            <img className={styles.logo} src={link.scrImage} alt={`${link.name} Logo`} />
+            <img className={`${styles.link} social-logo`}  src={link.scrImage} alt={`${link.name} Logo`} />
           </a>
         </li>
       ))}
