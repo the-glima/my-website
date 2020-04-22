@@ -22,12 +22,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  text-align: center;
 }
 
 .copyright { 
   margin-bottom: .5rem;
   font-size: .9rem;
-  text-align: center;
 }
 
 .quote { font-size: .8rem; }

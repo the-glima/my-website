@@ -5,7 +5,7 @@ import Footer from './components/containers/footer/Footer'
 import Jobs from './components/containers/jobs/Jobs'
 import Repositories from './components/containers/repositories/Repositories'
 
-function App () {
+function App() {
   return (
     <div>
       <Intro />

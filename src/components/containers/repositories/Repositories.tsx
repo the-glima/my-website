@@ -1,12 +1,12 @@
 import React from 'react'
-import { withNamespaces } from 'react-i18next';
+import {withNamespaces} from 'react-i18next'
 import styles from './Repositories.module.css'
 import {RepositoryModel} from './RepositoryModel'
 import Headings from '../../shared/headings/Headings'
 import SeeMore from '../../shared/see-more/SeeMore'
 import github from '../../../assets/images/logos/github.svg'
 
-const Repositories = ({ t }: any) => {
+const Repositories = ({t}: any) => {
   const repositories: RepositoryModel[] = [
     {
       icon: '🤖',
@@ -48,9 +48,11 @@ const Repositories = ({ t }: any) => {
           ))}
         </ul>
 
-        <SeeMore props={{
-          url: "https://github.com/the-glima"
-        }} />
+        <SeeMore
+          props={{
+            url: 'https://github.com/the-glima'
+          }}
+        />
       </div>
     </section>
   )

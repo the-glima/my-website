@@ -1,18 +1,18 @@
 import React from 'react'
-import { Trans, withNamespaces } from 'react-i18next';
+import {Trans, withNamespaces} from 'react-i18next'
 import styles from './Footer.module.css'
 import Social from '../../shared/social/Social'
 import Languages from '../../shared/languages/Languages'
 import DarkMode from '../../shared/dark-mode/DarkMode'
 
-const Footer = ({ t }: any) => {
+const Footer = ({t}: any) => {
   return (
     <footer className="section">
       <div className={`section-content ${styles.footer}`}>
         <div className={styles['top-wrapper']}>
           <Languages className={styles.languages} />
           <div className={styles.actions}>
-            <Social props={{ className: styles.social }}/>
+            <Social props={{className: styles.social}} />
             <DarkMode />
           </div>
         </div>
@@ -25,8 +25,11 @@ const Footer = ({ t }: any) => {
                 ☕
               </span>
               <span> during </span>
-              <a className={styles['quote-link']} href="https://www.google.com/search?q=covid+19&rlz=1C1GCEA_enES841ES841&oq=covid+19&aqs=chrome..69i57j0l4j69i60l3.1589j0j4&sourceid=chrome&ie=UTF-8">
-              a quarantine time
+              <a
+                className={styles['quote-link']}
+                href="https://www.google.com/search?q=covid+19&rlz=1C1GCEA_enES841ES841&oq=covid+19&aqs=chrome..69i57j0l4j69i60l3.1589j0j4&sourceid=chrome&ie=UTF-8"
+              >
+                a quarantine time
               </a>
             </Trans>
           </p>

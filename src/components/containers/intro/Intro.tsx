@@ -1,18 +1,18 @@
 import React from 'react'
-import { Trans, withNamespaces } from 'react-i18next';
+import {Trans, withNamespaces} from 'react-i18next'
 import styles from './Intro.module.css'
 import {IntroModel} from './IntroModel'
 import {settings} from '../../settings'
 import profile from '../../../assets/images/photos/me.jpg'
 
-const Intro = ({ t }: any) => {
-    const randomizePosition = (): IntroModel => {
+const Intro = ({t}: any) => {
+  const randomizePosition = (): IntroModel => {
     const titles: IntroModel[] = Object.values(settings.intro.positionOptions)
     const subTitleOptions = titles.map((item) => item.title)
     const randomness = Math.floor(Math.random() * subTitleOptions.length)
     const defaultTitle = titles.find((item) => item.default)
 
-    return titles[randomness] || defaultTitle
+    return titles[0]
   }
 
   const positionItem = randomizePosition()
@@ -34,8 +34,8 @@ const Intro = ({ t }: any) => {
 
         <p className={styles.bio}>
           <Trans i18nKey="intro.bio">
-            I build things for the web and love what I do. Mainly focused on 
-            <strong>Front-end Development</strong> with a good <strong>UI/UX</strong> 
+            I build things for the web and love what I do. Mainly focused on
+            <strong>Front-end Development</strong> with a good <strong>UI/UX</strong>
             taste but always trying different things.
           </Trans>
         </p>

@@ -1,11 +1,11 @@
 import React from 'react'
-import { withNamespaces } from 'react-i18next';
+import {withNamespaces} from 'react-i18next'
 import styles from './Jobs.module.css'
 import {JobModel} from './JobModel'
 import Headings from '../../shared/headings/Headings'
 import SeeMore from '../../shared/see-more/SeeMore'
 
-const Jobs = ({ t }: any) => {
+const Jobs = ({t}: any) => {
   const jobs: JobModel[] = [
     {
       title: 'Payvision',
@@ -63,10 +63,12 @@ const Jobs = ({ t }: any) => {
           ))}
         </ul>
 
-        <SeeMore props={{
-          url: "https://www.linkedin.com/in/gabriel--lima/",
-          text: t('jobs.see-more')
-        }} />
+        <SeeMore
+          props={{
+            url: 'https://www.linkedin.com/in/gabriel--lima/',
+            text: t('jobs.see-more')
+          }}
+        />
       </div>
     </section>
   )

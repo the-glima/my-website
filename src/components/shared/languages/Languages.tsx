@@ -9,8 +9,6 @@ const Languages = (props: any) => {
 
   const [lang, setLang]: any = useState(getLanguage)
 
-  console.log(lang);
-
   const changeLanguage = (langKey: string) => {
     i18n.changeLanguage(langKey)
     return setLang(langKey)
@@ -21,7 +19,7 @@ const Languages = (props: any) => {
       {languages.map((language: any, i: number) => (
         <li key={i} className={styles['list-item']}>
           <button 
-            className={`${styles.language} ${lang === language.key ? `${styles.active}` : ''}`} 
+            className={`${styles.language} ${lang.key === language.key ? `${styles.active}` : ''}`} 
             onClick={() => changeLanguage(language.key)}>
             {language.label}
           </button>
