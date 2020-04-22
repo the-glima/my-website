@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { withNamespaces } from 'react-i18next';
 import styles from './Gists.module.css'
 import Headings from '../../shared/headings/Headings'
 import SeeMore from '../../shared/see-more/SeeMore'
@@ -7,7 +8,7 @@ import {GistDOMModel} from './GistsModel'
 import {GistsService} from './GistsService'
 import {gistsGetLogo} from './GistsGetLogo'
 
-const Gists = () => {
+const Gists = ({ t }: any) => {
   const [gists, setGists]: any = useState([])
 
   useEffect(() => {
@@ -22,7 +23,8 @@ const Gists = () => {
   return (
     <section className={`section ${styles['section-gists']}`}>
       <div className="section-content">
-        <Headings title="Latest Gists" subtitle="Don’t have a blog yet but I have gists" />
+        <Headings title={t('gists.title')} subtitle={t('gists.subtitle')} />
+
 
         <ul className={styles.list}>
           {gists.map((gist: GistDOMModel, i: number) => (
@@ -35,10 +37,13 @@ const Gists = () => {
           ))}
         </ul>
 
-        <SeeMore url="https://gist.github.com/the-glima" />
+        <SeeMore props={{
+          url: "https://gist.github.com/the-glima",
+          text: t('gists.see-more')
+        }} />
       </div>
     </section>
   )
 }
 
-export default Gists
+export default withNamespaces()(Gists)

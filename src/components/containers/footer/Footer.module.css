@@ -30,7 +30,12 @@
   text-align: center;
 }
 
-.covid19 { font-size: .8rem; }
+.quote { font-size: .8rem; }
+
+.quote-link {
+  composes: link from '../../../assets/styles/helpers.css';
+  font-style: italic;
+}
 
 @media only screen and (min-width: 768px) {
   .top-wrapper,

@@ -1,36 +1,37 @@
 import React from 'react'
+import { withNamespaces } from 'react-i18next';
 import styles from './Repositories.module.css'
 import {RepositoryModel} from './RepositoryModel'
 import Headings from '../../shared/headings/Headings'
 import SeeMore from '../../shared/see-more/SeeMore'
 import github from '../../../assets/images/logos/github.svg'
 
-const Repositories = () => {
+const Repositories = ({ t }: any) => {
   const repositories: RepositoryModel[] = [
     {
       icon: '🤖',
       name: 'PR Fiscal',
       url: 'https://www.gabriel-lima.com',
-      description: 'A Chrome Extension to help you find patterns in your PR.'
+      description: t('repositories.repos.pr-fiscal-desc')
     },
     {
       icon: '🦨',
       name: 'Dale CLI',
       url: 'https://www.gabriel-lima.com',
-      description: 'One CLI to rule them all! A bunch of daily commands to help development’s workflow.'
+      description: t('repositories.repos.dale-cli')
     },
     {
       icon: '🔨',
       name: '.dotfiles',
       url: 'https://www.gabriel-lima.com',
-      description: 'Shell scripts, git and config files to kick off a project/OS from scratch.'
+      description: t('repositories.repos.dotfiles')
     }
   ]
 
   return (
     <section className={`section ${styles['section-repositories']}`}>
       <div className="section-content">
-        <Headings title="Repositories" subtitle="I’ve finally finish some side-projects" />
+        <Headings title={t('repositories.title')} subtitle={t('repositories.subtitle')} />
 
         <ul className={`${styles.list}`}>
           {repositories.map((repository: RepositoryModel, i: number) => (
@@ -47,10 +48,12 @@ const Repositories = () => {
           ))}
         </ul>
 
-        <SeeMore url="https://github.com/the-glima" />
+        <SeeMore props={{
+          url: "https://github.com/the-glima"
+        }} />
       </div>
     </section>
   )
 }
 
-export default Repositories
+export default withNamespaces()(Repositories)

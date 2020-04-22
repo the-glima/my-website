@@ -1,0 +1,46 @@
+{
+  "intro": {
+    "greeting": "Hi, my name is",
+    "name": "Gabriel Lima",
+    "bio": "I build things for the web and love what I do. Mainly focused on <1>Front-end Development</1> with a good <3>UI/UX</3> taste but always trying different things."
+  },
+  "repositories": {
+    "title": "Repositories",
+    "subtitle": "I’ve finally finished something",
+    "repos": {
+      "pr-fiscal-desc": "A Chrome Extension to help you find patterns in your PR",
+      "dale-cli": "One CLI to rule them all! A bunch of daily commands to help your development’s workflow",
+      "dotfiles": "Shell scripts, git and config files to kick off a project/OS from scratch"
+    }
+  },
+  "jobs": {
+    "title": "Places that I’ve worked",
+    "subtitle": "From 3 different countries",
+    "see-more": "Check my LinkedIn Profile",
+    "job": {
+      "software-developer": "Software Developer",
+      "full-stack-developer": "Full Stack Developer",
+      "javascript-developer": "Javascript Developer",
+      "front-end-developer": "Front-end Developer"
+    }
+  },
+  "gists": {
+    "title": "Latest Gists",
+    "subtitle": "Don’t have a blog yet but I have gists",
+    "see-more": "There's more"
+  },
+  "see-more": {
+    "link": "See More"
+  },
+  "social": {
+    "titles": {
+      "linkedin": "Check my LinkedIn Profile",
+      "twitter": "Follow me on Twitter",
+      "github": "Judge my code on GitHub"
+    }
+  },
+  "footer": {
+    "copyright": "All rights reserved",
+    "quote": "Made with a lot of <1>☕</1> during <3>the quarantine</3>"
+  }
+}

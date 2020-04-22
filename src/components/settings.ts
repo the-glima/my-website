@@ -37,14 +37,17 @@ export const settings = {
   languages: {
     options: [
       {
-        name: 'English',
+        label: 'English',
+        key: 'en',
         default: true
       },
       {
-        name: 'Portuguese'
+        label: 'Portuguese',
+        key: 'pt'
       },
       {
-        name: 'Spanish'
+        label: 'Spanish',
+        key: 'es'
       }
     ]
   },
@@ -57,5 +60,8 @@ export const settings = {
       spain:
         'https://www.google.com/search?rlz=1C1GCEA_enES841ES841&ei=DEVkXtyZDMm4aZqAu5AG&q=j%C3%A1mon+iberico&oq=j%C3%A1mon+&gs_l=psy-ab.3.0.0j0i30l4j0i5i30j0i30l3j0i5i30.25040.26774..28635...0.0..0.121.646.1j5......0....1..gws-wiz.......0i273.Wk5_W6D8jGA'
     }
+  },
+  localStorage: {
+    prefix: 'GL:'
   }
 }
