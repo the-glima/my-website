@@ -1,34 +1,28 @@
 import React from 'react'
 import {Trans, withNamespaces} from 'react-i18next'
 import styles from './Intro.module.css'
-import {IntroModel} from './IntroModel'
-import {settings} from '../../settings'
+
 import profile from '../../../assets/images/photos/me.jpg'
+import profile2x from '../../../assets/images/photos/me@2x.jpg'
+import profile3x from '../../../assets/images/photos/me@3x.jpg'
+import profile4x from '../../../assets/images/photos/me@4x.jpg'
 
 const Intro = ({t}: any) => {
-  const randomizePosition = (): IntroModel => {
-    const titles: IntroModel[] = Object.values(settings.intro.positionOptions)
-    // const subTitleOptions = titles.map((item) => item.title)
-    // const randomness = Math.floor(Math.random() * subTitleOptions.length)
-    // const defaultTitle = titles.find((item) => item.default)
-
-    return titles[0]
-  }
-
-  const positionItem = randomizePosition()
-
   return (
     <section className={`section ${styles['section-intro']}`}>
       <div className="section-content">
         <header className={styles.header}>
-          <img className={styles.picture} src={profile} alt="Gabriel Lima" />
+          <img 
+            className={styles.picture} 
+            src={profile}
+            srcSet={`${profile2x} 2x,${profile3x} 3x, ${profile4x} 4x`}
+            alt="Gabriel Lima" 
+          />
 
           <h1 className={`${styles.heading} `}>
             <div className={styles.intro}>{t('intro.greeting')}</div>
             <div className={styles.name}>Gabriel Lima</div>
-            <div className={styles.position} style={positionItem.jsxCss && positionItem.jsxCss}>
-              {positionItem.title}
-            </div>
+            <div className={styles.position}>{t('jobs.job.front-end-developer')}</div>
           </h1>
         </header>
 
