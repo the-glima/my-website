@@ -16,8 +16,10 @@
   height: 100%;
 }
 
-.link:hover .name {
-  color: var(--color-accent);
+@media (hover: hover) {
+  .link:hover .name {
+    color: var(--color-accent);
+  }
 }
 
 .link-wrapper {

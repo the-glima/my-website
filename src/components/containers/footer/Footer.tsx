@@ -3,7 +3,7 @@ import {Trans, withNamespaces} from 'react-i18next'
 import styles from './Footer.module.css'
 import Social from '../../shared/social/Social'
 import Languages from '../../shared/languages/Languages'
-import DarkMode from '../../shared/dark-mode/DarkMode'
+import SetTheme from '../../shared/set-theme/SetTheme'
 
 const Footer = ({t}: any) => {
   return (
@@ -13,7 +13,7 @@ const Footer = ({t}: any) => {
           <Languages className={styles.languages} />
           <div className={styles.actions}>
             <Social props={{className: styles.social}} />
-            <DarkMode />
+            <SetTheme />
           </div>
         </div>
         <div className={styles['bottom-wrapper']}>

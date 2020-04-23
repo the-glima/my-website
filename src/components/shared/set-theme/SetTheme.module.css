@@ -28,6 +28,8 @@
   background-color: var(--color-white);
 }
 
-.button-light:active {
-  box-shadow: inset 2px 2px 2px var(--color-black-full);
+@media (hover: hover) {
+  .button-light:active {
+    box-shadow: inset 2px 2px 2px var(--color-black-full);
+  }
 }

@@ -7,9 +7,11 @@
   transition: var(--transition);
 }
 
-.link:hover {
-  color: var(--color-accent);
-  border-bottom-color: var(--color-accent);
+@media (hover: hover) {
+  .link:hover {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+  }
 }
 
 /* Cards
@@ -23,9 +25,11 @@
   transition: var(--transition);
 }
 
-.card-hover:hover {
-  color: var(--color-card-text);
-  border-color: var(--color-accent);
-  box-shadow: 5px 5px 5px var(--color-grey-dark);
-  transform: scale(1.05);
+@media (hover: hover) {
+  .card-hover:hover {
+    color: var(--color-card-text);
+    border-color: var(--color-accent);
+    box-shadow: 5px 5px 5px var(--color-grey-dark);
+    transform: scale(1.05);
+  }
 }

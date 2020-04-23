@@ -20,12 +20,13 @@
   opacity: .6;
 }
 
-.language:hover {
-  color: var(--color-text);
-  border-color: var(--color-text);
-  opacity: 1;
+@media (hover: hover) {
+  .language:hover {
+    color: var(--color-text);
+    border-color: var(--color-text);
+    opacity: 1;
+  }
 }
-
 .language.active {
   opacity: 1;
   border-color: var(--color-text);

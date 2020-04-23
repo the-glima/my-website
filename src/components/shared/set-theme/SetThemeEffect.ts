@@ -1,11 +1,11 @@
 import {settings} from '../../settings'
-import {DarkModeEnum} from './DarkModeEnum'
+import {SetThemeEnum} from './SetThemeEnum'
 
-export const DarkModeService = {
+export const SetThemeEffect = {
   setTheme: (darkMode: string) => {
     window.localStorage.setItem(
       `${settings.localStorage.themeKey}`,
-      darkMode === DarkModeEnum.dark ? DarkModeEnum.dark : DarkModeEnum.light
+      darkMode === SetThemeEnum.dark ? SetThemeEnum.dark : SetThemeEnum.light
     )
   },
 
@@ -17,7 +17,7 @@ export const DarkModeService = {
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
   },
 
-  isDarkMode: function (theme: string): Boolean {
-    return theme === DarkModeEnum.dark
+  isDarkTheme: function (theme: string): Boolean {
+    return theme === SetThemeEnum.dark
   }
 }
