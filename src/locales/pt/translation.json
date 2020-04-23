@@ -1,0 +1,47 @@
+{
+  "intro": {
+    "greeting": "Oi, meu nome é",
+    "punch-line": "Eu desenvolvo para a web e amo o que faço.",
+    "bio": "Focado principalmente em <1>Desenvolvimento Front-end</1> com uma boa noção de <3>UI/UX</3>, mas sempre testando a aprendendo coisas diferentes."
+  },
+  "repositories": {
+    "title": "Repositórios",
+    "subtitle": "Finalmente terminei alguma coisa",
+    "repos": {
+      "pr-fiscal-desc": "Uma extensão para Chrome para te ajudar achar padrões em suas PRs",
+      "dale-cli": "Grupo de commandos padrões para usar no seu desenvolvimento diário",
+      "dotfiles": "Scripts de Shell, configurações de git e arquivos para inicializar um projeto/OS"
+    }
+  },
+  "jobs": {
+    "title": "Lugares que trabalhei",
+    "subtitle": "Em 3 países diferentes",
+    "see-more": "Veja meu perfil no LinkedIn",
+    "job": {
+      "software-developer": "Desenvolvedor de Software",
+      "full-stack-developer": "Desenvolvedor Full Stack",
+      "javascript-developer": "Desenvolvedor Javascript",
+      "front-end-developer": "Desenvolvedor Front-end"
+    }
+  },
+  "gists": {
+    "title": "Últimos Gists",
+    "subtitle": "Não tenho um blog mas tenho Gists!",
+    "see-more": "Têm mais"
+  },
+  "see-more": {
+    "link": "Veja Mais"
+  },
+  "social": {
+    "titles": {
+      "linkedin": "Veja meu perfil no LinkedIn",
+      "twitter": "Me siga no Twitter",
+      "github": "Julgue meu código no GitHub",
+      "spotify": "Seleção das melhores músicas no Spotify"
+    }
+  },
+  "footer": {
+    "copyright": "Todos os direitos reservados",
+    "quote": "Feito com muito <1>☕</1> durante a <3>quarentena COVID-19</3>."
+  }
+}

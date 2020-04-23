@@ -1,0 +1,35 @@
+/* Link
+------------------------------------- */
+.link {
+  padding-bottom: .1rem;
+  color: var(--color-text);
+  border-bottom: 1px dashed var(--color-accent-lighter);
+  transition: var(--transition);
+}
+
+@media (hover: hover) {
+  .link:hover {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+  }
+}
+
+/* Cards
+------------------------------------- */
+.card {
+  padding: 1rem;
+  color: var(--color-card-text);
+  background-color: var(--color-white);
+  border: 3px solid transparent;
+  box-shadow: var(--box-shadow) var(--box-shadow-color);
+  transition: var(--transition);
+}
+
+@media (hover: hover) {
+  .card-hover:hover {
+    color: var(--color-card-text);
+    border-color: var(--color-accent);
+    box-shadow: 5px 5px 5px var(--color-grey-dark);
+    transform: scale(1.05);
+  }
+}

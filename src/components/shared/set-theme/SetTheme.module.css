@@ -1,0 +1,35 @@
+.button {
+  padding: .65rem .85rem;
+  color: var(--color-white);
+  font-size: .7rem;
+  background-color: var(--color-black);
+  transition: var(--transition);
+  box-shadow: var(--box-shadow) var(--box-shadow-color);
+}
+
+@media (hover: hover) {
+  .button:hover {
+    position: relative;
+    top: 1px;
+    left: 1px;
+    box-shadow: none;
+    background-color: var(--color-accent);
+  }
+  
+  .button:active {
+    box-shadow: inset 2px 2px 2px var(--color-black);
+    background-color: var(--color-accent-darker);
+  }
+}
+
+
+.button-light {
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+@media (hover: hover) {
+  .button-light:active {
+    box-shadow: inset 2px 2px 2px var(--color-black-full);
+  }
+}

@@ -1,0 +1,26 @@
+.header { text-align: center; }
+
+.title {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+}
+
+
+@media only screen and (min-width: 576px) {
+  .title {
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+  }
+  
+  .subtitle {
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "intro": {
+    "greeting": "Hola, me llamo",
+    "name": "Gabriel Lima",
+    "punch-line": "Construyo cosas para la web y amo lo que hago.",
+    "bio": "Enfocado principalmente en <1>Desarrollo Front-end</1> con un buen <3>UI/ UX</3> pero siempre intentando cosas diferentes."
+  },
+  "repositories": {
+    "title": "Repositorios",
+    "subtitle": "finalmente he terminado algo",
+    "repos": {
+       "pr-fiscal-desc": "Una extensión de Chrome para ayudarlo a encontrar patrones en su PR",
+       "dale-cli": "Un conjunto de comandos diarios para ayudar al flujo de trabajo de su desarrollo",
+       "dotfiles": "Scripts de Shell, git y archivos de configuración para iniciar un proyecto / OS desde cero"
+     }
+  },
+  "jobs": {
+    "title": "Lugares donde he trabajado",
+    "subtitle": "De 3 países diferentes",
+    "see-more": "Mira mi perfil en LinkedIn",
+    "job": {
+      "software-developer": "Desarrollador de Software",
+      "full-stack-developer": "Desarrollador Full Stack",
+      "javascript-developer": "Desarrollador Javascript",
+      "front-end-developer": "Desarrollador Front-end"
+    }
+  },
+  "gists": {
+    "title": "Últimos Gists",
+    "subtitle": "Todavía no tengo un blog pero tengo Gists!",
+    "see-more": "Hay más"
+  },
+  "see-more": {
+    "link": "Vea mas"
+  },
+  "social": {
+    "titles": {
+      "linkedin": "Mira mi perfil en LinkedIn",
+      "twitter": "Sígueme en Twitter",
+      "github": "Juzga mi código en GitHub",
+      "spotify": "Gran selección de músicas en Spotify"
+    }
+  },
+  "footer": {
+    "copyright": "Todos los derechos reservados",
+    "quote": "Hecho con una gran cantidad de <1> ☕ </1> durante la <3>cuarentena COVID-19</3>."
+  }
+}

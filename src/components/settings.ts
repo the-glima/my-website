@@ -12,20 +12,42 @@ export const settings = {
     logo: 'GitHub'
   },
   intro: {
-    bio:
-      'Working in web development for almost 8 years with solid experience developing web applications, creating rich UI components, building RESTful APIs and improving development workflow (CI/CD and product infrastructure). Always learning and keeping track of modern technologies and new standards.',
-    subTitleOptions: [
-      'Front-End Developer',
-      'Front-End Engineer',
-      'JavaScript Engineer',
-      'JavaScript Developer',
-      'Software Developer',
-      'Software Engineer',
-      'Infrastructure Developer',
-      'Web Designer',
-      'UI Developer',
-      '10x Engineer *',
-      'JS-Framework Developer'
+    positionOptions: [
+      {
+        title: 'Front-End Developer',
+        default: true
+      },
+      {title: 'Front-End Engineer'},
+      {title: 'JavaScript Engineer'},
+      {title: 'JavaScript Developer'},
+      {title: 'Software Developer'},
+      {title: 'Software Engineer'},
+      {title: 'Infrastructure Developer'},
+      {title: 'Web Designer'},
+      {title: 'UI Developer'},
+      {title: 'JS-Framework Developer'},
+      {
+        title: '10x Engineer',
+        jsxCss: {
+          textDecoration: 'line-through'
+        }
+      }
+    ]
+  },
+  languages: {
+    options: [
+      {
+        label: 'English',
+        key: 'en'
+      },
+      {
+        label: 'Portuguese',
+        key: 'pt'
+      },
+      {
+        label: 'Spanish',
+        key: 'es'
+      }
     ]
   },
   footer: {
@@ -37,5 +59,9 @@ export const settings = {
       spain:
         'https://www.google.com/search?rlz=1C1GCEA_enES841ES841&ei=DEVkXtyZDMm4aZqAu5AG&q=j%C3%A1mon+iberico&oq=j%C3%A1mon+&gs_l=psy-ab.3.0.0j0i30l4j0i5i30j0i30l3j0i5i30.25040.26774..28635...0.0..0.121.646.1j5......0....1..gws-wiz.......0i273.Wk5_W6D8jGA'
     }
+  },
+  localStorage: {
+    themeKey: 'GABRIEL-LIMA:THEME',
+    languageKey: 'i18nextLng'
   }
 }

@@ -1,0 +1,33 @@
+.list { display: flex; }
+
+.list-item::before { content: '|'; }
+
+.list-item:first-child::before { display: none; }
+
+.list-item:first-child .language { 
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.language { 
+  display: inline-block;
+  margin: 0 .4rem;
+  padding-bottom: .2rem;
+  font-size: .9rem;
+  line-height: .9rem;
+  border-bottom: 1px solid transparent;
+  transition: var(--transition);
+  opacity: .8;
+}
+
+@media (hover: hover) {
+  .language:hover {
+    color: var(--color-text);
+    border-color: var(--color-text);
+    opacity: 1;
+  }
+}
+.language.active {
+  opacity: 1;
+  border-color: var(--color-text);
+}
