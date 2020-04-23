@@ -67,7 +67,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build:local": "serve -s build",
-    "test": "cross-env CI=true react-scripts test --env=jsdom",
+    "test": "cross-env CI=true react-scripts test --passWithNoTests --env=jsdom",
     "test:watch": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.{ts,tsx,js}\"",
