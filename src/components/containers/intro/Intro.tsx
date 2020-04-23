@@ -8,9 +8,9 @@ import profile from '../../../assets/images/photos/me.jpg'
 const Intro = ({t}: any) => {
   const randomizePosition = (): IntroModel => {
     const titles: IntroModel[] = Object.values(settings.intro.positionOptions)
-    const subTitleOptions = titles.map((item) => item.title)
-    const randomness = Math.floor(Math.random() * subTitleOptions.length)
-    const defaultTitle = titles.find((item) => item.default)
+    // const subTitleOptions = titles.map((item) => item.title)
+    // const randomness = Math.floor(Math.random() * subTitleOptions.length)
+    // const defaultTitle = titles.find((item) => item.default)
 
     return titles[0]
   }
@@ -31,12 +31,10 @@ const Intro = ({t}: any) => {
             </div>
           </h1>
         </header>
-        
+
         <div className={styles['bio-wrapper']}>
           <p>
-            <Trans i18nKey="intro.punch-line">
-              I build things for the web and love what I do. 
-            </Trans>
+            <Trans i18nKey="intro.punch-line">I build things for the web and love what I do.</Trans>
           </p>
           <p>
             <Trans i18nKey="intro.bio">
