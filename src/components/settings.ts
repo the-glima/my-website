@@ -62,6 +62,6 @@ export const settings = {
     }
   },
   localStorage: {
-    prefix: 'GL:'
+    themeKey: 'GABRIEL-LIMA:THEME'
   }
 }

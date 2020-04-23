@@ -1,26 +1,46 @@
 import React, {useState, useEffect} from 'react'
 import styles from './DarkMode.module.css'
 import {DarkModeService} from './DarkModeService'
+import {DarkModeEnum} from './DarkModeEnum'
 
 const DarkMode = () => {
-  const [theme, setDarkMode]: any = useState(false)
+  const [theme, setTheme] = useState('');
 
-  const toggle = () => {
-    DarkModeService.setDarkMode(theme)
-    setDarkMode((active: boolean) => !active)
+  const saveTheme = (theme: string) => {
+    DarkModeService.setTheme(theme)
+    setTheme(theme)
+  }
+
+  const toggleTheme = () => {
+    return theme === DarkModeEnum.light ? 
+      saveTheme(DarkModeEnum.dark) : 
+      saveTheme(DarkModeEnum.light)
   }
 
   useEffect(() => {
-    const darkModeClass = 'dark-mode'
+    const savedTheme = DarkModeService.getTheme()
 
-    const isDarkMode = DarkModeService.isDarkMode()
+    if (DarkModeService.hasDarkPreferColorScheme() && !savedTheme) {
+      setTheme(DarkModeEnum.dark)
+    } else if (savedTheme) {
+      setTheme(savedTheme)
+    } else {
+      setTheme(DarkModeEnum.light)
+    }
 
-    isDarkMode ? document.body.classList.add(darkModeClass) : document.body.classList.remove(darkModeClass)
-  })
+    DarkModeService.isDarkMode(theme) ? 
+      document.body.classList.add('dark-mode') : 
+      document.body.classList.remove('dark-mode')
+  }, [theme]);
 
   return (
-    <button className={`${styles.button} ${theme ? styles['button-active'] : ''}`} onClick={toggle}>
-      {theme ? 'LIGHT THEME' : 'DARK THEME'}
+    <button 
+      className={`${styles.button} ${DarkModeService.isDarkMode(theme) ? styles['button-light'] : ''}`} 
+      onClick={toggleTheme}
+    >
+      {DarkModeService.isDarkMode(theme) ? 
+        `${DarkModeEnum.light.toUpperCase()} THEME` : 
+        `${DarkModeEnum.dark.toUpperCase()} THEME`}
     </button>
   )
 }
