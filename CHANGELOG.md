@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/the-glima/my-website/compare/v2.0.1...v2.1.0) (2020-04-23)
+
+
+### Features
+
+* add more components and ui refactor ([05c91b3](https://github.com/the-glima/my-website/commit/05c91b3fcc4606036a410e9078802a377fd8df1a))
+
 ## [2.0.1](https://github.com/the-glima/my-website/compare/v2.0.0...v2.0.1) (2020-04-13)
 
 # [2.0.0](https://github.com/the-glima/my-website/compare/v1.0.1...v2.0.0) (2020-04-13)
