@@ -19,11 +19,14 @@ i18n
   .use(reactI18nextModule as any)
   .init({
     resources,
-    lng: 'en',
     fallbackLng: 'en',
     interpolation: {
-      escapeValue: false
+      escapeValue: false,
+      prefix: 'GL'
     }
+  })
+  .then(() => {
+    console.log(i18n)
   })
 
 export default i18n

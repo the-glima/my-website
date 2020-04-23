@@ -4,7 +4,7 @@ import {DarkModeService} from './DarkModeService'
 import {DarkModeEnum} from './DarkModeEnum'
 
 const DarkMode = () => {
-  const [theme, setTheme] = useState('');
+  const [theme, setTheme] = useState('')
 
   const saveTheme = (theme: string) => {
     DarkModeService.setTheme(theme)
@@ -12,9 +12,7 @@ const DarkMode = () => {
   }
 
   const toggleTheme = () => {
-    return theme === DarkModeEnum.light ? 
-      saveTheme(DarkModeEnum.dark) : 
-      saveTheme(DarkModeEnum.light)
+    return theme === DarkModeEnum.light ? saveTheme(DarkModeEnum.dark) : saveTheme(DarkModeEnum.light)
   }
 
   useEffect(() => {
@@ -28,19 +26,19 @@ const DarkMode = () => {
       setTheme(DarkModeEnum.light)
     }
 
-    DarkModeService.isDarkMode(theme) ? 
-      document.body.classList.add('dark-mode') : 
-      document.body.classList.remove('dark-mode')
-  }, [theme]);
+    DarkModeService.isDarkMode(theme)
+      ? document.body.classList.add('dark-mode')
+      : document.body.classList.remove('dark-mode')
+  }, [theme])
 
   return (
-    <button 
-      className={`${styles.button} ${DarkModeService.isDarkMode(theme) ? styles['button-light'] : ''}`} 
+    <button
+      className={`${styles.button} ${DarkModeService.isDarkMode(theme) ? styles['button-light'] : ''}`}
       onClick={toggleTheme}
     >
-      {DarkModeService.isDarkMode(theme) ? 
-        `${DarkModeEnum.light.toUpperCase()} THEME` : 
-        `${DarkModeEnum.dark.toUpperCase()} THEME`}
+      {DarkModeService.isDarkMode(theme)
+        ? `${DarkModeEnum.light.toUpperCase()} THEME`
+        : `${DarkModeEnum.dark.toUpperCase()} THEME`}
     </button>
   )
 }

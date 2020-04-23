@@ -38,8 +38,7 @@ export const settings = {
     options: [
       {
         label: 'English',
-        key: 'en',
-        default: true
+        key: 'en'
       },
       {
         label: 'Portuguese',
@@ -62,6 +61,7 @@ export const settings = {
     }
   },
   localStorage: {
-    themeKey: 'GABRIEL-LIMA:THEME'
+    themeKey: 'GABRIEL-LIMA:THEME',
+    languageKey: 'i18nextLng'
   }
 }
