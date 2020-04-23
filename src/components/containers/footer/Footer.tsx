@@ -29,7 +29,7 @@ const Footer = ({t}: any) => {
                 className={styles['quote-link']}
                 href="https://www.google.com/search?q=covid+19&rlz=1C1GCEA_enES841ES841&oq=covid+19&aqs=chrome..69i57j0l4j69i60l3.1589j0j4&sourceid=chrome&ie=UTF-8"
               >
-                a quarantine time
+                a quarantine time.
               </a>
             </Trans>
           </p>

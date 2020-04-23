@@ -2,7 +2,8 @@
   "intro": {
     "greeting": "Hi, my name is",
     "name": "Gabriel Lima",
-    "bio": "I build things for the web and love what I do. Mainly focused on <1>Front-end Development</1> with a good <3>UI/UX</3> taste but always trying different things."
+    "punch-line": "I build things for the web and love what I do.",
+    "bio": "Mainly focused on <1>Front-end Development</1> with a good <3>UI/UX</3> taste but always trying different things."
   },
   "repositories": {
     "title": "Repositories",
@@ -36,11 +37,12 @@
     "titles": {
       "linkedin": "Check my LinkedIn Profile",
       "twitter": "Follow me on Twitter",
-      "github": "Judge my code on GitHub"
+      "github": "Judge my code on GitHub",
+      "spotify": "Great selection of tunes on Spotify"
     }
   },
   "footer": {
     "copyright": "All rights reserved",
-    "quote": "Made with a lot of <1>☕</1> during <3>the quarantine</3>"
+    "quote": "Made with a lot of <1>☕</1> during the <3>COVID-19 quarantine</3>."
   }
 }

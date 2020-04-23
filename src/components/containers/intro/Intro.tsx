@@ -31,14 +31,21 @@ const Intro = ({t}: any) => {
             </div>
           </h1>
         </header>
-
-        <p className={styles.bio}>
-          <Trans i18nKey="intro.bio">
-            I build things for the web and love what I do. Mainly focused on
-            <strong>Front-end Development</strong> with a good <strong>UI/UX</strong>
-            taste but always trying different things.
-          </Trans>
-        </p>
+        
+        <div className={styles['bio-wrapper']}>
+          <p>
+            <Trans i18nKey="intro.punch-line">
+              I build things for the web and love what I do. 
+            </Trans>
+          </p>
+          <p>
+            <Trans i18nKey="intro.bio">
+              Mainly focused on
+              <strong>Front-end Development</strong> with a good <strong>UI/UX</strong>
+              taste but always trying different things.
+            </Trans>
+          </p>
+        </div>
       </div>
     </section>
   )

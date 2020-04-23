@@ -6,6 +6,7 @@ import {SocialLink} from './SocialModel'
 import linkedin from '../../../assets/images/logos/linkedin.svg'
 import twitter from '../../../assets/images/logos/twitter.svg'
 import github from '../../../assets/images/logos/github.svg'
+import spotify from '../../../assets/images/logos/spotify.svg'
 
 const Social = ({t, props}: any) => {
   const links = [
@@ -26,6 +27,12 @@ const Social = ({t, props}: any) => {
       url: 'https://github.com/the-glima',
       scrImage: github,
       title: t('social.titles.github')
+    },
+    {
+      name: 'Spotify',
+      url: 'https://open.spotify.com/playlist/2nbyGPsu5UjhwzIwHkL1ZF?si=eLDVmJ8xSLOOA57mWuHDKQ',
+      scrImage: spotify,
+      title: t('social.titles.spotify')
     }
   ]
 

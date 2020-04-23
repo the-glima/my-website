@@ -39,12 +39,15 @@
   line-height: 2.4rem;
 }
 
-.bio {
+.bio-wrapper {
   margin: 3rem auto 1.5rem;
   font-size: 1.3rem;
   font-style: italic;
   line-height: 2.2rem;
 }
+
+.punch-line { margin: 3rem auto 0; }
+.bio { margin: 0 auto 1.5rem; }
 
 @media only screen and (min-width: 576px) {
   .header {
@@ -80,10 +83,10 @@
     line-height: 2.3rem;
   }
 
-  .bio {
-    margin: 3.5rem auto;
-    max-width: 500px;
+  .bio-wrapper {
+    max-width: 550px;
     font-size: 1.4rem;
     line-height: 2.1rem;
+    font-style: italic;
   }
 }
