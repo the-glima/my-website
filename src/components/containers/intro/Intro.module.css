@@ -35,19 +35,30 @@
 }
 
 .position { 
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   line-height: 2.4rem;
 }
 
 .bio-wrapper {
-  margin: 3rem auto 1.5rem;
-  font-size: 1.3rem;
-  font-style: italic;
-  line-height: 2.2rem;
+  margin: 3rem auto 2rem;
+  font-size: 1.2rem;
+  line-height: 2.1rem;
+  text-align: center;
 }
 
-.punch-line { margin: 3rem auto 0; }
-.bio { margin: 0 auto 1.5rem; }
+.punch-line {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2.2rem;
+  border-bottom: 1px dashed rgba(0,0,0,.08);
+}
+
+.bio {
+  font-size: 1.2rem;
+  line-height: 1.9rem;
+}
 
 @media only screen and (min-width: 576px) {
   .header {
@@ -60,8 +71,8 @@
   }
 
   .picture {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     margin: 0 1rem 0 0;
   }
 
@@ -72,9 +83,9 @@
   }
 
   .name { 
-    padding-top: 0.8rem;
-    font-size: 2.5rem;
-    line-height: 3rem;
+    padding-top: .6rem;
+    font-size: 2.6rem;
+    line-height: 2.7rem;
   }
 
   .position { 
@@ -82,11 +93,28 @@
     font-size: 1.6rem;
     line-height: 2.3rem;
   }
+  
+  .bio-wrapper { max-width: 78%; }
+}
 
+@media only screen and (min-width: 992px) {
   .bio-wrapper {
-    max-width: 550px;
-    font-size: 1.4rem;
-    line-height: 2.1rem;
-    font-style: italic;
+    max-width: 70%;
+    margin: 4rem auto;
+  }
+  
+  .punch-line {
+    margin-bottom: 0.7rem;
+    font-size: 2.26rem;
+    font-weight: 300;
+    line-height: 3.2rem;
+    border-bottom: 1px dashed rgba(0,0,0,.08);
+  }
+
+  .bio {
+    width: 87%;
+    margin: 0 auto;
+    font-size: 1.33rem;
+    line-height: 2rem;
   }
 }

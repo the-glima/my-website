@@ -11,7 +11,7 @@
 .list-item {
   display: flex;
   align-items: center;
-  width: 70%;
+  width: 90%;
   justify-items: center;
 }
 
@@ -36,7 +36,7 @@
   }
 
   .list-item {
-    width: 80%;
+    width: 90%;
     justify-items: center;
   }
 }

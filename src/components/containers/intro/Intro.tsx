@@ -27,14 +27,15 @@ const Intro = ({t}: any) => {
         </header>
 
         <div className={styles['bio-wrapper']}>
-          <p>
+          <p className={styles['punch-line']}>
             <Trans i18nKey="intro.punch-line">I build things for the web and love what I do.</Trans>
           </p>
-          <p>
+          <p className={styles.bio}>
             <Trans i18nKey="intro.bio">
               Mainly focused on
               <strong>Front-end Development</strong> with a good <strong>UI/UX</strong>
-              taste but always trying different things.
+              eye and always trying different things. I speak <strong>JavaScript, CSS and HTML.</strong>
+              and more.
             </Trans>
           </p>
         </div>
