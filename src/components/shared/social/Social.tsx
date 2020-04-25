@@ -18,7 +18,7 @@ const Social = ({t, props}: any) => {
     },
     {
       name: 'Twitter',
-      url: 'https://www.linkedin.com/in/gabriel--lima/',
+      url: 'https://twitter.com/__glima',
       scrImage: twitter,
       title: t('social.titles.twitter')
     },

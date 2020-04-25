@@ -30,8 +30,11 @@ body.dark-mode {
   --color-grey-dark: var(--color-black-full);
   --color-accent: var(--color-gold);
   --color-accent-lighter: var(--color-grey-dark-1);
-  --color-card-text: var(--color-black);
+  --color-card-text: var(--color-white);
+  --color-card-background: rgb(59, 59, 59);
+  --color-card-border: #353535;
   --color-accent-darker: var(--color-gold-darker);
+  --dashed-border-color: var(--color-grey-dark-1);
 }
 
 body.dark-mode img {
@@ -43,7 +46,8 @@ body.dark-mode img {
   body.dark-mode img:hover { opacity: 1; }
 }
 
-body.dark-mode .social-logo {
+body.dark-mode .social-logo,
+body.dark-mode .dark-logo {
   filter: invert(1);
 }
 

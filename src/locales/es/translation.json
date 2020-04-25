@@ -7,7 +7,7 @@
   },
   "repositories": {
     "title": "Repositorios",
-    "subtitle": "finalmente he terminado algo",
+    "subtitle": "Finalmente he terminado algo",
     "repos": {
        "pr-fiscal-desc": "Una extensión de Chrome para ayudarlo a encontrar patrones en su PR",
        "dale-cli": "Un conjunto de comandos diarios para ayudar al flujo de trabajo de su desarrollo",

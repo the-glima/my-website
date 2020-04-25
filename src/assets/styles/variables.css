@@ -11,12 +11,13 @@
   --color-accent-darker: #2d47ce;
   --color-accent-lighter: #ccd3f7;
   --color-success: #8ec03f;
-  --color-purple: #7215c1;
+  --color-purple: #5B2C83;
   --color-gold: #efbb35;
   --color-gold-darker: #dda414;
   --color-error: #c03f3f;
   --color-grey: #f3f3f3;
-  --color-grey-2: #f9f9f9;
+  --color-grey-2: #e8e8e8;
+  --color-grey-3: #c2c2c2;
   --color-grey-dark: #a7a7a7;
   --color-grey-dark-1: #525252;
   --color-black: #212121;               
@@ -28,6 +29,10 @@
   --color-text: var(--color-black);
   --color-bg-section: var(--color-grey);
   --color-card-text: var(--color-text);
+  --color-card-background: var(--color-white);
+  --color-card-border: transparent;
+  --dashed-border: 1px dashed;
+  --dashed-border-color: rgba(0,0,0,.2);
   --font-size-root: 16px;
   --font-size: 1rem;
   --font-line-height: 1.6;

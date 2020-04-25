@@ -1,28 +1,151 @@
 .section-jobs { background-color: var(--color-bg-lighter); }
 
+.content {
+  display: flex;
+  margin-top: 4rem;
+}
+
+.about {
+  padding-right: 5rem;
+  width: calc(100% - 704px);
+}
+
+.about h4 {
+  font-size: 1.2rem;
+  line-height: 1.9rem;
+  font-weight: 600;
+  margin-bottom: .2rem;
+}
+
+.about p {
+  margin-bottom: 1rem;
+}
+
+.ad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: .8rem 0;
+  line-height: 3rem;
+  text-align: center;
+  border-top: var(--dashed-border) var(--dashed-border-color);
+  border-bottom: var(--dashed-border) var(--dashed-border-color);
+}
+
+.ad span {
+  padding: 0 .5rem;
+}
+
 .list {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-row-gap: 3rem;
-  justify-items: center;
-  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 704px;
+  margin-top: .8rem;
+}
+
+/* Center line */
+.list::before {
+  content: '';
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  display: block;
+  width: 2px;
+  height: calc(100% - 82px);
+  background-color: var(--box-shadow-color);
+  transform: translateX(-50%);
 }
 
 .list-item {
-  width: 270px;
-  justify-items: center;
-  text-align: left;
+  display: grid;
+  grid-template-columns: 342px auto;
+  justify-content: left;
+  align-items: center;
+  margin-top: 1.2rem;
 }
 
-.list-item-wrapper {
-  display: flex;
-  align-items: center;
+.list-item:first-child { margin-top: 0; }
+
+.list-item-left { 
+  grid-template-columns: auto auto;
+  align-self: flex-end; 
+  padding-right: 0.2rem;
 }
+
+.list-item-card {
+  composes: card from '../../../assets/styles/helpers.css';
+  composes: card-hover from '../../../assets/styles/helpers.css';
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  width: 272px;
+  padding: 0.7rem;
+  text-align: left;
+  border: 1px solid var(--box-shadow-color);
+}
+
+.list-item-left .list-item-card { 
+  order: 1;
+  justify-self: flex-end;
+}
+
+/* Line */
+.list-item-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -74px;
+  display: block;
+  width: 74px;
+  height: 2px;
+  background-color: var(--box-shadow-color);
+  transform: translateY(-50%);
+}
+
+.list-item-left .list-item-card::after { 
+  left: -70px; 
+  width: 70px;
+}
+
+/* Circle */
+.list-item-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -88px;
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  background-color: var(--color-grey-3);
+  transform: translateY(-50%);
+}
+
+.list-item-left .list-item-card::before { left: -84px; }
+
+.list-item-date {
+  padding-left: 24px;
+  font-size: 1.06rem;
+  font-weight: 600;
+}
+
+.list-item-left .list-item-date { 
+  order: 0; 
+  padding-right: 92px;
+  padding-left: 0;
+}
+
+.list-item-card:hover::after,
+.list-item-card:hover::before {
+  background-color: var(--color-accent);
+}
+
 
 .logo { 
-    width: 50px;
+  width: 50px;
   height: 50px;
-  margin-right: 20px;
+  margin-right: 0.8rem;
   background-image: url('../../../assets/images/jobs/jobs.jpg');
   background-repeat: no-repeat;
   background-size: 150px;
@@ -38,29 +161,26 @@
 .logo-elogroup {  background-position: -50px -50px; }
 .logo-bolt-brasil {  background-position: -100px -50px; }
 
-.link {
-  composes: link from '../../../assets/styles/helpers.css';
-  font-size: 1.1rem;
-  font-weight: 700;
+.title {
+  font-size: 1rem;
+  font-weight: 600;
 }
 
-.status {
-  display: inline-block;
-  padding: 0.3rem 0.35rem 0.25em;
-  color: var(--color-white);
-  font-size: 0.66rem;
-  text-transform: uppercase;
-  background-color: var(--color-accent);
+.list-item-card:hover .title {
+  color: var(--color-accent);
 }
 
-.position { padding-top: .3rem; }
+.position { 
+  padding-top: .15rem;
+  font-size: .95rem;
+ }
 
 .section-link {
   composes: link from '../../../assets/styles/helpers.css';
   text-align: center;
 }
 
-@media only screen and (min-width: 576px) {
+/* @media only screen and (min-width: 576px) {
   .list {
     margin: 4rem auto;
     grid-template-columns: 1fr 1fr;
@@ -75,4 +195,4 @@
   }
 
   .section-link { margin-top: 3rem; }
-}
+} */
