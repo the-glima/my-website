@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './SetTheme.module.css'
-import {SetThemeEffect} from './SetThemeEffect'
-import {SetThemeEnum} from './SetThemeEnum'
+import { SetThemeEffect } from './SetThemeEffect'
+import { SetThemeEnum } from './SetThemeEnum'
 
 const SetTheme = () => {
   const [theme, setTheme] = useState('')

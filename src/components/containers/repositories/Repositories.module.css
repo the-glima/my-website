@@ -1,3 +1,6 @@
+@value breakpoint-md from '../../../assets/styles/variables.css';
+@value breakpoint-lg from '../../../assets/styles/variables.css';
+
 .section-repositories { background-color: var(--color-bg-section); }
 
 .list {
@@ -45,14 +48,14 @@
   padding-top: 1rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media (min-width: breakpoint-md) {
   .list {
     margin: 4rem auto;
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media only screen and (min-width: 992px) {
+@media (min-width: breakpoint-lg) {
   .list {
     grid-template-columns: 1fr 1fr 1fr;
     max-width: 1200px;

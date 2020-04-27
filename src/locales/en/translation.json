@@ -1,4 +1,10 @@
 {
+  "position": {
+    "software-developer": "Software Developer",
+    "full-stack-developer": "Full Stack Developer",
+    "javascript-developer": "Javascript Developer",
+    "front-end-developer": "Front-end Developer"
+  },
   "intro": {
     "greeting": "Hi, my name is",
     "name": "Gabriel Lima",
@@ -15,16 +21,15 @@
       "dotfiles": "Shell scripts, git and config files to kick off a project/OS from scratch"
     }
   },
-  "jobs": {
+  "work": {
     "title": "Places that I’ve worked",
-    "subtitle": "From 3 different countries",
-    "see-more": "Check more details on LinkedIn",
-    "job": {
-      "software-developer": "Software Developer",
-      "full-stack-developer": "Full Stack Developer",
-      "javascript-developer": "Javascript Developer",
-      "front-end-developer": "Front-end Developer"
-    }
+    "subtitle": "Amazing and skilled people I've met",
+    "journey": {
+      "intro": "I started working with web development in 2011, studied Web/Multimedia, and always loved design + code. But since I'm not as close as a Designer (look at the design of this website) I've become a <1>Front-end Developer</1>.",
+      "body": "<0>CSS and HTML</0> are my companions but with <1>JavaScript</1> that the real passion flourishes in my heart. Then came NodeJS, RESTful APIs and the Back-end Development was closer than ever. JS's frameworks and testing libraries started to pop out almost monthly which made the opportunity to create better and rich UI components (my joy), also we have stopped to use jQuery right?!",
+      "conclusion": "One day I started to use Linux and the terminal, now I'm addicted to automate my workflow with Bash Scripts. Now, with Docker and CI/CD knowledge, I could entitle myself as a <1>Full-stack Developer</1>, but I won't do that and I'll call myself also as a <strong>Product Infrastructure Developer</strong> instead, which is way cooler."
+    },
+    "see-more": "Check more details on LinkedIn"
   },
   "gists": {
     "title": "Latest Gists",

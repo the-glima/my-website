@@ -1,5 +1,5 @@
 import React from 'react'
-import {Trans, withNamespaces} from 'react-i18next'
+import { Trans, withNamespaces } from 'react-i18next'
 import styles from './Intro.module.css'
 
 import profile from '../../../assets/images/photos/me.jpg'
@@ -22,7 +22,7 @@ const Intro = ({t}: any) => {
           <h1 className={`${styles.heading} `}>
             <div className={styles.intro}>{t('intro.greeting')}</div>
             <div className={styles.name}>Gabriel Lima</div>
-            <div className={styles.position}>{t('jobs.job.front-end-developer')}</div>
+            <div className={styles.position}>{t('position.front-end-developer')}</div>
           </h1>
         </header>
 

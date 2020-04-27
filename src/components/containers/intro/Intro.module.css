@@ -1,3 +1,6 @@
+@value breakpoint-sm from '../../../assets/styles/variables.css';
+@value breakpoint-lg from '../../../assets/styles/variables.css';
+
 .section-intro { text-align: center; }
 
 .header {
@@ -61,7 +64,7 @@
   line-height: 1.9rem;
 }
 
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: breakpoint-sm) {
   .header {
     flex-direction: row;
     padding-top: 1.5rem;
@@ -98,7 +101,7 @@
   .bio-wrapper { max-width: 78%; }
 }
 
-@media only screen and (min-width: 992px) {
+@media (min-width: breakpoint-lg) {
   .bio-wrapper {
     max-width: 70%;
     margin: 4rem auto;

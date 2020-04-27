@@ -1,19 +1,19 @@
-import React, {useState, useEffect} from 'react'
-import {withNamespaces} from 'react-i18next'
+import React, { useState, useEffect } from 'react'
+import { withNamespaces } from 'react-i18next'
 import styles from './Gists.module.css'
 import Headings from '../../shared/headings/Headings'
 import SeeMore from '../../shared/see-more/SeeMore'
 
-import {GistDOMModel} from './GistsModel'
-import {GistsService} from './GistsService'
-import {gistsGetLogo} from './GistsGetLogo'
+import { GistDOMModel } from './GistsModel'
+import { GistsEffect } from './GistsEffect'
+import { gistsGetLogo } from './GistsGetLogo'
 
 const Gists = ({t}: any) => {
   const [gists, setGists]: any = useState([])
 
   useEffect(() => {
     const fetchGists = async () => {
-      const result = await GistsService.mapGists()
+      const result = await GistsEffect.mapGists()
       setGists(result)
     }
 

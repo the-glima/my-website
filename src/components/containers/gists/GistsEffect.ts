@@ -1,7 +1,7 @@
 import {GistFilesModel, GistDOMModel, GistModel, GistsResponseModel} from './GistsModel'
 import {settings} from '../../settings'
 
-export const GistsService = {
+export const GistsEffect = {
   getUrl: (params = settings.github.urlParams): string =>
     `${params.url}/${params.user}/gists?page=1&per_page=${params.limit}`,
 
@@ -26,8 +26,8 @@ export const GistsService = {
         id: gist.id,
         url: gist.html_url,
         files: files,
-        title: gist.description || settings.gist.title,
-        language: files[0].language || settings.gist.logo
+        title: gist.description,
+        language: files[0].language
       }
     })
   }

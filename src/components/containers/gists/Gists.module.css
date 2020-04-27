@@ -1,3 +1,6 @@
+@value breakpoint-sm from '../../../assets/styles/variables.css';
+@value breakpoint-lg from '../../../assets/styles/variables.css';
+
 .section-gists { background-color: var(--color-bg-section); }
 
 .list {
@@ -28,7 +31,7 @@
   text-align: center;
 }
 
-@media only screen and (min-width: 576px) {
+@media (min-width: breakpoint-sm) {
   .list {
     margin: 4rem auto;
     grid-template-columns: 1fr 1fr;
@@ -41,7 +44,7 @@
   }
 }
 
-@media only screen and (min-width: 992px) {
+@media (min-width: breakpoint-lg) {
   .list {
     max-width: 800px;
   }

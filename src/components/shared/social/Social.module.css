@@ -1,3 +1,5 @@
+@value breakpoint-md from '../../../assets/styles/variables.css';
+
 .list { 
   display: flex;
   justify-content: space-between;
@@ -14,7 +16,7 @@
   height: 25px;
 }
 
-@media only screen and (min-width: 768px) {
+@media (min-width: breakpoint-md) {
   .list {
     max-width: 150px;
   }

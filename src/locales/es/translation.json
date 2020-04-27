@@ -1,4 +1,10 @@
 {
+  "position": {
+    "software-developer": "Desarrollador de Software",
+    "full-stack-developer": "Desarrollador Full Stack",
+    "javascript-developer": "Desarrollador Javascript",
+    "front-end-developer": "Desarrollador Front-end"
+  },
   "intro": {
     "greeting": "Hola, me llamo",
     "name": "Gabriel Lima",
@@ -14,15 +20,14 @@
        "dotfiles": "Scripts de Shell, git y archivos de configuración para iniciar un proyecto / OS desde cero"
      }
   },
-  "jobs": {
+  "work": {
     "title": "Lugares donde he trabajado",
     "subtitle": "De 3 países diferentes",
     "see-more": "Mira mi perfil en LinkedIn",
-    "job": {
-      "software-developer": "Desarrollador de Software",
-      "full-stack-developer": "Desarrollador Full Stack",
-      "javascript-developer": "Desarrollador Javascript",
-      "front-end-developer": "Desarrollador Front-end"
+    "journey": {
+      "intro": "Comencé a trabajar con el desarrollo web en 2011, estudié Web/ Multimedia, y siempre me encantó el diseño + código. Pero como ni siquiera soy Diseñador (mira el diseño de esta página web) me he convertido un <1>Desarrollador Front-end</1>",
+      "body": "<0>CSS y HTML </0> son mis compañeros pero con <1>JavaScript</1> que la verdadera pasión floreció en mi corazón. Luego vinieron NodeJS, API RESTful y el desarrollo de Back-end se quedo más cerca que nunca. Los frameworks y las bibliotecas de test en JavaScript comenzaron a aparecer casi mensualmente, lo que creó la oportunidad de crear componentes de interfaz de usuario mejores y más inteactivos (para mi alegría), también hemos dejado de usar jQuery, ¿verdad?",
+      "conclusion": "Un día comencé a usar Linux y el terminal, ahora soy adicto a automatizar mi flujo de trabajo con Bash Scripts. Ahora, con el conocimiento de Docker y CI/ CD, podría darme el derecho de ser <1>Desarrollador Full Stack</1>, pero no haré eso y en cambio me llamaré a mí mismo también como <strong>Desarrollador de Infraestructura de Producto</strong>, lo cual es mucho más genial"
     }
   },
   "gists": {

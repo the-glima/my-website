@@ -1,5 +1,5 @@
 import React from 'react'
-import {Trans, withNamespaces} from 'react-i18next'
+import { Trans, withNamespaces } from 'react-i18next'
 import styles from './Footer.module.css'
 import Social from '../../shared/social/Social'
 import Languages from '../../shared/languages/Languages'

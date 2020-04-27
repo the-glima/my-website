@@ -1,7 +1,7 @@
-@value breakpoint-xx from '../../../assets/styles/variables.css';
 @value breakpoint-lg from '../../../assets/styles/variables.css';
+@value breakpoint-xx from '../../../assets/styles/variables.css';
 
-.section-jobs { background-color: var(--color-bg-lighter); }
+.section-work { background-color: var(--color-bg-lighter); }
 
 .content {
   display: flex;
@@ -197,8 +197,8 @@
   }
 
   .list::before {
-    top: 52px;
-    height: calc(100% - 86px);
+    top: 64px;
+    height: calc(100% - 110px);
   }
 
   .list-item {

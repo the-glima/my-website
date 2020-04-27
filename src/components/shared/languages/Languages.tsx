@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import i18n from '../../../i18n'
 import styles from './Languages.module.css'
-import {settings} from '../../settings'
+import { settings } from '../../settings'
 
 const Languages = (props: any) => {
   const languagesOptions = Object.values(settings.languages.options)
