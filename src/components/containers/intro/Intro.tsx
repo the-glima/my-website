@@ -12,11 +12,11 @@ const Intro = ({t}: any) => {
     <section className={`section ${styles['section-intro']}`}>
       <div className="section-content">
         <header className={styles.header}>
-          <img 
-            className={styles.picture} 
+          <img
+            className={styles.picture}
             src={profile}
             srcSet={`${profile2x} 2x,${profile3x} 3x, ${profile4x} 4x`}
-            alt="Gabriel Lima" 
+            alt="Gabriel Lima"
           />
 
           <h1 className={`${styles.heading} `}>

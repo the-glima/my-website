@@ -1,14 +1,12 @@
 import React from 'react'
-import { withNamespaces } from 'react-i18next'
+import {withNamespaces} from 'react-i18next'
 import styles from './Jobs.module.css'
-import { JobsData, JobModel } from './JobsData'
+import {JobsData, JobModel} from './JobsData'
 import Headings from '../../shared/headings/Headings'
-import SeeMore from '../../shared/see-more/SeeMore'
+import linkedin from '../../../assets/images/logos/linkedin.svg'
 
 const Jobs = ({t}: any) => {
   let jobsData = JobsData(t)
-
-  // jobsData.splice(2)
 
   const oddJob = (int: number): Boolean => Math.abs(int % 2) === 1
 
@@ -19,14 +17,26 @@ const Jobs = ({t}: any) => {
 
         <div className={styles.content}>
           <div className={styles.about}>
-            <h4 className={styles['about-title']}>Technical About Me</h4>
-            <p>I started working with web development in 2011, studied Web/Multimedia and always loved design + code. But since I'm not as close as a Designer (look at the design of this website) I've became a <strong>Front-end Developer</strong>.</p>
+            <h4 className={styles['about-title']}>My journey</h4>
+            <p>
+            I started working with web development in 2011, studied Web/Multimedia, and always loved design + code. But since I'm not as close as a Designer (look at the design of this website) I've become a <strong>Front-end Developer</strong>.
+            </p>
 
-            <p className={styles.ad}><span><em>Check the cool timeline on the right</em></span><span role="img" aria-label="Backhand Index Pointing Right">👉</span></p>
-            
-            <p>With JavaScript the real passion flourish in my heart, then came NodeJS and RESTful APIs and the Back-end Development was closer then never. JS frameworks and testing libraries started to pop out almost monthly which made the opportunity to create better and rich UI components (my joy), also we have stopped to use jQuery right?!</p>
+            <a className={styles.ad} href="https://www.linkedin.com/in/gabriel--lima/" title="">
+              <em>{t('jobs.see-more')}</em>
+              <img className={styles.linkedin} src={linkedin} alt="LinkedIn Logo" />
+            </a>
 
-            <p>One day I started to use Linux and the terminal, now I'm addicted to automate my workflow with Bash Scripts. Now, with Docker and CI/CD knowledge I could entitle myself as a <em>Full-stack Developer</em>, but I won't do that and I'll call myself as a <strong>Product Infrastructure Developer</strong> instead, which is way cooler.</p>
+            <p>
+            <strong>CSS and HTML</strong> were my companions but with <strong>JavaScript</strong> that the real passion flourishes in my heart. Then came NodeJS and RESTful APIs and the Back-end Development was closer than ever. JS's frameworks and testing libraries started to pop out almost monthly which made the opportunity to create better and rich UI components (my joy), also we have stopped to use jQuery right?!
+            </p>
+
+            <p>
+              One day I started to use Linux and the terminal, now I'm addicted to automate my workflow with Bash
+              Scripts. Now, with Docker and CI/CD knowledge, I could entitle myself as a <em>Full-stack Developer</em>,
+              but I won't do that and I'll call myself as a <strong>Product Infrastructure Developer</strong> instead,
+              which is way cooler.
+            </p>
           </div>
 
           <ul className={`${styles.list}`}>
@@ -42,19 +52,12 @@ const Jobs = ({t}: any) => {
                   </div>
                 </a>
                 <div className={styles['list-item-date']}>
-                  {job.year} - {job.country}
+                  <span>{job.year}</span><span>{job.country}</span>
                 </div>
               </li>
             ))}
           </ul>
         </div>
-
-        <SeeMore
-          props={{
-            url: 'https://www.linkedin.com/in/gabriel--lima/',
-            text: t('jobs.see-more')
-          }}
-        />
       </div>
     </section>
   )

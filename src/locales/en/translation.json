@@ -8,6 +8,7 @@
   "repositories": {
     "title": "Repositories",
     "subtitle": "I’ve finally finished something",
+    "see-more": "I might have more",
     "repos": {
       "pr-fiscal-desc": "A Chrome Extension to help you find patterns in your PR",
       "dale-cli": "One CLI to rule them all! A bunch of daily commands to help your development’s workflow",
@@ -17,7 +18,7 @@
   "jobs": {
     "title": "Places that I’ve worked",
     "subtitle": "From 3 different countries",
-    "see-more": "Check my LinkedIn Profile",
+    "see-more": "Check more details on LinkedIn",
     "job": {
       "software-developer": "Software Developer",
       "full-stack-developer": "Full Stack Developer",

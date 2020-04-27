@@ -35,6 +35,8 @@ body.dark-mode {
   --color-card-border: #353535;
   --color-accent-darker: var(--color-gold-darker);
   --dashed-border-color: var(--color-grey-dark-1);
+  --work-pseudo-color: var(--color-grey-dark-1);
+  --work-list-pseudo-color: var(--color-black);
 }
 
 body.dark-mode img {

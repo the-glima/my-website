@@ -10,7 +10,7 @@
 @media (hover: hover) {
   .link:hover {
     color: var(--color-accent);
-    border-bottom-color: var(--color-accent);
+    border-color: var(--color-accent);
   }
 }
 
