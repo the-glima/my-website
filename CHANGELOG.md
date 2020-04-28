@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/the-glima/my-website/compare/v2.1.0...v2.2.0) (2020-04-28)
+
+
+### Features
+
+* change job component ([98707d7](https://github.com/the-glima/my-website/commit/98707d759b9275c71e491a801f62e0994ef3eb7d))
+
 # [2.1.0](https://github.com/the-glima/my-website/compare/v2.0.1...v2.1.0) (2020-04-23)
 
 
