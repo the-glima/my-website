@@ -82,12 +82,15 @@ jobs:
         with:
           ref: gh-pages
 
+      - name: Remove everything!
+        run: rm rf ./*
+
       - name: Download Version Artifact
         uses: actions/download-artifact@v1
         with:
           name: scripts.artifact
           path: scripts
-
+          
       - name: Get Current Version
         run: |
           VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
