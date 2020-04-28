@@ -18,7 +18,10 @@
     "repos": {
       "pr-fiscal-desc": "A Chrome Extension to help you find patterns in your PR",
       "dale-cli": "One CLI to rule them all! A bunch of daily commands to help your development’s workflow",
-      "dotfiles": "Shell scripts, git and config files to kick off a project/OS from scratch"
+      "website": {
+        "title": "Personal Website",
+        "description": "This one. Yep, you can check the cool stuff that I've used to build it."
+      }
     }
   },
   "work": {

@@ -17,7 +17,10 @@
     "repos": {
        "pr-fiscal-desc": "Una extensión de Chrome para ayudarlo a encontrar patrones en su PR",
        "dale-cli": "Un conjunto de comandos diarios para ayudar al flujo de trabajo de su desarrollo",
-       "dotfiles": "Scripts de Shell, git y archivos de configuración para iniciar un proyecto / OS desde cero"
+       "website": {
+         "title": "Sitio web personal",
+         "description": "Este mismo. Sí, puedes comprobar las cosas geniales que he usado para construirlo."
+       }
      }
   },
   "work": {

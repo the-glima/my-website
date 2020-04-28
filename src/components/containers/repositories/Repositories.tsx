@@ -1,32 +1,13 @@
 import React from 'react'
 import {withNamespaces} from 'react-i18next'
 import styles from './Repositories.module.css'
-import {RepositoryModel} from './RepositoryModel'
+import {RepositoriesData, RepositoryModel} from './RepositoriesData'
 import Headings from '../../shared/headings/Headings'
 import SeeMore from '../../shared/see-more/SeeMore'
 import github from '../../../assets/images/logos/github.svg'
 
 const Repositories = ({t}: any) => {
-  const repositories: RepositoryModel[] = [
-    {
-      icon: '🤖',
-      name: 'PR Fiscal',
-      url: 'https://www.gabriel-lima.com',
-      description: t('repositories.repos.pr-fiscal-desc')
-    },
-    {
-      icon: '🦨',
-      name: 'Dale CLI',
-      url: 'https://www.gabriel-lima.com',
-      description: t('repositories.repos.dale-cli')
-    },
-    {
-      icon: '🔨',
-      name: '.dotfiles',
-      url: 'https://www.gabriel-lima.com',
-      description: t('repositories.repos.dotfiles')
-    }
-  ]
+  const repositoriesData = RepositoriesData(t)
 
   return (
     <section className={`section ${styles['section-repositories']}`}>
@@ -34,7 +15,7 @@ const Repositories = ({t}: any) => {
         <Headings title={t('repositories.title')} subtitle={t('repositories.subtitle')} />
 
         <ul className={`${styles.list}`}>
-          {repositories.map((repository: RepositoryModel, i: number) => (
+          {repositoriesData.map((repository: RepositoryModel, i: number) => (
             <li key={i} className={styles['list-item']}>
               <a className={styles.link} href={repository.url} title={repository.name}>
                 <span className={styles['link-wrapper']}>

@@ -26,15 +26,15 @@ export const SocialData = (t: any): SocialModel[] => [
     title: t('social.titles.linkedin')
   },
   {
-    name: 'Spotify',
-    url: settings.social.spotify.url,
-    scrImage: spotify,
-    title: t('social.titles.spotify')
-  },
-  {
     name: 'Twitter',
     url: settings.social.twitter.url,
     scrImage: twitter,
     title: t('social.titles.twitter')
+  },
+  {
+    name: 'Spotify',
+    url: settings.social.spotify.url,
+    scrImage: spotify,
+    title: t('social.titles.spotify')
   }
 ]
