@@ -3,10 +3,8 @@
     ["@semantic-release/commit-analyzer", {
       "preset": "angular",
       "releaseRules": [
-        {"type": "ci", "release": "patch"},
-        {"type": "build", "release": "patch"},
         {"type": "refactor", "release": "patch"},
-        {"type": "style", "release": "patch"}
+        {"type": "perf", "release": "patch"}
       ],
       "parserOpts": {
         "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", ":rotating_light:"]

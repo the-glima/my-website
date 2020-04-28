@@ -60,10 +60,16 @@ jobs:
           RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
           echo '{ "version": "'${RELEASE_VERSION}'" }' > .release.json
 
-      - name: Upload Version Artifact
+      - name: Upload CNAME to Config Artifact
         uses: actions/upload-artifact@v1
         with:
-          name: release-json.artifact
+          name: config.artifact
+          path: CNAME
+          
+      - name: Upload Release to Config Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: config.artifact
           path: .release.json
 
       - name: Upload Scripts Artifact
@@ -83,7 +89,7 @@ jobs:
           ref: gh-pages
 
       - name: Remove everything!
-        run: rm rf ./*
+        run: rm -rf ./*
 
       - name: Download Version Artifact
         uses: actions/download-artifact@v1
@@ -96,10 +102,10 @@ jobs:
           VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
           echo "::set-env name=CURRENT_VERSION::${VERSION}"
           
-      - name: Download Version Artifact
+      - name: Download Config Artifact
         uses: actions/download-artifact@v1
         with:
-          name: release-json.artifact
+          name: config.artifact
           path: .
 
       - name: Get Release Version
