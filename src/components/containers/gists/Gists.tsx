@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { withNamespaces } from 'react-i18next'
+import React, {useState, useEffect} from 'react'
+import {withNamespaces} from 'react-i18next'
 import styles from './Gists.module.css'
 import Headings from '../../shared/headings/Headings'
 import SeeMore from '../../shared/see-more/SeeMore'
 
-import { GistDOMModel } from './GistsModel'
-import { GistsEffect } from './GistsEffect'
-import { gistsGetLogo } from './GistsGetLogo'
+import {GistDOMModel} from './GistsModel'
+import {GistsEffect} from './GistsEffect'
+import {gistsGetLogo} from './GistsGetLogo'
 
 const Gists = ({t}: any) => {
   const [gists, setGists]: any = useState([])
@@ -17,17 +17,17 @@ const Gists = ({t}: any) => {
   }
 
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       const gistsLocalStorage = GistsEffect.getGistsLocalStorage()
 
       if (!gistsLocalStorage || GistsEffect.shouldSetGistsLocalStorage(gistsLocalStorage)) {
-        const result = { data: await GistsEffect.mapGists() }
+        const result = {data: await GistsEffect.mapGists()}
 
         saveGists(result.data)
       } else {
         setGists(gistsLocalStorage.data)
       }
-    })();
+    })()
   }, [])
 
   return (
