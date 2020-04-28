@@ -1,5 +1,5 @@
 import React from 'react'
-import { Trans, withNamespaces } from 'react-i18next'
+import {Trans, withNamespaces} from 'react-i18next'
 import styles from './Intro.module.css'
 
 import profile from '../../../assets/images/photos/me.jpg'

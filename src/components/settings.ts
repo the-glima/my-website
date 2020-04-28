@@ -2,9 +2,13 @@ export const settings = {
   github: {
     urlParams: {
       url: 'https://api.github.com/users',
-      user: 'the-glima',
-      limit: '8'
+      user: 'the-glima'
     }
+  },
+  gist: {
+    title: 'A cool Gist about something',
+    logo: 'GitHub',
+    limit: 8
   },
   languages: {
     options: [
@@ -24,6 +28,7 @@ export const settings = {
   },
   localStorage: {
     themeKey: 'GABRIEL-LIMA:THEME',
+    gistsKey: 'GABRIEL-LIMA:GISTS',
     languageKey: 'i18nextLng'
   },
   social: {

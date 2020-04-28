@@ -25,8 +25,5 @@ i18n
       prefix: 'GL'
     }
   })
-  .then(() => {
-    console.log(i18n)
-  })
 
 export default i18n

@@ -1,7 +1,7 @@
 import React from 'react'
-import { withNamespaces } from 'react-i18next'
+import {withNamespaces} from 'react-i18next'
 import styles from './Social.module.css'
-import { SocialData, SocialModel } from './SocialData'
+import {SocialData, SocialModel} from './SocialData'
 
 const Social = ({t, props}: any) => {
   const socialData = SocialData(t)
