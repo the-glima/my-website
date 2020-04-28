@@ -12,29 +12,30 @@ const Intro = ({t}: any) => {
     <section className={`section ${styles['section-intro']}`}>
       <div className="section-content">
         <header className={styles.header}>
-          <img 
-            className={styles.picture} 
+          <img
+            className={styles.picture}
             src={profile}
             srcSet={`${profile2x} 2x,${profile3x} 3x, ${profile4x} 4x`}
-            alt="Gabriel Lima" 
+            alt="Gabriel Lima"
           />
 
           <h1 className={`${styles.heading} `}>
             <div className={styles.intro}>{t('intro.greeting')}</div>
             <div className={styles.name}>Gabriel Lima</div>
-            <div className={styles.position}>{t('jobs.job.front-end-developer')}</div>
+            <div className={styles.position}>{t('position.front-end-developer')}</div>
           </h1>
         </header>
 
         <div className={styles['bio-wrapper']}>
-          <p>
+          <p className={styles['punch-line']}>
             <Trans i18nKey="intro.punch-line">I build things for the web and love what I do.</Trans>
           </p>
-          <p>
+          <p className={styles.bio}>
             <Trans i18nKey="intro.bio">
               Mainly focused on
               <strong>Front-end Development</strong> with a good <strong>UI/UX</strong>
-              taste but always trying different things.
+              eye and always trying different things. I speak <strong>JavaScript, CSS and HTML.</strong>
+              and more.
             </Trans>
           </p>
         </div>

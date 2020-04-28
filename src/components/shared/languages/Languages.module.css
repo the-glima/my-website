@@ -27,6 +27,7 @@
     opacity: 1;
   }
 }
+
 .language.active {
   opacity: 1;
   border-color: var(--color-text);

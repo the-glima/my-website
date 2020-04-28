@@ -1,8 +1,14 @@
 {
+  "position": {
+    "software-developer": "Desenvolvedor de Software",
+    "full-stack-developer": "Desenvolvedor Full Stack",
+    "javascript-developer": "Desenvolvedor Javascript",
+    "front-end-developer": "Desenvolvedor Front-end"
+  },
   "intro": {
     "greeting": "Oi, meu nome é",
-    "punch-line": "Eu desenvolvo para a web e amo o que faço.",
-    "bio": "Focado principalmente em <1>Desenvolvimento Front-end</1> com uma boa noção de <3>UI/UX</3>, mas sempre testando a aprendendo coisas diferentes."
+    "punch-line": "Eu desenvolvo para a web e amo o que faço",
+    "bio": "Focado principalmente em <1>Desenvolvimento Front-end</1> com uma boa noção de <3>UI/UX</3>, mas sempre testando a aprendendo coisas diferentes. Experto em <5>JavaScript, CSS, HTML</5> e mais."
   },
   "repositories": {
     "title": "Repositórios",
@@ -10,19 +16,21 @@
     "repos": {
       "pr-fiscal-desc": "Uma extensão para Chrome para te ajudar achar padrões em suas PRs",
       "dale-cli": "Grupo de commandos padrões para usar no seu desenvolvimento diário",
-      "dotfiles": "Scripts de Shell, configurações de git e arquivos para inicializar um projeto/OS"
+      "website": {
+        "title": "Site Pessoal",
+        "description": "Este mesmo. Sim, você pode conferir as coisas legais que eu usei para criá-lo."
+      }
     }
   },
-  "jobs": {
+  "work": {
     "title": "Lugares que trabalhei",
     "subtitle": "Em 3 países diferentes",
-    "see-more": "Veja meu perfil no LinkedIn",
-    "job": {
-      "software-developer": "Desenvolvedor de Software",
-      "full-stack-developer": "Desenvolvedor Full Stack",
-      "javascript-developer": "Desenvolvedor Javascript",
-      "front-end-developer": "Desenvolvedor Front-end"
-    }
+    "journey": {
+      "intro": "Comecei a trabalhar com desenvolvimento web em 2011, estudei Produção Multimídia e sempre gostei de design + código. Mas, como não sou nem de longe um designer (veja o design deste site), me tornei um <1>Desenvolvedor Front-end</1>.",
+      "body": "<0>CSS e HTML</0> são meus companheiros, mas com <1>JavaScript</1> que a verdadeira paixão floresceu no meu coração. Depois vieram as NodeJS APIs, RESTful e o desenvolvimento de Back-end ficou mais perto do que nunca. Os frameworks e as bibliotecas de teste em JavaScript começaram a aparecer quase que mensalmente, o que cirou a oportunidade de criar UI componentes melhores e mais interativos (o que mais amo), também paramos de usar o jQuery certo?!",
+      "conclusion": "Um dia comecei a usar Linux e o terminal, agora sou viciado em automatizar meu fluxo de trabalho com Bash Scripts. Agora, com o conhecimento do Docker e CI/CD, poderia me intitular um <1>Desenvolvedor Full- Stack</1>, mas não farei isso e vou me chamar também de <strong>Desenvolvedor de Infrastructura do Produto</strong>, o que é muito mais legal. "
+    },
+    "see-more": "Veja meu perfil no LinkedIn"
   },
   "gists": {
     "title": "Últimos Gists",

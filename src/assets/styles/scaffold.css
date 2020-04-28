@@ -30,8 +30,13 @@ body.dark-mode {
   --color-grey-dark: var(--color-black-full);
   --color-accent: var(--color-gold);
   --color-accent-lighter: var(--color-grey-dark-1);
-  --color-card-text: var(--color-black);
+  --color-card-text: var(--color-white);
+  --color-card-background: rgb(59, 59, 59);
+  --color-card-border: #353535;
   --color-accent-darker: var(--color-gold-darker);
+  --dashed-border-color: var(--color-grey-dark-1);
+  --work-pseudo-color: var(--color-grey-dark-1);
+  --work-list-pseudo-color: var(--color-black);
 }
 
 body.dark-mode img {
@@ -43,12 +48,13 @@ body.dark-mode img {
   body.dark-mode img:hover { opacity: 1; }
 }
 
-body.dark-mode .social-logo {
+body.dark-mode .social-logo,
+body.dark-mode .dark-logo {
   filter: invert(1);
 }
 
 .section { 
-  padding: 2rem 1rem; 
+  padding: 2rem 1rem 2.5rem;
   transition: background-color .2s ease-out;
 }
 
@@ -59,5 +65,5 @@ body.dark-mode .social-logo {
 
 
 @media only screen and (min-width: 576px) {
-  .section { padding: 2rem; }
+  .section { padding: 2rem 2rem 2.5rem; }
 }

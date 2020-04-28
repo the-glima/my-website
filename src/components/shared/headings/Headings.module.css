@@ -1,26 +1,28 @@
+@value breakpoint-md from '../../../assets/styles/variables.css';
+
 .header { text-align: center; }
 
 .title {
-  font-size: 1.6rem;
-  line-height: 2.4rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 600;
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  line-height: 1.8rem;
+  font-size: 1.05rem;
+  line-height: 1.76rem;
   font-weight: 400;
 }
 
 
-@media only screen and (min-width: 576px) {
+@media (min-width: breakpoint-sm) {
   .title {
-    font-size: 1.8rem;
-    line-height: 2.6rem;
+    font-size: 1.7rem;
+    line-height: 2.1rem;
   }
   
   .subtitle {
-    font-size: 1.3rem;
-    line-height: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.9rem;
   }
 }

@@ -1,3 +1,5 @@
+@value breakpoint-md from '../../../assets/styles/variables.css';
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -37,7 +39,7 @@
   font-style: italic;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: breakpoint-md) {
   .top-wrapper,
   .bottom-wrapper { 
     flex-direction: row;

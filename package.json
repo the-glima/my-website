@@ -66,7 +66,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:local": "build && serve -s build",
+    "build:local": "yarn build && serve -s build",
     "test": "cross-env CI=true react-scripts test --passWithNoTests --env=jsdom",
     "test:watch": "react-scripts test",
     "eject": "react-scripts eject",

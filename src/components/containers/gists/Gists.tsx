@@ -5,19 +5,29 @@ import Headings from '../../shared/headings/Headings'
 import SeeMore from '../../shared/see-more/SeeMore'
 
 import {GistDOMModel} from './GistsModel'
-import {GistsService} from './GistsService'
+import {GistsEffect} from './GistsEffect'
 import {gistsGetLogo} from './GistsGetLogo'
 
 const Gists = ({t}: any) => {
   const [gists, setGists]: any = useState([])
 
-  useEffect(() => {
-    const fetchGists = async () => {
-      const result = await GistsService.mapGists()
-      setGists(result)
-    }
+  const saveGists = (state: any) => {
+    GistsEffect.setGistsLocalStorage(state)
+    setGists(state)
+  }
 
-    fetchGists()
+  useEffect(() => {
+    ;(async () => {
+      const gistsLocalStorage = GistsEffect.getGistsLocalStorage()
+
+      if (!gistsLocalStorage || GistsEffect.shouldSetGistsLocalStorage(gistsLocalStorage)) {
+        const result = {data: await GistsEffect.mapGists()}
+
+        saveGists(result.data)
+      } else {
+        setGists(gistsLocalStorage.data)
+      }
+    })()
   }, [])
 
   return (

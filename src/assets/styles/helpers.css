@@ -3,14 +3,14 @@
 .link {
   padding-bottom: .1rem;
   color: var(--color-text);
-  border-bottom: 1px dashed var(--color-accent-lighter);
+  border-bottom: var(--dashed-border) var(--dashed-border-color);
   transition: var(--transition);
 }
 
 @media (hover: hover) {
   .link:hover {
     color: var(--color-accent);
-    border-bottom-color: var(--color-accent);
+    border-color: var(--color-accent);
   }
 }
 
@@ -19,8 +19,8 @@
 .card {
   padding: 1rem;
   color: var(--color-card-text);
-  background-color: var(--color-white);
-  border: 3px solid transparent;
+  background: var(--color-card-background);
+  border: 3px solid var(--color-card-border);
   box-shadow: var(--box-shadow) var(--box-shadow-color);
   transition: var(--transition);
 }
@@ -30,6 +30,6 @@
     color: var(--color-card-text);
     border-color: var(--color-accent);
     box-shadow: 5px 5px 5px var(--color-grey-dark);
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
   }
 }
