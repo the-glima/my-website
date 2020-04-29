@@ -3,6 +3,11 @@
 
 .section-gists { background-color: var(--color-bg-section); }
 
+.error {
+  padding: 4rem 0;
+  text-align: center;
+}
+
 .list {
   display: grid;
   grid-template-columns: 1fr;

@@ -21,9 +21,9 @@ const Gists = ({t}: any) => {
       const gistsLocalStorage = GistsEffect.getGistsLocalStorage()
 
       if (!gistsLocalStorage || GistsEffect.shouldSetGistsLocalStorage(gistsLocalStorage)) {
-        const result = {data: await GistsEffect.mapGists()}
+        const data = await GistsEffect.mapGists()
 
-        saveGists(result.data)
+        data.length ? saveGists({ data }) : setGists([])
       } else {
         setGists(gistsLocalStorage.data)
       }
@@ -35,16 +35,22 @@ const Gists = ({t}: any) => {
       <div className="section-content">
         <Headings title={t('gists.title')} subtitle={t('gists.subtitle')} />
 
-        <ul className={styles.list}>
-          {gists.map((gist: GistDOMModel, i: number) => (
-            <li key={i} className={`${styles['list-item']}`}>
-              <img className={styles.logo} src={gistsGetLogo(gist.language.toLowerCase())?.src} alt={gist.language} />
-              <a className={styles.link} href={gist.url} title={`Check this gist: ${gist.title}`}>
-                {gist.title}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {!gists.data &&
+          <p className={styles.error}><span role="img" aria-label="Confused Face">😕</span> {t('error.message')}</p>
+        }
+
+        {gists.data && gists.data.length > 0 &&
+          <ul className={styles.list}>
+            {gists.data.map((gist: GistDOMModel, i: number) => (
+              <li key={i} className={`${styles['list-item']}`}>
+                <img className={styles.logo} src={gistsGetLogo(gist.language.toLowerCase())?.src} alt={gist.language} />
+                <a className={styles.link} href={gist.url} title={`Check this gist: ${gist.title}`}>
+                  {gist.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        }
 
         <SeeMore
           props={{

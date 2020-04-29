@@ -53,5 +53,8 @@
   "footer": {
     "copyright": "All rights reserved",
     "quote": "Made with a lot of <1>☕</1> during the <3>COVID-19 quarantine</3>."
+  },
+  "error": {
+    "message": "Sorry, something went wrong! Please, try again later."
   }
 }

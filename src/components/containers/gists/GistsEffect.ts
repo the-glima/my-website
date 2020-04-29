@@ -8,7 +8,7 @@ export const GistsEffect = {
   },
 
   getUrl: (params = settings.github.urlParams): string => {
-    const url = `${params.url}/${params.user}/gists?per_page`
+    const url = `${params.url}/${params.user}/gissts?per_page`
 
     return isDevelopment() ? `${url}=100` : `${url}=${settings.gist.limit}`
   },
@@ -49,12 +49,14 @@ export const GistsEffect = {
   },
 
   setGistsLocalStorage: async function (gists: GistDOMModel[]): Promise<void> {
-    const object = {
-      date: Date.now(),
-      data: gists
-    }
+    if (gists) {
+      const object = {
+        date: Date.now(),
+        data: gists
+      }
 
-    window.localStorage.setItem(`${settings.localStorage.gistsKey}`, JSON.stringify(object))
+      window.localStorage.setItem(`${settings.localStorage.gistsKey}`, JSON.stringify(object))
+    }
   },
 
   getGistsLocalStorage: function (): any {
