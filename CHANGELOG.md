@@ -1,5 +1,7 @@
 ## [2.2.1](https://github.com/the-glima/my-website/compare/v2.2.0...v2.2.1) (2020-04-29)
 
+## [2.2.1](https://github.com/the-glima/my-website/compare/v2.2.0...v2.2.1) (2020-04-29)
+
 # [2.2.0](https://github.com/the-glima/my-website/compare/v2.1.0...v2.2.0) (2020-04-28)
 
 
