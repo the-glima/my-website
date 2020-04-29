@@ -23,7 +23,7 @@ const Gists = ({t}: any) => {
       if (!gistsLocalStorage || GistsEffect.shouldSetGistsLocalStorage(gistsLocalStorage)) {
         const data = await GistsEffect.mapGists()
 
-        data.length ? saveGists({ data }) : setGists([])
+        data.length ? saveGists({data}) : setGists([])
       } else {
         setGists(gistsLocalStorage.data)
       }
@@ -35,11 +35,16 @@ const Gists = ({t}: any) => {
       <div className="section-content">
         <Headings title={t('gists.title')} subtitle={t('gists.subtitle')} />
 
-        {!gists.data &&
-          <p className={styles.error}><span role="img" aria-label="Confused Face">😕</span> {t('error.message')}</p>
-        }
+        {!gists.data && (
+          <p className={styles.error}>
+            <span role="img" aria-label="Confused Face">
+              😕
+            </span>{' '}
+            {t('error.message')}
+          </p>
+        )}
 
-        {gists.data && gists.data.length > 0 &&
+        {gists.data && gists.data.length > 0 && (
           <ul className={styles.list}>
             {gists.data.map((gist: GistDOMModel, i: number) => (
               <li key={i} className={`${styles['list-item']}`}>
@@ -50,7 +55,7 @@ const Gists = ({t}: any) => {
               </li>
             ))}
           </ul>
-        }
+        )}
 
         <SeeMore
           props={{

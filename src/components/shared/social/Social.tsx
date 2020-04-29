@@ -11,7 +11,7 @@ const Social = ({t, props}: any) => {
       {socialData.map((social: SocialModel, i: number) => (
         <li key={i}>
           <a className={styles.link} href={social.url} title={social.title}>
-            <img className={`${styles.social} social-logo`} src={social.scrImage} alt={`${social.name} Logo`} />
+            <img className={`${styles.social} dark-logo`} src={social.scrImage} alt={`${social.name} Logo`} />
           </a>
         </li>
       ))}

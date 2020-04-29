@@ -47,7 +47,6 @@ body.dark-mode img {
   body.dark-mode img:hover { opacity: 1; }
 }
 
-body.dark-mode .social-logo,
 body.dark-mode .dark-logo {
   filter: invert(1);
 }

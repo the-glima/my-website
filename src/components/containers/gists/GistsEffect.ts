@@ -8,7 +8,7 @@ export const GistsEffect = {
   },
 
   getUrl: (params = settings.github.urlParams): string => {
-    const url = `${params.url}/${params.user}/gissts?per_page`
+    const url = `${params.url}/${params.user}/gists?per_page`
 
     return isDevelopment() ? `${url}=100` : `${url}=${settings.gist.limit}`
   },

@@ -20,7 +20,7 @@ const Work = ({t}: any) => {
             <h4 className={styles['about-title']}>My journey</h4>
             <p>
               <Trans i18nKey="work.journey.intro">
-                I started working with web development in 2011, studied Web/Multimedia, and always loved design + code.
+                I started working with web development in 2011, studied Web and Multimedia, and always loved design + code.
                 But since I'm not as close as a Designer (look at the design of this website) I've become a{' '}
                 <strong>Front-end Developer</strong>.
               </Trans>
@@ -28,12 +28,12 @@ const Work = ({t}: any) => {
 
             <a className={styles.ad} href="https://www.linkedin.com/in/gabriel--lima/" title="">
               <em>{t('work.see-more')}</em>
-              <img className={styles.linkedin} src={linkedin} alt="LinkedIn Logo" />
+              <img className={`${styles.linkedin} dark-logo`} src={linkedin} alt="LinkedIn Logo" />
             </a>
 
             <p>
               <Trans i18nKey="work.journey.body">
-                <strong>CSS and HTML</strong> were my companions but with <strong>JavaScript</strong> that the real
+                <strong>CSS and HTML</strong> are my companions but with <strong>JavaScript</strong> that the real
                 passion flourishes in my heart. Then came NodeJS and RESTful APIs and the Back-end Development was
                 closer than ever. JS's frameworks and testing libraries started to pop out almost monthly which made the
                 opportunity to create better and rich UI components (my joy), also we have stopped to use jQuery right?!
