@@ -49,12 +49,14 @@ export const GistsEffect = {
   },
 
   setGistsLocalStorage: async function (gists: GistDOMModel[]): Promise<void> {
-    const object = {
-      date: Date.now(),
-      data: gists
-    }
+    if (gists) {
+      const object = {
+        date: Date.now(),
+        data: gists
+      }
 
-    window.localStorage.setItem(`${settings.localStorage.gistsKey}`, JSON.stringify(object))
+      window.localStorage.setItem(`${settings.localStorage.gistsKey}`, JSON.stringify(object))
+    }
   },
 
   getGistsLocalStorage: function (): any {

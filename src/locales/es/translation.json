@@ -28,8 +28,8 @@
     "subtitle": "De 3 países diferentes",
     "see-more": "Mira mi perfil en LinkedIn",
     "journey": {
-      "intro": "Comencé a trabajar con el desarrollo web en 2011, estudié Web/ Multimedia, y siempre me encantó el diseño + código. Pero como ni siquiera soy Diseñador (mira el diseño de esta página web) me he convertido un <1>Desarrollador Front-end</1>",
-      "body": "<0>CSS y HTML </0> son mis compañeros pero con <1>JavaScript</1> que la verdadera pasión floreció en mi corazón. Luego vinieron NodeJS, API RESTful y el desarrollo de Back-end se quedo más cerca que nunca. Los frameworks y las bibliotecas de test en JavaScript comenzaron a aparecer casi mensualmente, lo que creó la oportunidad de crear componentes de interfaz de usuario mejores y más inteactivos (para mi alegría), también hemos dejado de usar jQuery, ¿verdad?",
+      "intro": "Comencé a trabajar con el desarrollo web en 2011, estudié Web y Multimedia, y siempre me encantó el diseño + código. Pero como ni siquiera soy Diseñador (mira el diseño de esta página web) me he convertido un <1>Desarrollador Front-end</1>",
+      "body": "<0>CSS y HTML </0> son mis compañeros pero con <2>JavaScript</2> que la verdadera pasión floreció en mi corazón. Luego vinieron NodeJS, API RESTful y el desarrollo de Back-end se quedo más cerca que nunca. Los frameworks y las bibliotecas de test en JavaScript comenzaron a aparecer casi mensualmente, lo que creó la oportunidad de crear componentes de interfaz de usuario mejores y más inteactivos (para mi alegría), también hemos dejado de usar jQuery, ¿verdad?",
       "conclusion": "Un día comencé a usar Linux y el terminal, ahora soy adicto a automatizar mi flujo de trabajo con Bash Scripts. Ahora, con el conocimiento de Docker y CI/ CD, podría darme el derecho de ser <1>Desarrollador Full Stack</1>, pero no haré eso y en cambio me llamaré a mí mismo también como <strong>Desarrollador de Infraestructura de Producto</strong>, lo cual es mucho más genial"
     }
   },
@@ -52,5 +52,8 @@
   "footer": {
     "copyright": "Todos los derechos reservados",
     "quote": "Hecho con una gran cantidad de <1> ☕ </1> durante la <3>cuarentena COVID-19</3>."
+  },
+  "error": {
+    "message": "¡Lo siento, algo salió mal! Por favor, intente nuevamente más tarde."
   }
 }
