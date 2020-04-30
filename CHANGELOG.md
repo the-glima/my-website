@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/the-glima/my-website/compare/v2.2.1...v2.3.0) (2020-04-30)
+
+
+### Features
+
+* add scroll up ([c17a9ff](https://github.com/the-glima/my-website/commit/c17a9ff2768db3a43c4e13378f5309b781472e99))
+
 ## [2.2.1](https://github.com/the-glima/my-website/compare/v2.2.0...v2.2.1) (2020-04-29)
 
 ## [2.2.1](https://github.com/the-glima/my-website/compare/v2.2.0...v2.2.1) (2020-04-29)
