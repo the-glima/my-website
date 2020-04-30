@@ -1,9 +1,10 @@
-@value breakpoint-lg from '../../../assets/styles/variables.css';
+@value breakpoint-md from '../../../assets/styles/variables.css';
 
 .button {
   display: flex;
   justify-content: center;
   position: relative;
+  margin-top: 2rem;
   height: 32px;
   width: 32px;
   overflow: hidden;
@@ -32,6 +33,6 @@
   100% { transform: translateY(-70px); }
 }
 
-@media (min-width: breakpoint-lg) {
-
+@media (min-width: breakpoint-md) {
+  .button { margin-top: 0; }
 }

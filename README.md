@@ -1,3 +1,5 @@
+![CI CD](https://github.com/the-glima/my-website/workflows/CI%20CD/badge.svg)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
