@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ master ]
   repository_dispatch:
-    types: [manual-trigger]
+    types: [ci:action-trigger]
 
 jobs:
   build:

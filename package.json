@@ -73,6 +73,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,js}\"",
     "lint": "eslint src/**/*.{ts,tsx,js}",
     "release": "semantic-release",
-    "release:local": "semantic-release --no-ci --dry-run"
+    "release:local": "semantic-release --no-ci --dry-run",
+    "ci:action-trigger": "bash ./scripts/trigger-github-action.sh"
   }
 }
