@@ -4,6 +4,7 @@ import styles from './Footer.module.css'
 import Social from '../../shared/social/Social'
 import Languages from '../../shared/languages/Languages'
 import SetTheme from '../../shared/set-theme/SetTheme'
+import ScrollUp from '../../shared/scroll-up/ScrollUp'
 
 const Footer = ({t}: any) => {
   return (
@@ -14,6 +15,7 @@ const Footer = ({t}: any) => {
           <div className={styles.actions}>
             <Social props={{className: styles.social}} />
             <SetTheme />
+            <ScrollUp />
           </div>
         </div>
         <div className={styles['bottom-wrapper']}>

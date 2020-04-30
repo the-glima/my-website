@@ -54,5 +54,8 @@
   },
   "error": {
     "message": "Desculpe, algo deu errado! Tente novamente mais tarde."
+  },
+  "scroll-up": {
+    "title": "Vá para o topo!"
   }
 }
