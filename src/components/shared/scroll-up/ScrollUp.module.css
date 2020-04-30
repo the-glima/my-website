@@ -1,0 +1,37 @@
+@value breakpoint-lg from '../../../assets/styles/variables.css';
+
+.button {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 32px;
+  width: 32px;
+  overflow: hidden;
+  border: 3px solid var(--color-text);
+  border-radius: 100px;
+  transition: var(--transition);
+}
+
+.button:hover { border-color: var(--color-accent); }
+
+.button:active { top: 1px }
+
+.arrow {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  transition: var(--transition);
+}
+
+.button:hover .arrow { 
+  animation: scroll-up 1s infinite cubic-bezier(0.0, 0.6, 1.0, 0.4);
+}
+
+@keyframes scroll-up {
+  0%   { transform: translateY(40px); }
+  100% { transform: translateY(-70px); }
+}
+
+@media (min-width: breakpoint-lg) {
+
+}

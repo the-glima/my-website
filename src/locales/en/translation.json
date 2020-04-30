@@ -56,5 +56,8 @@
   },
   "error": {
     "message": "Sorry, something went wrong! Please, try again later."
+  },
+  "scroll-up": {
+    "title": "Go to the top!"
   }
 }

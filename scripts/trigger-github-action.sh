@@ -3,7 +3,8 @@
 # Manually Trigger A GitHub Actions Workflow: 
 # https://goobar.io/2019/12/07/manually-trigger-a-github-actions-workflow/
 
-GITHUB_TOKEN=${1:-$GITHUB_TOKEN}
+# GITHUB_TOKEN=${1:-$GITHUB_TOKEN}
+GITHUB_TOKEN=$(grep GITHUB_TOKEN .env | cut -d '=' -f 2-)
 
 function triggerGithubAction() {
   curl -H "Accept: application/vnd.github.everest-preview+json" \
