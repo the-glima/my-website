@@ -2,6 +2,8 @@
 
 .header { text-align: center; }
 
+.anchor { cursor: initial; }
+
 .title {
   font-size: 1.5rem;
   line-height: 2rem;

@@ -5,6 +5,7 @@ html {
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -61,7 +62,12 @@ body.dark-mode .dark-logo {
   margin: 0 auto;
 }
 
-
 @media only screen and (min-width: 576px) {
   .section { padding: 2rem 2rem 2.5rem; }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
