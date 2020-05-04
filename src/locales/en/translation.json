@@ -1,15 +1,27 @@
 {
   "position": {
-    "software-developer": "Software Developer",
-    "full-stack-developer": "Full Stack Developer",
+    "front-end-developer": "Front-end Developer",
     "javascript-developer": "Javascript Developer",
-    "front-end-developer": "Front-end Developer"
+    "full-stack-developer": "Full Stack Developer",
+    "software-developer": "Software Developer"
   },
   "intro": {
     "greeting": "Hi, my name is",
     "name": "Gabriel Lima",
     "punch-line": "I build things for the web and love what I do",
-    "bio": "Mainly focused on <1>Front-end Development</1> with a good <3>UI/UX</3> eye and always trying different things. I speak 3 languages and also <5>JavaScript</5>."
+    "bio": "Mainly focused on <1>Front-end Development</1> with a good <3>UI/UX</3> eye and always trying different things.",
+    "default": {
+      "bio-end": "I speak 3 languages but also JavaScript."
+    },
+    "dad": {
+      "bio-end": "Between coding I do change diapers."
+    },
+    "phone": {
+      "bio-end": "I think we don't have enough CLIs yet."
+    },
+    "old": {
+      "bio-end": "Remember when we supported IE6?!"
+    }
   },
   "repositories": {
     "title": "Repositories",

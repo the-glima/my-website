@@ -1,28 +1,60 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {Trans, withNamespaces} from 'react-i18next'
 import styles from './Intro.module.css'
-
-import profile from '../../../assets/images/photos/me.jpg'
-import profile2x from '../../../assets/images/photos/me@2x.jpg'
-import profile3x from '../../../assets/images/photos/me@3x.jpg'
-import profile4x from '../../../assets/images/photos/me@4x.jpg'
+import {IntroData} from './IntroData'
+import {IntroEffect} from './IntroEffect'
 
 const Intro = ({t}: any) => {
+  const introData = IntroData(t)
+  const personalityDefault = introData[0]
+
+  const [count, setCount]: any = useState(0)
+  const [personality, setPersonality]: any = useState(personalityDefault)
+
+  const clickPicture = () => {
+    const limit = introData.length - 1;
+
+    count < limit ? setCount(count + 1) : setCount(0)
+  }
+
+  const setAccent = () => {
+    const personality = introData[count]
+
+    IntroEffect.setAccent(personality.accent)
+    setPersonality(personality)
+  }
+
+  const toggleAccentClass = (accent: string) => {
+    document.body.className = document.body.className.replace(/accent-\w+/g, '')
+    document.body.classList.add(`accent-${accent}`)
+  }
+
+  useEffect(() => { 
+    const { accent } = introData[count]
+
+    setAccent()
+    toggleAccentClass(accent)
+  }, [count])
+
   return (
     <section className={`section ${styles['section-intro']}`}>
       <div className="section-content">
         <header className={styles.header}>
-          <img
-            className={styles.picture}
-            src={profile}
-            srcSet={`${profile2x} 2x,${profile3x} 3x, ${profile4x} 4x`}
-            alt="Gabriel Lima"
-          />
+          <div 
+            className={styles.circle}
+            onClick={clickPicture}>
+            <img
+              className={styles.picture}
+              src={personality.picture}
+              alt="Gabriel Lima"
+              title="Click Me"
+            />
+          </div>
 
           <h1 className={`${styles.heading} `}>
             <div className={styles.intro}>{t('intro.greeting')}</div>
             <div className={styles.name}>Gabriel Lima</div>
-            <div className={styles.position}>{t('position.front-end-developer')}</div>
+            <div className={`${styles.position}`}>{personality.position}</div>
           </h1>
         </header>
 
@@ -34,9 +66,8 @@ const Intro = ({t}: any) => {
             <Trans i18nKey="intro.bio">
               Mainly focused on
               <strong>Front-end Development</strong> with a good <strong>UI/UX</strong>
-              eye and always trying different things. I speak <strong>JavaScript, CSS and HTML.</strong>
-              and more.
-            </Trans>
+              eye and always trying different things.
+            </Trans> <strong><em className={styles['personality-bio']}>{personality.bio}</em></strong>
           </p>
         </div>
       </div>

@@ -44,6 +44,35 @@ body.dark-mode img {
   transition: opacity var(--transition);
 }
 
+/* Personalities Accent Color */
+body.accent-red {
+  --color-accent: #f65e5e;
+}
+
+body.accent-purple {
+  --color-accent: #7B4DA7;
+}
+
+body.dark-mode.accent-purple {
+  --color-accent: #ba33f8;
+}
+
+body.accent-cyan {
+  --color-accent: #4da39d;
+}
+
+body.dark-mode.accent-cyan {
+  --color-accent: #2dbadd;
+}
+
+body.accent-green {
+  --color-accent: #7eda5c;
+}
+
+body.dark-mode.accent-green {
+  --color-accent: #9fdd2d;
+}
+  
 @media (hover: hover) {
   body.dark-mode img:hover { opacity: 1; }
 }
