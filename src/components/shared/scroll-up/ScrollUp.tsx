@@ -4,11 +4,12 @@ import styles from './ScrollUp.module.css'
 
 import arrowUp from '../../../assets/images/icons/arrow-up.svg'
 
-const ScrollUp = ({ t }: any) => {
-  const scrollTop = () => window.scroll({
-    top: 0,
-    behavior: 'smooth'
-  })
+const ScrollUp = ({t}: any) => {
+  const scrollTop = () =>
+    window.scroll({
+      top: 0,
+      behavior: 'smooth'
+    })
 
   return (
     <button className={styles.button} onClick={scrollTop} title={t('scroll-up.title')}>

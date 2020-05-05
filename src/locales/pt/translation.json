@@ -8,11 +8,23 @@
   "intro": {
     "greeting": "Oi, meu nome é",
     "punch-line": "Eu desenvolvo para a web e amo o que faço",
-    "bio": "Focado principalmente em <1>Desenvolvimento Front-end</1> com uma boa noção de <3>UI/UX</3>, mas sempre testando a aprendendo coisas diferentes. Falo 3 idiomas e também <5>JavaScript</5>."
+    "bio": "Focado principalmente em <1>Desenvolvimento Front-end</1> com uma boa noção de <3>UI/UX</3>, mas sempre testando a aprendendo coisas diferentes.",
+    "default": {
+      "bio-end": "Falo 3 idiomas e também JavaScript."
+    },
+    "phone": {
+      "bio-end": "Precisamos de mais JS Frameworks!"
+    },
+    "dad": {
+      "bio-end": "Outra habilidade Full-stack: trocar fraldas."
+    },
+    "old": {
+      "bio-end": "Lembra quando a gente dava suporte ao IE6?!"
+    }
   },
   "repositories": {
     "title": "Repositórios",
-    "subtitle": "Finalmente terminei alguma coisa",
+    "subtitle": "Alguns projetos que eu finalmente terminei",
     "repos": {
       "pr-fiscal-desc": "Uma extensão para Chrome para te ajudar achar padrões em suas PRs",
       "dale-cli": "Grupo de commandos padrões para usar no seu desenvolvimento diário",
@@ -24,7 +36,7 @@
   },
   "work": {
     "title": "Lugares que trabalhei",
-    "subtitle": "Em 3 países diferentes",
+    "subtitle": "Conheci pessoas incríveis e habilidosas",
     "journey": {
       "intro": "Comecei a trabalhar com desenvolvimento web em 2011, estudei Produção Multimídia e sempre gostei de design + código. Mas, como não sou nem de longe um designer (veja o design deste site), me tornei um <1>Desenvolvedor Front-end</1>.",
       "body": "<0>CSS e HTML</0> são meus companheiros, mas com <2>JavaScript</2> que a verdadeira paixão floresceu no meu coração. Depois vieram as NodeJS APIs, RESTful e o desenvolvimento de Back-end ficou mais perto do que nunca. Os frameworks e as bibliotecas de teste em JavaScript começaram a aparecer quase que mensalmente, o que cirou a oportunidade de criar UI componentes melhores e mais interativos (o que mais amo), também paramos de usar o jQuery certo?!",
