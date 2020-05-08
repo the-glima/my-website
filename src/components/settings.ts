@@ -45,5 +45,8 @@ export const settings = {
     twitter: {
       url: 'https://twitter.com/__glima'
     }
+  },
+  theme: {
+    darkModeClassName: 'dark-mode'
   }
 }

@@ -1,12 +1,17 @@
 import React, {useState, useEffect} from 'react'
 import {Trans, withNamespaces} from 'react-i18next'
+import { useDispatch, useSelector } from 'react-redux';
+
 import styles from './Intro.module.css'
 import {IntroData} from './IntroData'
+import * as actions from './IntroActions'
 
 const Intro = ({t}: any) => {
   const introData = IntroData(t)
+  const dispatch = useDispatch()
   const [count, setCount]: any = useState(0)
-  const [personality, setPersonality]: any = useState(introData[0])
+  const [personality, setPersonality]: any = useState(introData)
+  const languagesState = useSelector((state: any) => state.languages)
 
   const clickPicture = () => {
     const limit = introData.length - 1
@@ -24,7 +29,9 @@ const Intro = ({t}: any) => {
 
     setPersonality(personality)
     toggleAccentClass(personality.accent)
-  }, [count])
+
+    dispatch(actions.setPersonality(personality))
+  }, [count, languagesState])
 
   return (
     <section className={`section ${styles['section-intro']}`}>

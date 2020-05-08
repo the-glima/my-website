@@ -45,7 +45,7 @@ body.dark-mode img {
 }
 
 /* Personalities Accent Color */
-body.accent-red {
+body.accent-orange {
   --color-accent: #f65e5e;
 }
 

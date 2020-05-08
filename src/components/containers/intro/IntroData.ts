@@ -1,6 +1,6 @@
-import phone from '../../../assets/images/photos/phone.jpg'
-import dad from '../../../assets/images/photos/dad.jpg'
 import husband from '../../../assets/images/photos/husband.jpg'
+import headphone from '../../../assets/images/photos/phone.jpg'
+import dad from '../../../assets/images/photos/dad.jpg'
 import old from '../../../assets/images/photos/old.jpg'
 
 export interface IntroModel {
@@ -17,13 +17,13 @@ export const IntroData = (t: any): IntroModel[] => [
     picture: husband,
     position: t('position.front-end-developer'),
     bio: t('intro.default.bio-end'),
-    accent: 'red'
+    accent: 'orange'
   },
   {
-    name: 'phone',
-    picture: phone,
+    name: 'headphone',
+    picture: headphone,
     position: t('position.javascript-developer'),
-    bio: t('intro.phone.bio-end'),
+    bio: t('intro.headphone.bio-end'),
     accent: 'purple'
   },
   {

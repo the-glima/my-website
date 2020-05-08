@@ -7,6 +7,11 @@
   box-shadow: var(--box-shadow) var(--box-shadow-color);
 }
 
+.button-light {
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
 @media (hover: hover) {
   .button:hover {
     position: relative;
@@ -18,17 +23,9 @@
   
   .button:active {
     box-shadow: inset 2px 2px 2px var(--color-black);
-    background-color: var(--color-accent-darker);
+    background-color: var(--color-accent);
   }
-}
 
-
-.button-light {
-  color: var(--color-black);
-  background-color: var(--color-white);
-}
-
-@media (hover: hover) {
   .button-light:active {
     box-shadow: inset 2px 2px 2px var(--color-black-full);
   }
