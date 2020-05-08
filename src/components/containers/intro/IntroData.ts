@@ -8,7 +8,7 @@ export interface IntroModel {
   picture: any
   position: any
   bio: any
-  accent: string
+  color: string
 }
 
 export const IntroData = (t: any): IntroModel[] => [
@@ -17,27 +17,27 @@ export const IntroData = (t: any): IntroModel[] => [
     picture: husband,
     position: t('position.front-end-developer'),
     bio: t('intro.default.bio-end'),
-    accent: 'orange'
+    color: 'orange'
   },
   {
     name: 'headphone',
     picture: headphone,
     position: t('position.javascript-developer'),
     bio: t('intro.headphone.bio-end'),
-    accent: 'purple'
+    color: 'purple'
   },
   {
     name: 'dad',
     picture: dad,
     position: t('position.full-stack-developer'),
     bio: t('intro.dad.bio-end'),
-    accent: 'cyan'
+    color: 'cyan'
   },
   {
     name: 'old',
     picture: old,
     position: t('position.software-developer'),
     bio: t('intro.old.bio-end'),
-    accent: 'green'
+    color: 'green'
   }
 ]

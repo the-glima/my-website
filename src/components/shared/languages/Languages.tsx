@@ -1,14 +1,14 @@
 import React from 'react'
-import { useDispatch, useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux'
 import {withNamespaces} from 'react-i18next'
 import i18n from '../../../i18n'
 import styles from './Languages.module.css'
 import {settings} from '../../settings'
-import { setLanguage } from './LanguagesActions';
+import {setLanguage} from './LanguagesActions'
 
 const Languages = (props: any) => {
   const dispatch = useDispatch()
-  const { langKey } = useSelector((state: any) => state.language)
+  const {langKey} = useSelector((state: any) => state.language)
   const languagesOptions = Object.values(settings.languages.options)
 
   const changeLanguage = (langKey: string) => {

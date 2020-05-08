@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Trans, withNamespaces} from 'react-i18next'
-import { useDispatch, useSelector } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux'
 
 import styles from './Intro.module.css'
 import {IntroData} from './IntroData'
@@ -10,8 +10,8 @@ const Intro = ({t}: any) => {
   const introData = IntroData(t)
   const dispatch = useDispatch()
   const [count, setCount]: any = useState(0)
-  const [personality, setPersonality]: any = useState(introData)
-  const languagesState = useSelector((state: any) => state.languages)
+  const languageState = useSelector((state: any) => state.language)
+  const personalityState = useSelector((state: any) => state.personality)
 
   const clickPicture = () => {
     const limit = introData.length - 1
@@ -24,27 +24,32 @@ const Intro = ({t}: any) => {
     document.body.classList.add(`accent-${accent}`)
   }
 
-  useEffect(() => {
-    const personality = introData[count]
-
-    setPersonality(personality)
-    toggleAccentClass(personality.accent)
-
+  const togglePersonality = (personality: any) => {
+    toggleAccentClass(personality.color)
     dispatch(actions.setPersonality(personality))
-  }, [count, languagesState])
+  }
+
+  useEffect(() => {
+    togglePersonality(introData[count])
+  }, [count, languageState])
+
+  useEffect(() => {
+    document.body.className = document.body.className.replace(/accent-\w+/g, '')
+    document.body.classList.add(`accent-${personalityState?.data?.color}`)
+  }, [personalityState])
 
   return (
     <section className={`section ${styles['section-intro']}`}>
       <div className="section-content">
         <header className={styles.header}>
           <div className={styles.circle} onClick={clickPicture}>
-            <img className={styles.picture} src={personality.picture} alt="Gabriel Lima" title="Click Me" />
+            <img className={styles.picture} src={personalityState?.data?.picture} alt="Gabriel Lima" title="Click Me" />
           </div>
 
           <h1 className={`${styles.heading} `}>
             <div className={styles.intro}>{t('intro.greeting')}</div>
             <div className={styles.name}>Gabriel Lima</div>
-            <div className={`${styles.position}`}>{personality.position}</div>
+            <div className={`${styles.position}`}>{personalityState?.data?.position}</div>
           </h1>
         </header>
 
@@ -59,7 +64,7 @@ const Intro = ({t}: any) => {
               eye and always trying different things.
             </Trans>
             <strong>
-              <em className={styles['personality-bio']}> {personality.bio}</em>
+              <em className={styles['personality-bio']}> {personalityState?.data?.bio}</em>
             </strong>
           </p>
         </div>

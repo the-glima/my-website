@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {withNamespaces} from 'react-i18next'
-import { useDispatch, useSelector } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux'
 
 import styles from './Gists.module.css'
 import Headings from '../../shared/headings/Headings'
@@ -11,7 +11,7 @@ import {GistsEffect} from './GistsEffect'
 import {gistsGetLogo} from './GistsGetLogo'
 
 import * as actions from './GistsActions'
-import { GistsState } from './GistsReducer';
+import {GistsState} from './GistsReducer'
 
 const Gists = ({t}: any) => {
   const dispatch = useDispatch()
@@ -37,14 +37,16 @@ const Gists = ({t}: any) => {
         const collection = await GistsEffect.mapGists()
         const gistsObject = createGistsObject(collection)
 
-        !ignore && collection.length ? saveGists(gistsObject) : dispatch(actions.setGists({ data: null }))
-      } else if(!ignore) {
+        !ignore && collection.length ? saveGists(gistsObject) : dispatch(actions.setGists({data: null}))
+      } else if (!ignore) {
         dispatch(actions.setGists(gistsLocalStorage))
-      } 
+      }
     }
 
     fetchGists()
-    return () => { ignore = true };
+    return () => {
+      ignore = true
+    }
   }, [])
 
   return (
@@ -52,14 +54,16 @@ const Gists = ({t}: any) => {
       <div className="section-content">
         <Headings title={t('gists.title')} subtitle={t('gists.subtitle')} />
 
-        {!gistsState?.data?.collection ?
+        {!gistsState?.data?.collection ? (
           <p className={styles.error}>
             <span role="img" aria-label="Confused Face">
               😕
             </span>{' '}
             {t('error.message')}
-          </p> : ''
-        }
+          </p>
+        ) : (
+          ''
+        )}
 
         {gistsState?.data?.collection && (
           <ul className={styles.list}>

@@ -6,7 +6,7 @@ import {SetThemeReducer} from '../components/shared/set-theme/SetThemeReducer'
 
 const reducers = combineReducers({
   gists: GistsReducer,
-  intro: IntroReducer,
+  personality: IntroReducer,
   language: LanguagesReducer,
   theme: SetThemeReducer
 })

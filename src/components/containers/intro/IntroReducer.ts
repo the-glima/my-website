@@ -1,7 +1,12 @@
 import {ActionTypes} from './IntroActions'
+import {IntroModel} from './IntroData'
 
-const initialState = {
-  personality: {}
+interface IntroState {
+  data: {[key: string]: IntroModel}
+}
+
+const initialState: IntroState = {
+  data: {}
 }
 
 export const IntroReducer = (state = initialState, action: any) => {
@@ -11,7 +16,7 @@ export const IntroReducer = (state = initialState, action: any) => {
 
       return {
         ...state,
-        personality
+        data: personality
       }
     }
     default:
