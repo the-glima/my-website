@@ -1906,6 +1906,13 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@types/redux-mock-store@^1.0.2":
+  version "1.0.2"
+  resolved "https://pkgs.dev.azure.com/payvision/_packaging/Resistance/npm/registry/@types/redux-mock-store/-/redux-mock-store-1.0.2.tgz#c27d5deadfb29d8514bdb0fc2cadae6feea1922d"
+  integrity sha1-wn1d6t+ynYUUvbD8LK2ub+6hki0=
+  dependencies:
+    redux "^4.0.5"
+
 "@types/retry@^0.12.0":
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.0.tgz#2b35eccfcee7d38cd72ad99232fbd58bffb3c84d"
@@ -11493,6 +11500,13 @@ redeyed@~2.1.0:
   integrity sha1-iYS1gV2ZyyIEacme7v/jiRPmzAs=
   dependencies:
     esprima "~4.0.0"
+
+redux-mock-store@^1.5.4:
+  version "1.5.4"
+  resolved "https://pkgs.dev.azure.com/payvision/_packaging/Resistance/npm/registry/redux-mock-store/-/redux-mock-store-1.5.4.tgz#90d02495fd918ddbaa96b83aef626287c9ab5872"
+  integrity sha1-kNAklf2Rjduqlrg672Jih8mrWHI=
+  dependencies:
+    lodash.isplainobject "^4.0.6"
 
 redux@^4.0.0, redux@^4.0.5:
   version "4.0.5"

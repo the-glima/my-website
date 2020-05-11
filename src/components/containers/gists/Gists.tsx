@@ -66,9 +66,9 @@ const Gists = ({t}: any) => {
         )}
 
         {gistsState?.data?.collection && (
-          <ul className={styles.list}>
+          <ul className={styles.list} data-testid="item">>
             {gistsState?.data?.collection.map((gist: GistDOMModel, i: number) => (
-              <li key={i} className={`${styles['list-item']}`}>
+              <li key={i} className={`${styles['list-item']}`} data-testid="gist-item">
                 <img className={styles.logo} src={gistsGetLogo(gist.language.toLowerCase())?.src} alt={gist.language} />
                 <a className={styles.link} href={gist.url} title={`Check this gist: ${gist.title}`}>
                   {gist.title}

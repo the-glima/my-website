@@ -1,4 +1,4 @@
-import {GistsData, GistFilesModel, GistDOMModel, GistModel, GistsResponseModel} from './GistsModel'
+import {GistFilesModel, GistDOMModel, GistModel, GistsResponseModel} from './GistsModel'
 import {settings} from '../../settings'
 import {isDevelopment} from '../../helpers'
 import {GistsState} from './GistsReducer'
