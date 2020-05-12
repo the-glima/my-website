@@ -42,3 +42,8 @@ export interface GistDOMModel {
   title: string
   language: string
 }
+
+export interface GistsData {
+  date: number
+  collection: any[]
+}

@@ -1,6 +1,7 @@
 import {GistFilesModel, GistDOMModel, GistModel, GistsResponseModel} from './GistsModel'
 import {settings} from '../../settings'
 import {isDevelopment} from '../../helpers'
+import {GistsState} from './GistsReducer'
 
 export const GistsEffect = {
   headers: {
@@ -48,14 +49,9 @@ export const GistsEffect = {
     })
   },
 
-  setGistsLocalStorage: async function (gists: GistDOMModel[]): Promise<void> {
-    if (gists) {
-      const object = {
-        date: Date.now(),
-        data: gists
-      }
-
-      window.localStorage.setItem(`${settings.localStorage.gistsKey}`, JSON.stringify(object))
+  setGistsLocalStorage: async function (gistState: GistsState): Promise<void> {
+    if (gistState) {
+      window.localStorage.setItem(`${settings.localStorage.gistsKey}`, JSON.stringify(gistState))
     }
   },
 

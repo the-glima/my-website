@@ -1,19 +1,31 @@
 {
   "position": {
-    "software-developer": "Software Developer",
-    "full-stack-developer": "Full Stack Developer",
+    "front-end-developer": "Front-end Developer",
     "javascript-developer": "Javascript Developer",
-    "front-end-developer": "Front-end Developer"
+    "full-stack-developer": "Full Stack Developer",
+    "software-developer": "Software Developer"
   },
   "intro": {
     "greeting": "Hi, my name is",
     "name": "Gabriel Lima",
     "punch-line": "I build things for the web and love what I do",
-    "bio": "Mainly focused on <1>Front-end Development</1> with a good <3>UI/UX</3> eye and always trying different things. I speak <5>JavaScript, CSS, HTML</5> and more."
+    "bio": "Mainly focused on <1>Front-end Development</1> with a good <3>UI/UX</3> eye and always trying different things.",
+    "default": {
+      "bio-end": "I speak 3 languages and also JavaScript."
+    },
+    "headphone": {
+      "bio-end": "We need more JS Frameworks!"
+    },
+    "dad": {
+      "bio-end": "Another Full-stack skill: changing diapers."
+    },
+    "old": {
+      "bio-end": "Remember when we supported IE6?!"
+    }
   },
   "repositories": {
     "title": "Repositories",
-    "subtitle": "I’ve finally finished something",
+    "subtitle": "Some side projects that I’ve finally finished",
     "see-more": "I might have more",
     "repos": {
       "pr-fiscal-desc": "A Chrome Extension to help you find patterns in your PR",

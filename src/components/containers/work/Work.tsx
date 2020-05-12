@@ -20,8 +20,8 @@ const Work = ({t}: any) => {
             <h4 className={styles['about-title']}>My journey</h4>
             <p>
               <Trans i18nKey="work.journey.intro">
-                I started working with web development in 2011, studied Web and Multimedia, and always loved design + code.
-                But since I'm not as close as a Designer (look at the design of this website) I've become a{' '}
+                I started working with web development in 2011, studied Web and Multimedia, and always loved design +
+                code. But since I'm not as close as a Designer (look at the design of this website) I've become a{' '}
                 <strong>Front-end Developer</strong>.
               </Trans>
             </p>

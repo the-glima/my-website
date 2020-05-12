@@ -1,5 +1,5 @@
 import {settings} from '../../settings'
-import {SetThemeEnum} from './SetThemeEnum'
+import {SetThemeEnum, SetThemeType} from './SetThemeEnum'
 
 export const SetThemeEffect = {
   setTheme: (darkMode: string) => {
@@ -13,8 +13,14 @@ export const SetThemeEffect = {
     return window.localStorage.getItem(`${settings.localStorage.themeKey}`)
   },
 
-  hasDarkPreferColorScheme: function (): Boolean {
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  getPreferColorScheme: function (): SetThemeType | null {
+    if (!window.matchMedia) return null
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? SetThemeEnum.dark
+      : window.matchMedia('(prefers-color-scheme: light)').matches
+      ? SetThemeEnum.light
+      : null
   },
 
   isDarkTheme: function (theme: string): Boolean {

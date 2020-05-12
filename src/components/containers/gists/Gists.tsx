@@ -1,33 +1,52 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect} from 'react'
 import {withNamespaces} from 'react-i18next'
+import {useDispatch, useSelector} from 'react-redux'
+
 import styles from './Gists.module.css'
 import Headings from '../../shared/headings/Headings'
 import SeeMore from '../../shared/see-more/SeeMore'
 
-import {GistDOMModel} from './GistsModel'
+import {GistDOMModel, GistsData} from './GistsModel'
 import {GistsEffect} from './GistsEffect'
 import {gistsGetLogo} from './GistsGetLogo'
 
+import * as actions from './GistsActions'
+import {GistsState} from './GistsReducer'
+
 const Gists = ({t}: any) => {
-  const [gists, setGists]: any = useState([])
+  const dispatch = useDispatch()
+  const gistsState: GistsState = useSelector((state: any) => state.gists)
 
   const saveGists = (state: any) => {
     GistsEffect.setGistsLocalStorage(state)
-    setGists(state)
+    dispatch(actions.setGists(state))
   }
 
+  const createGistsObject = (gists: GistDOMModel[]): GistsData => ({
+    date: Date.now(),
+    collection: gists
+  })
+
   useEffect(() => {
-    ;(async () => {
+    let ignore = false
+
+    const fetchGists = async () => {
       const gistsLocalStorage = GistsEffect.getGistsLocalStorage()
 
       if (!gistsLocalStorage || GistsEffect.shouldSetGistsLocalStorage(gistsLocalStorage)) {
-        const data = await GistsEffect.mapGists()
+        const collection = await GistsEffect.mapGists()
+        const gistsObject = createGistsObject(collection)
 
-        data.length ? saveGists({data}) : setGists([])
-      } else {
-        setGists(gistsLocalStorage.data)
+        !ignore && collection.length ? saveGists(gistsObject) : dispatch(actions.setGists({data: null}))
+      } else if (!ignore) {
+        dispatch(actions.setGists(gistsLocalStorage))
       }
-    })()
+    }
+
+    fetchGists()
+    return () => {
+      ignore = true
+    }
   }, [])
 
   return (
@@ -35,19 +54,22 @@ const Gists = ({t}: any) => {
       <div className="section-content">
         <Headings title={t('gists.title')} subtitle={t('gists.subtitle')} />
 
-        {!gists.data && (
+        {!gistsState?.data?.collection ? (
           <p className={styles.error}>
             <span role="img" aria-label="Confused Face">
               😕
             </span>{' '}
             {t('error.message')}
           </p>
+        ) : (
+          ''
         )}
 
-        {gists.data && gists.data.length > 0 && (
-          <ul className={styles.list}>
-            {gists.data.map((gist: GistDOMModel, i: number) => (
-              <li key={i} className={`${styles['list-item']}`}>
+        {gistsState?.data?.collection && (
+          <ul className={styles.list} data-testid="item">
+            >
+            {gistsState?.data?.collection.map((gist: GistDOMModel, i: number) => (
+              <li key={i} className={`${styles['list-item']}`} data-testid="gist-item">
                 <img className={styles.logo} src={gistsGetLogo(gist.language.toLowerCase())?.src} alt={gist.language} />
                 <a className={styles.link} href={gist.url} title={`Check this gist: ${gist.title}`}>
                   {gist.title}

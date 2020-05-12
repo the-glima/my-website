@@ -9,11 +9,23 @@
     "greeting": "Hola, me llamo",
     "name": "Gabriel Lima",
     "punch-line": "Construyo cosas para la web y amo lo que hago",
-    "bio": "Enfocado principalmente en <1> Desarrollo front-end </1> con un buen ojo de <3> UI / UX </3> y siempre intentando cosas diferentes. Hablo <5> JavaScript, CSS, HTML </5> y más."
+    "bio": "Enfocado principalmente en <1>Desarrollo front-end</1> con un buen ojo de <3>UI/UX</3> y siempre intentando cosas diferentes.",
+    "default": {
+      "bio-end": "Hablo 3 idiomas y también JavaScript."
+    },
+    "headphone": {
+      "bio-end": "¡Necesitamos más JS Frameworks!"
+    },
+    "dad": {
+      "bio-end": "Otra habilidad de Full-stack: cambiar pañales."
+    },
+    "old": {
+      "bio-end": "¿Recuerdas cuando admitimos IE6?"
+    }
   },
   "repositories": {
     "title": "Repositorios",
-    "subtitle": "Finalmente he terminado algo",
+    "subtitle": "Algunos proyectos que finalmente terminé",
     "repos": {
        "pr-fiscal-desc": "Una extensión de Chrome para ayudarlo a encontrar patrones en su PR",
        "dale-cli": "Un conjunto de comandos diarios para ayudar al flujo de trabajo de su desarrollo",
@@ -25,7 +37,7 @@
   },
   "work": {
     "title": "Lugares donde he trabajado",
-    "subtitle": "De 3 países diferentes",
+    "subtitle": "Gente increíble y experta que he conocido",
     "see-more": "Mira mi perfil en LinkedIn",
     "journey": {
       "intro": "Comencé a trabajar con el desarrollo web en 2011, estudié Web y Multimedia, y siempre me encantó el diseño + código. Pero como ni siquiera soy Diseñador (mira el diseño de esta página web) me he convertido un <1>Desarrollador Front-end</1>",

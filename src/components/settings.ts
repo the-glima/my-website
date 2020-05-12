@@ -27,6 +27,7 @@ export const settings = {
     ]
   },
   localStorage: {
+    accentKey: 'GABRIEL-LIMA:ACCENT',
     themeKey: 'GABRIEL-LIMA:THEME',
     gistsKey: 'GABRIEL-LIMA:GISTS',
     languageKey: 'i18nextLng'
@@ -44,5 +45,8 @@ export const settings = {
     twitter: {
       url: 'https://twitter.com/__glima'
     }
+  },
+  theme: {
+    darkModeClassName: 'dark-mode'
   }
 }

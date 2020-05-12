@@ -5,6 +5,7 @@ html {
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -43,6 +44,35 @@ body.dark-mode img {
   transition: opacity var(--transition);
 }
 
+/* Personalities Accent Color */
+body.accent-orange {
+  --color-accent: #f65e5e;
+}
+
+body.accent-purple {
+  --color-accent: #7B4DA7;
+}
+
+body.dark-mode.accent-purple {
+  --color-accent: #ba33f8;
+}
+
+body.accent-cyan {
+  --color-accent: #4da39d;
+}
+
+body.dark-mode.accent-cyan {
+  --color-accent: #2dbadd;
+}
+
+body.accent-green {
+  --color-accent: #7eda5c;
+}
+
+body.dark-mode.accent-green {
+  --color-accent: #9fdd2d;
+}
+  
 @media (hover: hover) {
   body.dark-mode img:hover { opacity: 1; }
 }
@@ -61,7 +91,12 @@ body.dark-mode .dark-logo {
   margin: 0 auto;
 }
 
-
 @media only screen and (min-width: 576px) {
   .section { padding: 2rem 2rem 2.5rem; }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
