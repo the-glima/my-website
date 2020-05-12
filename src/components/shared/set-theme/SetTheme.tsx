@@ -20,7 +20,7 @@ const SetTheme = () => {
   }
 
   // Effect: Use localStorage theme
-  // Also check and Set preferColorScheme theme if applicable 
+  // Also check and Set preferColorScheme theme if applicable
   useEffect(() => {
     const savedTheme = SetThemeEffect.getTheme()
     const preferColorScheme = SetThemeEffect.getPreferColorScheme()
@@ -45,7 +45,7 @@ const SetTheme = () => {
     SetThemeEffect.isDarkTheme(themeState.value)
       ? `${SetThemeEnum.light.toUpperCase()} THEME`
       : `${SetThemeEnum.dark.toUpperCase()} THEME`
-  
+
   return (
     <button
       className={`${styles.button} ${SetThemeEffect.isDarkTheme(themeState.value) ? styles['button-light'] : ''}`}
