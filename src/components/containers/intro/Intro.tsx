@@ -7,7 +7,7 @@ import {IntroData} from './IntroData'
 import * as actions from './IntroActions'
 
 const Intro = ({t}: any) => {
-  const introData = IntroData(t)
+  const introData = IntroData()
   const dispatch = useDispatch()
   const [count, setCount]: any = useState(0)
   const languageState = useSelector((state: any) => state.language)
@@ -31,6 +31,7 @@ const Intro = ({t}: any) => {
 
   useEffect(() => {
     togglePersonality(introData[count])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count, languageState])
 
   useEffect(() => {

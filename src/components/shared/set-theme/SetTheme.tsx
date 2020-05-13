@@ -32,6 +32,7 @@ const SetTheme = () => {
     } else {
       saveTheme(SetThemeEnum.light)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // Effect: Toggle body class theme

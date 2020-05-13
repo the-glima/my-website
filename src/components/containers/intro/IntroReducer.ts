@@ -1,12 +1,14 @@
 import {ActionTypes} from './IntroActions'
-import {IntroModel} from './IntroData'
+import {IntroData, IntroModel} from './IntroData'
+
+const introData = IntroData()
 
 interface IntroState {
-  data: {[key: string]: IntroModel}
+  data: IntroModel
 }
 
 const initialState: IntroState = {
-  data: {}
+  data: introData[0]
 }
 
 export const IntroReducer = (state = initialState, action: any) => {
