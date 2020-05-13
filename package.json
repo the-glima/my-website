@@ -75,7 +75,7 @@
     "test": "cross-env CI=true react-scripts test --env=jsdom",
     "test:watch": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier --write \"src/**/*.{ts,tsx,js}\"",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js}\" && git add .",
     "lint": "eslint src/**/*.{ts,tsx,js}",
     "release": "semantic-release",
     "release:local": "semantic-release --no-ci --dry-run",

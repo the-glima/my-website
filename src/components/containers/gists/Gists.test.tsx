@@ -73,7 +73,6 @@ describe('Gists', () => {
       `${JSON.stringify(gistsCollectionMock)}`
     )
 
-    console.log(queryAllByTestId('gist-item'))
     expect(queryAllByTestId('gist-item')).toHaveLength(8)
     spy.mockRestore()
   })
