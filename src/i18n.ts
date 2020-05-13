@@ -23,7 +23,8 @@ i18n
     interpolation: {
       escapeValue: false,
       prefix: 'GL'
-    }
+    },
+    debug: true
   })
 
 export default i18n

@@ -50,11 +50,11 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged",
-      "pre-push": "yarn test"
+      "pre-push": "yarn lint && yarn test"
     }
   },
   "lint-staged": {
-    "src/**/*.{js,ts}": "yarn lint && yarn format"
+    "src/**/*.{js,ts}": "yarn format"
   },
   "browserslist": {
     "production": [
@@ -75,7 +75,7 @@
     "test": "cross-env CI=true react-scripts test --env=jsdom",
     "test:watch": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier --write \"src/**/*.{ts,tsx,js}\"",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js}\" && git add .",
     "lint": "eslint src/**/*.{ts,tsx,js}",
     "release": "semantic-release",
     "release:local": "semantic-release --no-ci --dry-run",
