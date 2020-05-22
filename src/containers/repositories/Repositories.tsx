@@ -19,6 +19,9 @@ const Repositories = ({t}: any) => {
           {repositoriesData.map((repository: RepositoryModel, i: number) => (
             <li key={i} className={styles['list-item']}>
               <a className={styles.link} href={repository.url} title={repository.name}>
+                {repository.status === 'in-progress' && (
+                  <span className={styles.status}>{repository.status === 'in-progress' ? repository.status : ''}</span>
+                )}
                 <span className={styles['link-wrapper']}>
                   <i className={styles.icon}>{repository.icon}</i>
                   <span className={styles.name}>{repository.name}</span>
