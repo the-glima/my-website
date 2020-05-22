@@ -1,0 +1,58 @@
+@value breakpoint-sm from '../../assets/styles/variables.css';
+@value breakpoint-lg from '../../assets/styles/variables.css';
+
+.section-gists { background-color: var(--color-bg-section); }
+
+.error {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 2rem;
+  justify-items: center;
+  margin: 3rem auto;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  justify-items: center;
+}
+
+.link {
+  composes: link from '../../assets/styles/helpers.css';
+  margin-left: .76rem; 
+  transition: var(--transition);
+}
+
+.logo { width: 30px; }
+
+.section-link {
+  composes: link from '../../assets/styles/helpers.css';
+  text-align: center;
+}
+
+@media (min-width: breakpoint-sm) {
+  .list {
+    margin: 4rem auto;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  .list-item {
+    width: 90%;
+    justify-items: center;
+  }
+}
+
+@media (min-width: breakpoint-lg) {
+  .list {
+    max-width: 800px;
+  }
+
+  .section-link { margin-top: 3rem; }
+}

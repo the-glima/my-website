@@ -4,10 +4,11 @@
 :root {
   --box-shadow-color: #D3D3D3;
   --box-shadow: 3px 3px 0;
-  --color-primary: #213d8f;
-  --color-accent: #4B66F2;
-  --color-accent-darker: #2d47ce;
+  --color-primary: #4B66F2;
+  --color-primary-darker: #2d47ce;
   --color-purple: #7614b6;
+  --color-purple-dark: #c773ef;
+  --color-blue: #4B66F2;
   --color-gold: #efbb35;
   --color-gold-darker: #dda414;
   --color-grey: #f3f3f3;
@@ -15,6 +16,11 @@
   --color-grey-3: #D3D3D3;
   --color-grey-dark: #a7a7a7;
   --color-grey-dark-1: #525252;
+  --color-green: #5ef24b;
+  --color-cyan: #4da39d;
+  --color-red: #f24bc6;
+  --color-orange: #f65e5e;
+  --color-pink: #f24bc6;
   --color-black: #212121;               
   --color-black-full: #080808;
   --color-black-2: #272727;
@@ -26,6 +32,10 @@
   --color-card-text: var(--color-text);
   --color-card-background: var(--color-white);
   --color-card-border: transparent;
+  --color-twitter: #1DA1F2;
+  --color-linkedin: #2867B2;
+  --color-github: #AD5C51;
+  --color-spotify: #1DB954;
   --dashed-border: 1px dashed;
   --dashed-border-color: rgba(0,0,0,.2);
   --font-size-root: 17px;
