@@ -1,8 +1,8 @@
 import {combineReducers, createStore} from 'redux'
-import {IntroReducer} from '../components/containers/intro/IntroReducer'
-import {GistsReducer} from '../components/containers/gists/GistsReducer'
-import {LanguagesReducer} from '../components/shared/languages/LanguagesReducer'
-import {SetThemeReducer} from '../components/shared/set-theme/SetThemeReducer'
+import {IntroReducer} from '../containers/intro/IntroReducer'
+import {GistsReducer} from '../containers/gists/GistsReducer'
+import {LanguagesReducer} from '../shared/components/languages/LanguagesReducer'
+import {SetThemeReducer} from '../shared/components/set-theme/SetThemeReducer'
 
 const reducers = combineReducers({
   gists: GistsReducer,

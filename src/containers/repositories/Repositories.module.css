@@ -1,0 +1,63 @@
+@value breakpoint-md from '../../assets/styles/variables.css';
+@value breakpoint-lg from '../../assets/styles/variables.css';
+
+.section-repositories { background-color: var(--color-bg-section); }
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  grid-gap: 3rem;
+  margin: 3rem auto;
+}
+
+.link {
+  composes: card from '../../assets/styles/helpers.css';
+  composes: card-hover from '../../assets/styles/helpers.css';
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+@media (hover: hover) {
+  .link:hover .name {
+    color: var(--color-primary);
+  }
+}
+
+.link-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.icon { font-size: 1.26rem; }
+
+.name {
+  flex-grow: 1;
+  padding: 0 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.github {
+  width: 26px;
+  height: 26px;
+}
+
+.description {
+  padding-top: 1rem;
+}
+
+@media (min-width: breakpoint-md) {
+  .list {
+    margin: 4rem auto;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: breakpoint-lg) {
+  .list {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1200px;
+  }
+}

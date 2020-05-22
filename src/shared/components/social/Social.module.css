@@ -1,0 +1,37 @@
+@value breakpoint-md from '../../../assets/styles/variables.css';
+
+.list { 
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+}
+
+.link { 
+  display: inherit; 
+  position: relative;
+}
+
+.link,
+.social { 
+  width: 25px;
+  height: 25px;
+}
+
+.social {
+  position: relative;
+  top: 0;
+  transition: var(--transition);
+}
+
+.link:hover .social { top: 1px; }
+
+.logo-twitter:hover { color: var(--color-twitter); }
+.logo-linkedin:hover { color: var(--color-linkedin); }
+.logo-github:hover { color: var(--color-github); }
+.logo-spotify:hover { color: var(--color-spotify); }
+
+@media (min-width: breakpoint-md) {
+  .list { max-width: 150px; }
+}

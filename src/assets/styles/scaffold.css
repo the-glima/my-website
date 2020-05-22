@@ -19,7 +19,7 @@ body {
   line-height: var(--font-line-height);
   font-weight: var(--font-weight-body);
   transition: background-color .2s ease-out;
-  -webkit-tap-highlight-color: rgba(var(--color-accent), .1);
+  -webkit-tap-highlight-color: rgba(var(--color-primary), .1);
 }
 
 body.dark-mode {
@@ -29,11 +29,11 @@ body.dark-mode {
   --color-bg-section: var(--color-black);
   --color-white: var(--color-white-2);
   --color-grey-dark: var(--color-black-full);
-  --color-accent: var(--color-gold);
+  --color-primary: var(--color-gold);
   --color-card-text: var(--color-white);
   --color-card-background: rgb(59, 59, 59);
   --color-card-border: #353535;
-  --color-accent-darker: var(--color-gold-darker);
+  --color-primary-darker: var(--color-gold-darker);
   --dashed-border-color: var(--color-grey-dark-1);
   --work-pseudo-color: var(--color-grey-dark-1);
   --work-list-pseudo-color: var(--color-black);
@@ -44,41 +44,37 @@ body.dark-mode img {
   transition: opacity var(--transition);
 }
 
-/* Personalities Accent Color */
-body.accent-orange {
-  --color-accent: #f65e5e;
+/* Personalities Primary Color */
+body.primary-color-orange {
+  --color-primary: var(--color-orange);
 }
 
-body.accent-purple {
-  --color-accent: #7B4DA7;
+body.primary-color-purple {
+  --color-primary: var(--color-purple);
 }
 
-body.dark-mode.accent-purple {
-  --color-accent: #ba33f8;
+body.dark-mode.primary-color-purple {
+  --color-primary: var(--color-purple-dark);
 }
 
-body.accent-cyan {
-  --color-accent: #4da39d;
+body.primary-color-cyan {
+  --color-primary: var(--color-cyan);
 }
 
-body.dark-mode.accent-cyan {
-  --color-accent: #2dbadd;
+body.dark-mode.primary-color-cyan {
+  --color-primary: var(--color-cyan-dark);
 }
 
-body.accent-green {
-  --color-accent: #7eda5c;
+body.primary-color-yellow {
+  --color-primary: var(--color-gold);
 }
 
-body.dark-mode.accent-green {
-  --color-accent: #9fdd2d;
-}
-  
 @media (hover: hover) {
   body.dark-mode img:hover { opacity: 1; }
 }
 
 body.dark-mode .dark-logo {
-  filter: invert(1);
+  color: var(--color-white-2);
 }
 
 .section { 
