@@ -1,3 +1,11 @@
+## [2.5.1](https://github.com/the-glima/my-website/compare/v2.5.0...v2.5.1) (2020-05-24)
+
+
+### Bug Fixes
+
+* scroll x issue and loading dark mode styles ([be3c7d9](https://github.com/the-glima/my-website/commit/be3c7d9e2a2690853fd520b4ea4221b4fff81c48))
+* scroll x issue and loading dark mode styles ([5b03359](https://github.com/the-glima/my-website/commit/5b033597dedb291e23f1b5ac9846f2514420e483))
+
 # [2.5.0](https://github.com/the-glima/my-website/compare/v2.4.2...v2.5.0) (2020-05-24)
 
 
