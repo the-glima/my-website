@@ -10,7 +10,7 @@ export const GistsService = {
   getUrl: (params = settings.github.urlParams): string => {
     const url = `${params.url}/${params.user}/gists?per_page`
 
-    return isDevelopment() ? `${url}=100` : `${url}=${settings.gist.limit}`
+    return isDevelopment() ? `${url}=100` : `${url}=${settings.gists.limit}`
   },
 
   getGists: async function (): Promise<GistsResponseModel> {
@@ -32,7 +32,7 @@ export const GistsService = {
     let gistsCollection = Object.values(gists)
 
     if (isDevelopment()) {
-      gistsCollection = gistsCollection.filter((gist) => gist.public).slice(0, settings.gist.limit)
+      gistsCollection = gistsCollection.filter((gist) => gist.public).slice(0, settings.gists.limit)
     }
 
     return gistsCollection.map((gist: GistModel) => {
@@ -42,8 +42,8 @@ export const GistsService = {
         id: gist.id,
         url: gist.html_url,
         files: files,
-        title: gist.description || settings.gist.title,
-        language: files[0].language || settings.gist.logo
+        title: gist.description || settings.gists.title,
+        language: files[0].language || settings.gists.logo
       }
     })
   },

@@ -1,7 +1,11 @@
 @value breakpoint-sm from '../../assets/styles/variables.css';
 @value breakpoint-lg from '../../assets/styles/variables.css';
 
-.section-gists { background-color: var(--color-bg-section); }
+.section-gists { 
+  position: relative;
+  min-height: 500px;
+  background-color: var(--color-bg-section);
+}
 
 .error {
   padding: 4rem 0;
@@ -36,6 +40,12 @@
   text-align: center;
 }
 
+.gists-loading svg {
+  width: 100px;
+  animation: loading-animation 2s infinite ease-in-out; 
+  transition: var(--transition);
+}
+
 @media (min-width: breakpoint-sm) {
   .list {
     margin: 4rem auto;
@@ -55,4 +65,12 @@
   }
 
   .section-link { margin-top: 3rem; }
+}
+
+@keyframes loading-animation {
+  0% { color: var(--color-text); }
+  20% { color: var(--color-orange); }
+  40% { color: var(--color-purple); }
+  60% { color: var(--color-cyan); }
+  80% { color: var(--color-gold); }
 }

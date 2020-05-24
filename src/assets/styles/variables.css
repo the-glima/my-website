@@ -46,6 +46,8 @@
   --font-family-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --work-list-pseudo-color: var(--color-grey-3);
   --work-pseudo-color: var(--color-grey-3);
+  --color-white-2: #fdfdfd;
+  --loading-bg-color: 255, 255, 255;
   --transition: .06s ease-in-out;
 }
 

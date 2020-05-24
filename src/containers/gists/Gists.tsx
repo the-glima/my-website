@@ -4,6 +4,9 @@ import {useDispatch, useSelector} from 'react-redux'
 
 import Headings from '../../shared/components/headings/Headings'
 import SeeMore from '../../shared/components/see-more/SeeMore'
+import Loading from '../../shared/components/loading/Loading'
+import {ReactComponent as GitHubLogo} from '../../assets/images/logos/github.svg'
+import {settings} from '../../settings'
 
 import * as actions from './redux/GistsActions'
 import {GistsState} from './redux/GistsReducer'
@@ -16,12 +19,33 @@ import {GistsGetLogoUtil} from './utils/GistsGetLogoUtil'
 const Gists = ({t}: any) => {
   const dispatch = useDispatch()
   const gistsState: GistsState = useSelector((state: any) => state.gists)
+  const isLoading: GistsState = useSelector((state: any) => state.gists.isLoading)
+  const hasError: GistsState = useSelector((state: any) => state.gists.hasError)
+
+  const observeSection = useCallback(async (effect: any) => {
+    const threshold = 0.3
+    const options = {threshold}
+
+    const callback = (entries: any, observer: any) => {
+      entries.forEach((entry: any) => {
+        if (entry.isIntersecting && entry.intersectionRatio >= threshold) {
+          effect()
+          observer.unobserve(entry.target)
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback, options)
+    observer.observe(document.getElementById('section-gists') as any)
+  }, [])
 
   const setGistsLocalStorage = useCallback(async () => {
     const gistsLocalStorage: GistsData = GistsService.getGistsLocalStorage()
 
     if (gistsLocalStorage && !GistsService.shouldSetGistsLocalStorage(gistsLocalStorage)) {
-      dispatch(actions.fetchGistsLocalStorageSuccess(gistsLocalStorage))
+      setTimeout(() => {
+        dispatch(actions.fetchGistsLocalStorageSuccess(gistsLocalStorage))
+      }, settings.gists.delay)
     } else {
       const gistsCollection = await GistsService.mapGists()
       const data: GistsData = {
@@ -30,7 +54,9 @@ const Gists = ({t}: any) => {
       }
 
       if (data?.collection?.length) {
-        dispatch(actions.fetchGistsSuccess(data))
+        setTimeout(() => {
+          dispatch(actions.fetchGistsSuccess(data))
+        }, settings.gists.delay)
         GistsService.setGistsLocalStorage(data)
       }
     }
@@ -49,51 +75,56 @@ const Gists = ({t}: any) => {
       }
     }
 
-    fetchGists()
+    observeSection(() => {
+      fetchGists()
+    })
+
     return () => {
       ignore = true
     }
-  }, [dispatch, setGistsLocalStorage])
+  }, [dispatch, setGistsLocalStorage, observeSection])
 
   return (
-    <section className={`section ${styles['section-gists']}`}>
+    <section id="section-gists" className={`section ${styles['section-gists']}`}>
       <div className="section-content">
+        {isLoading && <Loading className={styles['gists-loading']} image={GitHubLogo} text="Loading Gists..." />}
+
         <Headings title={t('gists.title')} subtitle={t('gists.subtitle')} />
 
-        {!gistsState?.data?.collection ? (
+        {hasError && (
           <p className={styles.error}>
             <span role="img" aria-label="Confused Face">
               😕
             </span>{' '}
             {t('error.message')}
           </p>
-        ) : (
-          ''
         )}
 
-        {gistsState?.data?.collection && (
-          <ul className={styles.list}>
-            {gistsState?.data?.collection.map((gist: GistDOMModel, i: number) => (
-              <li key={i} className={`${styles['list-item']}`} data-testid="gist-item">
-                <img
-                  className={styles.logo}
-                  src={GistsGetLogoUtil(gist.language.toLowerCase())?.src}
-                  alt={gist.language}
-                />
-                <a className={styles.link} href={gist.url} title={`Check this gist: ${gist.title}`}>
-                  {gist.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        )}
+        {!hasError && !isLoading && (
+          <>
+            <ul className={styles.list}>
+              {gistsState?.data?.collection.map((gist: GistDOMModel, i: number) => (
+                <li key={i} className={`${styles['list-item']}`} data-testid="gist-item">
+                  <img
+                    className={styles.logo}
+                    src={GistsGetLogoUtil(gist.language.toLowerCase())?.src}
+                    alt={gist.language}
+                  />
+                  <a className={styles.link} href={gist.url} title={`Check this gist: ${gist.title}`}>
+                    {gist.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
 
-        <SeeMore
-          props={{
-            url: 'https://gist.github.com/the-glima',
-            text: t('gists.see-more')
-          }}
-        />
+            <SeeMore
+              props={{
+                url: 'https://gist.github.com/the-glima',
+                text: t('gists.see-more')
+              }}
+            />
+          </>
+        )}
       </div>
     </section>
   )

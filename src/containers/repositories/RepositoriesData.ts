@@ -17,14 +17,14 @@ export const RepositoriesData = (t: any): RepositoryModel[] => [
   {
     icon: '🤖',
     name: 'PR Fiscal',
-    url: 'https://www.gabriel-lima.com',
+    url: 'https://github.com/the-glima/fiscal',
     description: t('repositories.repos.pr-fiscal-desc'),
     status: 'in-progress'
   },
   {
     icon: '🦨',
     name: 'Dale CLI',
-    url: 'https://www.gabriel-lima.com',
+    url: 'https://github.com/the-glima/dale-cli',
     description: t('repositories.repos.dale-cli'),
     status: 'in-progress'
   }
