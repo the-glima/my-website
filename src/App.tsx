@@ -1,5 +1,5 @@
 import React from 'react'
-import {Provider} from 'react-redux'
+import {Provider, useSelector} from 'react-redux'
 import store from './redux/store'
 
 import Intro from './containers/intro/Intro'
@@ -9,6 +9,8 @@ import Work from './containers/work/Work'
 import Repositories from './containers/repositories/Repositories'
 
 function App() {
+  // const gistsState: GistsState = useSelector((state: any) => state.gists)
+
   return (
     <Provider store={store}>
       <Intro />

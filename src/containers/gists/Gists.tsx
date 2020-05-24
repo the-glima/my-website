@@ -1,45 +1,51 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useCallback} from 'react'
 import {withNamespaces} from 'react-i18next'
 import {useDispatch, useSelector} from 'react-redux'
 
-import styles from './Gists.module.css'
 import Headings from '../../shared/components/headings/Headings'
 import SeeMore from '../../shared/components/see-more/SeeMore'
 
-import {GistDOMModel, GistsData} from './GistsModel'
-import {GistsEffect} from './GistsEffect'
-import {gistsGetLogo} from './GistsGetLogo'
+import * as actions from './redux/GistsActions'
+import {GistsState} from './redux/GistsReducer'
 
-import * as actions from './GistsActions'
-import {GistsState} from './GistsReducer'
+import styles from './Gists.module.css'
+import {GistDOMModel, GistsData} from './models'
+import {GistsService} from './services/GistsService'
+import {GistsGetLogoUtil} from './utils/GistsGetLogoUtil'
 
 const Gists = ({t}: any) => {
   const dispatch = useDispatch()
   const gistsState: GistsState = useSelector((state: any) => state.gists)
 
-  const saveGists = (state: any) => {
-    GistsEffect.setGistsLocalStorage(state)
-    dispatch(actions.setGists(state))
-  }
+  const setGistsLocalStorage = useCallback(async () => {
+    const gistsLocalStorage: GistsData = GistsService.getGistsLocalStorage()
 
-  const createGistsObject = (gists: GistDOMModel[]): GistsData => ({
-    date: Date.now(),
-    collection: gists
-  })
+    if (gistsLocalStorage && !GistsService.shouldSetGistsLocalStorage(gistsLocalStorage)) {
+      dispatch(actions.fetchGistsLocalStorageSuccess(gistsLocalStorage))
+    } else {
+      const gistsCollection = await GistsService.mapGists()
+      const data: GistsData = {
+        date: Date.now(),
+        collection: gistsCollection
+      }
+
+      if (data?.collection?.length) {
+        dispatch(actions.fetchGistsSuccess(data))
+        GistsService.setGistsLocalStorage(data)
+      }
+    }
+  }, [dispatch])
 
   useEffect(() => {
     let ignore = false
 
     const fetchGists = async () => {
-      const gistsLocalStorage = GistsEffect.getGistsLocalStorage()
+      dispatch(actions.fetchGistsInit())
 
-      if (!gistsLocalStorage || GistsEffect.shouldSetGistsLocalStorage(gistsLocalStorage)) {
-        const collection = await GistsEffect.mapGists()
-        const gistsObject = createGistsObject(collection)
-
-        !ignore && collection.length ? saveGists(gistsObject) : dispatch(actions.setGists({data: null}))
-      } else if (!ignore) {
-        dispatch(actions.setGists(gistsLocalStorage))
+      try {
+        if (!ignore) setGistsLocalStorage()
+      } catch (error) {
+        dispatch(actions.fetchGistsFailure(error))
       }
     }
 
@@ -47,8 +53,7 @@ const Gists = ({t}: any) => {
     return () => {
       ignore = true
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [dispatch, setGistsLocalStorage])
 
   return (
     <section className={`section ${styles['section-gists']}`}>
@@ -70,7 +75,11 @@ const Gists = ({t}: any) => {
           <ul className={styles.list}>
             {gistsState?.data?.collection.map((gist: GistDOMModel, i: number) => (
               <li key={i} className={`${styles['list-item']}`} data-testid="gist-item">
-                <img className={styles.logo} src={gistsGetLogo(gist.language.toLowerCase())?.src} alt={gist.language} />
+                <img
+                  className={styles.logo}
+                  src={GistsGetLogoUtil(gist.language.toLowerCase())?.src}
+                  alt={gist.language}
+                />
                 <a className={styles.link} href={gist.url} title={`Check this gist: ${gist.title}`}>
                   {gist.title}
                 </a>

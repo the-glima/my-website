@@ -1,9 +1,8 @@
-import {GistFilesModel, GistDOMModel, GistModel, GistsResponseModel} from './GistsModel'
-import {settings} from '../../settings'
-import {isDevelopment} from '../../helpers'
-import {GistsState} from './GistsReducer'
+import {GistFilesModel, GistDOMModel, GistModel, GistsResponseModel, GistsData} from '../models'
+import {settings} from '../../../settings'
+import {isDevelopment} from '../../../helpers'
 
-export const GistsEffect = {
+export const GistsService = {
   headers: {
     Authorization: `token ${process.env.REACT_APP_GH_TOKEN}`
   },
@@ -49,19 +48,19 @@ export const GistsEffect = {
     })
   },
 
-  setGistsLocalStorage: async function (gistState: GistsState): Promise<void> {
-    if (gistState) {
-      window.localStorage.setItem(`${settings.localStorage.gistsKey}`, JSON.stringify(gistState))
+  setGistsLocalStorage: async function (data: GistsData): Promise<void> {
+    if (data) {
+      window.localStorage.setItem(`${settings.localStorage.gistsKey}`, JSON.stringify(data))
     }
   },
 
-  getGistsLocalStorage: function (): any {
+  getGistsLocalStorage: function (): GistsData {
     const gists = window.localStorage.getItem(`${settings.localStorage.gistsKey}`)
 
     return gists ? JSON.parse(gists) : null
   },
 
-  shouldSetGistsLocalStorage: function (savedGists: any): boolean {
+  shouldSetGistsLocalStorage: function (savedGists: GistsData): boolean {
     if (!savedGists || !savedGists.date) return false
 
     const hour = 1000 * 60 * 60
