@@ -1,3 +1,11 @@
+# [2.5.0](https://github.com/the-glima/my-website/compare/v2.4.2...v2.5.0) (2020-05-24)
+
+
+### Features
+
+* **gists:** add loading and intersector observer ([061f85c](https://github.com/the-glima/my-website/commit/061f85c36f8bfa5d9b0cf013b0e4e87ffda85098))
+* add loading and intersect observer ([ca4e2ac](https://github.com/the-glima/my-website/commit/ca4e2ac3c5a5f3d8ffe9ff3e08a267478da6761d))
+
 ## [2.4.2](https://github.com/the-glima/my-website/compare/v2.4.1...v2.4.2) (2020-05-22)
 
 ## [2.4.1](https://github.com/the-glima/my-website/compare/v2.4.0...v2.4.1) (2020-05-13)
