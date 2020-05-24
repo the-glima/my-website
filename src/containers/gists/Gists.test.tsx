@@ -6,17 +6,13 @@ import i18n from '../../i18n'
 import {render} from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import Gists from './Gists'
-import {GistsEffect} from './GistsEffect'
+import {GistsService} from './services/GistsService'
 import {gistsCollectionMock} from '../../../test/gists-mock'
 
 describe('Gists', () => {
   let mockStore: any
   let spy: any
   let setGistsLocalStorage: any
-
-  // const fakeAxios = {
-  //   get: jest.fn(() => Promise.resolve({ data: "Richard" }))
-  // };
 
   beforeEach(() => {
     mockStore = createMockStore()
@@ -29,8 +25,8 @@ describe('Gists', () => {
       writable: true
     })
 
-    spy = jest.spyOn(GistsEffect, 'setGistsLocalStorage')
-    setGistsLocalStorage = GistsEffect.setGistsLocalStorage(gistsCollectionMock)
+    spy = jest.spyOn(GistsService, 'setGistsLocalStorage')
+    setGistsLocalStorage = GistsService.setGistsLocalStorage(gistsCollectionMock.data)
   })
 
   test.skip('get and set gists to local storage', () => {
@@ -42,8 +38,8 @@ describe('Gists', () => {
       </Provider>
     )
 
-    const spy = jest.spyOn(GistsEffect, 'setGistsLocalStorage')
-    const setGistsLocalStorage = GistsEffect.setGistsLocalStorage({data: null})
+    const spy = jest.spyOn(GistsService, 'setGistsLocalStorage')
+    const setGistsLocalStorage = GistsService.setGistsLocalStorage(null as any)
 
     expect(spy).toHaveBeenCalledTimes(1)
     expect(setGistsLocalStorage).toEqual(Promise.resolve({}))

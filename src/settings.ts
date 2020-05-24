@@ -5,10 +5,11 @@ export const settings = {
       user: 'the-glima'
     }
   },
-  gist: {
+  gists: {
     title: 'A cool Gist about something',
     logo: 'GitHub',
-    limit: 8
+    limit: 8,
+    delay: 2000
   },
   languages: {
     options: [

@@ -24,7 +24,7 @@
   },
   "repositories": {
     "title": "Repositórios",
-    "subtitle": "Alguns projetos que eu finalmente terminei",
+    "subtitle": "Alguns projetos que eu finalmente terminei... ou quase",
     "repos": {
       "pr-fiscal-desc": "Uma extensão para Chrome para te ajudar achar padrões em suas PRs",
       "dale-cli": "Grupo de commandos padrões para usar no seu desenvolvimento diário",
@@ -40,8 +40,8 @@
     "journey": {
       "title": "Minha Jornada",
       "intro": "Comecei a trabalhar com desenvolvimento web em 2011, estudei Produção Multimídia e sempre gostei de design + código. Mas, como não sou nem de longe um designer (veja o design deste site), me tornei um <1>Desenvolvedor Front-end</1>.",
-      "body": "<0>CSS e HTML</0> são meus companheiros, mas com <2>JavaScript</2> que a verdadeira paixão floresceu no meu coração. Depois vieram as NodeJS APIs, RESTful e o desenvolvimento de Back-end ficou mais perto do que nunca. Os frameworks e as bibliotecas de teste em JavaScript começaram a aparecer quase que mensalmente, o que cirou a oportunidade de criar UI componentes melhores e mais interativos (o que mais amo), também paramos de usar o jQuery certo?!",
-      "conclusion": "Um dia comecei a usar Linux e o terminal, agora sou viciado em automatizar meu fluxo de trabalho com Bash Scripts. Agora, com o conhecimento do Docker e CI/CD, poderia me intitular um <1>Desenvolvedor Full- Stack</1>, mas não farei isso e vou me chamar também de <strong>Desenvolvedor de Infrastructura do Produto</strong>, o que é muito mais legal. "
+      "body": "<0>CSS e HTML</0> são meus companheiros, mas com <2>JavaScript</2> que a verdadeira paixão bate no meu coração. Depois vieram as NodeJS APIs, RESTful e o desenvolvimento de Back-end ficou mais perto do que nunca. Os frameworks e as bibliotecas de teste em JavaScript começaram a aparecer quase que mensalmente, o que cirou a oportunidade de criar componentes UI ricos e mais interativos (o que mais curto fazer), também paramos de usar jQuery certo?!",
+      "conclusion": "Um dia comecei a usar Linux e o terminal, agora sou viciado em automatizar meu fluxo de trabalho com Bash Scripts. Com o conhecimento do Docker e CI/CD, poderia me intitular um <1>Desenvolvedor Full- Stack</1>, mas não farei isso e vou me chamar também de <3>Desenvolvedor de Infrastructura do Produto</3>, o que é muito mais legal. "
     },
     "see-more": "Veja meu perfil no LinkedIn"
   },

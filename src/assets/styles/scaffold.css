@@ -54,7 +54,7 @@ body.primary-color-purple {
 }
 
 body.dark-mode.primary-color-purple {
-  --color-primary: var(--color-purple-dark);
+  --color-primary: var(--color-purple-dark-mode);
 }
 
 body.primary-color-cyan {
@@ -62,7 +62,7 @@ body.primary-color-cyan {
 }
 
 body.dark-mode.primary-color-cyan {
-  --color-primary: var(--color-cyan-dark);
+  --color-primary: var(--color-cyan-dark-mode);
 }
 
 body.primary-color-yellow {

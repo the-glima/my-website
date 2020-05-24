@@ -25,7 +25,7 @@
   },
   "repositories": {
     "title": "Repositories",
-    "subtitle": "Some side projects that I’ve finally finished",
+    "subtitle": "Some side projects that I’ve finally finished... almost",
     "see-more": "I might have more",
     "repos": {
       "pr-fiscal-desc": "A Chrome Extension to help you find patterns in your PR",
@@ -43,7 +43,7 @@
       "title": "My Journey",
       "intro": "I started working with web development in 2011, studied Web and Multimedia, and always loved design + code. But since I'm not as close as a Designer (look at the design of this website) I've become a <1>Front-end Developer</1>.",
       "body": "<0>CSS and HTML</0> are my companions but with <2>JavaScript</2> that the real passion flourishes in my heart. Then came NodeJS, RESTful APIs and the Back-end Development was closer than ever. JS's frameworks and testing libraries started to pop out almost monthly which made the opportunity to create better and rich UI components (my joy), also we have stopped to use jQuery right?!",
-      "conclusion": "One day I started to use Linux and the terminal, now I'm addicted to automate my workflow with Bash Scripts. Now, with Docker and CI/CD knowledge, I could entitle myself as a <1>Full-stack Developer</1>, but I won't do that and I'll call myself also as a <strong>Product Infrastructure Developer</strong> instead, which is way cooler."
+      "conclusion": "One day I started to use Linux and the terminal, now I'm addicted to automate my workflow with Bash Scripts. With Docker and CI/CD knowledge, I could entitle myself as a <1>Full-stack Developer</1>, but I won't do that and I'll call myself also as a <3>Product Infrastructure Developer</3> instead, which is way cooler."
     },
     "see-more": "Check more details on LinkedIn"
   },

@@ -1,9 +1,8 @@
-import {GistFilesModel, GistDOMModel, GistModel, GistsResponseModel} from './GistsModel'
-import {settings} from '../../settings'
-import {isDevelopment} from '../../helpers'
-import {GistsState} from './GistsReducer'
+import {GistFilesModel, GistDOMModel, GistModel, GistsResponseModel, GistsData} from '../models'
+import {settings} from '../../../settings'
+import {isDevelopment} from '../../../helpers'
 
-export const GistsEffect = {
+export const GistsService = {
   headers: {
     Authorization: `token ${process.env.REACT_APP_GH_TOKEN}`
   },
@@ -11,7 +10,7 @@ export const GistsEffect = {
   getUrl: (params = settings.github.urlParams): string => {
     const url = `${params.url}/${params.user}/gists?per_page`
 
-    return isDevelopment() ? `${url}=100` : `${url}=${settings.gist.limit}`
+    return isDevelopment() ? `${url}=100` : `${url}=${settings.gists.limit}`
   },
 
   getGists: async function (): Promise<GistsResponseModel> {
@@ -33,7 +32,7 @@ export const GistsEffect = {
     let gistsCollection = Object.values(gists)
 
     if (isDevelopment()) {
-      gistsCollection = gistsCollection.filter((gist) => gist.public).slice(0, settings.gist.limit)
+      gistsCollection = gistsCollection.filter((gist) => gist.public).slice(0, settings.gists.limit)
     }
 
     return gistsCollection.map((gist: GistModel) => {
@@ -43,25 +42,25 @@ export const GistsEffect = {
         id: gist.id,
         url: gist.html_url,
         files: files,
-        title: gist.description || settings.gist.title,
-        language: files[0].language || settings.gist.logo
+        title: gist.description || settings.gists.title,
+        language: files[0].language || settings.gists.logo
       }
     })
   },
 
-  setGistsLocalStorage: async function (gistState: GistsState): Promise<void> {
-    if (gistState) {
-      window.localStorage.setItem(`${settings.localStorage.gistsKey}`, JSON.stringify(gistState))
+  setGistsLocalStorage: async function (data: GistsData): Promise<void> {
+    if (data) {
+      window.localStorage.setItem(`${settings.localStorage.gistsKey}`, JSON.stringify(data))
     }
   },
 
-  getGistsLocalStorage: function (): any {
+  getGistsLocalStorage: function (): GistsData {
     const gists = window.localStorage.getItem(`${settings.localStorage.gistsKey}`)
 
     return gists ? JSON.parse(gists) : null
   },
 
-  shouldSetGistsLocalStorage: function (savedGists: any): boolean {
+  shouldSetGistsLocalStorage: function (savedGists: GistsData): boolean {
     if (!savedGists || !savedGists.date) return false
 
     const hour = 1000 * 60 * 60

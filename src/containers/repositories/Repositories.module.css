@@ -16,7 +16,23 @@
   composes: card-hover from '../../assets/styles/helpers.css';
   display: flex;
   flex-direction: column;
+  position: relative;
   height: 100%;
+  overflow: hidden;
+}
+
+.status {
+  position: absolute;
+  top: 13px;
+  left: -18px;
+  padding: .1rem 0;
+  width: 80px;
+  font-size: .5rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-white-2);
+  background-color: var(--color-primary);
+  transform: rotate(-45deg);
 }
 
 @media (hover: hover) {

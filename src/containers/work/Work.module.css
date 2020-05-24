@@ -131,7 +131,7 @@
 .logo-bolt-brasil {  background-position: -100px -50px; }
 
 .title {
-  font-size: 1rem;
+  font-size: .9rem;
   font-weight: 600;
 }
 
@@ -141,7 +141,7 @@
 
 .position { 
   padding-top: .15rem;
-  font-size: .95rem;
+  font-size: .8rem;
 }
 
 @media (min-width: breakpoint-lg) and (max-width: breakpoint-xx) {

@@ -61,10 +61,12 @@ const Intro = ({t}: any) => {
             <Trans i18nKey="intro.punch-line">I build things for the web and love what I do.</Trans>
           </p>
           <p className={styles.bio}>
-            <Trans i18nKey="intro.bio">
-              Mainly focused on
-              <strong>Front-end Development</strong> with a good <strong>UI/UX</strong>
-              eye and always trying different things.
+            <Trans
+              i18nKey="intro.bio"
+              defaults="Mainly focused on <1>Front-end Development</1> with a good
+              <3>UI/UX</3> eye and always trying different things."
+            >
+              text <strong>Front-end Development</strong> text <strong>UI/UX</strong> text
             </Trans>
             <strong>
               <em className={styles['personality-bio']}> {personalityState?.data?.bio}</em>

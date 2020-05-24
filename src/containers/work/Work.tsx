@@ -19,32 +19,37 @@ const Work = ({t}: any) => {
           <div className={styles.about}>
             <h4 className={styles['about-title']}>{t('work.journey.title')}</h4>
             <p>
-              <Trans i18nKey="work.journey.intro">
-                I started working with web development in 2011, studied Web and Multimedia, and always loved design +
-                code. But since I'm not as close as a Designer (look at the design of this website) I've become a{' '}
-                <strong>Front-end Developer</strong>.
+              <Trans
+                i18nKey="work.journey.intro"
+                defaults="I started working with web development in 2011, studied Web and Multimedia, and always loved design +
+                code. But since I'm not as close as a Designer (look at the design of this website) I've become a <1>Front-end Developer</1>."
+              >
+                text <strong>Front-end Developer</strong>
               </Trans>
             </p>
 
-            <a className={styles.ad} href="https://www.linkedin.com/in/gabriel--lima/" title="">
+            <a className={styles.ad} href="https://www.linkedin.com/in/gabriel--lima/" title={t('work.see-more')}>
               <em>{t('work.see-more')}</em>
             </a>
 
             <p>
-              <Trans i18nKey="work.journey.body">
-                <strong>CSS and HTML</strong> are my companions but with <strong>JavaScript</strong> that the real
+              <Trans
+                i18nKey="work.journey.body"
+                defaults="<0>CSS and HTML</0> are my companions but with <2>JavaScript</2> that the real
                 passion flourishes in my heart. Then came NodeJS and RESTful APIs and the Back-end Development was
                 closer than ever. JS's frameworks and testing libraries started to pop out almost monthly which made the
-                opportunity to create better and rich UI components (my joy), also we have stopped to use jQuery right?!
+                opportunity to create better and rich UI components (my joy), also we have stopped to use jQuery right?!"
+              >
+                <strong>CSS and HTML</strong> text <strong>JavaScript</strong> text
               </Trans>
             </p>
 
             <p>
-              <Trans i18nKey="work.journey.conclusion">
-                One day I started to use Linux and the terminal, now I'm addicted to automate my workflow with Bash
-                Scripts. Now, with Docker and CI/CD knowledge, I could entitle myself as a <em>Full-stack Developer</em>
-                , but I won't do that and I'll call myself as a <strong>Product Infrastructure Developer</strong>{' '}
-                instead, which is way cooler.
+              <Trans
+                i18nKey="work.journey.conclusion"
+                defaults="One day I started to use Linux and the terminal, now I'm addicted to automate my workflow with Bash Scripts. Now, with Docker and CI/CD knowledge, I could entitle myself as a <1>Full-stack Developer</1>, but I won't do that and I'll call myself also as a <3>Product Infrastructure Developer</3> instead, which is way cooler."
+              >
+                text <em>Full-stack Developer</em> text <strong>Product Infrastructure Developer</strong> text
               </Trans>
             </p>
           </div>
