@@ -12,10 +12,6 @@
   background-color: var(--color-white);
 }
 
-.button-light:hover {
-  color: inherit;
-}
-
 @media (hover: hover) {
   .button:hover {
     position: relative;

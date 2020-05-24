@@ -33,7 +33,7 @@
 
 .circle:hover::after {
   background: linear-gradient(90deg, var(--color-primary), var(--color-blue));
-  animation: circle-round .5s infinite linear;
+  animation: circle-round .4s infinite linear;
 }
 
 .primary-color-purple.circle:hover::after {
@@ -66,7 +66,6 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  min-width: 320px;
 }
 
 .intro {  
@@ -117,6 +116,7 @@
   .header {
     flex-direction: row;
     padding-top: 1.5rem;
+    min-width: 320px;
   }
 
   .heading {

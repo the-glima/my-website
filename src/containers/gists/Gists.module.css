@@ -42,7 +42,7 @@
 
 .gists-loading svg {
   width: 100px;
-  animation: loading-animation 2s infinite ease-in-out; 
+  animation: loading-animation 1.5s infinite ease-in-out; 
   transition: var(--transition);
 }
 
