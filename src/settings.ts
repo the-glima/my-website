@@ -9,7 +9,7 @@ export const settings = {
     title: 'A cool Gist about something',
     logo: 'GitHub',
     limit: 8,
-    delay: 2000
+    delay: 1500
   },
   languages: {
     options: [

@@ -37,6 +37,7 @@ body.dark-mode {
   --dashed-border-color: var(--color-grey-dark-1);
   --work-pseudo-color: var(--color-grey-dark-1);
   --work-list-pseudo-color: var(--color-black);
+  --loading-bg-color: 05, 05, 05;
 }
 
 body.dark-mode img {
