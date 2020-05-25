@@ -5,6 +5,9 @@ export const settings = {
       user: 'the-glima'
     }
   },
+  intro: {
+    animationDelay: 800
+  },
   gists: {
     title: 'A cool Gist about something',
     logo: 'GitHub',

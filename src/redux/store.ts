@@ -1,5 +1,5 @@
 import {combineReducers, createStore} from 'redux'
-import {IntroReducer} from '../containers/intro/IntroReducer'
+import {IntroReducer} from '../containers/intro/redux/IntroReducer'
 import {GistsReducer} from '../containers/gists/redux/GistsReducer'
 import {LanguagesReducer} from '../shared/components/languages/LanguagesReducer'
 import {SetThemeReducer} from '../shared/components/set-theme/SetThemeReducer'
