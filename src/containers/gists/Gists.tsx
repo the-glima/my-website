@@ -23,12 +23,11 @@ const Gists = ({t}: any) => {
   const hasError: GistsState = useSelector((state: any) => state.gists.hasError)
 
   const observeSection = useCallback(async (effect: any) => {
-    const threshold = 0.3
-    const options = {threshold}
+    const options = {threshold: settings.loading.threshold}
 
     const callback = (entries: any, observer: any) => {
       entries.forEach((entry: any) => {
-        if (entry.isIntersecting && entry.intersectionRatio >= threshold) {
+        if (entry.isIntersecting && entry.intersectionRatio >= settings.loading.threshold) {
           effect()
           observer.unobserve(entry.target)
         }
@@ -43,9 +42,7 @@ const Gists = ({t}: any) => {
     const gistsLocalStorage: GistsData = GistsService.getGistsLocalStorage()
 
     if (gistsLocalStorage && !GistsService.shouldSetGistsLocalStorage(gistsLocalStorage)) {
-      setTimeout(() => {
-        dispatch(actions.fetchGistsLocalStorageSuccess(gistsLocalStorage))
-      }, settings.gists.delay)
+      dispatch(actions.fetchGistsLocalStorageSuccess(gistsLocalStorage))
     } else {
       const gistsCollection = await GistsService.mapGists()
       const data: GistsData = {
@@ -56,7 +53,7 @@ const Gists = ({t}: any) => {
       if (data?.collection?.length) {
         setTimeout(() => {
           dispatch(actions.fetchGistsSuccess(data))
-        }, settings.gists.delay)
+        }, settings.loading.delay)
         GistsService.setGistsLocalStorage(data)
       }
     }

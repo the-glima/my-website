@@ -8,18 +8,18 @@ export const settings = {
   gists: {
     title: 'A cool Gist about something',
     logo: 'GitHub',
-    limit: 8,
-    delay: 1500
+    limit: 8
   },
   languages: {
     options: [
       {
         label: 'English',
-        key: 'en'
+        key: 'en',
+        default: true
       },
       {
         label: 'Portuguese',
-        key: 'pt'
+        key: 'pt-BR'
       },
       {
         label: 'Spanish',
@@ -49,5 +49,9 @@ export const settings = {
   },
   theme: {
     darkModeClassName: 'dark-mode'
+  },
+  loading: {
+    delay: 1200,
+    threshold: 0.3
   }
 }

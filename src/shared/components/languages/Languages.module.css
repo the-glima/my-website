@@ -15,9 +15,14 @@
   padding-bottom: .2rem;
   font-size: .9rem;
   line-height: .9rem;
-  border-bottom: 1px solid transparent;
+  color: var(--color-grey-dark);
+  border-bottom: var(--dashed-border) transparent;
   transition: var(--transition);
-  opacity: .8;
+}
+
+.language.active {
+  color: var(--color-text);
+  border-color: var(--color-primary);
 }
 
 @media (hover: hover) {
@@ -26,9 +31,4 @@
     border-color: var(--color-primary);
     opacity: 1;
   }
-}
-
-.language.active {
-  opacity: 1;
-  border-color: var(--color-primary);
 }

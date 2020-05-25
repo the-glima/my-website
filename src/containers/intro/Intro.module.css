@@ -101,7 +101,7 @@
   font-size: 1.6rem;
   font-weight: 300;
   line-height: 2.2rem;
-  border-bottom: var(--dashed-border) var(--dashed-border-color);
+  border-bottom: var(--dashed-border) var(--color-primary);
 }
 
 .bio,

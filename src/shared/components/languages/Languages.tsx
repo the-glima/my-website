@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {withNamespaces} from 'react-i18next'
 import i18n from '../../../i18n'
