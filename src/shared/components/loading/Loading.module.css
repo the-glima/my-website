@@ -9,6 +9,6 @@
   bottom: 0;
   text-align: center;
   z-index: 1;
-  background-color: rgba(var(--loading-bg-color), .9);
+  background-color: rgba(var(--loading-bg-color), .97);
   transition: var(--transition);
 }

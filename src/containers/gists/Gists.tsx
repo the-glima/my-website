@@ -51,9 +51,7 @@ const Gists = ({t}: any) => {
       }
 
       if (data?.collection?.length) {
-        setTimeout(() => {
-          dispatch(actions.fetchGistsSuccess(data))
-        }, settings.loading.delay)
+        dispatch(actions.fetchGistsSuccess(data))
         GistsService.setGistsLocalStorage(data)
       }
     }
@@ -71,7 +69,7 @@ const Gists = ({t}: any) => {
         dispatch(actions.fetchGistsFailure(error))
       }
     }
-
+    
     observeSection(() => {
       fetchGists()
     })
