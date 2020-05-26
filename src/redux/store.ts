@@ -2,7 +2,7 @@ import {combineReducers, createStore} from 'redux'
 import {IntroReducer} from '../containers/intro/redux/IntroReducer'
 import {GistsReducer} from '../containers/gists/redux/GistsReducer'
 import {LanguagesReducer} from '../shared/components/languages/LanguagesReducer'
-import {SetThemeReducer} from '../shared/components/set-theme/SetThemeReducer'
+import {SetThemeReducer} from '../shared/components/set-theme/redux/SetThemeReducer'
 
 const reducers = combineReducers({
   gists: GistsReducer,

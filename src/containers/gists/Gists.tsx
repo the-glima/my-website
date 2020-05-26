@@ -69,7 +69,7 @@ const Gists = ({t}: any) => {
         dispatch(actions.fetchGistsFailure(error))
       }
     }
-    
+
     observeSection(() => {
       fetchGists()
     })

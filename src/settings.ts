@@ -1,4 +1,4 @@
-export const settings = {
+const settings = {
   github: {
     urlParams: {
       url: 'https://api.github.com/users',
@@ -30,11 +30,14 @@ export const settings = {
       }
     ]
   },
-  localStorage: {
-    primaryColorKey: 'GABRIEL-LIMA:PRIMARY-COLOR',
-    themeKey: 'GABRIEL-LIMA:THEME',
-    gistsKey: 'GABRIEL-LIMA:GISTS',
-    languageKey: 'i18nextLng'
+  storage: {
+    prefix: 'GABRIEL-LIMA',
+    keys: {
+      primaryColor: 'PRIMARY-COLOR',
+      theme: 'THEME',
+      gists: 'GISTS',
+      intro: 'INTRO'
+    }
   },
   social: {
     github: {
@@ -58,3 +61,11 @@ export const settings = {
     threshold: 0.3
   }
 }
+
+const getStorageKey = (key: string): string => {
+  const value: string = (settings.storage as any).keys[key]
+
+  return `${settings.storage.prefix}:${value.toUpperCase()}`
+}
+
+export {settings, getStorageKey}

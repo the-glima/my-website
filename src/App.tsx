@@ -7,7 +7,7 @@ import Home from './pages/Home'
 function App() {
   return (
     <Provider store={store}>
-      <Home/>
+      <Home />
     </Provider>
   )
 }

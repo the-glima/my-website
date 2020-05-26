@@ -1,6 +1,9 @@
 import {GistFilesModel, GistDOMModel, GistModel, GistsResponseModel, GistsData} from '../models'
 import {settings} from '../../../settings'
 import {isDevelopment} from '../../../helpers'
+import StorageService from '../../../shared/services/StorageService'
+
+const storageService = StorageService()
 
 export const GistsService = {
   headers: {
@@ -48,19 +51,19 @@ export const GistsService = {
     })
   },
 
-  setGistsLocalStorage: async function (data: GistsData): Promise<void> {
+  setGistsLocalStorage: async (data: GistsData): Promise<void> => {
     if (data) {
-      window.localStorage.setItem(`${settings.localStorage.gistsKey}`, JSON.stringify(data))
+      storageService.setItem('gists', JSON.stringify(data))
     }
   },
 
-  getGistsLocalStorage: function (): GistsData {
-    const gists = window.localStorage.getItem(`${settings.localStorage.gistsKey}`)
+  getGistsLocalStorage: (): GistsData => {
+    const gists = storageService.getItem('gists')
 
     return gists ? JSON.parse(gists) : null
   },
 
-  shouldSetGistsLocalStorage: function (savedGists: GistsData): boolean {
+  shouldSetGistsLocalStorage: (savedGists: GistsData): boolean => {
     if (!savedGists || !savedGists.date) return false
 
     const hour = 1000 * 60 * 60

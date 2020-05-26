@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState, useCallback} from 'react'
 
 import Intro from '../containers/intro/Intro'
 import Gists from '../containers/gists/Gists'
@@ -12,33 +12,56 @@ import Loading from '../shared/components/loading/Loading'
 
 import styles from './Home.module.css'
 
+import StorageService from '../shared/services/StorageService'
+
 function Home() {
-  const [loading, setLoading]: any = useState(true)
+  const [loading, setLoading]: any = useState(false)
   const [fadeIntro, setFadeIntro]: any = useState(false)
+  const storageService = StorageService('session')
+
+  const setSessionStorage = useCallback(() => {
+    storageService.setItem('intro', 'initialized')
+  }, [storageService])
 
   useEffect(() => {
-    setTimeout(() => {
-      setFadeIntro(true)
-    }, 3000)
+    const isIntroSaved = storageService.getItem('intro')
 
-    setTimeout(() => {
+    if (!isIntroSaved) {
+      setLoading(true)
+      // document.documentElement.classList.add('loading')
+
+      setTimeout(() => {
+        setFadeIntro(true)
+      }, 1600)
+
+      setTimeout(() => {
+        setLoading(false)
+        setSessionStorage()
+        // document.documentElement.classList.remove('loading')
+      }, 1800)
+    } else {
+      setFadeIntro(false)
       setLoading(false)
-    }, 3200)
+    }
   }, [])
 
-  const cpPictureCircle = 
-    <PictureCircle 
-      image={{ src: husband, alt: 'Gabriel Lima', title: 'Please wait' }} 
+  const cpPictureCircle = (
+    <PictureCircle
+      image={{src: husband, alt: 'Gabriel Lima', title: 'Please wait'}}
       className={styles.picture}
       text="Welcome..."
     />
+  )
 
   return (
     <>
       {loading ? (
-        <Loading className={`${styles['home-loading']} ${fadeIntro ? styles['fade-intro'] : ''}`} component={cpPictureCircle} />
+        <Loading
+          className={`${styles['home-loading']} ${fadeIntro ? styles['fade-intro'] : ''}`}
+          component={cpPictureCircle}
+        />
       ) : (
-        <div className={styles['fade-content']}>
+        <div className={`${fadeIntro ? styles['fade-content'] : ''}`}>
           <Intro />
           <Repositories />
           <Work />

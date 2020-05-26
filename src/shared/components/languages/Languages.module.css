@@ -15,13 +15,13 @@
   padding-bottom: .2rem;
   font-size: .9rem;
   line-height: .9rem;
-  color: var(--color-grey-dark);
   border-bottom: var(--dashed-border) transparent;
+  opacity: .5;
   transition: var(--transition);
 }
 
 .language.active {
-  color: var(--color-text);
+  opacity: 1;
   border-color: var(--color-primary);
 }
 
