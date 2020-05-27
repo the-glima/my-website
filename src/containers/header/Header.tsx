@@ -2,13 +2,13 @@ import React, {useState, useEffect, useCallback} from 'react'
 import {Trans, withNamespaces} from 'react-i18next'
 import {useDispatch, useSelector} from 'react-redux'
 
-import styles from './Intro.module.css'
-import {IntroData} from './IntroData'
-import * as actions from './redux/IntroActions'
+import styles from './Header.module.css'
+import {HeaderData} from './HeaderData'
+import * as actions from './redux/HeaderActions'
 import {settings} from '../../settings'
 
-const Intro = ({t}: any) => {
-  const introData = IntroData()
+const Header = ({t}: any) => {
+  const headerData = HeaderData()
   const dispatch = useDispatch()
   const [count, setCount]: any = useState(0)
   const [active, setActive]: any = useState('')
@@ -20,9 +20,9 @@ const Intro = ({t}: any) => {
 
     setTimeout(() => {
       setActive(null)
-      count < introData.length - 1 ? setCount(count + 1) : setCount(0)
-    }, settings.intro.animationDelay)
-  }, [count, introData])
+      count < headerData.length - 1 ? setCount(count + 1) : setCount(0)
+    }, settings.header.animationDelay)
+  }, [count, headerData])
 
   const togglePersonality = useCallback(
     (personality: any) => {
@@ -36,7 +36,7 @@ const Intro = ({t}: any) => {
 
   useEffect(() => {
     dispatch(actions.getPersonality())
-    togglePersonality(introData[count])
+    togglePersonality(headerData[count])
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count, languageState])
@@ -44,7 +44,7 @@ const Intro = ({t}: any) => {
   const isActive = () => (active ? styles.active : '')
 
   return (
-    <section className={`section ${styles['section-intro']}`}>
+    <section className={`section ${styles['section-header']}`}>
       <div className="section-content">
         <header className={styles.header}>
           <div
@@ -55,7 +55,7 @@ const Intro = ({t}: any) => {
           </div>
 
           <h1 className={styles.heading}>
-            <div className={styles.intro}>{t('intro.greeting')}</div>
+            <div className={styles.greeting}>{t('header.greeting')}</div>
             <div className={styles.name}>Gabriel Lima</div>
             <div className={styles.position}>{personalityState?.data?.position}</div>
           </h1>
@@ -63,11 +63,11 @@ const Intro = ({t}: any) => {
 
         <div className={styles['bio-wrapper']}>
           <p className={styles['punch-line']}>
-            <Trans i18nKey="intro.punch-line">I build things for the web and love what I do.</Trans>
+            <Trans i18nKey="header.punch-line">I build things for the web and love what I do.</Trans>
           </p>
           <p className={styles.bio}>
             <Trans
-              i18nKey="intro.bio"
+              i18nKey="header.bio"
               defaults="Mainly focused on <1>Front-end Development</1> with a good
               <3>UI/UX</3> eye and always trying different things."
             >
@@ -83,4 +83,4 @@ const Intro = ({t}: any) => {
   )
 }
 
-export default withNamespaces()(Intro)
+export default withNamespaces()(Header)

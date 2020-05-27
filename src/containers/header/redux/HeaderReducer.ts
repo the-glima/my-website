@@ -1,21 +1,21 @@
-import {ActionTypes} from './IntroActions'
-import {IntroData, IntroModel} from '../IntroData'
+import {ActionTypes} from './HeaderActions'
+import {HeaderData, HeaderModel} from '../HeaderData'
 
-const introData = IntroData()
+const introData = HeaderData()
 
-interface IntroState {
-  data: IntroModel
+interface HeaderState {
+  data: HeaderModel
   isLoading: boolean
   hasError: boolean
 }
 
-const initialState: IntroState = {
+const initialState: HeaderState = {
   data: introData[0],
   isLoading: false,
   hasError: false
 }
 
-export const IntroReducer = (state = initialState, action: any) => {
+export const HeaderReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case ActionTypes.GET_PERSONALITY: {
       return {

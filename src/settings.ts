@@ -5,7 +5,7 @@ const settings = {
       user: 'the-glima'
     }
   },
-  intro: {
+  header: {
     animationDelay: 800
   },
   gists: {
@@ -57,8 +57,8 @@ const settings = {
     darkModeClassName: 'dark-mode'
   },
   loading: {
-    delay: 1200,
-    threshold: 0.3
+    delay: 1500,
+    threshold: 0.1
   }
 }
 

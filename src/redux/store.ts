@@ -1,12 +1,12 @@
 import {combineReducers, createStore} from 'redux'
-import {IntroReducer} from '../containers/intro/redux/IntroReducer'
+import {HeaderReducer} from '../containers/header/redux/HeaderReducer'
 import {GistsReducer} from '../containers/gists/redux/GistsReducer'
 import {LanguagesReducer} from '../shared/components/languages/LanguagesReducer'
 import {SetThemeReducer} from '../shared/components/set-theme/redux/SetThemeReducer'
 
 const reducers = combineReducers({
   gists: GistsReducer,
-  personality: IntroReducer,
+  personality: HeaderReducer,
   language: LanguagesReducer,
   theme: SetThemeReducer
 })

@@ -51,8 +51,10 @@ const Gists = ({t}: any) => {
       }
 
       if (data?.collection?.length) {
-        dispatch(actions.fetchGistsSuccess(data))
-        GistsService.setGistsLocalStorage(data)
+        setTimeout(() => {
+          dispatch(actions.fetchGistsSuccess(data))
+          GistsService.setGistsLocalStorage(data)
+        }, settings.loading.delay)
       }
     }
   }, [dispatch])
@@ -82,42 +84,44 @@ const Gists = ({t}: any) => {
   return (
     <section id="section-gists" className={`section ${styles['section-gists']}`}>
       <div className="section-content">
-        {isLoading && <Loading className={styles['gists-loading']} image={GitHubLogo} text="Loading Gists..." />}
-
-        <Headings title={t('gists.title')} subtitle={t('gists.subtitle')} />
-
-        {hasError && (
-          <p className={styles.error}>
-            <span role="img" aria-label="Confused Face">
-              😕
-            </span>{' '}
-            {t('error.message')}
-          </p>
-        )}
-
-        {!hasError && !isLoading && (
+        {isLoading ? (
+          <Loading className={styles['gists-loading']} image={GitHubLogo} text="Loading Gists..." />
+        ) : (
           <>
-            <ul className={styles.list}>
-              {gistsState?.data?.collection.map((gist: GistDOMModel, i: number) => (
-                <li key={i} className={`${styles['list-item']}`} data-testid="gist-item">
-                  <img
-                    className={styles.logo}
-                    src={GistsGetLogoUtil(gist.language.toLowerCase())?.src}
-                    alt={gist.language}
-                  />
-                  <a className={styles.link} href={gist.url} title={`Check this gist: ${gist.title}`}>
-                    {gist.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <Headings title={t('gists.title')} subtitle={t('gists.subtitle')} />
 
-            <SeeMore
-              props={{
-                url: 'https://gist.github.com/the-glima',
-                text: t('gists.see-more')
-              }}
-            />
+            {!hasError ? (
+              <>
+                <ul className={styles.list}>
+                  {gistsState?.data?.collection.map((gist: GistDOMModel, i: number) => (
+                    <li key={i} className={`${styles['list-item']}`} data-testid="gist-item">
+                      <img
+                        className={styles.logo}
+                        src={GistsGetLogoUtil(gist.language.toLowerCase())?.src}
+                        alt={gist.language}
+                      />
+                      <a className={styles.link} href={gist.url} title={`Check this gist: ${gist.title}`}>
+                        {gist.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+
+                <SeeMore
+                  props={{
+                    url: 'https://gist.github.com/the-glima',
+                    text: t('gists.see-more')
+                  }}
+                />
+              </>
+            ) : (
+              <p className={styles.error}>
+                <span role="img" aria-label="Confused Face">
+                  😕
+                </span>{' '}
+                {t('error.message')}
+              </p>
+            )}
           </>
         )}
       </div>

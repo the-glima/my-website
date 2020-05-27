@@ -1,7 +1,6 @@
-import React, {useCallback, useState} from 'react'
+import React from 'react'
 
 import styles from './PictureCircle.module.css'
-import {settings} from '../../../settings'
 
 interface Props {
   image: {
@@ -15,21 +14,8 @@ interface Props {
 }
 
 const PictureCircle = (props: Props) => {
-  const [active, setActive]: any = useState('')
-
-  const onClickPicture = useCallback((event: any) => {
-    // const element = event.currentTarget
-    // const parent = element.parentNode
-    // setActive('active')
-    // setTimeout(() => {
-    //   parent.removeChild(element);
-    // }, 1000);
-  }, [])
-
-  const isActive = () => (active ? styles.active : '')
-
   return (
-    <div className={`${props.wrapperClassName} ${isActive()}`} onClick={(e: any) => onClickPicture(e)}>
+    <div className={props.wrapperClassName}>
       <div className={`${styles.circle} ${props.className}`}>
         <img className={styles.picture} src={props.image?.src} alt={props.image?.alt} title={props.image?.title} />
       </div>

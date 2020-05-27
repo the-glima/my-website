@@ -1,26 +1,30 @@
 import React, {useEffect, useState, useCallback} from 'react'
+import {withNamespaces} from 'react-i18next'
 
-import Intro from '../containers/intro/Intro'
+import Header from '../containers/header/Header'
 import Gists from '../containers/gists/Gists'
 import Footer from '../containers/footer/Footer'
 import Work from '../containers/work/Work'
 import Repositories from '../containers/repositories/Repositories'
 import PictureCircle from '../shared/components/picture-circle/PictureCircle'
 
+import StorageService from '../shared/services/StorageService'
+
 import husband from '../assets/images/photos/husband.jpg'
 import Loading from '../shared/components/loading/Loading'
 
 import styles from './Home.module.css'
 
-import StorageService from '../shared/services/StorageService'
-
-function Home() {
+const Home = ({t}: any) => {
   const [loading, setLoading]: any = useState(false)
   const [fadeIntro, setFadeIntro]: any = useState(false)
   const storageService = StorageService('session')
 
   const setSessionStorage = useCallback(() => {
     storageService.setItem('intro', 'initialized')
+
+    setLoading(false)
+    setTimeout(() => setFadeIntro(false), 700)
   }, [storageService])
 
   useEffect(() => {
@@ -28,28 +32,17 @@ function Home() {
 
     if (!isIntroSaved) {
       setLoading(true)
-      // document.documentElement.classList.add('loading')
-
-      setTimeout(() => {
-        setFadeIntro(true)
-      }, 1600)
-
-      setTimeout(() => {
-        setLoading(false)
-        setSessionStorage()
-        // document.documentElement.classList.remove('loading')
-      }, 1800)
-    } else {
-      setFadeIntro(false)
-      setLoading(false)
+      setTimeout(() => setFadeIntro(true), 1600)
+      setTimeout(setSessionStorage, 1800)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const cpPictureCircle = (
     <PictureCircle
       image={{src: husband, alt: 'Gabriel Lima', title: 'Please wait'}}
       className={styles.picture}
-      text="Welcome..."
+      text={t('intro.welcome.0')}
     />
   )
 
@@ -62,7 +55,7 @@ function Home() {
         />
       ) : (
         <div className={`${fadeIntro ? styles['fade-content'] : ''}`}>
-          <Intro />
+          <Header />
           <Repositories />
           <Work />
           <Gists />
@@ -73,4 +66,4 @@ function Home() {
   )
 }
 
-export default Home
+export default withNamespaces()(Home)

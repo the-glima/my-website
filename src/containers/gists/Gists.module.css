@@ -3,7 +3,7 @@
 
 .section-gists { 
   position: relative;
-  min-height: 800px;
+  min-height: 544px;
   background-color: var(--color-bg-section);
 }
 
@@ -60,10 +60,6 @@
 }
 
 @media (min-width: breakpoint-lg) {
-  .section-gists { 
-    min-height: 544px;
-  }
-
   .list {
     max-width: 800px;
   }
