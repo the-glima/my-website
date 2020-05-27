@@ -1,0 +1,33 @@
+.picture:after {
+  background: linear-gradient(90deg, var(--color-orange), var(--color-blue));
+}
+
+.fade-intro {
+  transition: 2s;
+  animation: fade-intro .26s linear forwards;
+}
+
+@keyframes fade-intro {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.fade-content {
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  transition: .7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation: fade-content .7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@keyframes fade-content {
+  0% {
+    top: 26px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}

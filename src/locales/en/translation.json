@@ -6,6 +6,11 @@
     "software-developer": "Software Developer"
   },
   "intro": {
+    "welcome" : {
+      "0": "Loading bits and bytes..."
+    }
+  },
+  "header": {
     "greeting": "Hi, my name is",
     "name": "Gabriel Lima",
     "punch-line": "I build things for the web and love what I do",

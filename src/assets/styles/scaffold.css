@@ -1,25 +1,32 @@
+html,
+body {
+  overflow-x: hidden;
+}
+
 html {
   font-size: var(--font-size-root);
   min-width: 300px;
-  height: 100%;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
-  overflow-x: hidden;
   scroll-behavior: smooth;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
 
+html.loading {
+  overflow: hidden;
+}
+
 body {
   height: 100%;
   color: var(--color-text);
-  background-color: var(--color-bg);
   font-size: var(--font-size);
   font-family: var(--font-family-system);
   line-height: var(--font-line-height);
   font-weight: var(--font-weight-body);
+  background-color: var(--color-bg);
   transition: background-color .2s ease-out;
-  -webkit-tap-highlight-color: rgba(var(--color-primary), .1);
+  -webkit-tap-highlight-color: rgba(#f65e5e, .1);
 }
 
 body.dark-mode {
@@ -34,8 +41,8 @@ body.dark-mode {
   --color-card-background: rgb(59, 59, 59);
   --color-card-border: #353535;
   --color-primary-darker: var(--color-gold-darker);
-  --dashed-border-color: var(--color-grey-dark-1);
-  --work-pseudo-color: var(--color-grey-dark-1);
+  --dashed-border-color: var(--color-grey-darker);
+  --work-pseudo-color: var(--color-grey-darker);
   --work-list-pseudo-color: var(--color-black);
   --loading-bg-color: 05, 05, 05;
 }

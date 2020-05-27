@@ -2,15 +2,13 @@
 ------------------------------------- */
 .link {
   padding-bottom: .1rem;
-  color: var(--color-text);
-  border-bottom: var(--dashed-border) var(--dashed-border-color);
+  border-bottom: var(--dashed-border) var(--color-primary);
   transition: var(--transition);
 }
 
 @media (hover: hover) {
   .link:hover {
     color: var(--color-primary);
-    border-color: var(--color-primary);
   }
 }
 

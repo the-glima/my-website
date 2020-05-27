@@ -1,25 +1,28 @@
-export const settings = {
+const settings = {
   github: {
     urlParams: {
       url: 'https://api.github.com/users',
       user: 'the-glima'
     }
   },
+  header: {
+    animationDelay: 800
+  },
   gists: {
     title: 'A cool Gist about something',
     logo: 'GitHub',
-    limit: 8,
-    delay: 1500
+    limit: 8
   },
   languages: {
     options: [
       {
         label: 'English',
-        key: 'en'
+        key: 'en',
+        default: true
       },
       {
         label: 'Portuguese',
-        key: 'pt'
+        key: 'pt-BR'
       },
       {
         label: 'Spanish',
@@ -27,11 +30,14 @@ export const settings = {
       }
     ]
   },
-  localStorage: {
-    primaryColorKey: 'GABRIEL-LIMA:PRIMARY-COLOR',
-    themeKey: 'GABRIEL-LIMA:THEME',
-    gistsKey: 'GABRIEL-LIMA:GISTS',
-    languageKey: 'i18nextLng'
+  storage: {
+    prefix: 'GABRIEL-LIMA',
+    keys: {
+      primaryColor: 'PRIMARY-COLOR',
+      theme: 'THEME',
+      gists: 'GISTS',
+      intro: 'INTRO'
+    }
   },
   social: {
     github: {
@@ -49,5 +55,17 @@ export const settings = {
   },
   theme: {
     darkModeClassName: 'dark-mode'
+  },
+  loading: {
+    delay: 1500,
+    threshold: 0.1
   }
 }
+
+const getStorageKey = (key: string): string => {
+  const value: string = (settings.storage as any).keys[key]
+
+  return `${settings.storage.prefix}:${value.toUpperCase()}`
+}
+
+export {settings, getStorageKey}

@@ -24,7 +24,7 @@ const Work = ({t}: any) => {
                 defaults="I started working with web development in 2011, studied Web and Multimedia, and always loved design +
                 code. But since I'm not as close as a Designer (look at the design of this website) I've become a <1>Front-end Developer</1>."
               >
-                text <strong>Front-end Developer</strong>
+                . <strong>.</strong>
               </Trans>
             </p>
 
@@ -40,7 +40,7 @@ const Work = ({t}: any) => {
                 closer than ever. JS's frameworks and testing libraries started to pop out almost monthly which made the
                 opportunity to create better and rich UI components (my joy), also we have stopped to use jQuery right?!"
               >
-                <strong>CSS and HTML</strong> text <strong>JavaScript</strong> text
+                <strong>.</strong> . <strong>.</strong> .
               </Trans>
             </p>
 
@@ -49,7 +49,7 @@ const Work = ({t}: any) => {
                 i18nKey="work.journey.conclusion"
                 defaults="One day I started to use Linux and the terminal, now I'm addicted to automate my workflow with Bash Scripts. Now, with Docker and CI/CD knowledge, I could entitle myself as a <1>Full-stack Developer</1>, but I won't do that and I'll call myself also as a <3>Product Infrastructure Developer</3> instead, which is way cooler."
               >
-                text <em>Full-stack Developer</em> text <strong>Product Infrastructure Developer</strong> text
+                . <em>.</em> . <strong>.</strong> .
               </Trans>
             </p>
           </div>
