@@ -1,3 +1,11 @@
+# [2.6.0](https://github.com/the-glima/my-website/compare/v2.5.1...v2.6.0) (2020-05-27)
+
+
+### Features
+
+* add intro animation ([ffc709f](https://github.com/the-glima/my-website/commit/ffc709fe1a094a1dedb84e4d24dc7d71276cd69f))
+* add intro loading and refactor a bunch of  ([69ce934](https://github.com/the-glima/my-website/commit/69ce9343ac488e2ef6f9b0ca78adb5edce13c164))
+
 ## [2.5.1](https://github.com/the-glima/my-website/compare/v2.5.0...v2.5.1) (2020-05-24)
 
 
