@@ -12,6 +12,7 @@ const settings = {
     title: 'A cool Gist about something',
     logo: 'GitHub',
     limit: 8,
+    perPage: 60,
     regexWebsite: /#website/,
     regexLogo: /^\[(.*)\]/
   },
@@ -24,7 +25,7 @@ const settings = {
       },
       {
         label: 'Portuguese',
-        key: 'pt-BR'
+        key: 'pt'
       },
       {
         label: 'Spanish',

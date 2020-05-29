@@ -16,16 +16,16 @@
     "punch-line": "I build things for the web and love what I do",
     "bio": "Mainly focused on <1>Front-end Development</1> with a good <3>UI/UX</3> eye and always trying different things.",
     "default": {
-      "bio-end": "I speak 3 languages and also JavaScript."
+      "bio-end": "I speak 3 languages but also JavaScript."
     },
     "headphone": {
       "bio-end": "We need more JS Frameworks!"
     },
     "dad": {
-      "bio-end": "Another Full-stack skill: changing diapers."
+      "bio-end": "Another Full-stack skill: agile diaper changer."
     },
     "old": {
-      "bio-end": "Remember when we supported IE6?!"
+      "bio-end": "Remember when we cared about IE6?!"
     }
   },
   "repositories": {
@@ -37,7 +37,7 @@
       "dale-cli": "One CLI to rule them all! A bunch of daily commands to help your development’s workflow",
       "website": {
         "title": "Personal Website",
-        "description": "This one. Yep, you can check the cool stuff that I've used to build it."
+        "description": "This one. Yep, you can check the cool stuff that I've used to build it"
       }
     }
   },
@@ -48,13 +48,13 @@
       "title": "My Journey",
       "intro": "I started working with web development in 2011, studied Web and Multimedia, and always loved design + code. But since I'm not as close as a Designer (look at the design of this website) I've become a <1>Front-end Developer</1>.",
       "body": "<0>CSS and HTML</0> are my companions but with <2>JavaScript</2> that the real passion flourishes in my heart. Then came NodeJS, RESTful APIs and the Back-end Development was closer than ever. JS's frameworks and testing libraries started to pop out almost monthly which made the opportunity to create better and rich UI components (my joy), also we have stopped to use jQuery right?!",
-      "conclusion": "One day I started to use Linux and the terminal, now I'm addicted to automate my workflow with Bash Scripts. With Docker and CI/CD knowledge, I could entitle myself as a <1>Full-stack Developer</1>, but I won't do that and I'll call myself also as a <3>Product Infrastructure Developer</3> instead, which is way cooler."
+      "conclusion": "One day I started to use Linux and the terminal, now I'm addicted to automate my workflow with Bash Scripts. With Docker and CI/CD knowledge I could entitle myself as a <1>Full-stack Developer</1>, but I won't do that and I'll call myself also as a <3>Product Infrastructure Developer</3> instead, which is way cooler."
     },
     "see-more": "Check more details on LinkedIn"
   },
   "gists": {
     "title": "Latest Gists",
-    "subtitle": "Don’t have a blog yet but I have gists",
+    "subtitle": "Don’t have a blog yet but I have Gists!",
     "see-more": "There's more"
   },
   "see-more": {

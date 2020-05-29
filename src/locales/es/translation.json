@@ -14,7 +14,7 @@
     "greeting": "Hola, me llamo",
     "name": "Gabriel Lima",
     "punch-line": "Construyo cosas para la web y amo lo que hago",
-    "bio": "Enfocado principalmente en <1>Desarrollo front-end</1> con un buen ojo de <3>UI/UX</3> y siempre intentando cosas diferentes.",
+    "bio": "Enfocado principalmente en <1>Desarrollo Front-end</1> con un buen ojo de <3>UI/UX</3> y siempre intentando cosas diferentes.",
     "default": {
       "bio-end": "Hablo 3 idiomas y también JavaScript."
     },
@@ -22,10 +22,10 @@
       "bio-end": "¡Necesitamos más JS Frameworks!"
     },
     "dad": {
-      "bio-end": "Otra habilidad de Full-stack: cambiar pañales."
+      "bio-end": "Otra habilidad de Full-stack: cambiador de pañales ágil."
     },
     "old": {
-      "bio-end": "¿Recuerdas cuando admitimos IE6?"
+      "bio-end": "¿Recuerdas cuando nos preocupamos por IE6?"
     }
   },
   "repositories": {
@@ -36,7 +36,7 @@
        "dale-cli": "Un conjunto de comandos diarios para ayudar al flujo de trabajo de su desarrollo",
        "website": {
          "title": "Sitio web personal",
-         "description": "Este mismo. Sí, puedes comprobar las cosas geniales que he usado para construirlo."
+         "description": "Este mismo. Sí, puedes comprobar las cosas geniales que he usado para construirlo"
        }
      }
   },
@@ -47,8 +47,8 @@
     "journey": {
       "title": "Mi Experiencia",
       "intro": "Empecé a trabajar con el desarrollo web en 2011, estudié Web y Multimedia, y siempre me encantó el diseño + código. Pero como ni siquiera soy Diseñador (mira el diseño de esta página web) me he convertido un <1>Desarrollador Front-end</1>.",
-      "body": "<0>CSS y HTML </0> son mis compañeros pero con <2>JavaScript</2> que la verdadera pasión floreció en mi corazón. Luego vinieron NodeJS, API RESTful y el desarrollo de Back-end se quedo más cerca que nunca. Los frameworks y las bibliotecas de test en JavaScript comenzaron a aparecer casi mensualmente, lo que creó la oportunidad de crear componentes de interfaz de usuario mejores y más inteactivos (para mi alegría), también hemos dejado de usar jQuery, ¿verdad?",
-      "conclusion": "Un día comencé a usar Linux y el terminal, ahora soy adicto a automatizar mi flujo de trabajo con Bash Scripts. Ahora, con el conocimiento de Docker y CI/ CD, podría darme el derecho de ser <1>Desarrollador Full Stack</1>, pero no haré eso y en cambio me llamaré a mí mismo también como <3>Desarrollador de Infraestructura de Producto</3>, lo cual es mucho más genial."
+      "body": "<0>CSS y HTML </0> siempre han sido mis compañeros pero con <2>JavaScript</2> que la verdadera pasión floreció en mi corazón. Luego vinieron NodeJS, API RESTful y el desarrollo de Back-end se quedo más cerca que nunca. Los frameworks y las bibliotecas de test en JavaScript comenzaron a aparecer casi mensualmente, lo que creó la oportunidad de crear componentes de interfaz de usuario mejores y más inteactivos (para mi alegría), también hemos dejado de usar jQuery, ¿verdad?",
+      "conclusion": "Un día comencé a usar Linux y el terminal, ahora soy adicto a automatizar mi flujo de trabajo con Bash Scripts. Ahora, con el conocimiento de Docker y CI/ CD podría darme el derecho de ser <1>Desarrollador Full Stack</1>, pero no haré eso y en cambio me llamaré a mí mismo también como <3>Desarrollador de Infraestructura de Producto</3>, lo cual es mucho más genial."
     }
   },
   "gists": {
