@@ -16,12 +16,18 @@ const Languages = (props: any) => {
     dispatch(setLanguage(langKey))
   }
 
+  const hasLanguage = (langKeyOption: string, langKey: string) => {
+    const regex = new RegExp(`^${langKeyOption}`, 'i')
+
+    return regex.test(langKey)
+  }
+
   return (
     <ul className={`${props.className} ${styles.list}`}>
       {languagesOptions.map((languageItem: any, i: number) => (
         <li key={i} className={styles['list-item']}>
           <button
-            className={`${styles.language} ${langKey === languageItem.key ? `${styles.active}` : ''}`}
+            className={`${styles.language} ${hasLanguage(languageItem.key, langKey) ? `${styles.active}` : ''}`}
             onClick={() => changeLanguage(languageItem.key)}
           >
             {languageItem.label}

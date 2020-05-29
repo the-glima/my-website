@@ -10,11 +10,8 @@ export const GistsService = {
     Authorization: `token ${process.env.REACT_APP_GH_TOKEN}`
   },
 
-  getUrl: (params = settings.github.urlParams): string => {
-    const url = `${params.url}/${params.user}/gists?per_page`
-
-    return isDevelopment() ? `${url}=100` : `${url}=${settings.gists.limit}`
-  },
+  getUrl: (params = settings.github.urlParams): string =>
+    `${params.url}/${params.user}/gists?per_page=${settings.gists.perPage}`,
 
   fetchGists: async function (): Promise<GistModel[]> {
     const url = this.getUrl()
