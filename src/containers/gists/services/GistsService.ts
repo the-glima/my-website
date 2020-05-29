@@ -1,4 +1,4 @@
-import {GistFilesModel, GistDOMModel, GistModel, GistsResponseModel, GistsData} from '../models'
+import {GistFilesModel, GistDOMModel, GistModel, GistsData} from '../models'
 import {settings} from '../../../settings'
 import {isDevelopment} from '../../../helpers'
 import StorageService from '../../../shared/services/StorageService'
