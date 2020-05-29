@@ -23,11 +23,11 @@
 
 .status {
   position: absolute;
-  top: 13px;
-  left: -18px;
+  top: 16px;
+  left: -28px;
   padding: .1rem 0;
-  width: 80px;
-  font-size: .47rem;
+  width: 110px;
+  font-size: 0.58rem;
   text-align: center;
   text-transform: uppercase;
   color: var(--color-white-2);

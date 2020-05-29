@@ -11,7 +11,9 @@ const settings = {
   gists: {
     title: 'A cool Gist about something',
     logo: 'GitHub',
-    limit: 8
+    limit: 8,
+    regexWebsite: /#website/,
+    regexLogo: /^\[(.*)\]/
   },
   languages: {
     options: [
