@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2b5bb1993b451744275cd464ba8215a6",
+    "revision": "56457bf900fd48462170b66bd5661917",
     "url": "/index.html"
   },
   {
-    "revision": "fbc44e18b23ed72dfac3",
-    "url": "/static/css/main.f9a4f884.chunk.css"
+    "revision": "6afc47dddce16e40c089",
+    "url": "/static/css/main.8980ff65.chunk.css"
   },
   {
-    "revision": "d064d63ca91fc4420dcb",
-    "url": "/static/js/2.c46021f4.chunk.js"
+    "revision": "5db8c03541f4d61e8d45",
+    "url": "/static/js/2.13ed53e6.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/static/js/2.c46021f4.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.13ed53e6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fbc44e18b23ed72dfac3",
-    "url": "/static/js/main.87c05f68.chunk.js"
+    "revision": "6afc47dddce16e40c089",
+    "url": "/static/js/main.1691bffc.chunk.js"
   },
   {
     "revision": "83da95eba59e2b0644ae",
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/arrow-up.9786f23f.svg"
   },
   {
-    "revision": "1a02f06796d6e60988ff7fb01d092e48",
-    "url": "/static/media/css.1a02f067.svg"
+    "revision": "00b3fbf99f00394a58ce165f2f5dba01",
+    "url": "/static/media/css.00b3fbf9.svg"
   },
   {
     "revision": "ace01fb6a429fab83d7c4b4d4e51ac65",
@@ -42,6 +42,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6ff6f984defc03de417fcad2220d4d91",
     "url": "/static/media/docker.6ff6f984.svg"
+  },
+  {
+    "revision": "51dd78bf2bbe4055b0d39a77778014b9",
+    "url": "/static/media/git.51dd78bf.svg"
   },
   {
     "revision": "1ac308c716e2b2f580495bd0b0ebee27",
@@ -80,8 +84,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/phone.0c3defde.jpg"
   },
   {
-    "revision": "c0a606f55ff3d6d835f05754c3f8da71",
-    "url": "/static/media/scss.c0a606f5.svg"
+    "revision": "9f5491ea02d36964e68e15f8eb716709",
+    "url": "/static/media/scss.9f5491ea.svg"
   },
   {
     "revision": "287a4561c8b3ca4b81deb9756dca598c",
