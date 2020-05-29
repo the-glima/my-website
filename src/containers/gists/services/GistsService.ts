@@ -1,4 +1,4 @@
-import {GistFilesModel, GistDOMModel, GistModel, GistsResponseModel, GistsData} from '../models'
+import {GistFilesModel, GistDOMModel, GistModel, GistsData} from '../models'
 import {settings} from '../../../settings'
 import {isDevelopment} from '../../../helpers'
 import StorageService from '../../../shared/services/StorageService'
@@ -16,7 +16,7 @@ export const GistsService = {
     return isDevelopment() ? `${url}=100` : `${url}=${settings.gists.limit}`
   },
 
-  getGists: async function (): Promise<GistsResponseModel> {
+  fetchGists: async function (): Promise<GistModel[]> {
     const url = this.getUrl()
     const headers = {
       ...(isDevelopment() && {headers: {...this.headers}})
@@ -30,25 +30,44 @@ export const GistsService = {
     }
   },
 
-  mapGists: async function (): Promise<GistDOMModel[]> {
-    const gists: GistsResponseModel = await this.getGists()
-    let gistsCollection = Object.values(gists)
-
-    if (isDevelopment()) {
-      gistsCollection = gistsCollection.filter((gist) => gist.public).slice(0, settings.gists.limit)
-    }
-
-    return gistsCollection.map((gist: GistModel) => {
+  mapGists: function (gists: GistModel[]): GistDOMModel[] {
+    return gists.map((gist: GistModel) => {
       const files: GistFilesModel[] = Object.values(gist.files)
+      const title = gist.description.replace(settings.gists.regexLogo, '').trim()
+      const languageMatch = gist.description.match(settings.gists.regexLogo)
+      const language =
+        languageMatch && languageMatch[1] && languageMatch[1].replace(settings.gists.regexWebsite, '').trim()
 
       return {
         id: gist.id,
         url: gist.html_url,
         files: files,
-        title: gist.description || settings.gists.title,
-        language: files[0].language || settings.gists.logo
+        title: title || settings.gists.title,
+        language: language || files[0].language || settings.gists.logo
       }
     })
+  },
+
+  filterGists: function (gists: GistModel[]): GistModel[] {
+    const regex = new RegExp(settings.gists.regexWebsite, 'gmi')
+
+    return gists
+      .filter((gist) => gist.public)
+      .filter((gist: GistModel) => gist.description.match(regex))
+      .slice(0, settings.gists.limit)
+      .map((gist: GistModel) => ({
+        ...gist,
+        description: gist.description.replace(regex, '').trim()
+      }))
+  },
+
+  getGists: async function (): Promise<GistDOMModel[]> {
+    const gists = await this.fetchGists()
+    const filteredGists = this.filterGists(gists)
+    console.log(filteredGists)
+    const mappedGists = this.mapGists(filteredGists)
+
+    return mappedGists
   },
 
   setGistsLocalStorage: async (data: GistsData): Promise<void> => {

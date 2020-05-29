@@ -44,7 +44,7 @@ const Gists = ({t}: any) => {
     if (gistsLocalStorage && !GistsService.shouldSetGistsLocalStorage(gistsLocalStorage)) {
       dispatch(actions.fetchGistsLocalStorageSuccess(gistsLocalStorage))
     } else {
-      const gistsCollection = await GistsService.mapGists()
+      const gistsCollection = await GistsService.getGists()
       const data: GistsData = {
         date: Date.now(),
         collection: gistsCollection
@@ -99,8 +99,13 @@ const Gists = ({t}: any) => {
                         className={styles.logo}
                         src={GistsGetLogoUtil(gist.language.toLowerCase())?.src}
                         alt={gist.language}
+                        title={gist.language}
                       />
-                      <a className={styles.link} href={gist.url} title={`Check this gist: ${gist.title}`}>
+                      <a
+                        className={styles.link}
+                        href={gist.url}
+                        title={` Check this gist: ${gist.language} - ${gist.title}`}
+                      >
                         {gist.title}
                       </a>
                     </li>

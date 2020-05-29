@@ -40,7 +40,7 @@
   animation-duration: .3s;
 }
 
-.circle.active:hover::after {
+.circle.active::after {
   animation-duration: .25s;
 }
 

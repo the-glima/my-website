@@ -3,7 +3,7 @@
 
 .section-gists { 
   position: relative;
-  min-height: 544px;
+  min-height: 300px;
   background-color: var(--color-bg-section);
 }
 
@@ -30,6 +30,7 @@
 .link {
   composes: link from '../../assets/styles/helpers.css';
   margin-left: .76rem; 
+  font-size: .9rem; 
   transition: var(--transition);
 }
 
@@ -41,14 +42,14 @@
 }
 
 .gists-loading svg {
-  width: 100px;
+  width: 84px;
   animation: loading-animation 1.5s infinite ease-in-out; 
   transition: var(--transition);
 }
 
 @media (min-width: breakpoint-sm) {
   .list {
-    margin: 4rem auto;
+    margin: 4rem auto 2rem;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
   }

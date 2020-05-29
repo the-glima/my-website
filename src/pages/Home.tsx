@@ -16,7 +16,7 @@ import Loading from '../shared/components/loading/Loading'
 import styles from './Home.module.css'
 
 const Home = ({t}: any) => {
-  const [loading, setLoading]: any = useState(false)
+  const [loading, setLoading]: any = useState(true)
   const [fadeIntro, setFadeIntro]: any = useState(false)
   const storageService = StorageService('session')
 
@@ -31,10 +31,12 @@ const Home = ({t}: any) => {
     const isIntroSaved = storageService.getItem('intro')
 
     if (!isIntroSaved) {
-      setLoading(true)
       setTimeout(() => setFadeIntro(true), 1600)
       setTimeout(setSessionStorage, 1800)
+    } else {
+      setLoading(false)
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

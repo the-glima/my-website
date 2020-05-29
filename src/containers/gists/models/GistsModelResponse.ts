@@ -33,4 +33,5 @@ export interface GistModel {
   comments_url: string
   owner: any
   truncated: boolean
+  public: boolean
 }
