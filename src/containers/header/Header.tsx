@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import styles from './Header.module.css'
 import {HeaderData} from './HeaderData'
 import * as actions from './redux/HeaderActions'
+import * as homeActions from '../../pages/home/redux/HomeActions'
 import {settings} from '../../settings'
 
 const Header = ({t}: any) => {
@@ -34,6 +35,10 @@ const Header = ({t}: any) => {
     [dispatch]
   )
 
+  const onPictureLoad = useCallback(() => {
+    dispatch(homeActions.setHomeInit({isInitialized: true}))
+  }, [dispatch])
+
   useEffect(() => {
     dispatch(actions.getPersonality())
     togglePersonality(headerData[count])
@@ -51,7 +56,13 @@ const Header = ({t}: any) => {
             className={`${styles.circle} ${styles[`primary-color-${personalityState?.data?.color}`]} ${isActive()}`}
             onClick={onClickPicture}
           >
-            <img className={styles.picture} src={personalityState?.data?.picture} alt="Gabriel Lima" title="Click Me" />
+            <img
+              className={styles.picture}
+              src={personalityState?.data?.picture}
+              onLoad={onPictureLoad}
+              alt="Gabriel Lima"
+              title="Click Me"
+            />
           </div>
 
           <h1 className={styles.heading}>

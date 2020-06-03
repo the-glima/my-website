@@ -6,9 +6,7 @@
     "software-developer": "Software Developer"
   },
   "intro": {
-    "welcome" : {
-      "0": "Loading bits and bytes..."
-    }
+    "welcome" : "Good thigns take time... to load"
   },
   "header": {
     "greeting": "Hi, my name is",
@@ -22,7 +20,7 @@
       "bio-end": "We need more JS Frameworks!"
     },
     "dad": {
-      "bio-end": "Another Full-stack skill: agile diaper changer."
+      "bio-end": "Another skill: agile diaper changer."
     },
     "old": {
       "bio-end": "Remember when we cared about IE6?!"
