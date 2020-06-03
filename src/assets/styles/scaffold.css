@@ -47,6 +47,8 @@ body.dark-mode {
   --loading-bg-color: 05, 05, 05;
 }
 
+#root { overflow: hidden;}
+
 body.dark-mode img {
   opacity: .96;
   transition: opacity var(--transition);
