@@ -6,11 +6,10 @@
     "front-end-developer": "Desarrollador Front-end"
   },
   "intro": {
-    "welcome" : {
-      "0": "Cargando bits and bytes..."
-    }
+    "welcome": "Las cosas buenas toman tiempo..."
   },
   "header": {
+    "hint": "¡Haz clic aquí!",
     "greeting": "Hola, me llamo",
     "name": "Gabriel Lima",
     "punch-line": "Construyo cosas para la web y amo lo que hago",

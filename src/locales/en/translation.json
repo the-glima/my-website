@@ -6,9 +6,10 @@
     "software-developer": "Software Developer"
   },
   "intro": {
-    "welcome" : "Good thigns take time... to load"
+    "welcome": "Good things take time... to load"
   },
   "header": {
+    "hint": "Click me!",
     "greeting": "Hi, my name is",
     "name": "Gabriel Lima",
     "punch-line": "I build things for the web and love what I do",
