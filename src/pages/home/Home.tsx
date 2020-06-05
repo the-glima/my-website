@@ -26,17 +26,17 @@ const Home = ({t}: any) => {
     const isIntroSaved = storageService.getItem('intro')
 
     if (!isIntroSaved) {
-      if (!homeState.isInitialized) {
+    if (!homeState.isInitialized) {
         setLoading(true)
       } else {
         setTimeout(() => {
           setFadeIntro(true)
           setLoading(false)
-          storageService.setItem('intro', 'initialized')
+          // storageService.setItem('intro', 'initialized')
         }, 2000)
       }
     } else {
-      setFadeIntro(true)
+      // setFadeIntro(true)
     }
   }, [homeState, storageService])
 

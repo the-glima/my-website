@@ -24,7 +24,7 @@
   z-index: 1;
   opacity: 0;
   background: var(--color-primary);
-  animation: hint 16s infinite cubic-bezier(0.41, -0.12, 0.61, 1.43) 3s;
+  animation: hint 15s infinite cubic-bezier(0.41, -0.12, 0.61, 1.43) 4s;
   transform: rotate(-35deg);
 }
 
@@ -103,6 +103,7 @@
 
   .heading {
     text-align: left;
+    margin-left: .6rem;
   }
 
   .greeting {  
