@@ -32,11 +32,11 @@ const Home = ({t}: any) => {
         setTimeout(() => {
           setFadeIntro(true)
           setLoading(false)
-          // storageService.setItem('intro', 'initialized')
+          storageService.setItem('intro', 'initialized')
         }, 2000)
       }
     } else {
-      // setFadeIntro(true)
+      setFadeIntro(true)
     }
   }, [homeState, storageService])
 
@@ -55,7 +55,10 @@ const Home = ({t}: any) => {
   return (
     <>
       {loading && (
-        <Loading className={`${styles.loading} ${fadeIntro ? styles['fade-loading'] : ''}`} component={cpPersonality} />
+        <Loading
+          className={`${styles.loading} ${fadeIntro ? styles['fade-loading'] : ''}`}
+          component={cpPersonality}
+        />
       )}
 
       <div className={`${styles.hidden} ${fadeIntro ? styles['fade-content'] : ''}`}>
