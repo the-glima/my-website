@@ -23,7 +23,7 @@ interface Props {
 const Personality = (props: Props) => {
   return (
     <div className={`${styles.wrapper} ${props.wrapperClassName || ''}`}>
-      <div 
+      <div
         className={`
           ${styles.circle}
           ${props.spinning ? styles.spinning : ''}
@@ -32,10 +32,10 @@ const Personality = (props: Props) => {
         `}
         onClick={props.events?.onClick}
       >
-        <img 
-          className={styles.picture} 
-          src={props.image?.src} 
-          alt={props.image?.alt} 
+        <img
+          className={styles.picture}
+          src={props.image?.src}
+          alt={props.image?.alt}
           onLoad={props.image?.events?.onLoad}
         />
       </div>

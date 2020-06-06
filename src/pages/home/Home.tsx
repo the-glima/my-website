@@ -26,7 +26,7 @@ const Home = ({t}: any) => {
     const isIntroSaved = storageService.getItem('intro')
 
     if (!isIntroSaved) {
-    if (!homeState.isInitialized) {
+      if (!homeState.isInitialized) {
         setLoading(true)
       } else {
         setTimeout(() => {
@@ -43,7 +43,7 @@ const Home = ({t}: any) => {
   const cpPersonality = (
     <Personality
       image={{
-        src: husband, 
+        src: husband,
         alt: 'Gabriel Lima'
       }}
       className={styles['loading-picture']}
@@ -55,10 +55,7 @@ const Home = ({t}: any) => {
   return (
     <>
       {loading && (
-        <Loading
-          className={`${styles.loading} ${fadeIntro ? styles['fade-loading'] : ''}`}
-          component={cpPersonality}
-        />
+        <Loading className={`${styles.loading} ${fadeIntro ? styles['fade-loading'] : ''}`} component={cpPersonality} />
       )}
 
       <div className={`${styles.hidden} ${fadeIntro ? styles['fade-content'] : ''}`}>

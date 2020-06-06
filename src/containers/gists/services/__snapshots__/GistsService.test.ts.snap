@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GistsService getGistsLocalStorage: should get gists from local storage 1`] = `
+Object {
+  "data": Object {
+    "collection": Array [
+      Object {
+        "files": Array [
+          Object {
+            "filename": ".hyper.js",
+            "language": "JavaScript",
+            "raw_url": "https://gist.githubusercontent.com/the-glima/2980bf771357f4caab71e8ae571f10c9/raw/e78cec2e2086dab2e96e766b401d08312a6e67a2/.hyper.js",
+            "size": 5898,
+            "type": "application/javascript",
+          },
+        ],
+        "id": "1",
+        "language": "JavaScript",
+        "title": "Hyper Configuration",
+        "url": "https://gist.github.com/2980bf771357f4caab71e8ae571f10c9",
+      },
+      Object {
+        "files": Array [
+          Object {
+            "filename": "get-latest-tag-on-git.sh",
+            "language": "Shell",
+            "raw_url": "https://gist.githubusercontent.com/the-glima/5b5503c60df6371c22d611a0c87c2821/raw/486a95da7c14fbd3c5cc7801f273bf72a9a28ea8/get-latest-tag-on-git.sh",
+            "size": 637,
+            "type": "application/x-sh",
+          },
+        ],
+        "id": "5b5503c60df6371c22d611a0c87c2821",
+        "language": "Shell",
+        "title": "Getting latest tag on git repository",
+        "url": "https://gist.github.com/5b5503c60df6371c22d611a0c87c2821",
+      },
+      Object {
+        "files": Array [
+          Object {
+            "filename": "git-show-commits-range.sh",
+            "language": "Shell",
+            "raw_url": "https://gist.githubusercontent.com/the-glima/e19892f44976495b43b68cbf075d0d1b/raw/ab907b151ddb09033cf5131dae455e75bb19047b/git-show-commits-range.sh",
+            "size": 308,
+            "type": "application/x-sh",
+          },
+        ],
+        "id": "e19892f44976495b43b68cbf075d0d1b",
+        "language": "Shell",
+        "title": "Show commits by a range of time",
+        "url": "https://gist.github.com/e19892f44976495b43b68cbf075d0d1b",
+      },
+      Object {
+        "files": Array [
+          Object {
+            "filename": "sync-branch.sh",
+            "language": "Shell",
+            "raw_url": "https://gist.githubusercontent.com/the-glima/5912b8c98bef97c19bc4c0ca3b4e29ee/raw/dbcd7224a8d8ca6cef5412b106ad71c2cab3eb4a/sync-branch.sh",
+            "size": 579,
+            "type": "application/x-sh",
+          },
+        ],
+        "id": "5912b8c98bef97c19bc4c0ca3b4e29ee",
+        "language": "Shell",
+        "title": "Sync your current branch with another",
+        "url": "https://gist.github.com/5912b8c98bef97c19bc4c0ca3b4e29ee",
+      },
+      Object {
+        "files": Array [
+          Object {
+            "filename": "multiple_ssh_setting.md",
+            "language": "Markdown",
+            "raw_url": "https://gist.githubusercontent.com/the-glima/37d90c5060f8d9dd2e5bdb6611c416f5/raw/58a7c960d1fddc642b6d60e76633210cd4b659ec/multiple_ssh_setting.md",
+            "size": 1797,
+            "type": "text/markdown",
+          },
+        ],
+        "id": "37d90c5060f8d9dd2e5bdb6611c416f5",
+        "language": "Markdown",
+        "title": "Multiple SSH keys GitHub setup",
+        "url": "https://gist.github.com/37d90c5060f8d9dd2e5bdb6611c416f5",
+      },
+      Object {
+        "files": Array [
+          Object {
+            "filename": "pr-check.js",
+            "language": "JavaScript",
+            "raw_url": "https://gist.githubusercontent.com/the-glima/86e7eec2a597ee7a22121b11cab32a0d/raw/75e59e6ab4818b287451556a7a7b76692951ef85/pr-check.js",
+            "size": 3930,
+            "type": "application/javascript",
+          },
+        ],
+        "id": "86e7eec2a597ee7a22121b11cab32a0d",
+        "language": "JavaScript",
+        "title": "Automated checks when creating PRs",
+        "url": "https://gist.github.com/86e7eec2a597ee7a22121b11cab32a0d",
+      },
+      Object {
+        "files": Array [
+          Object {
+            "filename": "string.customIndexOf.js",
+            "language": "JavaScript",
+            "raw_url": "https://gist.githubusercontent.com/the-glima/9ca6a248e61c3ed74859e30f0952bf3c/raw/71f20b957ce4c74bc329076876456dbb9a6508fc/string.customIndexOf.js",
+            "size": 7472,
+            "type": "application/javascript",
+          },
+        ],
+        "id": "9ca6a248e61c3ed74859e30f0952bf3c",
+        "language": "JavaScript",
+        "title": "Custom String.prototype.indexOf",
+        "url": "https://gist.github.com/9ca6a248e61c3ed74859e30f0952bf3c",
+      },
+      Object {
+        "files": Array [
+          Object {
+            "filename": "prepare-commit-msg.sh",
+            "language": "Shell",
+            "raw_url": "https://gist.githubusercontent.com/the-glima/ccca711a04e5e9951b1a/raw/5929054f65dbefbf210b2f5eb399e1e344310ef5/prepare-commit-msg.sh",
+            "size": 549,
+            "type": "application/x-sh",
+          },
+        ],
+        "id": "ccca711a04e5e9951b1a",
+        "language": "Shell",
+        "title": "Prepend branch name into commit message",
+        "url": "https://gist.github.com/ccca711a04e5e9951b1a",
+      },
+    ],
+    "date": 1000000,
+  },
+}
+`;
