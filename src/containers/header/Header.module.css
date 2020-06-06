@@ -1,7 +1,10 @@
 @value breakpoint-sm from '../../assets/styles/variables.css';
 @value breakpoint-lg from '../../assets/styles/variables.css';
 
-.section-header { text-align: center; }
+.section-header { 
+  padding-top: 3rem;
+  text-align: center; 
+}
 
 .header {
   display: inline-flex;
@@ -10,73 +13,33 @@
   text-align: left;
 }
 
-/* Picture */
-.circle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin-right: .8rem;
-  cursor: pointer;
+.header-picture { position: relative; }
+
+.picture-hint {
+  position: absolute;
+  padding: 0.05rem .4rem;
+  font-size: .65rem;
+  color: var(--color-white);
+  border-radius: 5px;
+  z-index: 1;
+  opacity: 0;
+  background: var(--color-primary);
+  animation: hint 15s infinite cubic-bezier(0.41, -0.12, 0.61, 1.43) 4s;
+  transform: rotate(-35deg);
 }
 
-.circle::after {
+.picture-hint::before {
   content: '';
   position: absolute;
-  width: 128px;
-  height: 128px;
-  background-color: var(--color-primary);
-  z-index: -1;
-  border-radius: 50%;
+  top: calc(100% - 1px);
+  left: 50%;
+  display: block;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--color-primary);
+  transform: translateX(-50%);
 }
 
-.circle:hover::after,
-.circle.active::after {
-  background: linear-gradient(90deg, var(--color-primary), var(--color-blue));
-  animation: circle-round infinite linear;
-}
-
-.circle:hover::after {
-  animation-duration: .3s;
-}
-
-.circle.active::after {
-  animation-duration: .25s;
-}
-
-.primary-color-purple.circle:hover::after,
-.primary-color-purple.circle.active::after {
-  background: linear-gradient(90deg, var(--color-primary), var(--color-cyan));
-}
-
-.primary-color-cyan.circle:hover::after,
-.primary-color-cyan.circle.active::after {
-  background: linear-gradient(90deg, var(--color-primary), var(--color-pink));
-}
-
-.primary-color-yellow.circle.active::after,
-.primary-color-yellow.circle:hover::after {
-  background: linear-gradient(90deg, var(--color-primary), var(--color-blue));
-}
-
-.circle:hover img,
-.circle.active img {
-  border-color: transparent;
-}
-
-.circle.active img {
-  transform: scale(.86); 
-  filter: grayscale(100%); 
-}
-
-.picture {
-  width: 120px;
-  height: 120px;
-  border-radius: 100%;
-  transition: .06s ease-in-out;
-}
-
-/* Heading Intro */
 .heading {
   display: flex;
   flex-direction: column;
@@ -128,6 +91,10 @@
 .personality-bio { color: var(--color-primary); }
 
 @media only screen and (min-width: breakpoint-sm) {
+  .section-header { 
+    padding-top: 2rem;
+  }
+
   .header {
     flex-direction: row;
     padding-top: 1.5rem;
@@ -136,6 +103,7 @@
 
   .heading {
     text-align: left;
+    margin-left: .6rem;
   }
 
   .greeting {  
@@ -181,7 +149,22 @@
   }
 }
 
-@keyframes circle-round {
-  0% { transform: rotate(0deg) }
-  100% { transform: rotate(360deg) }
+@keyframes hint {
+  0% {
+    top: 2px;
+    left: 2px;
+    opacity: 0;
+    transform: scale(.2) rotate(-35deg);
+  }
+  4%, 98% {
+    top: -18px;
+    left: -18px;
+    opacity: 1;
+    transform: scale(1) rotate(-35deg);
+  }
+  100% {
+    top: -18px;
+    left: -18px;
+    opacity: 0;
+  }
 }

@@ -2,7 +2,8 @@ const settings = {
   github: {
     urlParams: {
       url: 'https://api.github.com/users',
-      user: 'the-glima'
+      user: 'the-glima',
+      perPage: 60
     }
   },
   header: {
@@ -12,7 +13,6 @@ const settings = {
     title: 'A cool Gist about something',
     logo: 'GitHub',
     limit: 8,
-    perPage: 60,
     regexWebsite: /#website/,
     regexLogo: /^\[(.*)\]/
   },

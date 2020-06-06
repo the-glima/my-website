@@ -7,7 +7,7 @@ import Gists from '../../containers/gists/Gists'
 import Footer from '../../containers/footer/Footer'
 import Work from '../../containers/work/Work'
 import Repositories from '../../containers/repositories/Repositories'
-import PictureCircle from '../../shared/components/picture-circle/PictureCircle'
+import Personality from '../../shared/components/personality/Personality'
 
 import StorageService from '../../shared/services/StorageService'
 
@@ -31,22 +31,23 @@ const Home = ({t}: any) => {
       } else {
         setTimeout(() => {
           setFadeIntro(true)
-          storageService.setItem('intro', 'initialized')
+          setLoading(false)
+          // storageService.setItem('intro', 'initialized')
         }, 2000)
       }
     } else {
-      setFadeIntro(true)
+      // setFadeIntro(true)
     }
-
-    console.time('homeState')
-    console.log(homeState)
-    console.timeEnd('homeState')
   }, [homeState, storageService])
 
-  const cpPictureCircle = (
-    <PictureCircle
-      image={{src: husband, alt: 'Gabriel Lima', title: 'Please wait'}}
+  const cpPersonality = (
+    <Personality
+      image={{
+        src: husband,
+        alt: 'Gabriel Lima'
+      }}
       className={styles['loading-picture']}
+      spinning={true}
       text={t('intro.welcome')}
     />
   )
@@ -54,10 +55,7 @@ const Home = ({t}: any) => {
   return (
     <>
       {loading && (
-        <Loading
-          className={`${styles.loading} ${fadeIntro ? styles['fade-loading'] : ''}`}
-          component={cpPictureCircle}
-        />
+        <Loading className={`${styles.loading} ${fadeIntro ? styles['fade-loading'] : ''}`} component={cpPersonality} />
       )}
 
       <div className={`${styles.hidden} ${fadeIntro ? styles['fade-content'] : ''}`}>

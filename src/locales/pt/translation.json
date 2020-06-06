@@ -6,11 +6,10 @@
     "front-end-developer": "Desenvolvedor Front-end"
   },
   "intro": {
-    "welcome" : {
-      "0": "Carregando bits and bytes..."
-    }
+    "welcome": "Site legal tem que ter loading..."
   },
   "header": {
+    "hint": "Clica aqui!",
     "greeting": "Oi, meu nome é",
     "punch-line": "Eu desenvolvo para a web e amo o que faço",
     "bio": "Focado principalmente em <1>Desenvolvimento Front-end</1> com uma boa noção de <3>UI/UX</3>, mas sempre testando a aprendendo coisas diferentes.",

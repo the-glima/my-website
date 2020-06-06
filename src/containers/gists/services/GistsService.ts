@@ -11,7 +11,7 @@ export const GistsService = {
   },
 
   getUrl: (params = settings.github.urlParams): string =>
-    `${params.url}/${params.user}/gists?per_page=${settings.gists.perPage}`,
+    `${params.url}/${params.user}/gists?per_page=${params.perPage}`,
 
   fetchGists: async function (): Promise<GistModel[]> {
     const url = this.getUrl()
@@ -67,7 +67,7 @@ export const GistsService = {
     return mappedGists
   },
 
-  setGistsLocalStorage: async (data: GistsData): Promise<void> => {
+  setGistsLocalStorage: (data: GistsData) => {
     if (data) {
       storageService.setItem('gists', JSON.stringify(data))
     }

@@ -7,6 +7,7 @@ import {HeaderData} from './HeaderData'
 import * as actions from './redux/HeaderActions'
 import * as homeActions from '../../pages/home/redux/HomeActions'
 import {settings} from '../../settings'
+import Personality from '../../shared/components/personality/Personality'
 
 const Header = ({t}: any) => {
   const headerData = HeaderData()
@@ -42,27 +43,28 @@ const Header = ({t}: any) => {
   useEffect(() => {
     dispatch(actions.getPersonality())
     togglePersonality(headerData[count])
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count, languageState])
-
-  const isActive = () => (active ? styles.active : '')
 
   return (
     <section className={`section ${styles['section-header']}`}>
       <div className="section-content">
         <header className={styles.header}>
-          <div
-            className={`${styles.circle} ${styles[`primary-color-${personalityState?.data?.color}`]} ${isActive()}`}
-            onClick={onClickPicture}
-          >
-            <img
-              className={styles.picture}
-              src={personalityState?.data?.picture}
-              onLoad={onPictureLoad}
-              alt="Gabriel Lima"
-              title="Click Me"
+          <div className={styles['header-picture']}>
+            <Personality
+              active={active}
+              events={{
+                onClick: onClickPicture
+              }}
+              image={{
+                src: personalityState?.data?.picture,
+                alt: 'Gabriel Lima',
+                events: {
+                  onLoad: onPictureLoad
+                }
+              }}
             />
+            <span className={styles['picture-hint']}>{t('header.hint')}</span>
           </div>
 
           <h1 className={styles.heading}>
