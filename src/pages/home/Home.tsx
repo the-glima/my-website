@@ -32,11 +32,11 @@ const Home = ({t}: any) => {
         setTimeout(() => {
           setFadeIntro(true)
           setLoading(false)
-          // storageService.setItem('intro', 'initialized')
+          storageService.setItem('intro', 'initialized')
         }, 2000)
       }
     } else {
-      // setFadeIntro(true)
+      setFadeIntro(true)
     }
   }, [homeState, storageService])
 
