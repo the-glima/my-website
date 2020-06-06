@@ -57,8 +57,8 @@ const Header = ({t}: any) => {
                 onClick: onClickPicture
               }}
               image={{
-                src: personalityState?.data?.picture, 
-                alt: 'Gabriel Lima', 
+                src: personalityState?.data?.picture,
+                alt: 'Gabriel Lima',
                 events: {
                   onLoad: onPictureLoad
                 }
