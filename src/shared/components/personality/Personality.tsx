@@ -23,7 +23,7 @@ interface Props {
 const Personality = (props: Props) => {
   return (
     <div className={`${styles.wrapper} ${props.wrapperClassName || ''}`}>
-      <div
+      <div 
         className={`
           ${styles.circle}
           ${props.spinning ? styles.spinning : ''}

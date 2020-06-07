@@ -1,4 +1,5 @@
 .loading {
+  position: fixed;
   background-color: var(--color-white);
 }
 
