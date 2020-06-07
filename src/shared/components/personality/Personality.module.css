@@ -81,6 +81,30 @@
   font-size: 1.2rem;
 }
 
+:global(.primary-color-orange) {
+  --color-primary: var(--color-orange);
+}
+
+:global(.primary-color-purple) {
+  --color-primary: var(--color-purple);
+}
+
+:global(.dark-mode.primary-color-purple) {
+  --color-primary: var(--color-purple-dark-mode);
+}
+
+:global(.primary-color-cyan) {
+  --color-primary: var(--color-cyan);
+}
+
+:global(.dark-mode):global(.primary-color-cyan) {
+  --color-primary: var(--color-cyan-dark-mode);
+}
+
+:global(.primary-color-yellow) {
+  --color-primary: var(--color-gold);
+}
+
 @keyframes circle-rotation {
   0% { transform: rotate(0deg) }
   100% { transform: rotate(360deg) }

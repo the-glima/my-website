@@ -1,0 +1,26 @@
+.dark-mode {
+  --box-shadow-color: var(--color-black);
+  --color-text: var(--color-white-2);
+  --color-bg: var(--color-black-2);
+  --color-bg-section: var(--color-black);
+  --color-white: var(--color-white-2);
+  --color-grey-dark: var(--color-black-full);
+  --color-card-text: var(--color-white);
+  --color-card-background: rgb(59, 59, 59);
+  --color-card-border: #353535;
+  --color-primary-darker: var(--color-gold-darker);
+  --dashed-border-color: var(--color-grey-darker);
+  --work-pseudo-color: var(--color-grey-darker);
+  --work-list-pseudo-color: var(--color-black);
+  --loading-bg-color: 05, 05, 05;
+}
+
+.dark-mode img {
+  opacity: .96;
+  transition: opacity var(--transition);
+}
+
+
+@media (hover: hover) {
+  .dark-mode img:hover { opacity: 1; }
+}

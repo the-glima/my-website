@@ -1,7 +1,12 @@
-.loading {
-  position: fixed;
-  background-color: var(--color-white);
+:global(.home) { opacity: 0; }
+
+:global(.home):global(.home-initialized) {
+  position: relative;
+  transition: .7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation: fade-content .5s cubic-bezier(0.22, 0.61, 0.36, 1) .1s forwards;
 }
+
+.loading { position: fixed; }
 
 .fade-loading {
   transition: 2s;
@@ -10,14 +15,6 @@
 
 .loading-picture:after {
   background: linear-gradient(90deg, var(--color-orange), var(--color-blue));
-}
-
-.hidden { opacity: 0; }
-
-.fade-content {
-  position: relative;
-  transition: .7s cubic-bezier(0.22, 0.61, 0.36, 1);
-  animation: fade-content .5s cubic-bezier(0.22, 0.61, 0.36, 1) .1s forwards;
 }
 
 @keyframes fade-loading {

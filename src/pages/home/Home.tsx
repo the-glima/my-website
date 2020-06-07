@@ -33,7 +33,7 @@ const Home = ({t}: any) => {
           setFadeIntro(true)
           setLoading(false)
           storageService.setItem('intro', 'initialized')
-        }, 2000)
+        }, 2500)
       }
     } else {
       setFadeIntro(true)
@@ -55,13 +55,10 @@ const Home = ({t}: any) => {
   return (
     <>
       {loading && (
-        <Loading
-          className={`${styles.loading} ${fadeIntro ? styles['fade-loading'] : ''}`}
-          component={cpPersonality}
-        />
+        <Loading className={`${styles.loading} ${fadeIntro ? styles['fade-loading'] : ''}`} component={cpPersonality} />
       )}
 
-      <div className={`${styles.hidden} ${fadeIntro ? styles['fade-content'] : ''}`}>
+      <div className={`home  ${fadeIntro ? 'home-initialized' : ''}`}>
         <Header />
         <Repositories />
         <Work />
