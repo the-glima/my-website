@@ -55,7 +55,10 @@ const Home = ({t}: any) => {
   return (
     <>
       {loading && (
-        <Loading className={`${styles.loading} ${fadeIntro ? styles['fade-loading'] : ''}`} component={cpPersonality} />
+        <Loading
+          className={`${styles.loading} ${fadeIntro ? styles['fade-loading'] : ''}`}
+          component={cpPersonality}
+        />
       )}
 
       <div className={`home  ${fadeIntro ? 'home-initialized' : ''}`}>
