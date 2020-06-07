@@ -96,10 +96,6 @@
   z-index: 2;
 }
 
-.list-item-card:hover::before {
-  background-color: var(--color-primary);
-}
-
 .list-item-date {
   margin: 2rem auto;
   font-size: 1.06rem;
@@ -138,13 +134,19 @@
   font-weight: 600;
 }
 
-.list-item-card:hover .title {
-  color: var(--color-primary);
-}
-
 .position { 
   padding-top: .15rem;
   font-size: .8rem;
+}
+
+@media (hover: hover) {
+  .list-item-card:hover::before {
+    background-color: var(--color-primary);
+  }
+  
+  .list-item-card:hover .title {
+    color: var(--color-primary);
+  }
 }
 
 @media (min-width: breakpoint-lg) and (max-width: breakpoint-xx) {

@@ -28,14 +28,12 @@
   background: linear-gradient(90deg, var(--color-primary), var(--color-blue));
 }
 
-.circle:hover::after,
 .circle.spinning::after,
 .circle.active::after {
   background: linear-gradient(90deg, var(--color-primary), var(--color-blue));
   animation: circle-rotation infinite linear;
 }
 
-.circle:hover::after,
 .circle.spinning::after {
   animation-duration: .29s;
 }
@@ -44,22 +42,18 @@
   animation-duration: .25s;
 }
 
-.primary-color-purple.circle:hover::after,
 .primary-color-purple.circle.active::after {
   background: linear-gradient(90deg, var(--color-primary), var(--color-cyan));
 }
 
-.primary-color-cyan.circle:hover::after,
 .primary-color-cyan.circle.active::after {
   background: linear-gradient(90deg, var(--color-primary), var(--color-pink));
 }
 
-.primary-color-yellow.circle.active::after,
-.primary-color-yellow.circle:hover::after {
+.primary-color-yellow.circle.active::after {
   background: linear-gradient(90deg, var(--color-primary), var(--color-blue));
 }
 
-.circle:hover img,
 .circle.active img {
   border-color: transparent;
   filter: grayscale(100%); 
@@ -110,3 +104,30 @@
   100% { transform: rotate(360deg) }
 }
 
+@media (hover: hover) {
+  .circle:hover::after {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-blue));
+    animation: circle-rotation infinite linear;
+  }
+  
+  .circle:hover::after {
+    animation-duration: .29s;
+  }
+  
+  .primary-color-purple.circle:hover::after {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-cyan));
+  }
+  
+  .primary-color-cyan.circle:hover::after {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-pink));
+  }
+  
+  .primary-color-yellow.circle:hover::after {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-blue));
+  }
+
+  .circle:hover img {
+    border-color: transparent;
+    filter: grayscale(100%); 
+  }
+}

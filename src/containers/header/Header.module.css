@@ -40,7 +40,7 @@
 }
 
 :global(.home-initialized) .picture-hint {
-  animation: hint 15s infinite cubic-bezier(0.41, -0.12, 0.61, 1.43) 3s;
+  animation: hint 15s infinite cubic-bezier(0.41, -0.12, 0.61, 1.43) 2.3s;
 }
 
 .heading {
