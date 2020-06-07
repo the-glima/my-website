@@ -35,12 +35,6 @@
   transform: rotate(-45deg);
 }
 
-@media (hover: hover) {
-  .link:hover .name {
-    color: var(--color-primary);
-  }
-}
-
 .link-wrapper {
   display: flex;
   align-items: center;
@@ -62,6 +56,12 @@
 
 .description {
   padding-top: 1rem;
+}
+
+@media (hover: hover) {
+  .link:hover .name {
+    color: var(--color-primary);
+  }
 }
 
 @media (min-width: breakpoint-md) {

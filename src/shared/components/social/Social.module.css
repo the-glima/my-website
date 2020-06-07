@@ -25,13 +25,12 @@
   transition: var(--transition);
 }
 
-.logo-twitter:hover { color: var(--color-twitter); }
-.logo-linkedin:hover { color: var(--color-linkedin); }
-.logo-github:hover { color: var(--color-github); }
-.logo-spotify:hover { color: var(--color-spotify); }
-
 @media (hover: hover) {
   .link:hover .social { top: 1px; }
+  .logo-twitter:hover { color: var(--color-twitter); }
+  .logo-linkedin:hover { color: var(--color-linkedin); }
+  .logo-github:hover { color: var(--color-github); }
+  .logo-spotify:hover { color: var(--color-spotify); }
 }
 
 @media (min-width: breakpoint-md) {

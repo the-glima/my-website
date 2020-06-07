@@ -13,10 +13,6 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-html.loading {
-  overflow: hidden;
-}
-
 body {
   height: 100%;
   color: var(--color-text);
@@ -29,63 +25,7 @@ body {
   -webkit-tap-highlight-color: rgba(#f65e5e, .1);
 }
 
-body.dark-mode {
-  --box-shadow-color: var(--color-black);
-  --color-text: var(--color-white-2);
-  --color-bg: var(--color-black-2);
-  --color-bg-section: var(--color-black);
-  --color-white: var(--color-white-2);
-  --color-grey-dark: var(--color-black-full);
-  --color-primary: var(--color-gold);
-  --color-card-text: var(--color-white);
-  --color-card-background: rgb(59, 59, 59);
-  --color-card-border: #353535;
-  --color-primary-darker: var(--color-gold-darker);
-  --dashed-border-color: var(--color-grey-darker);
-  --work-pseudo-color: var(--color-grey-darker);
-  --work-list-pseudo-color: var(--color-black);
-  --loading-bg-color: 05, 05, 05;
-}
-
-#root { overflow: hidden;}
-
-body.dark-mode img {
-  opacity: .96;
-  transition: opacity var(--transition);
-}
-
-/* Personalities Primary Color */
-body.primary-color-orange {
-  --color-primary: var(--color-orange);
-}
-
-body.primary-color-purple {
-  --color-primary: var(--color-purple);
-}
-
-body.dark-mode.primary-color-purple {
-  --color-primary: var(--color-purple-dark-mode);
-}
-
-body.primary-color-cyan {
-  --color-primary: var(--color-cyan);
-}
-
-body.dark-mode.primary-color-cyan {
-  --color-primary: var(--color-cyan-dark-mode);
-}
-
-body.primary-color-yellow {
-  --color-primary: var(--color-gold);
-}
-
-@media (hover: hover) {
-  body.dark-mode img:hover { opacity: 1; }
-}
-
-body.dark-mode .dark-logo {
-  color: var(--color-white-2);
-}
+#root { overflow: hidden; }
 
 .section { 
   padding: 2rem 1rem 2.5rem;

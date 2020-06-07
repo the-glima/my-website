@@ -3,9 +3,6 @@ import {GistsService} from './GistsService'
 import {gistsCollectionMock} from '../../../../test/gists-mock'
 
 describe('GistsService', () => {
-  let spy: any
-  let setGistsLocalStorage: any
-
   beforeEach(() => {
     Object.defineProperty(window, 'localStorage', {
       value: {
@@ -14,9 +11,6 @@ describe('GistsService', () => {
       },
       writable: true
     })
-
-    spy = jest.spyOn(GistsService, 'setGistsLocalStorage')
-    setGistsLocalStorage = GistsService.getGistsLocalStorage()
   })
 
   it('getUrl: return an url', () => {

@@ -10,4 +10,5 @@
   text-align: center;
   z-index: 1;
   transition: var(--transition);
+  background-color: var(--color-bg-lighter);
 }

@@ -14,8 +14,6 @@
   transition: var(--transition);
 }
 
-.button:hover { border-color: var(--color-primary); }
-
 .button:active { top: 1px }
 
 .arrow {
@@ -25,13 +23,17 @@
   transition: var(--transition);
 }
 
-.button:hover .arrow { 
-  animation: scroll-up 1s infinite cubic-bezier(0.0, 0.6, 1.0, 0.4);
-}
-
 @keyframes scroll-up {
   0%   { transform: translateY(40px); }
   100% { transform: translateY(-70px); }
+}
+
+@media (hover: hover) {
+  .button:hover { border-color: var(--color-primary); }
+
+  .button:hover .arrow { 
+    animation: scroll-up 1s infinite cubic-bezier(0.0, 0.6, 1.0, 0.4);
+  }
 }
 
 @media (min-width: breakpoint-md) {
