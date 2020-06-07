@@ -101,14 +101,17 @@
 }
 
 .list-item-date {
-  width: 134px;
   margin: 2rem auto;
   font-size: 1.06rem;
   font-weight: 600;
   z-index: 1;
 }
 
-.list-item-date span:first-child { padding: 0 30px 0 14px; }
+.list-item-date span {
+  display: inline-block;
+  width: 90px;
+  text-align: center;
+}
 
 /* ----- List Card: content ----- */
 .logo { 
@@ -269,6 +272,10 @@
     order: 1;
   }
 
-  .list-item-date span:first-child { padding: 0 0.05rem; }
+  .list-item-date span {
+    width: auto;
+    padding: 0 .15rem;
+  }
+
   .list-item-date span:first-child:after { content: ' - '; }
 }
