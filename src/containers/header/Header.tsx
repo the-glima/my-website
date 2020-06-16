@@ -51,6 +51,7 @@ const Header = ({t}: any) => {
       <div className="section-content">
         <header className={styles.header}>
           <div className={styles['header-picture']}>
+            <span className={styles['picture-hint']}>{t('header.hint')}</span>
             <Personality
               active={active}
               events={{
@@ -64,7 +65,6 @@ const Header = ({t}: any) => {
                 }
               }}
             />
-            <span className={styles['picture-hint']}>{t('header.hint')}</span>
           </div>
 
           <h1 className={styles.heading}>

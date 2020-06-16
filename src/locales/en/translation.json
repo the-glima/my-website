@@ -17,13 +17,13 @@
     "default": {
       "bio-end": "I speak 3 languages but also JavaScript."
     },
-    "headphone": {
+    "headphones": {
       "bio-end": "We need more JS Frameworks!"
     },
-    "dad": {
+    "drawing": {
       "bio-end": "Another skill: agile diaper changer."
     },
-    "old": {
+    "dude": {
       "bio-end": "Remember when we cared about IE6?!"
     }
   },

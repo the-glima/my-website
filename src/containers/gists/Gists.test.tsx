@@ -7,7 +7,7 @@ import {render} from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import Gists from './Gists'
 import {GistsService} from './services/GistsService'
-import {gistsCollectionMock} from '../../../test/gists-mock'
+import {gistsCollectionMock} from '../../../test/mocks/gists.mock'
 
 describe('Gists', () => {
   let mockStore: any
