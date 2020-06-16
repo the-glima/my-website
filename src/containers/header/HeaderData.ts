@@ -1,7 +1,7 @@
 import husband from '../../assets/images/photos/husband.jpg'
-import headphone from '../../assets/images/photos/phone.jpg'
-import dad from '../../assets/images/photos/dad.jpg'
-import old from '../../assets/images/photos/old.jpg'
+import headphones from '../../assets/images/photos/headphones.jpg'
+import drawing from '../../assets/images/photos/drawing.jpg'
+import dude from '../../assets/images/photos/dude.jpg'
 import i18n from '../../i18n'
 
 export interface HeaderModel {
@@ -21,24 +21,24 @@ export const HeaderData = (): HeaderModel[] => [
     color: 'orange'
   },
   {
-    name: 'headphone',
-    picture: headphone,
+    name: 'headphones',
+    picture: headphones,
     position: i18n.t('position.javascript-developer'),
     bio: i18n.t('header.headphone.bio-end'),
     color: 'purple'
   },
   {
-    name: 'dad',
-    picture: dad,
+    name: 'drawing',
+    picture: drawing,
     position: i18n.t('position.full-stack-developer'),
-    bio: i18n.t('header.dad.bio-end'),
+    bio: i18n.t('header.drawing.bio-end'),
     color: 'cyan'
   },
   {
-    name: 'old',
-    picture: old,
+    name: 'dude',
+    picture: dude,
     position: i18n.t('position.software-developer'),
-    bio: i18n.t('header.old.bio-end'),
+    bio: i18n.t('header.dude.bio-end'),
     color: 'yellow'
   }
 ]
