@@ -11,7 +11,7 @@ import Personality from '../../shared/components/personality/Personality'
 
 import StorageService from '../../shared/services/StorageService'
 
-import husband from '../../assets/images/photos/husband.jpg'
+import logo from '../../assets/images/logo.jpg'
 import Loading from '../../shared/components/loading/Loading'
 
 import styles from './Home.module.css'
@@ -43,10 +43,10 @@ const Home = ({t}: any) => {
   const cpPersonality = (
     <Personality
       image={{
-        src: husband,
+        src: logo,
         alt: 'Gabriel Lima'
       }}
-      className={styles['loading-picture']}
+      className={styles['home-loading']}
       spinning={true}
       text={t('intro.welcome')}
     />
@@ -55,10 +55,12 @@ const Home = ({t}: any) => {
   return (
     <>
       {loading && (
-        <Loading
-          className={`${styles.loading} ${fadeIntro ? styles['fade-loading'] : ''}`}
-          component={cpPersonality}
-        />
+        <div className="primary-color-yellow">
+          <Loading
+            className={`${styles.loading} ${fadeIntro ? styles['fade-loading'] : ''}`}
+            component={cpPersonality}
+          />
+        </div>
       )}
 
       <div className={`home  ${fadeIntro ? 'home-initialized' : ''}`}>
