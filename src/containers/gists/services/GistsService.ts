@@ -1,4 +1,4 @@
-import {GistFilesModel, GistDOMModel, GistModel, GistsData} from '../models'
+import {GistFilesModel, GistDOMModel, GistModel, GistsData, ErrorResponse} from '../models'
 import {settings} from '../../../settings'
 import {isDevelopment} from '../../../helpers'
 import StorageService from '../../../shared/services/StorageService'
@@ -11,27 +11,38 @@ export const GistsService = {
   },
 
   getUrl: (params = settings.github.urlParams): string =>
-    `${params.url}/${params.user}/gists?per_page=${params.perPage}`,
+    `${params.url}/users/${params.user}/gists?per_page=${params.perPage}`,
 
-  fetchGists: async function (): Promise<GistModel[]> {
+  fetchGists: async function (): Promise<GistModel[] | ErrorResponse> {
     const url = this.getUrl()
     const headers = {
       ...(isDevelopment() && {headers: {...this.headers}})
     }
 
-    try {
-      const response = await fetch(url, headers)
-      return await response.json()
-    } catch (error) {
-      return error
-    }
+    return await fetch(url, headers)
+      .then(async (res) => {
+        if (!res.ok) {
+          const error: ErrorResponse = {
+            name: res.ok,
+            status: res.status,
+            message: res.statusText
+          }
+
+          return Promise.reject(error)
+        }
+
+        return await res.json()
+      })
+      .catch((error) => {
+        throw error
+      })
   },
 
   mapGists: function (gists: GistModel[]): GistDOMModel[] {
     return gists.map((gist: GistModel) => {
       const files: GistFilesModel[] = Object.values(gist.files)
-      const title = gist.description.replace(settings.gists.regexLogo, '').trim()
-      const languageMatch = gist.description.match(settings.gists.regexLogo)
+      const title = gist.description.replace(settings.gists.regexLogoDescription, '').trim()
+      const languageMatch = gist.description.match(settings.gists.regexLogoDescription)
       const language =
         languageMatch && languageMatch[1] && languageMatch[1].replace(settings.gists.regexWebsite, '').trim()
 
@@ -58,18 +69,17 @@ export const GistsService = {
       }))
   },
 
-  getGists: async function (): Promise<GistDOMModel[]> {
-    const gists = await this.fetchGists()
-    const filteredGists = this.filterGists(gists)
-    console.log(filteredGists)
-    const mappedGists = this.mapGists(filteredGists)
+  getGists: function (gistCollection: []): GistDOMModel[] {
+    gistCollection = (gistCollection?.length && gistCollection) || []
 
-    return mappedGists
+    const filteredGists = this.filterGists(gistCollection)
+
+    return this.mapGists(filteredGists)
   },
 
   setGistsLocalStorage: (data: GistsData) => {
     if (data) {
-      storageService.setItem('gists', JSON.stringify(data))
+      // storageService.setItem('gists', JSON.stringify(data))
     }
   },
 

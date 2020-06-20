@@ -1,0 +1,47 @@
+@value breakpoint-sm from '../../../assets/styles/variables.css';
+@value breakpoint-lg from '../../../assets/styles/variables.css';
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 2rem;
+  justify-items: center;
+  margin: 3rem auto;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  width: 90%;
+}
+
+.link {
+  composes: link from '../../../assets/styles/helpers.css';
+  font-size: .9rem; 
+  transition: var(--transition);
+}
+
+.tech-logo {
+  width: 30px;
+  margin-right: .76rem; 
+}
+
+@media (min-width: breakpoint-sm) {
+  .list {
+    margin: 4rem auto 2rem;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  .list-item {
+    width: 90%;
+    justify-items: center;
+  }
+}
+
+@media (min-width: breakpoint-lg) {
+  .list {
+    max-width: 800px;
+  }
+}

@@ -13,6 +13,8 @@ export interface GistFilesModel {
   language: string
   raw_url: string
   size: number
+  truncated?: boolean
+  content?: string
 }
 
 export interface GistModel {
@@ -24,7 +26,7 @@ export interface GistModel {
   git_pull_url: string
   git_push_url: string
   html_url: string
-  files: GistFilesModel
+  files: GistFilesModel[]
   created_at: string
   updated_at: string
   description: string

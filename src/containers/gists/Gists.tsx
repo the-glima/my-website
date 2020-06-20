@@ -5,7 +5,8 @@ import {useDispatch, useSelector} from 'react-redux'
 import Headings from '../../shared/components/headings/Headings'
 import SeeMore from '../../shared/components/see-more/SeeMore'
 import Loading from '../../shared/components/loading/Loading'
-import {ReactComponent as GitHubLogo} from '../../assets/images/logos/github.svg'
+import TechLogo from '../../shared/components/tech-logo/TechLogo'
+import {ReactComponent as GitHubLogo} from '../../assets/images/social/github.svg'
 import {settings} from '../../settings'
 
 import * as actions from './redux/GistsActions'
@@ -14,7 +15,10 @@ import {GistsState} from './redux/GistsReducer'
 import styles from './Gists.module.css'
 import {GistDOMModel, GistsData} from './models'
 import {GistsService} from './services/GistsService'
-import {GistsGetLogoUtil} from './utils/GistsGetLogoUtil'
+import {GistTechLogosService} from './services/GistTechLogosService'
+import Message from './components/Message'
+import GistsList from './components/GistsList'
+
 
 const Gists = ({t}: any) => {
   const dispatch = useDispatch()
@@ -38,35 +42,42 @@ const Gists = ({t}: any) => {
     observer.observe(document.getElementById('section-gists') as any)
   }, [])
 
-  const setGistsLocalStorage = useCallback(async () => {
+  const setGistsLocalStorage = useCallback(async (response: any) => {
     const gistsLocalStorage: GistsData = GistsService.getGistsLocalStorage()
 
     if (gistsLocalStorage && !GistsService.shouldSetGistsLocalStorage(gistsLocalStorage)) {
       dispatch(actions.fetchGistsLocalStorageSuccess(gistsLocalStorage))
     } else {
-      const gistsCollection = await GistsService.getGists()
+      const gistsCollection = GistsService.getGists(response)
+
+      const gistTechLogos = gistsCollection.length
+        ? await GistTechLogosService.getTechLogos()
+        : []
+
       const data: GistsData = {
         date: Date.now(),
-        collection: gistsCollection
+        collection: gistsCollection,
+        logos: gistTechLogos
       }
 
-      if (data?.collection?.length) {
-        setTimeout(() => {
-          dispatch(actions.fetchGistsSuccess(data))
-          GistsService.setGistsLocalStorage(data)
-        }, settings.loading.delay)
-      }
+      setTimeout(() => {
+        dispatch(actions.fetchGistsSuccess(data))
+        GistsService.setGistsLocalStorage(data)
+      }, settings.loading.delay)
     }
   }, [dispatch])
 
   useEffect(() => {
     let ignore = false
-
+    
     const fetchGists = async () => {
       dispatch(actions.fetchGistsInit())
 
       try {
-        if (!ignore) setGistsLocalStorage()
+        if (!ignore) {
+          const response = await GistsService.fetchGists()
+          setGistsLocalStorage(response)
+        }
       } catch (error) {
         dispatch(actions.fetchGistsFailure(error))
       }
@@ -90,42 +101,25 @@ const Gists = ({t}: any) => {
           <>
             <Headings title={t('gists.title')} subtitle={t('gists.subtitle')} />
 
-            {!hasError ? (
-              <>
-                <ul className={styles.list}>
-                  {gistsState?.data?.collection.map((gist: GistDOMModel, i: number) => (
-                    <li key={i} className={`${styles['list-item']}`} data-testid="gist-item">
-                      <img
-                        className={styles.logo}
-                        src={GistsGetLogoUtil(gist.language.toLowerCase())?.src}
-                        alt={gist.language}
-                        title={gist.language}
-                      />
-                      <a
-                        className={styles.link}
-                        href={gist.url}
-                        title={` Check this gist: ${gist.language} - ${gist.title}`}
-                      >
-                        {gist.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-
-                <SeeMore
-                  props={{
-                    url: 'https://gist.github.com/the-glima',
-                    text: t('gists.see-more')
-                  }}
-                />
-              </>
+            {!!hasError ? (
+              <Message
+                show={!!hasError}
+                message={t('error.message')}
+              /> 
             ) : (
-              <p className={styles.error}>
-                <span role="img" aria-label="Confused Face">
-                  😕
-                </span>{' '}
-                {t('error.message')}
-              </p>
+              <>
+                <GistsList
+                  className={styles.list}
+                  collection={gistsState?.data?.collection}
+                  logos={gistsState?.data?.logos}
+                  noGistsMessage={t('gists.no-gists')}
+                />
+
+                <SeeMore props={{
+                  url: 'https://gist.github.com/the-glima',
+                  text: t('gists.see-more')
+                }}/>
+              </>
             )}
           </>
         )}

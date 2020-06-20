@@ -6,7 +6,7 @@
     "software-developer": "Software Developer"
   },
   "intro": {
-    "welcome": "Good things take time... to load"
+    "welcome": "Good things take time..."
   },
   "header": {
     "hint": "Click me!",
@@ -54,7 +54,8 @@
   "gists": {
     "title": "Latest Gists",
     "subtitle": "Don’t have a blog yet but I have Gists!",
-    "see-more": "There's more"
+    "see-more": "There's more",
+    "no-gists": "No Gists were found"
   },
   "see-more": {
     "link": "See More"

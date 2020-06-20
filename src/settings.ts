@@ -1,9 +1,10 @@
 const settings = {
   github: {
     urlParams: {
-      url: 'https://api.github.com/users',
+      url: 'https://api.github.com',
       user: 'the-glima',
-      perPage: 60
+      perPage: 60,
+      gistTechLogosId: 'cba6af25cf3143ff16de5b4f4d06c87d'
     }
   },
   header: {
@@ -13,8 +14,9 @@ const settings = {
     title: 'A cool Gist about something',
     logo: 'GitHub',
     limit: 10,
-    regexWebsite: /#website/,
-    regexLogo: /^\[(.*)\]/
+    regexWebsite: /#website$/,
+    regexLogoDescription: /^\[(.*)\]/,
+    regexLogoFilename: /^(\w+)-logo.svg/
   },
   languages: {
     options: [

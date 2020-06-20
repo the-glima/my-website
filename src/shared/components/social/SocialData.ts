@@ -1,9 +1,9 @@
 import {settings} from '../../../settings'
 
-import {ReactComponent as LinkedinLogo} from '../../../assets/images/logos/linkedin.svg'
-import {ReactComponent as TwitterLogo} from '../../../assets/images/logos/twitter.svg'
-import {ReactComponent as GithubLogo} from '../../../assets/images/logos/github.svg'
-import {ReactComponent as SpotifyLogo} from '../../../assets/images/logos/spotify.svg'
+import {ReactComponent as LinkedinLogo} from '../../../assets/images/social/linkedin.svg'
+import {ReactComponent as TwitterLogo} from '../../../assets/images/social/twitter.svg'
+import {ReactComponent as GithubLogo} from '../../../assets/images/social/github.svg'
+import {ReactComponent as SpotifyLogo} from '../../../assets/images/social/spotify.svg'
 
 export interface SocialModel {
   name: string
