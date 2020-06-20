@@ -1,13 +1,15 @@
 import {getStorageKey} from '../../settings'
 
-const StorageService = (storageType = 'local') => ({
-  getItem: (key: string) => {
-    return (window as any)[`${storageType}Storage`].getItem(getStorageKey(key))
-  },
+const getItem = (key: string, storageType = 'local') =>
+  (window as any)[`${storageType}Storage`].getItem(getStorageKey(key))
 
-  setItem: (key: string, value: string) => {
-    ;(window as any)[`${storageType}Storage`].setItem(getStorageKey(key), value)
-  }
-})
+const getParsedItem = (key: string, storageType?: string) => JSON.parse(getItem(key, storageType)) || null
 
-export default StorageService
+const setItem = (key: string, value: string, storageType = 'local') =>
+  (window as any)[`${storageType}Storage`].setItem(getStorageKey(key), value)
+
+export const storageService = {
+  getItem,
+  getParsedItem,
+  setItem
+}

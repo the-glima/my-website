@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 
 import {settings} from '../../../settings'
-import StorageService from '../../services/StorageService'
+import {storageService} from '../../services/StorageService'
 
 import styles from './SetTheme.module.css'
 import {SetThemeEffect} from './services/SetThemeService'
@@ -12,7 +12,6 @@ import * as actions from './redux/SetThemeActions'
 const SetTheme = () => {
   const dispatch = useDispatch()
   const themeState = useSelector((state: any) => state.theme)
-  const storageService = StorageService()
 
   const toggleTheme = () =>
     themeState.value === SetThemeEnum.light ? storeTheme(SetThemeEnum.dark) : storeTheme(SetThemeEnum.light)

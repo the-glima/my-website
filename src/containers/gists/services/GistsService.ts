@@ -1,9 +1,14 @@
 import {GistFilesModel, GistDOMModel, GistModel, GistsData, ErrorResponse} from '../models'
 import {settings} from '../../../settings'
 import {isDevelopment} from '../../../helpers'
-import StorageService from '../../../shared/services/StorageService'
+import {storageService} from '../../../shared/services/StorageService'
+import {GistTechLogosService} from './GistTechLogosService'
 
-const storageService = StorageService()
+export interface GistsSave {
+  data: GistModel[] | ErrorResponse
+  fetchSuccess: any
+  callback: any
+}
 
 export const GistsService = {
   headers: {
@@ -69,7 +74,7 @@ export const GistsService = {
       }))
   },
 
-  getGists: function (gistCollection: []): GistDOMModel[] {
+  getGists: function (gistCollection: GistModel[]): GistDOMModel[] {
     gistCollection = (gistCollection?.length && gistCollection) || []
 
     const filteredGists = this.filterGists(gistCollection)
@@ -77,24 +82,30 @@ export const GistsService = {
     return this.mapGists(filteredGists)
   },
 
-  setGistsLocalStorage: (data: GistsData) => {
-    if (data) {
-      // storageService.setItem('gists', JSON.stringify(data))
-    }
-  },
-
-  getGistsLocalStorage: (): GistsData => {
-    const gists = storageService.getItem('gists')
-
-    return gists ? JSON.parse(gists) : null
-  },
-
-  shouldSetGistsLocalStorage: (savedGists: GistsData): boolean => {
-    if (!savedGists || !savedGists.date) return false
+  shouldSave: (gists: GistsData): boolean => {
+    if (!gists || !gists.date) return false
 
     const hour = 1000 * 60 * 60
-    const diff = (Date.now() - savedGists.date) / hour
+    const diff = (Date.now() - gists.date) / hour
 
     return Math.abs(Math.round(diff)) > 1
+  },
+
+  save: async (data: any): Promise<GistsData> => {
+    const savedGists = storageService.getParsedItem('gists')
+
+    if (savedGists && !GistsService.shouldSave(savedGists)) return savedGists
+
+    const gistsCollection = GistsService.getGists(data)
+    const gistTechLogos = gistsCollection.length ? await GistTechLogosService.getTechLogos() : []
+    const gistsData: GistsData = {
+      date: Date.now(),
+      collection: gistsCollection,
+      logos: gistTechLogos
+    }
+
+    storageService.setItem('gists', JSON.stringify(gistsData))
+
+    return gistsData
   }
 }

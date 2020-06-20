@@ -9,7 +9,7 @@ import Work from '../../containers/work/Work'
 import Repositories from '../../containers/repositories/Repositories'
 import Personality from '../../shared/components/personality/Personality'
 
-import StorageService from '../../shared/services/StorageService'
+import {storageService} from '../../shared/services/StorageService'
 
 import logo from '../../assets/images/logo.jpg'
 import Loading from '../../shared/components/loading/Loading'
@@ -20,7 +20,6 @@ const Home = ({t}: any) => {
   const [loading, setLoading]: any = useState(false)
   const [fadeIntro, setFadeIntro]: any = useState(false)
   const homeState = useSelector((state: any) => state.home)
-  const storageService = StorageService('session')
 
   useEffect(() => {
     const isIntroSaved = storageService.getItem('intro')
@@ -32,7 +31,7 @@ const Home = ({t}: any) => {
         setTimeout(() => {
           setFadeIntro(true)
           setLoading(false)
-          // storageService.setItem('intro', 'initialized')
+          storageService.setItem('intro', 'initialized')
         }, 2500)
       }
     } else {
