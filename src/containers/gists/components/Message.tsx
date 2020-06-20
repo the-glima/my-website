@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Message.module.css'
 
 interface Props {
-  show: boolean,
+  show: boolean
   message: string
   className?: string
 }

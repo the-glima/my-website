@@ -19,7 +19,6 @@ import {GistTechLogosService} from './services/GistTechLogosService'
 import Message from './components/Message'
 import GistsList from './components/GistsList'
 
-
 const Gists = ({t}: any) => {
   const dispatch = useDispatch()
   const gistsState: GistsState = useSelector((state: any) => state.gists)
@@ -42,34 +41,35 @@ const Gists = ({t}: any) => {
     observer.observe(document.getElementById('section-gists') as any)
   }, [])
 
-  const setGistsLocalStorage = useCallback(async (response: any) => {
-    const gistsLocalStorage: GistsData = GistsService.getGistsLocalStorage()
+  const setGistsLocalStorage = useCallback(
+    async (response: any) => {
+      const gistsLocalStorage: GistsData = GistsService.getGistsLocalStorage()
 
-    if (gistsLocalStorage && !GistsService.shouldSetGistsLocalStorage(gistsLocalStorage)) {
-      dispatch(actions.fetchGistsLocalStorageSuccess(gistsLocalStorage))
-    } else {
-      const gistsCollection = GistsService.getGists(response)
+      if (gistsLocalStorage && !GistsService.shouldSetGistsLocalStorage(gistsLocalStorage)) {
+        dispatch(actions.fetchGistsLocalStorageSuccess(gistsLocalStorage))
+      } else {
+        const gistsCollection = GistsService.getGists(response)
 
-      const gistTechLogos = gistsCollection.length
-        ? await GistTechLogosService.getTechLogos()
-        : []
+        const gistTechLogos = gistsCollection.length ? await GistTechLogosService.getTechLogos() : []
 
-      const data: GistsData = {
-        date: Date.now(),
-        collection: gistsCollection,
-        logos: gistTechLogos
+        const data: GistsData = {
+          date: Date.now(),
+          collection: gistsCollection,
+          logos: gistTechLogos
+        }
+
+        setTimeout(() => {
+          dispatch(actions.fetchGistsSuccess(data))
+          GistsService.setGistsLocalStorage(data)
+        }, settings.loading.delay)
       }
-
-      setTimeout(() => {
-        dispatch(actions.fetchGistsSuccess(data))
-        GistsService.setGistsLocalStorage(data)
-      }, settings.loading.delay)
-    }
-  }, [dispatch])
+    },
+    [dispatch]
+  )
 
   useEffect(() => {
     let ignore = false
-    
+
     const fetchGists = async () => {
       dispatch(actions.fetchGistsInit())
 
@@ -102,10 +102,7 @@ const Gists = ({t}: any) => {
             <Headings title={t('gists.title')} subtitle={t('gists.subtitle')} />
 
             {!!hasError ? (
-              <Message
-                show={!!hasError}
-                message={t('error.message')}
-              /> 
+              <Message show={!!hasError} message={t('error.message')} />
             ) : (
               <>
                 <GistsList
@@ -115,10 +112,12 @@ const Gists = ({t}: any) => {
                   noGistsMessage={t('gists.no-gists')}
                 />
 
-                <SeeMore props={{
-                  url: 'https://gist.github.com/the-glima',
-                  text: t('gists.see-more')
-                }}/>
+                <SeeMore
+                  props={{
+                    url: 'https://gist.github.com/the-glima',
+                    text: t('gists.see-more')
+                  }}
+                />
               </>
             )}
           </>
