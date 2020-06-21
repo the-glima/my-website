@@ -37,7 +37,7 @@ const Home = ({t}: any) => {
     } else {
       setFadeIntro(true)
     }
-  }, [homeState, storageService])
+  }, [homeState])
 
   const cpPersonality = (
     <Personality

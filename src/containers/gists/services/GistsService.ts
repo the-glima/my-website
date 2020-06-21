@@ -21,7 +21,7 @@ const fetchGists = async (): Promise<GistModel[] | ErrorResponse> => {
     .then(async (res) => {
       if (!res.ok) {
         const error: ErrorResponse = {
-          name: res.ok,
+          ok: res.ok,
           status: res.status,
           message: res.statusText
         }
@@ -84,12 +84,13 @@ const shouldSave = (gists: GistsData): boolean => {
   return Math.abs(Math.round(diff)) > 1
 }
 
-const save = async (data: any): Promise<GistsData> => {
+const fetchAndSave = async (): Promise<GistsData> => {
   const savedGists = storageService.getParsedItem('gists')
 
   if (savedGists && !shouldSave(savedGists)) return savedGists
 
-  const gistsCollection = getGists(data)
+  const data = await gistsService.fetchGists()
+  const gistsCollection = getGists(data as any)
   const gistTechLogos = gistsCollection.length ? await GistTechLogosService.getTechLogos() : []
   const gistsData: GistsData = {
     date: Date.now(),
@@ -105,5 +106,5 @@ const save = async (data: any): Promise<GistsData> => {
 export const gistsService = {
   fetchGists,
   getGists,
-  save
+  fetchAndSave
 }
