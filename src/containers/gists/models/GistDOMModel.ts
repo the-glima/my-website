@@ -1,4 +1,4 @@
-import {GistFilesModel} from './GistsModelResponse'
+import {GistFilesModel} from './GistResponseModel'
 
 export interface GistDOMModel {
   id: string
@@ -8,13 +8,13 @@ export interface GistDOMModel {
   language: string
 }
 
-export interface GistTechLogoDOMModel {
+export interface GistLogoDOMModel {
   name: string
   url: string
 }
 
 export interface GistsData {
-  date: number
   collection: GistDOMModel[]
-  logos?: any[]
+  logos: any[]
+  date?: number
 }

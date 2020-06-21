@@ -36,4 +36,6 @@ export interface GistModel {
   owner: any
   truncated: boolean
   public: boolean
+  history?: any
+  forks?: any
 }

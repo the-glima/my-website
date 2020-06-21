@@ -1,4 +1,4 @@
-const settings = {
+export const settings = {
   github: {
     urlParams: {
       url: 'https://api.github.com',
@@ -66,11 +66,3 @@ const settings = {
     threshold: 0.1
   }
 }
-
-const getStorageKey = (key: string): string => {
-  const value: string = (settings.storage as any).keys[key]
-
-  return `${settings.storage.prefix}:${value.toUpperCase()}`
-}
-
-export {settings, getStorageKey}

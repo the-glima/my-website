@@ -1,10 +1,10 @@
 import fetchMock, {enableFetchMocks} from 'jest-fetch-mock'
 
-import {GistsService} from './GistsService'
+import {gistsService} from './GistsService'
 
 import {gistsResponseMock} from '../../../../test/mocks'
 
-describe('GistsService', () => {
+describe('Gists Service', () => {
   beforeEach(() => {
     Object.defineProperty(window, 'localStorage', {
       value: {
@@ -25,7 +25,7 @@ describe('GistsService', () => {
     it('fetchGists: return fetched gists', async (done) => {
       fetchMock.mockResponseOnce(JSON.stringify(gistsResponseMock))
 
-      const result = await GistsService.fetchGists()
+      const result = await gistsService.fetchGists()
 
       expect(result).toMatchSnapshot()
       done()
@@ -33,9 +33,9 @@ describe('GistsService', () => {
 
     it('fetchGists: return error when trying to fetch gists', async (done) => {
       fetchMock.mockRejectOnce(new Error('Not Found!'))
-      jest.spyOn(GistsService, 'getUrl').mockImplementationOnce(() => 'https://example.com')
+      jest.spyOn(gistsService, 'getUrl').mockImplementationOnce(() => 'https://example.com')
 
-      const result = await GistsService.fetchGists()
+      const result = await gistsService.fetchGists()
 
       expect(result.toString()).toBe('Error: Not Found!')
       expect((fetch as any).mock.calls.length).toEqual(1)
@@ -55,11 +55,11 @@ describe('GistsService', () => {
 
       const result = 'www.example.com/john-doe/gists?per_page=100'
 
-      expect(GistsService.getUrl(urlParam)).toBe(result)
+      expect(gistsService.getUrl(urlParam)).toBe(result)
     })
 
     it('mapGists: return a mapped array of gists', () => {
-      const result = GistsService.mapGists(gistsResponseMock as any)
+      const result = gistsService.mapGists(gistsResponseMock as any)
 
       expect(result).toMatchSnapshot()
     })
@@ -74,7 +74,7 @@ describe('GistsService', () => {
       })
 
       const now = Date.now()
-      GistsService.setGistsLocalStorage({
+      gistsService.setGistsLocalStorage({
         date: now,
         collection: [
           {
@@ -108,7 +108,7 @@ describe('GistsService', () => {
         }
       })
 
-      GistsService.setGistsLocalStorage(null as any)
+      gistsService.setGistsLocalStorage(null as any)
 
       expect(window.localStorage.setItem).toHaveBeenCalledTimes(0)
     })
@@ -120,7 +120,7 @@ describe('GistsService', () => {
         }
       })
 
-      const result = GistsService.getGistsLocalStorage()
+      const result = gistsService.getGistsLocalStorage()
 
       expect(window.localStorage.getItem).toHaveBeenCalledWith('GABRIEL-LIMA:GISTS')
       expect(result).toMatchSnapshot()
@@ -133,7 +133,7 @@ describe('GistsService', () => {
         }
       })
 
-      const result = GistsService.getGistsLocalStorage()
+      const result = gistsService.getGistsLocalStorage()
 
       expect(window.localStorage.getItem).toHaveBeenCalledWith('GABRIEL-LIMA:GISTS')
       expect(result).toBeNull()

@@ -1,42 +1,10 @@
-import {GistFilesModel, GistDOMModel, GistModel, GistsData, ErrorResponse} from '../models'
 import {settings} from '../../../settings'
-import {isDevelopment} from '../../../helpers'
+import {GistFilesModel, GistDOMModel, GistModel, GistsData} from '../models'
+import {GistsApi} from './GistsApi'
+import {gistLogosService} from './GistLogosService'
 import {storageService} from '../../../shared/services/StorageService'
-import {GistTechLogosService} from './GistTechLogosService'
 
-const headers = {
-  Authorization: `token ${process.env.REACT_APP_GH_TOKEN}`
-}
-
-const getUrl = (params = settings.github.urlParams): string =>
-  `${params.url}/users/${params.user}/gists?per_page=${params.perPage}`
-
-const fetchGists = async (): Promise<GistModel[] | ErrorResponse> => {
-  const url = getUrl()
-  const customHeaders = {
-    ...(isDevelopment() && {headers: {...headers}})
-  }
-
-  return await fetch(url, customHeaders)
-    .then(async (res) => {
-      if (!res.ok) {
-        const error: ErrorResponse = {
-          ok: res.ok,
-          status: res.status,
-          message: res.statusText
-        }
-
-        return Promise.reject(error)
-      }
-
-      return await res.json()
-    })
-    .catch((error) => {
-      throw error
-    })
-}
-
-const mapGists = (gists: GistModel[]): GistDOMModel[] => {
+const transformData = (gists: GistModel[]): GistDOMModel[] => {
   return gists.map((gist: GistModel) => {
     const files: GistFilesModel[] = Object.values(gist.files)
     const title = gist.description.replace(settings.gists.regexLogoDescription, '').trim()
@@ -54,12 +22,11 @@ const mapGists = (gists: GistModel[]): GistDOMModel[] => {
   })
 }
 
-const filterGists = (gists: GistModel[]): GistModel[] => {
+const filterData = (gists: GistModel[]): GistModel[] => {
   const regex = new RegExp(settings.gists.regexWebsite, 'gmi')
 
   return gists
-    .filter((gist) => gist.public)
-    .filter((gist: GistModel) => gist.description.match(regex))
+    .filter((gist) => gist.public && gist.description.match(regex))
     .slice(0, settings.gists.limit)
     .map((gist: GistModel) => ({
       ...gist,
@@ -67,15 +34,18 @@ const filterGists = (gists: GistModel[]): GistModel[] => {
     }))
 }
 
-const getGists = (gistCollection: GistModel[]): GistDOMModel[] => {
-  gistCollection = (gistCollection?.length && gistCollection) || []
+const getGists = async (): Promise<GistsData> => {
+  const gists = await GistsApi.fetchGists()
+  const filteredGists = filterData(gists.collection)
 
-  const filteredGists = filterGists(gistCollection)
-
-  return mapGists(filteredGists)
+  return {
+    date: Date.now(),
+    collection: transformData(filteredGists),
+    logos: gistLogosService.transformLogos(gists.logos)
+  }
 }
 
-const shouldSave = (gists: GistsData): boolean => {
+const shouldSaveGists = (gists: GistsData): boolean => {
   if (!gists || !gists.date) return false
 
   const hour = 1000 * 60 * 60
@@ -84,27 +54,14 @@ const shouldSave = (gists: GistsData): boolean => {
   return Math.abs(Math.round(diff)) > 1
 }
 
-const fetchAndSave = async (): Promise<GistsData> => {
+const saveGists = (gists: GistsData): void => {
   const savedGists = storageService.getParsedItem('gists')
+  if (savedGists && !shouldSaveGists(savedGists)) return savedGists
 
-  if (savedGists && !shouldSave(savedGists)) return savedGists
-
-  const data = await gistsService.fetchGists()
-  const gistsCollection = getGists(data as any)
-  const gistTechLogos = gistsCollection.length ? await GistTechLogosService.getTechLogos() : []
-  const gistsData: GistsData = {
-    date: Date.now(),
-    collection: gistsCollection,
-    logos: gistTechLogos
-  }
-
-  storageService.setItem('gists', JSON.stringify(gistsData))
-
-  return gistsData
+  storageService.setItem('gists', JSON.stringify(gists))
 }
 
 export const gistsService = {
-  fetchGists,
   getGists,
-  fetchAndSave
+  saveGists
 }

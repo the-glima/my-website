@@ -1,5 +1,5 @@
 import {ActionTypes} from './GistsActions'
-import {GistsData} from '../models/GistsModelDOM'
+import {GistsData} from '../models/GistDOMModel'
 
 export interface GistsState {
   data: GistsData | null
@@ -10,7 +10,8 @@ export interface GistsState {
 const initialState: GistsState = {
   data: {
     date: Date.now(),
-    collection: []
+    collection: [],
+    logos: []
   } as GistsData | null,
   isLoading: false,
   hasError: false
