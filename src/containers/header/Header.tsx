@@ -5,7 +5,6 @@ import {useDispatch, useSelector} from 'react-redux'
 import styles from './Header.module.css'
 import {HeaderData} from './HeaderData'
 import * as actions from './redux/HeaderActions'
-import * as homeActions from '../../pages/home/redux/HomeActions'
 import {settings} from '../../settings'
 import Personality from '../../shared/components/personality/Personality'
 
@@ -36,10 +35,6 @@ const Header = ({t}: any) => {
     [dispatch]
   )
 
-  const onPictureLoad = useCallback(() => {
-    dispatch(homeActions.setHomeInit({isInitialized: true}))
-  }, [dispatch])
-
   useEffect(() => {
     dispatch(actions.getPersonality())
     togglePersonality(headerData[count])
@@ -60,9 +55,6 @@ const Header = ({t}: any) => {
               image={{
                 src: personalityState?.data?.picture,
                 alt: 'Gabriel Lima',
-                events: {
-                  onLoad: onPictureLoad
-                }
               }}
             />
           </div>

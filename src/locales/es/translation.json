@@ -5,9 +5,6 @@
     "javascript-developer": "Desarrollador Javascript",
     "front-end-developer": "Desarrollador Front-end"
   },
-  "intro": {
-    "welcome": "Las cosas buenas toman tiempo..."
-  },
   "header": {
     "hint": "¡Haz clic aquí!",
     "greeting": "Hola, me llamo",

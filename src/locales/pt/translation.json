@@ -5,9 +5,6 @@
     "javascript-developer": "Desenvolvedor Javascript",
     "front-end-developer": "Desenvolvedor Front-end"
   },
-  "intro": {
-    "welcome": "Site legal tem que ter loading..."
-  },
   "header": {
     "hint": "Clica aqui!",
     "greeting": "Oi, meu nome é",

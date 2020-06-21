@@ -14,9 +14,6 @@ interface Props {
   image: {
     src: string
     alt: string
-    events?: {
-      onLoad: any
-    }
   }
 }
 
@@ -36,7 +33,6 @@ const Personality = (props: Props) => {
           className={styles.picture}
           src={props.image?.src}
           alt={props.image?.alt}
-          onLoad={props.image?.events?.onLoad}
         />
       </div>
       <p className={styles.text}>{props.text}</p>

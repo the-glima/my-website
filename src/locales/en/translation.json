@@ -5,9 +5,6 @@
     "full-stack-developer": "Full Stack Developer",
     "software-developer": "Software Developer"
   },
-  "intro": {
-    "welcome": "Good things take time..."
-  },
   "header": {
     "hint": "Click me!",
     "greeting": "Hi, my name is",
