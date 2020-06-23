@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useCallback} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 
 import {settings} from '../../../settings'
@@ -16,15 +16,15 @@ const SetTheme = () => {
   const toggleTheme = () =>
     themeState.value === SetThemeEnum.light ? storeTheme(SetThemeEnum.dark) : storeTheme(SetThemeEnum.light)
 
-  const storeTheme = (theme: string) => {
+  const storeTheme = useCallback((theme: string) => {
     const cond = theme === SetThemeEnum.dark ? SetThemeEnum.dark : SetThemeEnum.light
 
     storageService.setItem('theme', cond)
     dispatch(actions.setTheme(theme))
-  }
+  }, [dispatch])
 
   useEffect(() => {
-    const savedTheme = storageService.getItem('theme')
+    const [savedTheme] = storageService.getItem('theme', false)
     const preferColorScheme = SetThemeEffect.getPreferColorScheme()
 
     if (preferColorScheme && !savedTheme) {
@@ -34,8 +34,7 @@ const SetTheme = () => {
     } else {
       storeTheme(SetThemeEnum.light)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [dispatch, storeTheme])
 
   useEffect(() => {
     SetThemeEffect.isDarkTheme(themeState.value)

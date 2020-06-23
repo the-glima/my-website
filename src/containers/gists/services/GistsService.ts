@@ -54,9 +54,12 @@ const shouldSaveGists = (gists: GistsData): boolean => {
   return Math.abs(Math.round(diff)) > 1
 }
 
-const saveGists = (gists: GistsData): void => {
-  const savedGists = storageService.getParsedItem('gists')
-  if (savedGists && !shouldSaveGists(savedGists)) return savedGists
+const saveGists = (gists: GistsData): GistsData | void => {
+  const [savedGists, error] = storageService.getItem('gists')
+
+  if (error) return error
+
+  if (!shouldSaveGists(savedGists)) return gists
 
   storageService.setItem('gists', JSON.stringify(gists))
 }
