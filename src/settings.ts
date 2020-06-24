@@ -40,8 +40,7 @@ export const settings = {
     keys: {
       primaryColor: 'PRIMARY-COLOR',
       theme: 'THEME',
-      gists: 'GISTS',
-      intro: 'INTRO'
+      gists: 'GISTS'
     }
   },
   social: {

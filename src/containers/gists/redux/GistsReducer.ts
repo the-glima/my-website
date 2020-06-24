@@ -2,7 +2,7 @@ import {ActionTypes} from './GistsActions'
 import {GistsData} from '../models/GistDOMModel'
 
 export interface GistsState {
-  data: GistsData | null
+  data: GistsData | undefined
   isLoading: boolean
   hasError: boolean
 }
@@ -12,7 +12,7 @@ const initialState: GistsState = {
     date: Date.now(),
     collection: [],
     logos: []
-  } as GistsData | null,
+  } as GistsData | undefined,
   isLoading: false,
   hasError: false
 }

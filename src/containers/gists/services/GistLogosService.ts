@@ -13,10 +13,10 @@ const transformLogos = (logos: GistModel): GistLogoDOMModel[] | any[] => {
   }))
 }
 
-const getLogoName = (str: string): string | null => {
+const getLogoName = (str: string): string | undefined => {
   const result = str.match(settings.gists.regexLogoFilename)
 
-  return result && result[1] ? result[1].replace(settings.gists.regexLogoFilename, '').trim() : null
+  return result && result[1] ? result[1].replace(settings.gists.regexLogoFilename, '').trim() : undefined
 }
 
 const getLogo = (techLogos: GistLogoDOMModel[] | undefined, name: string): GistLogoDOMModel => {

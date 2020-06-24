@@ -31,7 +31,7 @@ export interface GistModel {
   updated_at: string
   description: string
   comments: 0
-  user: null
+  user: undefined
   comments_url: string
   owner: any
   truncated: boolean

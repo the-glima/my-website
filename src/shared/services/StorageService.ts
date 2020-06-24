@@ -1,5 +1,10 @@
 import {settings} from '../../settings'
 
+interface CustomError {
+  name: string
+  error: any
+}
+
 const getKey = (key: string): string => {
   const value: string = (settings.storage as any).keys[key]
 
@@ -12,12 +17,14 @@ const getApi = (): any[] => {
 
     return [localStorage, undefined]
   } catch (error) {
-    console.log({
-      name: 'Error: localStorage might be disabled',
+    const customError: CustomError = {
+      name: 'localStorage might be disabled',
       error
-    })
+    }
 
-    return [undefined, error]
+    console.log(customError)
+
+    return [undefined, customError]
   }
 }
 
@@ -35,12 +42,14 @@ const getItem = (key: string, parsed = true): any[] => {
 
     return [data, undefined]
   } catch (error) {
-    console.log({
-      name: 'Unable to parse localStorage item',
+    const customError: CustomError = {
+      name: 'Unable to get item from localStorage',
       error
-    })
+    }
 
-    return [undefined, error]
+    console.log(customError)
+
+    return [undefined, customError]
   }
 }
 
@@ -52,12 +61,14 @@ const setItem = (key: string, value: string): any[] => {
 
     return [value, undefined]
   } catch (error) {
-    console.log({
+    const customError: CustomError = {
       name: 'Unable to set item into localStorage',
       error
-    })
+    }
 
-    return [undefined, error]
+    console.log(customError)
+
+    return [undefined, customError]
   }
 }
 
