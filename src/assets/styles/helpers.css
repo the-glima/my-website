@@ -28,6 +28,5 @@
     color: var(--color-card-text);
     border-color: var(--color-primary);
     box-shadow: 5px 5px 5px var(--color-grey-dark);
-    /* transform: scale(1.05); */
   }
 }

@@ -5,9 +5,6 @@
     "javascript-developer": "Desarrollador Javascript",
     "front-end-developer": "Desarrollador Front-end"
   },
-  "intro": {
-    "welcome": "Las cosas buenas toman tiempo..."
-  },
   "header": {
     "hint": "¡Haz clic aquí!",
     "greeting": "Hola, me llamo",
@@ -53,7 +50,8 @@
   "gists": {
     "title": "Últimos Gists",
     "subtitle": "Todavía no tengo un blog pero tengo Gists!",
-    "see-more": "Hay más"
+    "see-more": "Hay más",
+    "no-gists": "No se encontraron Gists"
   },
   "see-more": {
     "link": "Vea mas"

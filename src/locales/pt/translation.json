@@ -5,9 +5,6 @@
     "javascript-developer": "Desenvolvedor Javascript",
     "front-end-developer": "Desenvolvedor Front-end"
   },
-  "intro": {
-    "welcome": "Site legal tem que ter loading..."
-  },
   "header": {
     "hint": "Clica aqui!",
     "greeting": "Oi, meu nome é",
@@ -52,7 +49,8 @@
   "gists": {
     "title": "Últimos Gists",
     "subtitle": "Não tenho um blog mas tenho Gists!",
-    "see-more": "Têm mais"
+    "see-more": "Têm mais",
+    "no-gists": "Nenhum Gist foi encontrado"
   },
   "see-more": {
     "link": "Veja Mais"

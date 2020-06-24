@@ -1,7 +1,7 @@
 import {ActionTypes} from './SetThemeActions'
 
 const initialState = {
-  value: null
+  value: undefined
 }
 
 export const SetThemeReducer = (state = initialState, action: any) => {

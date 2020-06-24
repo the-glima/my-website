@@ -22,7 +22,7 @@ export const gistsResponseMock = [
     updated_at: '2020-06-08T11:11:55Z',
     description: 'Pipe Functional Programming',
     comments: 0,
-    user: null,
+    user: undefined,
     comments_url: 'https://api.github.com/gists/0a08eae4466d4dff53eaa59fcdad75dd/comments',
     owner: {
       login: 'the-glima',
@@ -69,7 +69,7 @@ export const gistsResponseMock = [
     updated_at: '2020-05-29T08:57:52Z',
     description: 'Formatting date with Intl.DateTimeFormat #website',
     comments: 0,
-    user: null,
+    user: undefined,
     comments_url: 'https://api.github.com/gists/6550840f43473d5b54d4e9232ba67ab0/comments',
     owner: {
       login: 'the-glima',
@@ -116,7 +116,7 @@ export const gistsResponseMock = [
     updated_at: '2020-05-29T02:33:39Z',
     description: 'Easiest way to add Dark Mode #website',
     comments: 1,
-    user: null,
+    user: undefined,
     comments_url: 'https://api.github.com/gists/9e575e3a22813fdd3ab76aa33946a766/comments',
     owner: {
       login: 'the-glima',
@@ -163,7 +163,7 @@ export const gistsResponseMock = [
     updated_at: '2020-05-28T08:44:46Z',
     description: '[Git] Clean Branches Alias #website',
     comments: 0,
-    user: null,
+    user: undefined,
     comments_url: 'https://api.github.com/gists/102ed3ae45494862c9b1381fb6749275/comments',
     owner: {
       login: 'the-glima',
@@ -210,7 +210,7 @@ export const gistsResponseMock = [
     updated_at: '2020-05-27T14:42:21Z',
     description: 'Terminal: My Hyper Configuration #website',
     comments: 0,
-    user: null,
+    user: undefined,
     comments_url: 'https://api.github.com/gists/2980bf771357f4caab71e8ae571f10c9/comments',
     owner: {
       login: 'the-glima',
@@ -257,7 +257,7 @@ export const gistsResponseMock = [
     updated_at: '2020-05-28T08:50:53Z',
     description: '[Git] Getting the latest tag #website',
     comments: 1,
-    user: null,
+    user: undefined,
     comments_url: 'https://api.github.com/gists/5b5503c60df6371c22d611a0c87c2821/comments',
     owner: {
       login: 'the-glima',
@@ -304,7 +304,7 @@ export const gistsResponseMock = [
     updated_at: '2020-04-04T01:04:46Z',
     description: 'Github',
     comments: 0,
-    user: null,
+    user: undefined,
     comments_url: 'https://api.github.com/gists/a93aaf635ca70d76547f73a4c2e9995e/comments',
     owner: {
       login: 'the-glima',
@@ -351,7 +351,7 @@ export const gistsResponseMock = [
     updated_at: '2020-04-04T01:03:45Z',
     description: 'Old Cookie Script',
     comments: 0,
-    user: null,
+    user: undefined,
     comments_url: 'https://api.github.com/gists/763c805ef87c03b9010d91f301ccb98b/comments',
     owner: {
       login: 'the-glima',
@@ -398,7 +398,7 @@ export const gistsResponseMock = [
     updated_at: '2020-04-04T01:03:15Z',
     description: 'Sublime Plugins',
     comments: 0,
-    user: null,
+    user: undefined,
     comments_url: 'https://api.github.com/gists/ac5c75b71719266c14e4ee883e46b37f/comments',
     owner: {
       login: 'the-glima',
@@ -452,7 +452,7 @@ export const gistsResponseMock = [
     updated_at: '2020-04-04T01:01:48Z',
     description: 'A list of ideas',
     comments: 0,
-    user: null,
+    user: undefined,
     comments_url: 'https://api.github.com/gists/5fd0148eaac889a335a5150751ca9c45/comments',
     owner: {
       login: 'the-glima',

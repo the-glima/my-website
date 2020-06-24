@@ -5,7 +5,7 @@ import styles from './Repositories.module.css'
 import {RepositoriesData, RepositoryModel} from './RepositoriesData'
 import Headings from '../../shared/components/headings/Headings'
 import SeeMore from '../../shared/components/see-more/SeeMore'
-import {ReactComponent as GithubLogo} from '../../assets/images/logos/github.svg'
+import {ReactComponent as GithubLogo} from '../../assets/images/social/github.svg'
 
 const Repositories = ({t}: any) => {
   const repositoriesData = RepositoriesData(t)

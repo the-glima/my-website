@@ -1,14 +1,14 @@
 import {SetThemeEnum, SetThemeType} from '../models/SetThemeEnum'
 
 export const SetThemeEffect = {
-  getPreferColorScheme: (): SetThemeType | null => {
-    if (!window.matchMedia) return null
+  getPreferColorScheme: (): SetThemeType | undefined => {
+    if (!window.matchMedia) return undefined
 
     return window.matchMedia('(prefers-color-scheme: dark)').matches
       ? SetThemeEnum.dark
       : window.matchMedia('(prefers-color-scheme: light)').matches
       ? SetThemeEnum.light
-      : null
+      : undefined
   },
 
   isDarkTheme: (theme: string): Boolean => theme === SetThemeEnum.dark

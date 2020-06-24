@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useCallback} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 
 import {settings} from '../../../settings'
-import StorageService from '../../services/StorageService'
+import {storageService} from '../../services/StorageService'
 
 import styles from './SetTheme.module.css'
 import {SetThemeEffect} from './services/SetThemeService'
@@ -12,20 +12,19 @@ import * as actions from './redux/SetThemeActions'
 const SetTheme = () => {
   const dispatch = useDispatch()
   const themeState = useSelector((state: any) => state.theme)
-  const storageService = StorageService()
 
   const toggleTheme = () =>
     themeState.value === SetThemeEnum.light ? storeTheme(SetThemeEnum.dark) : storeTheme(SetThemeEnum.light)
 
-  const storeTheme = (theme: string) => {
+  const storeTheme = useCallback((theme: string) => {
     const cond = theme === SetThemeEnum.dark ? SetThemeEnum.dark : SetThemeEnum.light
 
     storageService.setItem('theme', cond)
     dispatch(actions.setTheme(theme))
-  }
+  }, [dispatch])
 
   useEffect(() => {
-    const savedTheme = storageService.getItem('theme')
+    const [savedTheme] = storageService.getItem('theme', false)
     const preferColorScheme = SetThemeEffect.getPreferColorScheme()
 
     if (preferColorScheme && !savedTheme) {
@@ -35,8 +34,7 @@ const SetTheme = () => {
     } else {
       storeTheme(SetThemeEnum.light)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [dispatch, storeTheme])
 
   useEffect(() => {
     SetThemeEffect.isDarkTheme(themeState.value)
