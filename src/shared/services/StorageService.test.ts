@@ -1,6 +1,8 @@
 import {storageService} from './StorageService'
 
 describe('Storage Service', () => {
+  const value = JSON.stringify({foo: 'bar'})
+
   describe('getItem', () => {
     it('should return null if localStorage is disable or not found', () => {
       const [data, error] = storageService.getItem('gists')
@@ -9,10 +11,10 @@ describe('Storage Service', () => {
       expect(error).toBeUndefined()
     })
 
-    it('should return value from mocked local storage', () => {
+    it('should return value', () => {
       Object.defineProperty(window, 'localStorage', {
         value: {
-          getItem: jest.fn(() => JSON.stringify({foo: 'bar'}))
+          getItem: jest.fn(() => value)
         },
         writable: true
       })
@@ -20,6 +22,22 @@ describe('Storage Service', () => {
       const [data, error] = storageService.getItem('gists')
 
       expect(data).toEqual({foo: 'bar'})
+      expect(error).toBeUndefined()
+      expect(window.localStorage.getItem).toHaveBeenCalledTimes(1)
+      expect(window.localStorage.getItem).toHaveBeenCalledWith('GABRIEL-LIMA:GISTS')
+    })
+
+    it('should return value not parsed', () => {
+      Object.defineProperty(window, 'localStorage', {
+        value: {
+          getItem: jest.fn(() => value)
+        },
+        writable: true
+      })
+
+      const [data, error] = storageService.getItem('gists', false)
+
+      expect(data).toEqual(value)
       expect(error).toBeUndefined()
       expect(window.localStorage.getItem).toHaveBeenCalledTimes(1)
       expect(window.localStorage.getItem).toHaveBeenCalledWith('GABRIEL-LIMA:GISTS')

@@ -34,14 +34,16 @@ const filterData = (gists: GistModel[]): GistModel[] => {
     }))
 }
 
-const getGists = async (): Promise<GistsData> => {
-  const gists = await GistsApi.fetchGists()
-  const filteredGists = filterData(gists.collection)
+const getSavedGists = (): GistsData | undefined => {
+  const [savedGists, error] = storageService.getItem('gists') as GistsData[]
+
+  if (error) return error
+  if (!savedGists) return undefined
 
   return {
     date: Date.now(),
-    collection: transformData(filteredGists),
-    logos: gistLogosService.transformLogos(gists.logos)
+    collection: savedGists.collection,
+    logos: savedGists.logos
   }
 }
 
@@ -55,13 +57,26 @@ const shouldSaveGists = (gists: GistsData): boolean => {
 }
 
 const saveGists = (gists: GistsData): GistsData | void => {
-  const [savedGists, error] = storageService.getItem('gists')
+  const savedGists = getSavedGists()
 
-  if (error) return error
-
-  if (!shouldSaveGists(savedGists)) return gists
+  if (savedGists && !shouldSaveGists(savedGists)) return gists
 
   storageService.setItem('gists', JSON.stringify(gists))
+}
+
+const getGists = async (): Promise<GistsData> => {
+  const savedGists = getSavedGists()
+
+  if (savedGists) return savedGists
+
+  const gists = await GistsApi.fetchGists()
+  const filteredGists = filterData(gists.collection)
+
+  return {
+    date: Date.now(),
+    collection: transformData(filteredGists),
+    logos: gistLogosService.transformLogos(gists.logos)
+  }
 }
 
 export const gistsService = {
