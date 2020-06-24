@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/the-glima/my-website/compare/v2.6.7...v2.7.0) (2020-06-24)
+
+
+### Features
+
+* add gist logos endpoint ([0632807](https://github.com/the-glima/my-website/commit/0632807d5ee4cbcc7bb35f89708e242cd597b6c3))
+
 ## [2.6.7](https://github.com/the-glima/my-website/compare/v2.6.6...v2.6.7) (2020-06-16)
 
 ## [2.6.6](https://github.com/the-glima/my-website/compare/v2.6.5...v2.6.6) (2020-06-07)
