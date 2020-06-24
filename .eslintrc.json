@@ -6,7 +6,7 @@
     "no-null"
   ],
   "rules": {
-    "no-null/no-null": 2,
+    "no-null/no-null": 1,
     "max-len": [ "warn", {
       "code": 120,
       "ignoreUrls": true,

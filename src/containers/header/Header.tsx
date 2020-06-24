@@ -20,7 +20,7 @@ const Header = ({t}: any) => {
     setActive('active')
 
     setTimeout(() => {
-      setActive(null)
+      setActive(undefined)
       count < headerData.length - 1 ? setCount(count + 1) : setCount(0)
     }, settings.header.animationDelay)
   }, [count, headerData])
