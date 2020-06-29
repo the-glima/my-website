@@ -11,7 +11,7 @@ const Social = ({t, props}: any) => {
       {socialData.map((social: SocialModel, i: number) => (
         <li key={i}>
           <a className={styles.link} href={social.url} title={social.title}>
-            <span className={`${styles.social} ${styles[`logo-${social.name.toLowerCase()}`]} dark-logo`}>
+            <span className={`${styles.social} ${styles[`logo-${social.name.toLowerCase()}`]}`}>
               <social.logo />
             </span>
           </a>

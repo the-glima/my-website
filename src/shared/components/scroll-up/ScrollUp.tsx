@@ -13,7 +13,7 @@ const ScrollUp = ({t}: any) => {
 
   return (
     <button className={styles.button} onClick={scrollTop} title={t('scroll-up.title')}>
-      <span className={`${styles.arrow} dark-logo`}>
+      <span className={styles.arrow}>
         <ArrowUpIcon />
       </span>
     </button>

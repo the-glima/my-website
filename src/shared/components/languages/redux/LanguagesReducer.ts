@@ -1,5 +1,5 @@
 import {ActionTypes} from './LanguagesActions'
-import i18n from '../../../i18n'
+import i18n from '../../../../i18n'
 
 const initialState = {
   langKey: i18n.language

@@ -1,15 +1,11 @@
-import {settings} from '../../settings'
+import {StorageEnum} from '../models/StorageEnum'
 
 interface CustomError {
   name: string
   error: any
 }
 
-const getKey = (key: string): string => {
-  const value: string = (settings.storage as any).keys[key]
-
-  return `${settings.storage.prefix}:${value.toUpperCase()}`
-}
+const getKey = (key: string): string => `${StorageEnum.prefix}:${key.toUpperCase()}`
 
 const getApi = (): any[] => {
   try {

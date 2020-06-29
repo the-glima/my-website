@@ -5,8 +5,8 @@ import {useDispatch, useSelector} from 'react-redux'
 import styles from './Header.module.css'
 import {HeaderData} from './HeaderData'
 import * as actions from './redux/HeaderActions'
-import {settings} from '../../settings'
 import Personality from '../../shared/components/personality/Personality'
+import { HeaderEnum } from './models/HeaderEnum'
 
 const Header = ({t}: any) => {
   const headerData = HeaderData()
@@ -22,7 +22,7 @@ const Header = ({t}: any) => {
     setTimeout(() => {
       setActive(undefined)
       count < headerData.length - 1 ? setCount(count + 1) : setCount(0)
-    }, settings.header.animationDelay)
+    }, HeaderEnum.animationDelay)
   }, [count, headerData])
 
   const togglePersonality = useCallback(

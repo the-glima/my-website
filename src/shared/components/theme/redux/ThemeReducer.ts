@@ -1,10 +1,10 @@
-import {ActionTypes} from './SetThemeActions'
+import {ActionTypes} from './ThemeActions'
 
 const initialState = {
   value: undefined
 }
 
-export const SetThemeReducer = (state = initialState, action: any) => {
+export const ThemeReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case ActionTypes.SetTheme: {
       const {theme} = action.payload

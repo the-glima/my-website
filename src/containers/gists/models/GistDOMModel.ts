@@ -11,6 +11,7 @@ export interface GistDOMModel {
 export interface GistLogoDOMModel {
   name: string
   url: string
+  className: string
 }
 
 export interface GistsData {

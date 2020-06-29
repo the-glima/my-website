@@ -3,7 +3,6 @@ import {useDispatch} from 'react-redux'
 
 import {gistsService} from '../services/GistsService'
 import * as actions from '../redux/GistsActions'
-import {settings} from '../../../settings'
 
 export const useFetchGists = () => {
   const dispatch = useDispatch()
@@ -14,10 +13,8 @@ export const useFetchGists = () => {
     try {
       const gistsData = await gistsService.getGists()
 
-      setTimeout(() => {
-        gistsService.saveGists(gistsData)
-        dispatch(actions.fetchGistsSuccess(gistsData))
-      }, settings.loading.delay)
+      gistsService.saveGists(gistsData)
+      dispatch(actions.fetchGistsSuccess(gistsData))
     } catch (error) {
       dispatch(actions.fetchGistsFailure(error))
     }

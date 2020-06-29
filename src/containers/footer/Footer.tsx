@@ -4,7 +4,7 @@ import styles from './Footer.module.css'
 
 import Social from '../../shared/components/social/Social'
 import Languages from '../../shared/components/languages/Languages'
-import SetTheme from '../../shared/components/set-theme/SetTheme'
+import Theme from '../../shared/components/theme/Theme'
 import ScrollUp from '../../shared/components/scroll-up/ScrollUp'
 
 const Footer = ({t}: any) => {
@@ -15,7 +15,7 @@ const Footer = ({t}: any) => {
           <Languages className={styles.languages} />
           <div className={styles.actions}>
             <Social props={{className: styles.social}} />
-            <SetTheme />
+            <Theme />
             <ScrollUp />
           </div>
         </div>
