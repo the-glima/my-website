@@ -20,6 +20,11 @@
   transition: opacity var(--transition);
 }
 
+.dark-logo {
+  color: var(--color-white-2);
+  filter: invert(1);
+}
+
 
 @media (hover: hover) {
   .dark-mode img:hover { opacity: 1; }

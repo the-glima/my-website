@@ -18,7 +18,7 @@ const GistsList = (props: Props) => {
       {!props.collection?.length ? (
         <Message show={!props.collection?.length} message={props.noGistsMessage || ''} />
       ) : (
-        <ul className={`${styles.list} ${props.className}`} data-testid="gists-list">
+        <ul className={`${styles.list} ${props.className || ''}`} data-testid="gists-list">
           {props.collection.map((gist: GistDOMModel, i: number) => (
             <li key={i} className={`${styles['list-item']}`} data-testid="gist-item">
               <TechLogo

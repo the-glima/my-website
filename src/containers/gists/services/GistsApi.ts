@@ -1,6 +1,6 @@
-import {settings} from '../../../settings'
 import {envService} from '../../../shared/services/EnvService'
 import {APIService} from 'shared/services/APIService'
+import {GitHubAPIEnum} from '../models/GithubAPIEnum'
 
 const getHeaders = (headersParams = {}) => ({
   ...(envService.isDevelopment() && {
@@ -11,10 +11,10 @@ const getHeaders = (headersParams = {}) => ({
   })
 })
 
-const getCollectionUrl = (params = settings.github.urlParams): string =>
+const getCollectionUrl = (params = GitHubAPIEnum): string =>
   `${params.url}/users/${params.user}/gists?per_page=${params.perPage}`
 
-const getLogosUrl = (params = settings.github.urlParams): string => `${params.url}/gists/${params.gistTechLogosId}`
+const getLogosUrl = (params = GitHubAPIEnum): string => `${params.url}/gists/${params.gistTechLogosId}`
 
 const fetchGists = async () => {
   const headers = getHeaders()

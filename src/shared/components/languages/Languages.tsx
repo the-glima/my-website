@@ -3,13 +3,13 @@ import {useDispatch, useSelector} from 'react-redux'
 import {withNamespaces} from 'react-i18next'
 import i18n from '../../../i18n'
 import styles from './Languages.module.css'
-import {settings} from '../../../settings'
-import {setLanguage} from './LanguagesActions'
+import {setLanguage} from './redux/LanguagesActions'
+import { LanguageData } from './LanguageData'
 
 const Languages = (props: any) => {
   const dispatch = useDispatch()
   const {langKey} = useSelector((state: any) => state.language)
-  const languagesOptions = Object.values(settings.languages.options)
+  const languagesOptions = Object.values(LanguageData.options)
 
   const changeLanguage = (langKey: string) => {
     i18n.changeLanguage(langKey)

@@ -1,6 +1,7 @@
 import {GistFilesModel, GistLogoDOMModel, GistModel} from '../models'
-import {settings} from '../../../settings'
 import githubLogo from '../../../assets/images/social/github.svg'
+
+const REGEX_LOGO_FILENAME = /^(\w+)-logo.svg/
 
 const transformLogos = (logos: GistModel): GistLogoDOMModel[] | any[] => {
   if (!logos?.files) return []
@@ -14,13 +15,17 @@ const transformLogos = (logos: GistModel): GistLogoDOMModel[] | any[] => {
 }
 
 const getLogoName = (str: string): string | undefined => {
-  const result = str.match(settings.gists.regexLogoFilename)
+  const result = str.match(REGEX_LOGO_FILENAME)
 
-  return result && result[1] ? result[1].replace(settings.gists.regexLogoFilename, '').trim() : undefined
+  return result && result[1] ? result[1].replace(REGEX_LOGO_FILENAME, '').trim() : undefined
 }
 
 const getLogo = (techLogos: GistLogoDOMModel[] | undefined, name: string): GistLogoDOMModel => {
-  const logoDefault = {name: 'github', url: githubLogo}
+  const logoDefault = {
+    name: 'github',
+    url: githubLogo,
+    className: 'dark-logo'
+  }
 
   if (!techLogos || !techLogos.length) return logoDefault
 

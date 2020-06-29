@@ -25,7 +25,7 @@ const Repositories = ({t}: any) => {
                 <span className={styles['link-wrapper']}>
                   <i className={styles.icon}>{repository.icon}</i>
                   <span className={styles.name}>{repository.name}</span>
-                  <span className={`${styles.github} dark-logo`}>
+                  <span className={styles.github}>
                     <GithubLogo />
                   </span>
                 </span>

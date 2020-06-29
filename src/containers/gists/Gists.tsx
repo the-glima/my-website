@@ -6,16 +6,14 @@ import Headings from '../../shared/components/headings/Headings'
 import SeeMore from '../../shared/components/see-more/SeeMore'
 import Loading from '../../shared/components/loading/Loading'
 import {ReactComponent as GitHubLogo} from '../../assets/images/social/github.svg'
-import {settings} from '../../settings'
 
+import {domService} from '../../shared/services/DOMService'
 import {GistsState} from './redux/GistsReducer'
-
 import styles from './Gists.module.css'
 import Message from './components/Message'
 import GistsList from './components/GistsList'
-import {domService} from '../../shared/services/DOMService'
-
 import {useFetchGists} from './hooks/UseGists.hook'
+import { GistsEnum } from './models'
 
 const Gists = ({t}: any) => {
   const fetchGists = useFetchGists()
@@ -27,7 +25,7 @@ const Gists = ({t}: any) => {
     if (!ignore) {
       domService.observeSection({
         element: document.getElementById('section-gists'),
-        threshold: settings.loading.threshold,
+        threshold: GistsEnum.intersectionThreshold,
         callback: fetchGists
       })
     }

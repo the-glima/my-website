@@ -1,33 +1,35 @@
-import {settings} from '../../../settings'
 import {GistFilesModel, GistDOMModel, GistModel, GistsData} from '../models'
 import {GistsApi} from './GistsApi'
+import {GistsEnum} from '../models/GistsEnum'
 import {gistLogosService} from './GistLogosService'
 import {storageService} from '../../../shared/services/StorageService'
+
+const REGEX_WEBSITE = /#website$/
+const REGEX_LOGO_DESCRIPTION = /^\[(.*)\]/
 
 const transformData = (gists: GistModel[]): GistDOMModel[] => {
   return gists.map((gist: GistModel) => {
     const files: GistFilesModel[] = Object.values(gist.files)
-    const title = gist.description.replace(settings.gists.regexLogoDescription, '').trim()
-    const languageMatch = gist.description.match(settings.gists.regexLogoDescription)
-    const language =
-      languageMatch && languageMatch[1] && languageMatch[1].replace(settings.gists.regexWebsite, '').trim()
+    const title = gist.description.replace(REGEX_LOGO_DESCRIPTION, '').trim()
+    const languageMatch = gist.description.match(REGEX_LOGO_DESCRIPTION)
+    const language = languageMatch && languageMatch[1] && languageMatch[1].replace(REGEX_WEBSITE, '').trim()
 
     return {
       id: gist.id,
       url: gist.html_url,
       files: files,
-      title: title || settings.gists.title,
-      language: language || files[0].language || settings.gists.logo
+      title: title || GistsEnum.title,
+      language: language || files[0].language || GistsEnum.logo
     }
   })
 }
 
 const filterData = (gists: GistModel[]): GistModel[] => {
-  const regex = new RegExp(settings.gists.regexWebsite, 'gmi')
+  const regex = new RegExp(REGEX_WEBSITE, 'gmi')
 
   return gists
     .filter((gist) => gist.public && gist.description.match(regex))
-    .slice(0, settings.gists.limit)
+    .slice(0, GistsEnum.limit)
     .map((gist: GistModel) => ({
       ...gist,
       description: gist.description.replace(regex, '').trim()

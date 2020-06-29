@@ -1,14 +1,6 @@
-export enum GistLanguagesEnum {
-  yaml = 'YAML',
-  shell = 'Shell',
-  markdown = 'Markdown',
-  javaScript = 'JavaScript',
-  html = 'HTML',
-  liquid = 'Liquid',
-  text = 'Text',
-  github = 'GitHub',
-  io = 'Io',
-  css = 'CSS',
-  scss = 'SCSS',
-  typeScript = 'TypeScript'
+export enum GistsEnum {
+  title = 'A cool Gist about something',
+  logo = 'GitHub',
+  limit = 10,
+  intersectionThreshold = 0.1
 }

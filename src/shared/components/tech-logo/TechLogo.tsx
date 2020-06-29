@@ -6,6 +6,7 @@ interface Props {
   source: {
     name: string
     url: string
+    className: string
   }
   logoClassName?: string
 }
@@ -13,7 +14,7 @@ interface Props {
 const TechLogo = (props: Props) => {
   return (
     <img
-      className={`${styles.logo} ${props.logoClassName || ''}`}
+      className={`${styles.logo} ${props.logoClassName || ''} ${props.source.className || ''}`}
       src={props.source.url}
       alt={props.source.name}
       title={props.source.name}
