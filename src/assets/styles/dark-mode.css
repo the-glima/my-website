@@ -20,7 +20,7 @@
   transition: opacity var(--transition);
 }
 
-.dark-logo {
+.dark-mode .dark-logo {
   color: var(--color-white-2);
   filter: invert(1);
 }
