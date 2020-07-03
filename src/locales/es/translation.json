@@ -1,5 +1,6 @@
 {
   "position": {
+    "senior-front-end-developer": "Sr. Desarrollador Front-end",
     "software-developer": "Desarrollador de Software",
     "full-stack-developer": "Desarrollador Full Stack",
     "javascript-developer": "Desarrollador Javascript",
@@ -66,7 +67,7 @@
   },
   "footer": {
     "copyright": "Todos los derechos reservados",
-    "quote": "Hecho con una gran cantidad de <1> ☕ </1> durante la <3>cuarentena COVID-19</3>."
+    "quote": "Hecho con mucha ansiedad durante la <1>cuarentena del COVID-19</1>."
   },
   "error": {
     "message": "¡Lo siento, algo salió mal! Por favor, intente nuevamente más tarde."

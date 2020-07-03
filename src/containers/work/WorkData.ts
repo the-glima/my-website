@@ -9,12 +9,19 @@ export interface WorkModel {
 
 export const WorkData = (t: any): WorkModel[] => [
   {
+    title: 'Ciklum',
+    position: t('position.senior-front-end-developer'),
+    url: 'https://www.ciklum.com/',
+    country: 'Spain',
+    year: '2020',
+    status: 'current'
+  },
+  {
     title: 'Payvision',
     position: t('position.software-developer'),
     url: 'https://www.payvision.com',
     country: 'Spain',
-    year: '2019',
-    status: 'current'
+    year: '2019'
   },
   {
     title: 'Webdoctor',

@@ -1,5 +1,6 @@
 {
   "position": {
+    "senior-front-end-developer": "Senior Front-end Developer",
     "front-end-developer": "Front-end Developer",
     "javascript-developer": "Javascript Developer",
     "full-stack-developer": "Full Stack Developer",
@@ -67,7 +68,7 @@
   },
   "footer": {
     "copyright": "All rights reserved",
-    "quote": "Made with a lot of <1>☕</1> during the <3>COVID-19 quarantine</3>."
+    "quote": "Made with a lot of anxiety during the <1>COVID-19's quarantine</1>."
   },
   "error": {
     "message": "Sorry, something went wrong! Please, try again later."
