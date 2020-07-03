@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/the-glima/my-website/compare/v2.7.1...v2.8.0) (2020-07-03)
+
+
+### Features
+
+* add ciklum job ([ae3ce23](https://github.com/the-glima/my-website/commit/ae3ce23fc9a23bacc2b639449f2828dddee6d29f))
+
 ## [2.7.1](https://github.com/the-glima/my-website/compare/v2.7.0...v2.7.1) (2020-06-29)
 
 # [2.7.0](https://github.com/the-glima/my-website/compare/v2.6.7...v2.7.0) (2020-06-24)
