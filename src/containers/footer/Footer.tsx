@@ -23,11 +23,7 @@ const Footer = ({t}: any) => {
           <p className={styles.copyright}>© 2020 Gabriel Lima - {t('footer.copyright')}</p>
           <p className={styles.quote}>
             <Trans i18nKey="footer.quote">
-              <span>Made with a lot of </span>
-              <span role="img" aria-label="Coffee">
-                ☕
-              </span>
-              <span> during </span>
+              <span>Made with a lot of <em>anxiety</em> during </span>
               <a
                 className={styles['quote-link']}
                 href="https://www.google.com/search?q=covid+19&rlz=1C1GCEA_enES841ES841&oq=covid+19&aqs=chrome..69i57j0l4j69i60l3.1589j0j4&sourceid=chrome&ie=UTF-8"
