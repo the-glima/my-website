@@ -174,9 +174,11 @@
 
   .list::before {
     top: 58px;
-    height: calc(100% - 84px);
+    height: calc(100% - 77px);
     background-color: var(--work-list-pseudo-color);
   }
+
+  .list-item { margin-bottom: 2rem; }
 
   .list-item-card {
     height: 90px;

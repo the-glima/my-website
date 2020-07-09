@@ -4,8 +4,10 @@ import drawing from '../../assets/images/photos/drawing.jpg'
 import dude from '../../assets/images/photos/dude.jpg'
 import i18n from '../../i18n'
 
+export type HeaderModelName = 'default' | 'headphones' | 'drawing' | 'dude'
+
 export interface HeaderModel {
-  name: string
+  name: HeaderModelName
   picture: any
   position: any
   bio: any
@@ -24,7 +26,7 @@ export const HeaderData = (): HeaderModel[] => [
     name: 'headphones',
     picture: headphones,
     position: i18n.t('position.javascript-developer'),
-    bio: i18n.t('header.headphone.bio-end'),
+    bio: i18n.t('header.headphones.bio-end'),
     color: 'purple'
   },
   {

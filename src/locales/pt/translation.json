@@ -14,14 +14,14 @@
     "default": {
       "bio-end": "Falo 3 idiomas e também JavaScript."
     },
-    "headphone": {
+    "headphones": {
       "bio-end": "Precisamos de mais JS Frameworks!"
     },
-    "dad": {
-      "bio-end": "Outra habilidade Full-stack: ágil trocador de fraldas."
+    "drawing": {
+      "bio-end": "Outra habilidade Full-stack: trocador de fraldas ágil."
     },
-    "old": {
-      "bio-end": "Lembra quando a gente dava suporte ao IE6?!"
+    "dude": {
+      "bio-end": "Lembra quando a gente dava suporte ao IE6?"
     }
   },
   "repositories": {
