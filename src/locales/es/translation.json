@@ -7,7 +7,7 @@
     "front-end-developer": "Desarrollador Front-end"
   },
   "header": {
-    "hint": "¡Haz clic aquí!",
+    "hint": "¡Clícame!",
     "greeting": "Hola, me llamo",
     "name": "Gabriel Lima",
     "punch-line": "Construyo cosas para la web y amo lo que hago",
@@ -15,13 +15,13 @@
     "default": {
       "bio-end": "Hablo 3 idiomas y también JavaScript."
     },
-    "headphone": {
+    "headphones": {
       "bio-end": "¡Necesitamos más JS Frameworks!"
     },
-    "dad": {
+    "drawing": {
       "bio-end": "Otra habilidad de Full-stack: cambiador de pañales ágil."
     },
-    "old": {
+    "dude": {
       "bio-end": "¿Recuerdas cuando nos preocupamos por IE6?"
     }
   },
