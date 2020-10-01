@@ -6,6 +6,11 @@
     "full-stack-developer": "Full Stack Developer",
     "software-developer": "Software Developer"
   },
+  "countries": {
+    "brazil": "Brazil",
+    "ireland": "Ireland",
+    "spain": "Spain"
+  },
   "header": {
     "hint": "Click me!",
     "greeting": "Hi, my name is",

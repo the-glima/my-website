@@ -6,6 +6,11 @@
     "javascript-developer": "Desenvolvedor Javascript",
     "front-end-developer": "Desenvolvedor Front-end"
   },
+  "countries": {
+    "brazil": "Brasil",
+    "ireland": "Irlanda",
+    "spain": "Espanha"
+  },
   "header": {
     "hint": "Clica aqui!",
     "greeting": "Oi, meu nome é",
