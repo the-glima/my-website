@@ -1,3 +1,10 @@
+# [2.9.0](https://github.com/the-glima/my-website/compare/v2.8.1...v2.9.0) (2020-10-02)
+
+
+### Features
+
+* add i18n to countries ([#51](https://github.com/the-glima/my-website/issues/51)) ([0ab23d1](https://github.com/the-glima/my-website/commit/0ab23d11052059d8f6b330685698c83483005e7e))
+
 ## [2.8.1](https://github.com/the-glima/my-website/compare/v2.8.0...v2.8.1) (2020-07-09)
 
 # [2.8.0](https://github.com/the-glima/my-website/compare/v2.7.1...v2.8.0) (2020-07-03)
