@@ -100,7 +100,7 @@ jobs:
       - name: Get Current Version
         run: |
           VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
-          echo "::set-env name=CURRENT_VERSION::${VERSION}"
+          echo "CURRENT_VERSION=${VERSION}" >> $GITHUB_ENV
           
       - name: Download Config Artifact
         uses: actions/download-artifact@v1
@@ -113,8 +113,8 @@ jobs:
           RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version .release.json)
           SHOULD_UPDATE=false
           [[ ${{ env.CURRENT_VERSION }} != ${RELEASE_VERSION} ]]; SHOULD_UPDATE=true || SHOULD_UPDATE=false
-          echo "::set-env name=SHOULD_UPDATE::${SHOULD_UPDATE}"
-          echo "::set-env name=VERSION::${RELEASE_VERSION}"
+          echo "SHOULD_UPDATE=${SHOULD_UPDATE}" >> $GITHUB_ENV
+          echo "VERSION=${RELEASE_VERSION}" >> $GITHUB_ENV
 
       - name: Log Variables
         run: |
