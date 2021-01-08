@@ -1,3 +1,10 @@
+# [2.10.0](https://github.com/the-glima/my-website/compare/v2.9.0...v2.10.0) (2021-01-08)
+
+
+### Features
+
+* **footer:** add dynamic year ([b5d6c11](https://github.com/the-glima/my-website/commit/b5d6c1108d43ea6ebe2469e6b2af2ab621957d6a))
+
 # [2.9.0](https://github.com/the-glima/my-website/compare/v2.8.1...v2.9.0) (2020-10-02)
 
 
