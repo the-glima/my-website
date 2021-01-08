@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {Trans, withNamespaces} from 'react-i18next'
 import styles from './Footer.module.css'
 
@@ -8,6 +8,12 @@ import Theme from '../../shared/components/theme/Theme'
 import ScrollUp from '../../shared/components/scroll-up/ScrollUp'
 
 const Footer = ({t}: any) => {
+  const [year, setYear]: any = useState(0)
+
+  useEffect(() => {
+    setYear(new Date().getFullYear())
+  }, [year])
+
   return (
     <footer className="section">
       <div className={`section-content ${styles.footer}`}>
@@ -20,7 +26,7 @@ const Footer = ({t}: any) => {
           </div>
         </div>
         <div className={styles['bottom-wrapper']}>
-          <p className={styles.copyright}>© 2020 Gabriel Lima - {t('footer.copyright')}</p>
+          <p className={styles.copyright}>© {year} Gabriel Lima - {t('footer.copyright')}</p>
           <p className={styles.quote}>
             <Trans i18nKey="footer.quote">
               <span>Made with a lot of <em>anxiety</em> during </span>
