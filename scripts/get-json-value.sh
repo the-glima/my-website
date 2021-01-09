@@ -12,7 +12,7 @@ function getJsonValue {
     exit 1
   fi
 
-  result=$(node -pe "JSON.parse(process.argv[1]).${PROP}" "$(cat ${FILE_PATH})")
+  readonly local result=$(node -pe "JSON.parse(process.argv[1]).${PROP}" "$(cat ${FILE_PATH})")
 
   if [[ "$result" == "undefined" ]] || [[ "$result" == "null" ]]; then
     echo "Property: '${PROP}' not found"

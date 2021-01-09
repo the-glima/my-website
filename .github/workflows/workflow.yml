@@ -43,7 +43,12 @@ jobs:
     if: github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, '[skip ci]')
     runs-on: ubuntu-latest
     steps:
+      - name: Should Skip Release?
+        run: | 
+          $(bash ./scripts/check-commit-message.sh)
+
       - name: Checkout
+        if: success()
         uses: actions/checkout@v2
 
       - name: Install dependencies
