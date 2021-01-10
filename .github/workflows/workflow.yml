@@ -49,6 +49,7 @@ jobs:
 
       - name: Should Skip Release?
         run: | 
+          echo "Last Commit Message X2: ${{ github.event.head_commit.message }}"
           bash ./scripts/check-commit-message.sh
 
       # - name: Install dependencies
