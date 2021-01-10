@@ -18,7 +18,7 @@ jobs:
       - name: Install Dependencies
         run: |
           yarn install --frozen-lockfile
-          echo "EXAMPLE=Hello World"" >> $GITHUB_ENV
+          echo "EXAMPLE=Hello World" >> $GITHUB_ENV
 
       - name: Run Lint
         if: success()
