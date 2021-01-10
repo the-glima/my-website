@@ -49,7 +49,7 @@ jobs:
 
       - name: Should Skip Release?
         run: | 
-          $(bash ./scripts/check-commit-message.sh)
+          bash ./scripts/check-commit-message.sh
 
       # - name: Install dependencies
       #   run: yarn install --frozen-lockfile
