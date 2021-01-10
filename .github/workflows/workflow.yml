@@ -50,7 +50,7 @@ jobs:
 
       - name: Should Skip Release?
         run: | 
-          echo "Does it works?
+          echo "HEY?
           echo "Example variable: ${{ env.EXAMPLE }}"
           # echo "Event client_payload: ${{ github.event.client_payload.branch_name }}"'
           ls
