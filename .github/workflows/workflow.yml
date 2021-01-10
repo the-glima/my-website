@@ -18,27 +18,29 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          # yarn install --frozen-lockfile
-          echo "EXAMPLE=Hello World" >> $GITHUB_ENV
+          yarn install --frozen-lockfile
 
-      # - name: Run Lint
-      #   if: success()
-      #   run: yarn lint
+      - name: Run Lint
+        if: success()
+        run: yarn lint
 
-      # - name: Run Unit Tests
-      #   if: success()
-      #   run: yarn test
+      - name: Run Unit Tests
+        if: success()
+        run: yarn test
       
-      # - name: Run Build
-      #   if: success()
-      #   run: yarn build
+      - name: Run Build
+        if: success()
+        run: |
+          yarn build
+          ls -la
+          find scripts
 
-      # - name: Upload Build Artifact
-      #   if: success()
-      #   uses: actions/upload-artifact@v1
-      #   with:
-      #     name: build.artifact
-      #     path: build
+      - name: Upload Build Artifact
+        if: success()
+        uses: actions/upload-artifact@v1
+        with:
+          name: build.artifact
+          path: build
 
   release:
     name: Release
@@ -51,10 +53,9 @@ jobs:
       - name: Should Skip Release?
         run: | 
           echo "HEY?
-          echo "Example variable: ${{ env.EXAMPLE }}"
-          # echo "Event client_payload: ${{ github.event.client_payload.branch_name }}"'
-          ls
-          ls scripts
+          # echo "Event client_payload: ${{ github.event.client_payload.branch_name }}"
+          ls -la
+          find scripts
 
       # - name: Install dependencies
       #   run: yarn install --frozen-lockfile
