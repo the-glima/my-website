@@ -3,7 +3,7 @@
 COMMIT_FILTERS=("feat" "fix" "perf" "refactor")
 
 function checkCommitMessage {
-  local LAST_COMMMIT=$(git log -1 --pretty=format:"%s")
+  local LAST_COMMMIT=$(git log -7 --pretty=format:"%s")
   echo "Last Commit Message: \"$LAST_COMMMIT\""
 
   for i in "${COMMIT_FILTERS[@]}";
