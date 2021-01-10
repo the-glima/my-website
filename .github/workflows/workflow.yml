@@ -16,7 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: |
+          yarn install --frozen-lockfile
+          echo "EXAMPLE=Hello World"" >> $GITHUB_ENV
 
       - name: Run Lint
         if: success()
@@ -40,48 +42,52 @@ jobs:
   release:
     name: Release
     needs: build
-    if: github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, '[skip ci]')
+    # if: github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, '[skip ci]')
     runs-on: ubuntu-latest
     steps:
-      - name: Should Skip Release?
-        run: | 
-          $(bash ./scripts/check-commit-message.sh)
-
       - name: Checkout
         if: success()
         uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      - name: Should Skip Release?
+        run: | 
+          echo "Does it works? ${{ env.EXAMPLE }}""
+          # echo "Event client_payload: ${{ github.event.client_payload.branch_name }}"'
+          ll ./scripts/
+          cat ./scripts/check-commit-message.sh
+          $(bash ./scripts/check-commit-message.sh)
+
+      # - name: Install dependencies
+      #   run: yarn install --frozen-lockfile
       
-      - name: Release
-        run: yarn release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Release
+      #   run: yarn release
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Create release.json
-        run: |
-          RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
-          echo '{ "version": "'${RELEASE_VERSION}'" }' > .release.json
+      # - name: Create release.json
+      #   run: |
+      #     RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
+      #     echo '{ "version": "'${RELEASE_VERSION}'" }' > .release.json
 
-      - name: Upload CNAME to Config Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: config.artifact
-          path: CNAME
+      # - name: Upload CNAME to Config Artifact
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: config.artifact
+      #     path: CNAME
           
-      - name: Upload Release to Config Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: config.artifact
-          path: .release.json
+      # - name: Upload Release to Config Artifact
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: config.artifact
+      #     path: .release.json
 
-      - name: Upload Scripts Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: scripts.artifact
-          path: scripts
+      # - name: Upload Scripts Artifact
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: scripts.artifact
+      #     path: scripts
 
   deploy:
     name: Deploy to GH-Pages
