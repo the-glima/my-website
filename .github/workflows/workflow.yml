@@ -15,29 +15,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - name: Install Dependencies
         run: |
-          yarn install --frozen-lockfile
+          # yarn install --frozen-lockfile
           echo "EXAMPLE=Hello World" >> $GITHUB_ENV
 
-      - name: Run Lint
-        if: success()
-        run: yarn lint
+      # - name: Run Lint
+      #   if: success()
+      #   run: yarn lint
 
-      - name: Run Unit Tests
-        if: success()
-        run: yarn test
+      # - name: Run Unit Tests
+      #   if: success()
+      #   run: yarn test
       
-      - name: Run Build
-        if: success()
-        run: yarn build
+      # - name: Run Build
+      #   if: success()
+      #   run: yarn build
 
-      - name: Upload Build Artifact
-        if: success()
-        uses: actions/upload-artifact@v1
-        with:
-          name: build.artifact
-          path: build
+      # - name: Upload Build Artifact
+      #   if: success()
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: build.artifact
+      #     path: build
 
   release:
     name: Release
@@ -45,17 +46,15 @@ jobs:
     # if: github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, '[skip ci]')
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        if: success()
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Should Skip Release?
         run: | 
-          echo "Does it works? ${{ env.EXAMPLE }}""
+          echo "Does it works?
+          echo "Example variable: ${{ env.EXAMPLE }}"
           # echo "Event client_payload: ${{ github.event.client_payload.branch_name }}"'
-          ll ./scripts/
-          cat ./scripts/check-commit-message.sh
-          $(bash ./scripts/check-commit-message.sh)
+          ls
+          ls scripts
 
       # - name: Install dependencies
       #   run: yarn install --frozen-lockfile
