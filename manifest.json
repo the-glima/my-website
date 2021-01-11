@@ -1,1 +1,26 @@
-{"theme_color": "#000000", "name": "Gabriel Lima | Front-End Developer - Personal Website", "short_name": "Gabriel Lima's Website", "icons": [{"src": "favicon.ico", "type": "image/x-icon", "sizes": "64x64"}, {"src": "logo192.jpg", "type": "image/jpg", "sizes": "192x192"}, {"src": "logo512.jpg", "type": "image/jpg", "sizes": "512x512"}], "version": "3.0.0", "start_url": ".", "background_color": "#ffffff", "display": "standalone"}
+{
+  "short_name": "Gabriel Lima's Website",
+  "version": "2.10.0",
+  "name": "Gabriel Lima | Front-End Developer - Personal Website",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.jpg",
+      "type": "image/jpg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.jpg",
+      "type": "image/jpg",
+      "sizes": "512x512"
+    }
+  ]
+}
