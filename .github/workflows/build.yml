@@ -1,65 +1,74 @@
-# name: Main
+name: Main
 
-# on:
-#   push:
-#     branches: ["**"]
-#   pull_request:
-#     branches: [main]
-#   repository_dispatch:
-#     types: [manual-action-trigger]
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: [main]
+  repository_dispatch:
+    types: [manual-action-trigger]
 
-# jobs:
-#   build:
-#     name: Build
-#     if: "!contains(github.event.head_commit.message, '[skip ci]')"
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
+jobs:
+  # build:
+  #   name: Build
+  #   if: "!contains(github.event.head_commit.message, '[skip ci]')"
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
 
-#       - name: Install Dependencies
-#         run: yarn install --frozen-lockfile
+  #     - name: Install Dependencies
+  #       run: yarn install --frozen-lockfile
 
-#       - name: Run Lint
-#         if: success()
-#         run: yarn lint
+  #     - name: Run Lint
+  #       if: success()
+  #       run: yarn lint
 
-#       - name: Run Unit Tests
-#         if: success()
-#         run: yarn test
+  #     - name: Run Unit Tests
+  #       if: success()
+  #       run: yarn test
       
-#       - name: Run Build
-#         if: success()
-#         run: yarn build
+  #     - name: Run Build
+  #       if: success()
+  #       run: yarn build
 
-#       - name: Upload Build Artifact
-#         if: success()
-#         uses: actions/upload-artifact@v1
-#         with:
-#           name: build.artifact
-#           path: build
+  #     - name: Upload Build Artifact
+  #       if: success()
+  #       uses: actions/upload-artifact@v1
+  #       with:
+  #         name: build.artifact
+  #         path: build
+          
+  artifact:
+      name: Setup Artifacts
+      runs-on: ubuntu-latest
+      steps:
+      - name: Upload Scripts Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: scripts.artifact
+          path: scripts
 
-#   release:
-#     name: Release
-#     needs: build
-#     if: github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, '[skip ci]')
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-
-#       - name: Install dependencies
-#         run: yarn install --frozen-lockfile
+      - name: Upload Config Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: config.artifact
+          path: CNAME
       
-#       - name: Release
-#         if: success()
-#         run: yarn release
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  # release:
+  #   name: Release
+  #   needs: build
+  #   if: github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, '[skip ci]')
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
 
-#       - name: Upload CNAME to Config Artifact
-#         if: success()
-#         uses: actions/upload-artifact@v1
-#         with:
-#           name: config.artifact
-#           path: CNAME
+  #     - name: Install dependencies
+  #       run: yarn install --frozen-lockfile
+      
+  #     - name: Release
+  #       if: success()
+  #       run: yarn release
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   
