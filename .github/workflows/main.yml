@@ -77,13 +77,16 @@ jobs:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Get Version
-      #   if: success()
-        run: |	
-          RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)	
-          echo "VERSION ${VERSION}"
-          echo "VERSION=${RELEASE_VERSION}" >> $GITHUB_ENV
-          echo "RELEASE ${{ env.RELEASE_VERSION }}"
+      - name: Create release.json
+        run: |
+          RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
+          echo '{ "version": "'${RELEASE_VERSION}'" }' > version.json
+
+      - name: Upload Release to Config Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: config.artifact
+          path: version.json
 
   deploy:
     name: Deploy to GH-Pages
@@ -96,6 +99,12 @@ jobs:
           name: build.artifact
           path: .
 
+      - name: Download Config Artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: config.artifact
+          path: .
+
       # - name: GitHub Pages action
       #   uses: peaceiris/actions-gh-pages@v3.7.3
       #   with:
@@ -104,14 +113,15 @@ jobs:
 
       - name: Update version in Manifest
         run: |	
-          import json, os
-          # manifestFile = open("./manifest.json", "r")	
-          # jsonObj = json.load(manifestFile)	
-          print(os.environ)
-          # jsonObj["version"] = "${VERSION}"
-          # manifestFile.close()	
+          import json
+          manifestFile = open("./manifest.json", "r")	
+          versionFile = open("./version.json", "r")	
+          manifestJson = json.load(manifestFile)	
+          manifestJson["version"] = versionFile["version"]
+          manifestFile.close()	
+          versionFile.close()	
 
-          # manifestFile = open("./manifest.json", "w")	
-          # json.dump(json_object, manifestFile)	
-          # manifestFile.close()	
+          manifestFile = open("./manifest.json", "w")
+          json.dump(json_object, manifestFile)	
+          manifestFile.close()	
         shell: python
