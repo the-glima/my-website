@@ -126,3 +126,10 @@ jobs:
           json.dump(manifestJson, manifestFile)	
           manifestFile.close()	
         shell: python
+
+      - name: ECHO
+        run: |
+          ls
+          cat manifest.json
+          rm version.json
+          ls
