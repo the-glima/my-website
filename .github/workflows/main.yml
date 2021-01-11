@@ -103,16 +103,14 @@ jobs:
       - name: Update version in Manifest
         run: |	
           import json, os
-          manifestFile = open("./manifest.json", "r")	
-          jsonObj = json.load(manifestFile)	
+          # manifestFile = open("./manifest.json", "r")	
+          # jsonObj = json.load(manifestFile)	
           print(os.environ['PATH'])
-          print(os.environ['VERSION'])
-          print(env['VERSION'])
-          jsonObj["version"] = "${VERSION}"
-          manifestFile.close()	
-          
+          print(os.environ)
+          # jsonObj["version"] = "${VERSION}"
+          # manifestFile.close()	
 
-          manifestFile = open("./manifest.json", "w")	
-          json.dump(json_object, manifestFile)	
-          manifestFile.close()	
+          # manifestFile = open("./manifest.json", "w")	
+          # json.dump(json_object, manifestFile)	
+          # manifestFile.close()	
         shell: python
