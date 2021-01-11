@@ -2,41 +2,41 @@ name: Main
 
 on:
   push:
-    branches: ["**"]
+    branches: [main]
   pull_request:
     branches: [main]
   repository_dispatch:
     types: [manual-action-trigger]
 
 jobs:
-  # build:
-  #   name: Build
-  #   if: "!contains(github.event.head_commit.message, '[skip ci]')"
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
+  build:
+    name: Build
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
 
-  #     - name: Install Dependencies
-  #       run: yarn install --frozen-lockfile
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
 
-  #     - name: Run Lint
-  #       if: success()
-  #       run: yarn lint
+      # - name: Run Lint
+      #   if: success()
+      #   run: yarn lint
 
-  #     - name: Run Unit Tests
-  #       if: success()
-  #       run: yarn test
+      # - name: Run Unit Tests
+      #   if: success()
+      #   run: yarn test
       
-  #     - name: Run Build
-  #       if: success()
-  #       run: yarn build
+      - name: Run Build
+        if: success()
+        run: yarn build
 
-  #     - name: Upload Build Artifact
-  #       if: success()
-  #       uses: actions/upload-artifact@v1
-  #       with:
-  #         name: build.artifact
-  #         path: build
+      - name: Upload Build Artifact
+        if: success()
+        uses: actions/upload-artifact@v1
+        with:
+          name: build.artifact
+          path: build
           
   artifact:
       name: Setup Artifacts
@@ -73,4 +73,20 @@ jobs:
   #       env:
   #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   #         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-  
+
+
+  deploy:
+    name: Deploy to GH-Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: build.artifact
+          path: .
+
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .  
