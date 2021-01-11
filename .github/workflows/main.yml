@@ -40,13 +40,13 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
-      # - name: Run Lint
-      #   if: success()
-      #   run: yarn lint
+      - name: Run Lint
+        if: success()
+        run: yarn lint
 
-      # - name: Run Unit Tests
-      #   if: success()
-      #   run: yarn test
+      - name: Run Unit Tests
+        if: success()
+        run: yarn test
       
       - name: Run Build
         if: success()
@@ -67,15 +67,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # - name: Install dependencies
-      #   run: yarn install --frozen-lockfile
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
       
-      # - name: Release
-      #   if: success()
-      #   run: yarn release
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Release
+        if: success()
+        run: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create version.json
         run: |
@@ -127,9 +127,7 @@ jobs:
           manifestFile.close()	
         shell: python
 
-      - name: ECHO
+      - name: Clean
         run: |
-          ls
           cat manifest.json
           rm version.json
-          ls
