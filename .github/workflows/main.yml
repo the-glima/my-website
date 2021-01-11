@@ -38,19 +38,15 @@ jobs:
           name: build.artifact
           path: build
           
-  artifact:
-      name: Setup Artifacts
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@v2
-
-      - name: Upload Scripts Artifact
+      - name: Upload Scripts 
+        if: success()
         uses: actions/upload-artifact@v1
         with:
           name: scripts.artifact
           path: scripts
 
       - name: Upload Config Artifact
+        if: success()
         uses: actions/upload-artifact@v1
         with:
           name: config.artifact
