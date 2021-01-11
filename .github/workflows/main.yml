@@ -105,8 +105,11 @@ jobs:
           import json	
           manifestFile = open("./manifest.json", "r")	
           jsonObj = json.load(manifestFile)	
-          jsonObj["version"] = ${VERSION}	
+          print("${VERSION}")
+          print("${{ env.VERSION }}")
+          jsonObj["version"] = "${VERSION}"
           manifestFile.close()	
+          
 
           manifestFile = open("./manifest.json", "w")	
           json.dump(json_object, manifestFile)	
