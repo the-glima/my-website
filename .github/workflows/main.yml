@@ -56,28 +56,27 @@ jobs:
           name: config.artifact
           path: CNAME
       
-  # release:
-  #   name: Release
-  #   needs: build
-  #   if: github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, '[skip ci]')
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
+  release:
+    name: Release
+    needs: build
+    if: github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, '[skip ci]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
 
-  #     - name: Install dependencies
-  #       run: yarn install --frozen-lockfile
+      # - name: Install dependencies
+      #   run: yarn install --frozen-lockfile
       
-  #     - name: Release
-  #       if: success()
-  #       run: yarn release
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
+      # - name: Release
+      #   if: success()
+      #   run: yarn release
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   deploy:
     name: Deploy to GH-Pages
-    needs: build
+    needs: release
     runs-on: ubuntu-latest
     steps:
       - name: Download Build Artifact
