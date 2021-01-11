@@ -40,13 +40,13 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Run Lint
-        if: success()
-        run: yarn lint
+      # - name: Run Lint
+      #   if: success()
+      #   run: yarn lint
 
-      - name: Run Unit Tests
-        if: success()
-        run: yarn test
+      # - name: Run Unit Tests
+      #   if: success()
+      #   run: yarn test
       
       - name: Run Build
         if: success()
@@ -67,26 +67,27 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      # - name: Install dependencies
+      #   run: yarn install --frozen-lockfile
       
-      - name: Release
-        if: success()
-        run: yarn release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Release
+      #   if: success()
+      #   run: yarn release
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Create version.json
+      - name: Create Version File
         run: |
           RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
-          echo '{ "version": "'${RELEASE_VERSION}'" }' > version.json
+          echo '{ "version": "'${RELEASE_VERSION}'" }' > .version.json
+          python ./scripts/update-version.py ${RELEASE_VERSION}
 
       - name: Upload Release to Config Artifact
         uses: actions/upload-artifact@v1
         with:
           name: config.artifact
-          path: version.json
+          path: .version.json
 
   deploy:
     name: Deploy to GH-Pages
@@ -112,22 +113,8 @@ jobs:
       #     publish_dir: .  
 
       - name: Update version in Manifest
-        run: |	
-          import json
-          manifestFile = open("./manifest.json", "r")	
-          versionFile = open("./version.json", "r")	
-          manifestJson = json.load(manifestFile)	
-          versionJson = json.load(versionFile)	
-          manifestJson["version"] = versionJson["version"]
-          manifestFile.close()	
-          versionFile.close()	
-
-          manifestFile = open("./manifest.json", "w")
-          json.dump(manifestJson, manifestFile)	
-          manifestFile.close()	
-        shell: python
+        run: python ./scripts/update-version.py
 
       - name: Clean
         run: |
-          cat manifest.json
-          rm version.json
+          rm .version.json
