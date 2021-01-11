@@ -105,8 +105,8 @@ jobs:
           import json	
           manifestFile = open("./manifest.json", "r")	
           jsonObj = json.load(manifestFile)	
-          print("${VERSION}")
-          print("${{ env.VERSION }}")
+          print(os.environ['PATH'])
+          print(env['VERSION'])
           jsonObj["version"] = "${VERSION}"
           manifestFile.close()	
           
