@@ -79,9 +79,9 @@ jobs:
 
       # - name: Get Version
       #   if: success()
-      #   run: |	
-      #     RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)	
-      #     echo "VERSION=${RELEASE_VERSION}" >> $GITHUB_ENV
+        run: |	
+          RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)	
+          echo "VERSION=${RELEASE_VERSION}" >> $GITHUB_ENV
 
   deploy:
     name: Deploy to GH-Pages
@@ -105,8 +105,7 @@ jobs:
           import json, os
           # manifestFile = open("./manifest.json", "r")	
           # jsonObj = json.load(manifestFile)	
-          print(os.environ['VERSION'])
-          print(os.environ['GITHUB_ENV'])
+          print(os.environ)
           # jsonObj["version"] = "${VERSION}"
           # manifestFile.close()	
 
