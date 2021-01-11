@@ -78,17 +78,19 @@ jobs:
       #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create Version File
-        uses: jossef/action-set-json-field@v1
-        with:
-          file: version.json
-          field: version
-          value: ${RELEASE_VERSION}
+        run: |
+          RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
+          cat > ./temp/README.md << EOL
+          # Gabriel Lima's Website
+          > Version v${RELEASE_VERSION}
+          ... 
+          EOL
 
       - name: Upload Release to Config Artifact
         uses: actions/upload-artifact@v1
         with:
           name: config.artifact
-          path: .version.json
+          path: README.md
 
   deploy:
     name: Deploy to GH-Pages
