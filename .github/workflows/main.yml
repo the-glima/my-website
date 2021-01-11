@@ -77,7 +77,7 @@ jobs:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Create release.json
+      - name: Create version.json
         run: |
           RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
           echo '{ "version": "'${RELEASE_VERSION}'" }' > version.json
@@ -104,6 +104,11 @@ jobs:
         with:
           name: config.artifact
           path: .
+
+      - name: ECHO
+        run: |
+          ls
+          cat version.json
 
       # - name: GitHub Pages action
       #   uses: peaceiris/actions-gh-pages@v3.7.3
