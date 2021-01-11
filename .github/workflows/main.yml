@@ -117,7 +117,7 @@ jobs:
           manifestFile = open("./manifest.json", "r")	
           versionFile = open("./version.json", "r")	
           manifestJson = json.load(manifestFile)	
-          versionJson = json.load(manifestFile)	
+          versionJson = json.load(versionFile)	
           manifestJson["version"] = versionJson["version"]
           manifestFile.close()	
           versionFile.close()	
