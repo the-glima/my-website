@@ -77,7 +77,7 @@ jobs:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      # - name: Get Version
+      - name: Get Version
       #   if: success()
         run: |	
           RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)	
