@@ -105,8 +105,8 @@ jobs:
           import json, os
           # manifestFile = open("./manifest.json", "r")	
           # jsonObj = json.load(manifestFile)	
-          print(os.getenv)
-          print(os.getenv['VERSION'])
+          print(os.environ['VERSION'])
+          print(os.environ['GITHUB_ENV'])
           # jsonObj["version"] = "${VERSION}"
           # manifestFile.close()	
 
