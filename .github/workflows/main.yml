@@ -105,11 +105,6 @@ jobs:
           name: config.artifact
           path: .
 
-      - name: ECHO
-        run: |
-          ls
-          cat version.json
-
       # - name: GitHub Pages action
       #   uses: peaceiris/actions-gh-pages@v3.7.3
       #   with:
@@ -122,11 +117,12 @@ jobs:
           manifestFile = open("./manifest.json", "r")	
           versionFile = open("./version.json", "r")	
           manifestJson = json.load(manifestFile)	
-          manifestJson["version"] = versionFile["version"]
+          versionJson = json.load(manifestFile)	
+          manifestJson["version"] = versionJson["version"]
           manifestFile.close()	
           versionFile.close()	
 
           manifestFile = open("./manifest.json", "w")
-          json.dump(json_object, manifestFile)	
+          json.dump(manifestJson, manifestFile)	
           manifestFile.close()	
         shell: python
