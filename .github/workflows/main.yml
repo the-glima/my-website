@@ -80,11 +80,8 @@ jobs:
       - name: Create Version File
         run: |
           RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
-          cat > ./temp/README.md << EOL
-          # Gabriel Lima's Website
-          > Version v${RELEASE_VERSION}
-          ... 
-          EOL
+          echo "# Gabriel Lima's Website
+          > Version v${RELEASE_VERSION} " > README.md
 
       - name: Upload Release to Config Artifact
         uses: actions/upload-artifact@v1
