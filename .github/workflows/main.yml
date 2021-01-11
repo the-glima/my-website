@@ -78,10 +78,11 @@ jobs:
       #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create Version File
-        run: |
-          RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
-          echo '{ "version": "'${RELEASE_VERSION}'" }' > .version.json
-          python ./scripts/update-version.py ${RELEASE_VERSION}
+        uses: jossef/action-set-json-field@v1
+        with:
+          file: version.json
+          field: version
+          value: ${RELEASE_VERSION}
 
       - name: Upload Release to Config Artifact
         uses: actions/upload-artifact@v1
@@ -111,10 +112,3 @@ jobs:
       #   with:
       #     github_token: ${{ secrets.GITHUB_TOKEN }}
       #     publish_dir: .  
-
-      - name: Update version in Manifest
-        run: python ./scripts/update-version.py
-
-      - name: Clean
-        run: |
-          rm .version.json
