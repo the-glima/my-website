@@ -9,6 +9,12 @@ jobs:
     name: GH-Pages
     runs-on: ubuntu-latest
     steps:
+      - name: Download Version Artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: scripts.artifact
+          path: scripts
+
       - name: Clean
         run: rm -rf ./*
 
@@ -17,5 +23,24 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .
+
+      - name: Get Version
+        run: |
+          VERSION=$(bash ./scripts/get-json-value.sh version package.json)
+          echo "VERSION: ${VERSION}"
+          echo "VERSION=${VERSION}" >> $GITHUB_ENV
+
+      - name: Update version in Manifest 
+        run: |
+          import json
+          manifestFile = open("./public/manifest.json", "r")
+          jsonObj = json.load(manifestFile)
+          jsonObj["version"] = ${{ env.VERSION }}"
+          manifestFile.close()
+
+          manifestFile = open("public/manifest.json", "w")
+          json.dump(json_object, manifestFile)
+          manifestFile.close()
+        shell: python
 
       
