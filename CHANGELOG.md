@@ -1,3 +1,10 @@
+## [2.10.4](https://github.com/the-glima/my-website/compare/v2.10.3...v2.10.4) (2021-01-12)
+
+
+### Bug Fixes
+
+* **workflow:** manual trigger ([95ce306](https://github.com/the-glima/my-website/commit/95ce306a7ad0f98687cae8be47b6c67240f96bcf))
+
 ## [2.10.3](https://github.com/the-glima/my-website/compare/v2.10.2...v2.10.3) (2021-01-12)
 
 ## [2.10.2](https://github.com/the-glima/my-website/compare/v2.10.1...v2.10.2) (2021-01-12)
