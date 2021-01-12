@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       hello:
-        description: 'Hey'
+        description: 'That same'
         required: false
-        default: 'Mundo'
-      rule:
-        description: 'A rule'
+        default: 'Hello'
+      world:
+        description: 'Nerd Phrase'
         required: true
-        default: 'Do not forget me'
+        default: 'World'
 
 jobs:
   init:
@@ -18,4 +18,4 @@ jobs:
     steps:
     - run: |
         echo "Greeting: ${{ github.event.inputs.hello }}!"
-        echo "Rule ${{ github.event.inputs.rule }}!"
+        echo "Cliche ${{ github.event.inputs.world }}!"
