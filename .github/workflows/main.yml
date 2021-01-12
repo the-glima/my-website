@@ -59,21 +59,27 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           
-      - name: Create README File
+      - name: Update README File
         id: update_version
         if: steps.semantic.outputs.new_release_published
         run: |
           RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
-          echo "# Gabriel Lima's Website
-          > Version v${{ steps.semantic.outputs.new_release_version }} " > README.md
           echo "::set-output name=version::${{ steps.semantic.outputs.new_release_version }}"
+          echo "\nVersion ${{ steps.semantic.outputs.new_release_version }}" >> ./docs/README.md
 
       - name: Upload README to Config Artifact
         if: steps.semantic.outputs.new_release_published
         uses: actions/upload-artifact@v1
         with:
           name: config.artifact
-          path: README.md
+          path: ./docs/README.md
+
+      - name: Upload CHANGELOG to Config Artifact
+        if: steps.semantic.outputs.new_release_published
+        uses: actions/upload-artifact@v1
+        with:
+          name: config.artifact
+          path: CHANGELOG.md
 
   deploy:
     name: Deploy to GH-Pages
