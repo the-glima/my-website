@@ -61,7 +61,7 @@ jobs:
   release:
     name: Release
     needs: build
-    # if: github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, '[skip ci]')
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -81,21 +81,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           
-      - name: Was a new release published?
-        if: "!steps.semantic.outputs.new_release_published"
-        run: |
-          echo "Nope, no release was published, skipping..."
-          exit 1
-
       - name: Create README File
-        if: success()
+        if: steps.semantic.outputs.new_release_published
         run: |
           RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
           echo "# Gabriel Lima's Website
           > Version v${{ steps.semantic.outputs.new_release_version }} " > README.md
 
       - name: Upload README to Config Artifact
-        if: success()
+        if: steps.semantic.outputs.new_release_published
         uses: actions/upload-artifact@v1
         with:
           name: config.artifact
