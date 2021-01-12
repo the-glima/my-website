@@ -61,6 +61,8 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.update_version.outputs.version }}
     steps:
       - uses: actions/checkout@v2
 
@@ -80,11 +82,13 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           
       - name: Create README File
+        id: update_version
         if: steps.semantic.outputs.new_release_published
         run: |
           RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
           echo "# Gabriel Lima's Website
           > Version v${{ steps.semantic.outputs.new_release_version }} " > README.md
+          echo "::set-output name=version::${{ steps.semantic.outputs.new_release_version }}"
 
       - name: Upload README to Config Artifact
         if: steps.semantic.outputs.new_release_published
@@ -114,4 +118,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ secrets.PAT_TOKEN }}
-          publish_dir: .  
+          publish_dir: .
+          cname: gabriel-lima.com
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'chore(release): v${{needs.release.outputs.version}} [skip-ci]'
