@@ -1,11 +1,10 @@
 # !/usr/bin/env bash
 
-REPO_NAME=$(grep REPO_NAME .env | cut -d '=' -f 2-)
 GITHUB_TOKEN=$(grep GITHUB_TOKEN .env | cut -d '=' -f 2-)
 BRANCH_NAME="${1:=main}"
 
 function triggerGithubAction() {
-  echo "GitHub: Running Manual Action Trigger for: ${REPO_NAME}"
+  echo "GitHub: Running Manual Action Trigger"
   # curl -H "Accept: application/vnd.github.everest-preview+json" \
   #     -H "Authorization: token ${GITHUB_TOKEN}" \
   #     --request POST \
@@ -15,6 +14,7 @@ function triggerGithubAction() {
     -X POST \
     -H "Accept: application/vnd.github.v3+json" \
     -H "Authorization: token ${GITHUB_TOKEN}" \
-    https://api.github.com/repos/octocat/hello-world/actions/workflows/42/dispatches \
-    -d '{"ref": "'${BRANCH_NAME}'", "hello": "Hello", "world": "World"}'
-}
+    https://api.github.com/repos/the-glima/my-website/actions/workflows/Manually%20Triggered/dispatches \
+    -d '{"ref": "'${BRANCH_NAME}'", "hello": "Hola", "world": "Mundo"}'
+
+triggerGithubAction
