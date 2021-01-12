@@ -1,0 +1,21 @@
+name: Manually Triggered
+
+on:
+  workflow_dispatch:
+    inputs:
+      hello:
+        description: 'Hey'
+        required: false
+        default: 'Mundo'
+      rule:
+        description: 'A rule'
+        required: true
+        default: 'Do not forget me'
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Greeting: ${{ github.event.inputs.hello }}!"
+        echo "Rule ${{ github.event.inputs.rule }}!"

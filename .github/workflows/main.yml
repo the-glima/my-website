@@ -3,33 +3,11 @@ name: Main
 on:
   push:
     branches: [main]
-  repository_dispatch:
-    types: [manual-action-trigger]
 
 jobs:
-  init: 
-    name: Init
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Upload Scripts 
-        uses: actions/upload-artifact@v1
-        with:
-          name: scripts.artifact
-          path: scripts
-
-      - name: Upload Config Artifact
-        if: success()
-        uses: actions/upload-artifact@v1
-        with:
-          name: config.artifact
-          path: CNAME
-      
   build:
     name: Build
-    needs: init
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -123,3 +101,4 @@ jobs:
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: 'chore(release): v${{needs.release.outputs.version}} [skip-ci]'
+          

@@ -13,5 +13,3 @@ function triggerGithubAction() {
       --data '{"event_type": "manual-action-trigger", "client_payload": { "branch_name": '${BRANCH_NAME}'}}' \
       https://api.github.com/repos/${REPO_NAME}/dispatches
 }
-
-triggerGithubAction
