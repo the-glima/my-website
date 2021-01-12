@@ -3,8 +3,6 @@ name: Main
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: ['**']
   repository_dispatch:
     types: [manual-action-trigger]
 
@@ -78,7 +76,7 @@ jobs:
             @semantic-release/git
             @semantic-release/changelog
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           
       - name: Create README File
@@ -115,5 +113,5 @@ jobs:
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PAT_TOKEN }}
           publish_dir: .  
