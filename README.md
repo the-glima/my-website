@@ -1,4 +1,4 @@
-![CI CD](https://github.com/the-glima/my-website/workflows/CI%20CD/badge.svg)
+![CI CD](https://github.com/the-glima/my-website/workflows/Main/badge.svg)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
