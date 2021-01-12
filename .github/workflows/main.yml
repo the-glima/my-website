@@ -3,33 +3,11 @@ name: Main
 on:
   push:
     branches: [main]
-  repository_dispatch:
-    types: [manual-action-trigger]
 
 jobs:
-  init: 
-    name: Init
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Upload Scripts 
-        uses: actions/upload-artifact@v1
-        with:
-          name: scripts.artifact
-          path: scripts
-
-      - name: Upload Config Artifact
-        if: success()
-        uses: actions/upload-artifact@v1
-        with:
-          name: config.artifact
-          path: CNAME
-      
   build:
     name: Build
-    needs: init
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -81,21 +59,27 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           
-      - name: Create README File
+      - name: Update README File
         id: update_version
         if: steps.semantic.outputs.new_release_published
         run: |
           RELEASE_VERSION=$(bash ./scripts/get-json-value.sh version package.json)
-          echo "# Gabriel Lima's Website
-          > Version v${{ steps.semantic.outputs.new_release_version }} " > README.md
           echo "::set-output name=version::${{ steps.semantic.outputs.new_release_version }}"
+          echo "\nVersion ${{ steps.semantic.outputs.new_release_version }}" >> ./docs/README.md
 
       - name: Upload README to Config Artifact
         if: steps.semantic.outputs.new_release_published
         uses: actions/upload-artifact@v1
         with:
           name: config.artifact
-          path: README.md
+          path: ./docs/README.md
+
+      - name: Upload CHANGELOG to Config Artifact
+        if: steps.semantic.outputs.new_release_published
+        uses: actions/upload-artifact@v1
+        with:
+          name: config.artifact
+          path: CHANGELOG.md
 
   deploy:
     name: Deploy to GH-Pages
@@ -123,3 +107,4 @@ jobs:
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: 'chore(release): v${{needs.release.outputs.version}} [skip-ci]'
+          

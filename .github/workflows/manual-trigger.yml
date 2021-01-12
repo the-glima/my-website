@@ -1,0 +1,21 @@
+name: Manual Trigger
+
+on:
+  workflow_dispatch:
+    inputs:
+      hello:
+        description: 'That same'
+        required: false
+        default: 'Hello'
+      world:
+        description: 'Nerd Phrase'
+        required: true
+        default: 'World'
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Greeting: ${{ github.event.inputs.hello }}!"
+        echo "Cliche ${{ github.event.inputs.world }}!"
