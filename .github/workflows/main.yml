@@ -3,8 +3,6 @@ name: Main
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
   repository_dispatch:
     types: [manual-action-trigger]
 
@@ -71,7 +69,12 @@ jobs:
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v2
-        id: semantic 
+        id: semantic
+        with:
+          branch: main
+          extra_plugins: |
+            @semantic-release/git
+            @semantic-release/changelog
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
