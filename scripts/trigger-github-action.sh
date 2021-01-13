@@ -1,7 +1,7 @@
 # !/usr/bin/env bash
 
 GITHUB_TOKEN=$(grep GITHUB_TOKEN .env | cut -d '=' -f 2-)
-BRANCH_NAME="${1:=main}"
+BRANCH_NAME="${1:-main}"
 
 function triggerGithubAction() {
   echo "GitHub: Running Manual Action Trigger"
