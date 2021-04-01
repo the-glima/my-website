@@ -9,6 +9,13 @@ export interface WorkModel {
 
 export const WorkData = (t: any): WorkModel[] => [
   {
+    title: 'Webdoctor',
+    position: t('position.senior-front-end-developer'),
+    year: '2021',
+    country: t('countries.brazil'),
+    url: 'https://www.webdoctor.ie/'
+  },
+  {
     title: 'Ciklum',
     position: t('position.senior-front-end-developer'),
     url: 'https://www.ciklum.com/',
