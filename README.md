@@ -33,4 +33,4 @@ On Twitter at [@__glima](https://twitter.com/__glima), where I tweet mostly abou
 - 🏳️ &nbsp;In the JS famework war I support JavaScript
 - 🗣️ &nbsp;I speak 3 languages (English, Spanish and Portuguese) and also JavaScript.
 
-\nVersion 2.10.6
+\nVersion 
