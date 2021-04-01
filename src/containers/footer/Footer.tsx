@@ -32,7 +32,7 @@ const Footer = ({t}: any) => {
               <span>Made with a lot of <em>anxiety</em> during </span>
               <a
                 className={styles['quote-link']}
-                href="https://www.google.com/search?q=covid+19&rlz=1C1GCEA_enES841ES841&oq=covid+19&aqs=chrome..69i57j0l4j69i60l3.1589j0j4&sourceid=chrome&ie=UTF-8"
+                href="https://www.google.com/search?q=covid+19+march+in+2020+spain&rlz=1C1GCEA_enES841ES841&ei=7w1mYIilBsG45OUP4uWMyAk&oq=covid+19+march+in+2020+spain&gs_lcp=Cgdnd3Mtd2l6EAM6CQgAELADEAgQHjoGCAAQFhAeOggIIRAWEB0QHjoHCCEQChCgAVCYC1jbE2CrFWgCcAB4AIAB5wGIAf4LkgEFMC43LjGYAQCgAQGqAQdnd3Mtd2l6yAEIwAEB&sclient=gws-wiz&ved=0ahUKEwjI2PbQ093vAhVBHLkGHeIyA5kQ4dUDCA0&uact=5"
               >
                 a quarantine time.
               </a>
