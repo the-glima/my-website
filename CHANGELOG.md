@@ -1,3 +1,10 @@
+# [2.11.0](https://github.com/the-glima/my-website/compare/v2.10.6...v2.11.0) (2021-04-01)
+
+
+### Features
+
+* update work experiecne and footer ([30c9b66](https://github.com/the-glima/my-website/commit/30c9b66d67bfa428d06000b446c25acdc924ae40))
+
 ## [2.10.6](https://github.com/the-glima/my-website/compare/v2.10.5...v2.10.6) (2021-01-13)
 
 ## [2.10.5](https://github.com/the-glima/my-website/compare/v2.10.4...v2.10.5) (2021-01-13)
