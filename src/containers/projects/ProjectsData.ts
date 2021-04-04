@@ -9,7 +9,7 @@ export interface ProjectModel {
 export const ProjectsData = (t: any): ProjectModel[] => [
   {
     name: t('projects.links.website.title'),
-    favicon: 'http://localhost:3000/favicon.ico',
+    favicon: 'https://gabriel-lima.com/favicon.ico',
     url: 'https://github.com/the-glima/my-website',
     description: t('projects.links.website.description'),
     status: 'done'
