@@ -29,15 +29,17 @@
       "bio-end": "Lembra quando a gente dava suporte ao IE6?"
     }
   },
-  "repositories": {
-    "title": "Repositórios",
-    "subtitle": "Alguns projetos que eu finalmente terminei... ou quase",
-    "repos": {
-      "pr-fiscal-desc": "Uma extensão para Chrome para te ajudar achar padrões em suas PRs",
-      "dale-cli": "Grupo de commandos padrões para usar no seu desenvolvimento diário",
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Coisas legais em que eu participei",
+    "see-more": "Mais no GitHub",
+    "links": {
+      "has-health": "Conectando doutors e pacientes de uma forma segura de qualquer lugar",
+      "lottoland": "Apostas de loteria onde é possível apostar em sorteios de outros países",
+      "payvision": "Solução para pagamentos global online especializada para ecommerce",
       "website": {
-        "title": "Site Pessoal",
-        "description": "Este mesmo. Sim, você pode conferir as coisas legais que eu usei para criá-lo"
+        "title": "Site pessoal",
+        "description": "Sim, este mesmo. Dá uma olhada nas coisas legais que usei para criá-lo"
       }
     }
   },

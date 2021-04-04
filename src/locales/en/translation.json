@@ -30,16 +30,17 @@
       "bio-end": "Remember when we cared about IE6?"
     }
   },
-  "repositories": {
-    "title": "Repositories",
-    "subtitle": "Some side projects that I’ve finally finished... almost",
-    "see-more": "I might have more",
-    "repos": {
-      "pr-fiscal-desc": "A Chrome Extension to help you find patterns in your PR",
-      "dale-cli": "One CLI to rule them all! A bunch of daily commands to help your development’s workflow",
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Cool things that I've participate",
+    "see-more": "More on GitHub",
+    "links": {
+      "has-health": "Connecting doctors and patients safely and securely from anywhere",
+      "lottoland": "Lottery betting service that allows to bet on the outcomes of large overseas lotteries",
+      "payvision": "Payment solutions provider specializing in global card processing for ecommerce",
       "website": {
         "title": "Personal Website",
-        "description": "This one. Yep, you can check the cool stuff that I've used to build it"
+        "description": "Yep, this one. Check it ouy the cool tools that I've used to build it"
       }
     }
   },
