@@ -32,7 +32,7 @@
   },
   "projects": {
     "title": "Projects",
-    "subtitle": "Cool things that I've participate",
+    "subtitle": "Cool things that I've participated",
     "see-more": "More on GitHub",
     "links": {
       "has-health": "Connecting doctors and patients safely and securely from anywhere",
@@ -40,7 +40,7 @@
       "payvision": "Payment solutions provider specializing in global card processing for ecommerce",
       "website": {
         "title": "Personal Website",
-        "description": "Yep, this one. Check it ouy the cool tools that I've used to build it"
+        "description": "Yep, this one. Check it out the tools that I've used to build it"
       }
     }
   },
