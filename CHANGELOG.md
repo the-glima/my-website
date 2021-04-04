@@ -1,3 +1,10 @@
+# [2.12.0](https://github.com/the-glima/my-website/compare/v2.11.0...v2.12.0) (2021-04-04)
+
+
+### Features
+
+* replace respositories secion with projects ([36c16a9](https://github.com/the-glima/my-website/commit/36c16a9e18f70a3a5a6e5413283a8746edbdf717))
+
 # [2.11.0](https://github.com/the-glima/my-website/compare/v2.10.6...v2.11.0) (2021-04-01)
 
 
