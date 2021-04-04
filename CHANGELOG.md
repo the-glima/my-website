@@ -1,3 +1,10 @@
+## [2.12.2](https://github.com/the-glima/my-website/compare/v2.12.1...v2.12.2) (2021-04-04)
+
+
+### Bug Fixes
+
+* projects typos ([77534ea](https://github.com/the-glima/my-website/commit/77534ea79464aa08ba01860e4d37151c6286fb73))
+
 ## [2.12.1](https://github.com/the-glima/my-website/compare/v2.12.0...v2.12.1) (2021-04-04)
 
 
