@@ -1,3 +1,10 @@
+## [2.12.1](https://github.com/the-glima/my-website/compare/v2.12.0...v2.12.1) (2021-04-04)
+
+
+### Bug Fixes
+
+* **projects:** my website favicon ([045756d](https://github.com/the-glima/my-website/commit/045756d1731d5e8786315e5da0739e40066fdb00))
+
 # [2.12.0](https://github.com/the-glima/my-website/compare/v2.11.0...v2.12.0) (2021-04-04)
 
 
