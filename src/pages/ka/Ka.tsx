@@ -19,7 +19,7 @@ const Ka = ({t}: any) => {
 
   return (
     <div className={`home  ${fadeIntro ? 'home-initialized' : ''} ${styles.container}`}>
-      <span className={styles['bull']}>🐂</span>
+      <span className={styles['bull']} role="img" aria-label="bull">🐂</span>
       <h1>Quer namorar comigo?</h1>
 
       <div className={styles['options']}>
