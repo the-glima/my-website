@@ -1,3 +1,15 @@
+# [2.13.0](https://github.com/the-glima/my-website/compare/v2.12.2...v2.13.0) (2022-03-13)
+
+
+### Bug Fixes
+
+* node sass version ([d0d71ab](https://github.com/the-glima/my-website/commit/d0d71aba03dab560ba2e8263842a0f5960a48e59))
+
+
+### Features
+
+* **cnc:** bump the idea ([6add443](https://github.com/the-glima/my-website/commit/6add44307180ddedf92adbced865d0bfdaf8d684))
+
 ## [2.12.2](https://github.com/the-glima/my-website/compare/v2.12.1...v2.12.2) (2021-04-04)
 
 
