@@ -1,9 +1,10 @@
 import React, {ChangeEvent, useEffect, useState, useCallback} from 'react'
 import {withNamespaces} from 'react-i18next'
 import styles from './MTGRanking.module.css'
-import csa from '../../assets/images/mtg-ranking/csa.png'
+import csaLogo from '../../assets/images/mtg-ranking/csa.png'
+import resetIcon from '../../assets/images/mtg-ranking/reset.png'
 
-import {MTGRankingPlayersModel} from '../../shared/models/MTGRankingModel'
+import {MTGRankingPlayersModel} from './MTGRankingModel'
 import {storageService} from '../../shared/services/StorageService'
 import Ranking from './components/Ranking'
 import {MTGRankingData, MTGRankingDataModel} from './MTGRankingData'
@@ -21,10 +22,11 @@ const MTGRanking = ({t}: any) => {
     
     if (!player) return
 
-    const wins = parseInt(player.ranking.wins) * 3
-    const draws = parseInt(player.ranking.draws) 
-    const losses = parseInt(player.ranking.losses)
-    const total = (wins + draws) - losses
+    const first = parseInt(player.ranking.first) * 3
+    const second = parseInt(player.ranking.second) * 2
+    const third = parseInt(player.ranking.third)
+    const fourth = parseInt(player.ranking.fourth)
+    const total = (first + second + third) - fourth
 
     return isNaN(total) ? '0' : total.toString()
   }, [mtgRanking])
@@ -35,31 +37,32 @@ const MTGRanking = ({t}: any) => {
       .reverse()
   }, [])
 
+  const setRankingDefault = useCallback(() => {
+    const ranking = MTGRankingData.map((player: MTGRankingDataModel) => ({
+      name: player.name,
+      avatar: player.avatar,
+      ranking: {
+        first: '0',
+        second: '0',
+        third: '0',
+        fourth: '0',
+        points: '0'
+      }
+    }))
+    setMTGRanking(ranking)
+    storageService.setItem('mtg-ranking', JSON.stringify(ranking))
+  }, [])
+
   const fetchRanking = useCallback(() => {
-    let ranking = []
-
-    if (mtgError) return
-
     if (!savedMTGRanking || !savedMTGRanking.length) {
-      ranking = MTGRankingData.map((player: MTGRankingDataModel) => ({
-        name: player.name,
-        avatar: player.avatar,
-        ranking: {
-          wins: '0',
-          draws: '0',
-          losses: '0',
-          points: '0'
-        }
-      }))
-      setMTGRanking(ranking)
-      storageService.setItem('mtg-ranking', JSON.stringify(ranking))
+      setRankingDefault()
     } else {
       savedMTGRanking.forEach((player: MTGRankingPlayersModel) => {
         player.ranking.points = getTotalPoints(player.name)
       });
       sortRanking(mtgRanking)
     }
-  }, [mtgRanking, savedMTGRanking, mtgError, getTotalPoints, sortRanking])
+  }, [mtgRanking, savedMTGRanking, getTotalPoints, sortRanking, setRankingDefault])
 
   const getRankingProp = useCallback((playerName: string, prop: string) => {
     if (!mtgRanking) return
@@ -79,7 +82,7 @@ const MTGRanking = ({t}: any) => {
       ? (e.target as HTMLInputElement).value
       : '0'
 
-    const ranking = mtgRanking.map((item: any) => {
+    const ranking = mtgRanking.map((item: MTGRankingPlayersModel) => {
       if (item.name === playerName) { 
         item.ranking[prop] = value
         item.ranking.points = getTotalPoints(playerName)
@@ -93,6 +96,11 @@ const MTGRanking = ({t}: any) => {
       setMTGRanking(ranking)
       storageService.setItem('mtg-ranking', JSON.stringify(ranking))
     }, 2000)
+  }
+
+  const resetRanking = () => {
+    storageService.clear('mtg-ranking')
+    setRankingDefault()
   }
   
   useEffect(() => {
@@ -108,10 +116,16 @@ const MTGRanking = ({t}: any) => {
       <table>
         <thead>
           <tr>
-            <th colSpan={2} className={`${styles.logo}`}><img src={csa} alt="Commander - CSA"/></th>
-            <th>Vitória</th>
-            <th>Empate</th>
-            <th>Derrota</th>
+            <th colSpan={2} className={styles.logo}>
+              <img src={csaLogo} alt="Commander - CSA"/>
+              <button className={styles.reset} onClick={resetRanking}>
+                <img src={resetIcon} alt="Reset"/>
+              </button>
+            </th>
+            <th>Primeiro</th>
+            <th>Segundo</th>
+            <th>Terceiro</th>
+            <th>Quarto</th>
             <th>Pontos</th>
           </tr>
         </thead>

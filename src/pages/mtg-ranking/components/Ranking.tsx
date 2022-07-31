@@ -11,10 +11,8 @@ interface Props {
   place: number
 }
 
-const handleImg = (props: Props) => {
-  console.log(props);
-  return props.avatar ? props.avatar : 'https://gravatar.com/avatar/e83c877ee1c239f12407b483c106a352?s=150&d=robohash&r=x'
-}
+const handleImg = (props: Props) => 
+  props.avatar ? props.avatar : 'https://gravatar.com/avatar/e83c877ee1c239f12407b483c106a352?s=150&d=robohash&r=x'
 
 const Ranking = (props: Props) => {
   return (
@@ -28,16 +26,16 @@ const Ranking = (props: Props) => {
         <h3>{props.name}</h3>
       </td>
       <td>
-        <span className={`${styles['ranking-icon']}`} role="img" aria-label="Thumbs up">👍</span>
-        <input type="number" min="0" step="1" onChange={e => props.updateFunction(e, props.name, 'wins')} placeholder={props.getFunction(props.name, 'wins')}/>
+        <input type="number" min="0" step="1" onChange={e => props.updateFunction(e, props.name, 'first')} placeholder={props.getFunction(props.name, 'first')}/>
       </td>
       <td>
-        <span className={`${styles['ranking-icon']}`} role="img" aria-label="Thumbs down">👎</span>
-        <input type="number" min="0" step="1" onChange={e => props.updateFunction(e, props.name, 'draws')} placeholder={props.getFunction(props.name, 'draws')}/>
+        <input type="number" min="0" step="1" onChange={e => props.updateFunction(e, props.name, 'second')} placeholder={props.getFunction(props.name, 'second')}/>
       </td>
       <td>
-      <span className={`${styles['ranking-icon']}`} role="img" aria-label="Person shrugging">🤷</span>
-        <input type="number" min="0" step="1" onChange={e => props.updateFunction(e, props.name, 'losses')} placeholder={props.getFunction(props.name, 'losses')}/>
+        <input type="number" min="0" step="1" onChange={e => props.updateFunction(e, props.name, 'third')} placeholder={props.getFunction(props.name, 'third')}/>
+      </td>
+      <td>
+        <input type="number" min="0" step="1" onChange={e => props.updateFunction(e, props.name, 'fourth')} placeholder={props.getFunction(props.name, 'fourth')}/>
       </td>
       <td className={`${styles['points']}`}>{props.getFunction(props.name, 'points')}pts</td>
     </tr>

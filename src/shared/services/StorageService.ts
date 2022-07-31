@@ -68,7 +68,26 @@ const setItem = (key: string, value: string): any[] => {
   }
 }
 
+const clear = (key: string) => {
+  const [api] = getApi()
+
+  try {
+    api.clear(getKey(key))
+    return ['success', undefined]
+  } catch (error) {
+    const customError: CustomError = {
+      name: `Unable to clear ${key} localStorage`,
+      error
+    }
+
+    console.log(customError)
+
+    return [undefined, customError]
+  }
+}
+
 export const storageService = {
   getItem,
-  setItem
+  setItem,
+  clear
 }

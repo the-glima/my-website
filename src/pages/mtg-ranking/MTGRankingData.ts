@@ -11,20 +11,20 @@ export interface MTGRankingDataModel {
 
 export const MTGRankingData: MTGRankingDataModel[] = [
   {
-    name: 'Felipe',
-    avatar: felipeAvatar
-  },
-  {
-    name: 'Bia',
-    avatar: biaAvatar
-  },
-  {
     name: 'João',
     avatar: joaoAvatar
   },
   {
     name: 'Gabriel',
     avatar: gabrielAvatar
+  },
+  {
+    name: 'Felipe',
+    avatar: felipeAvatar
+  },
+  {
+    name: 'Bia',
+    avatar: biaAvatar
   },
   {
     name: 'Berbert',

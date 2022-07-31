@@ -30,7 +30,6 @@ table th {
   font-size: 1.5rem;
   text-align: center;
   padding-bottom: 1rem;
-  padding-left: 2.5rem;
 }
 
 .logo {
@@ -39,4 +38,18 @@ table th {
 
 .logo img {
   width: 80px;
+}
+
+.reset {
+  margin-left: 1rem;
+  opacity: 0.2;
+  transition: var(--transition);
+}
+
+.reset:hover {
+  opacity: 1;
+}
+
+.reset img {
+  width: 44px;
 }

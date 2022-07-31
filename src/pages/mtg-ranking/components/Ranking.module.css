@@ -21,6 +21,12 @@
   color: var(--color-text);
 }
 
+.row input:focus,
+.row input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
 .row .player {
   padding: 2.5rem 3rem;
 }
