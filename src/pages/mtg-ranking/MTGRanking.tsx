@@ -7,7 +7,7 @@ import resetIcon from '../../assets/images/mtg-ranking/reset.png'
 import {MTGRankingPlayersModel} from './MTGRankingModel'
 import {storageService} from '../../shared/services/StorageService'
 import Ranking from './components/Ranking'
-import {MTGRankingData, MTGRankingDataModel} from './MTGRankingData'
+import {MTGRankingData, MTGRankingDataModel, MTGRankingSettings} from './MTGRankingData'
 
 const MTGRanking = ({t}: any) => {
   const [fadeIntro, setFadeIntro]: any = useState(false)
@@ -22,10 +22,10 @@ const MTGRanking = ({t}: any) => {
     
     if (!player) return
 
-    const first = parseInt(player.ranking.first) * 3
-    const second = parseInt(player.ranking.second) * 2
-    const third = parseInt(player.ranking.third)
-    const fourth = parseInt(player.ranking.fourth)
+    const first = parseInt(player.ranking.first) * MTGRankingSettings.firstPoints
+    const second = parseInt(player.ranking.second) * MTGRankingSettings.secondPoints
+    const third = parseInt(player.ranking.third) * MTGRankingSettings.thirdPoints
+    const fourth = parseInt(player.ranking.fourth) * MTGRankingSettings.forthPoints
     const total = (first + second + third) - fourth
 
     return isNaN(total) ? '0' : total.toString()
@@ -95,7 +95,7 @@ const MTGRanking = ({t}: any) => {
     setTimeout(() => {
       setMTGRanking(ranking)
       storageService.setItem('mtg-ranking', JSON.stringify(ranking))
-    }, 2000)
+    }, MTGRankingSettings.delay)
   }
 
   const resetRanking = () => {

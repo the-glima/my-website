@@ -48,6 +48,7 @@
 }
 
 .player img {
+  border: 1px solid;
   border-radius: 100px;
 }
 
