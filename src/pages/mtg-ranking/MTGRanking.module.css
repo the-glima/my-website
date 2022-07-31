@@ -1,0 +1,42 @@
+:global(.mtg-ranking) { 
+  opacity: 0; 
+}
+
+:global(.mtg-ranking):global(.mtg-ranking-initialized) {
+  animation: fade-content .8s cubic-bezier(0.22, 0.61, 0.36, 1) .1s forwards;
+}
+
+@keyframes fade-content {
+  0% {
+    opacity: 0;
+    transform: translateY(70px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mtg-ranking {
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+table {
+  width: 100%;
+}
+
+table th {
+  font-size: 1.5rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  padding-left: 2.5rem;
+}
+
+.logo {
+  padding-left: 1rem;
+}
+
+.logo img {
+  width: 80px;
+}

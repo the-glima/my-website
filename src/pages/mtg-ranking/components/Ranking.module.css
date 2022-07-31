@@ -1,0 +1,63 @@
+@value breakpoint-sm from '../../../assets/styles/variables.css';
+@value breakpoint-lg from '../../../assets/styles/variables.css';
+
+.row {
+  --color-primary: var(--color-pink);
+  composes: link from '../../../assets/styles/helpers.css';
+  border-bottom-style: solid;
+  transition: var(--transition);
+}
+
+.row input {
+  width: 70%;
+  font-size: 2rem;
+  border: none;
+  padding-bottom: 1rem;
+  background: transparent;
+  border-bottom: 2px solid var(--color-grey-dark);
+}
+
+.row input::placeholder {
+  color: var(--color-text);
+}
+
+.row .player {
+  padding: 2.5rem 3rem;
+}
+
+.row .points {
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+
+.row td:first-child { padding-left: 3rem; }
+.row td:last-child { padding-right: 3rem; }
+
+.row.featured td {
+  background-color: rgba(242, 75, 198, 0.06);
+}
+
+.trophy-icon {
+  width: 130px;
+}
+
+.player img {
+  border-radius: 100px;
+}
+
+.player h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.ranking-icon {
+  font-size: 1.7rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: breakpoint-sm) {
+}
+
+@media (min-width: breakpoint-lg) {
+}
