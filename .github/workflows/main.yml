@@ -22,7 +22,7 @@ jobs:
       - name: Run Unit Tests
         if: success()
         run: yarn test
-      
+
       - name: Run Build
         if: success()
         run: yarn build
@@ -33,7 +33,7 @@ jobs:
         with:
           name: build.artifact
           path: build
-      
+
   release:
     name: Release
     needs: build
@@ -48,7 +48,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v2
+        uses: cycjimmy/semantic-release-action@v3
         id: semantic
         with:
           branch: main
@@ -58,7 +58,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          
+
       - name: Update README File
         id: update_version
         if: steps.semantic.outputs.new_release_published
