@@ -110,7 +110,7 @@
 }
 
 /* ----- List Card: content ----- */
-.logo { 
+.logo {
   width: 50px;
   height: 50px;
   margin-right: 0.8rem;
@@ -123,6 +123,7 @@
   box-shadow: var(--box-shadow) var(--box-shadow-color);
 }
 
+.logo-nexhealth { background-position: -150px -50px; }
 .logo-ciklum { background-position: -150px 0; }
 .logo-payvision { background-position: 0 0; }
 .logo-webdoctor { background-position: -50px 0; }
@@ -145,7 +146,7 @@
   .list-item-card:hover::before {
     background-color: var(--color-primary);
   }
-  
+
   .list-item-card:hover .title {
     color: var(--color-primary);
   }
@@ -194,8 +195,8 @@
 
 
 @media (min-width: breakpoint-xx) {
-  .content { 
-    flex-direction: row; 
+  .content {
+    flex-direction: row;
     margin: 4rem 0;
   }
 
@@ -224,21 +225,21 @@
     margin-top: 1.2rem;
   }
 
-  .list-item-left { 
+  .list-item-left {
     grid-template-columns: auto auto;
-    align-self: flex-end; 
+    align-self: flex-end;
     padding-right: 0.2rem;
   }
 
-  .list-item-card { 
-    width: 272px; 
+  .list-item-card {
+    width: 272px;
     margin: 0;
   }
 
   .list-item-card:hover::after {
     background-color: var(--color-primary);
   }
-  
+
   .list-item-card::after {
     content: '';
     position: absolute;
@@ -251,8 +252,8 @@
     transform: translateY(-50%);
   }
 
-  .list-item-left .list-item-card::after { 
-    left: -56px; 
+  .list-item-left .list-item-card::after {
+    left: -56px;
     width: 56px;
   }
 
@@ -265,8 +266,8 @@
 
   .list-item-left .list-item-card::before { left: -67px; }
 
-  .list-item-left .list-item-date { 
-    order: 0; 
+  .list-item-left .list-item-date {
+    order: 0;
     padding-right: 92px;
     padding-left: 0;
   }

@@ -9,32 +9,32 @@ export interface WorkModel {
 
 export const WorkData = (t: any): WorkModel[] => [
   {
-    title: 'Webdoctor',
+    title: 'NexHealth',
     position: t('position.senior-front-end-developer'),
-    year: '2021',
     country: t('countries.brazil'),
-    url: 'https://www.webdoctor.ie/'
+    year: '2021',
+    url: 'https://www.nexhealth.com/',
+    status: 'current'
   },
   {
     title: 'Ciklum',
     position: t('position.senior-front-end-developer'),
-    url: 'https://www.ciklum.com/',
     country: t('countries.spain'),
     year: '2020',
-    status: 'current'
+    url: 'https://www.ciklum.com/'
   },
   {
     title: 'Payvision',
     position: t('position.software-developer'),
-    url: 'https://www.payvision.com',
     country: t('countries.spain'),
-    year: '2019'
+    year: '2019',
+    url: 'https://www.payvision.com'
   },
   {
     title: 'Webdoctor',
     position: t('position.software-developer'),
-    year: '2017',
     country: t('countries.ireland'),
+    year: '2017',
     url: 'https://www.webdoctor.ie/'
   },
   {
