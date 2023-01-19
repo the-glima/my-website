@@ -93,8 +93,8 @@
     ]
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "build:local": "yarn build && serve -s build",
     "test": "cross-env CI=true react-scripts test --env=jsdom --silent --verbose",
     "test:watch": "react-scripts test",
