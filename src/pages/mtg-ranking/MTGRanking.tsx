@@ -26,7 +26,7 @@ const MTGRanking = ({t}: any) => {
     const second = parseInt(player.ranking.second) * MTGRankingSettings.secondPoints
     const third = parseInt(player.ranking.third) * MTGRankingSettings.thirdPoints
     const fourth = parseInt(player.ranking.fourth) * MTGRankingSettings.forthPoints
-    const total = (first + second + third) - fourth
+    const total = first + second + third + fourth
 
     return isNaN(total) ? '0' : total.toString()
   }, [mtgRanking])
@@ -54,7 +54,7 @@ const MTGRanking = ({t}: any) => {
   }, [])
 
   const fetchRanking = useCallback(() => {
-    if (!savedMTGRanking || !savedMTGRanking.length) {
+    if (mtgError || !savedMTGRanking || !savedMTGRanking.length) {
       setRankingDefault()
     } else {
       savedMTGRanking.forEach((player: MTGRankingPlayersModel) => {
@@ -62,7 +62,7 @@ const MTGRanking = ({t}: any) => {
       });
       sortRanking(mtgRanking)
     }
-  }, [mtgRanking, savedMTGRanking, getTotalPoints, sortRanking, setRankingDefault])
+  }, [mtgRanking, savedMTGRanking, mtgError, getTotalPoints, sortRanking, setRankingDefault])
 
   const getRankingProp = useCallback((playerName: string, prop: string) => {
     if (!mtgRanking) return
