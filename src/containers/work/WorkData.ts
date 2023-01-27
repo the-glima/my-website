@@ -5,6 +5,7 @@ export interface WorkModel {
   country: string
   year: string
   status?: string
+  remote?: boolean
 }
 
 export const WorkData = (t: any): WorkModel[] => [
@@ -14,14 +15,15 @@ export const WorkData = (t: any): WorkModel[] => [
     country: t('countries.brazil'),
     year: '2021',
     url: 'https://www.nexhealth.com/',
-    status: 'current'
+    remote: true
   },
   {
     title: 'Ciklum',
     position: t('position.senior-front-end-developer'),
     country: t('countries.spain'),
     year: '2020',
-    url: 'https://www.ciklum.com/'
+    url: 'https://www.ciklum.com/',
+    remote: true
   },
   {
     title: 'Payvision',
@@ -35,7 +37,8 @@ export const WorkData = (t: any): WorkModel[] => [
     position: t('position.software-developer'),
     country: t('countries.ireland'),
     year: '2017',
-    url: 'https://www.webdoctor.ie/'
+    url: 'https://www.webdoctor.ie/',
+    remote: true
   },
   {
     title: 'Neoway',
