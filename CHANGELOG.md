@@ -1,3 +1,17 @@
+# [2.14.0](https://github.com/the-glima/my-website/compare/v2.13.0...v2.14.0) (2023-01-19)
+
+
+### Bug Fixes
+
+* **actions:** fix semantic release ([#106](https://github.com/the-glima/my-website/issues/106)) ([c57e5f6](https://github.com/the-glima/my-website/commit/c57e5f62eb9c457070de6e99e764ee536ba35fe0))
+
+
+### Features
+
+* add nexhealth in projects  ([#105](https://github.com/the-glima/my-website/issues/105)) ([0cc0c29](https://github.com/the-glima/my-website/commit/0cc0c291477e2d95f31bf2f4e23617cfa4bdcf83))
+* add nexhealth info ([#104](https://github.com/the-glima/my-website/issues/104)) ([78c5ca3](https://github.com/the-glima/my-website/commit/78c5ca33d38146a94ad3e3486deb5509a480be78))
+* **mtg:** add mtg ranking ([#99](https://github.com/the-glima/my-website/issues/99)) ([6abca8e](https://github.com/the-glima/my-website/commit/6abca8e16dc1e18185f22836d2b2dcd558c8d635))
+
 # [2.13.0](https://github.com/the-glima/my-website/compare/v2.12.2...v2.13.0) (2022-03-13)
 
 
