@@ -1,10 +1,10 @@
 import husband from '../../assets/images/photos/husband.jpg'
 import headphones from '../../assets/images/photos/headphones.jpg'
-import drawing from '../../assets/images/photos/drawing.jpg'
+import me from '../../assets/images/photos/me.jpg'
 import dude from '../../assets/images/photos/dude.jpg'
 import i18n from '../../i18n'
 
-export type HeaderModelName = 'default' | 'headphones' | 'drawing' | 'dude'
+export type HeaderModelName = 'default' | 'headphones' | 'me' | 'dude'
 
 export interface HeaderModel {
   name: HeaderModelName
@@ -16,10 +16,10 @@ export interface HeaderModel {
 
 export const HeaderData = (): HeaderModel[] => [
   {
-    name: 'default',
-    picture: husband,
+    name: 'me',
+    picture: me,
     position: i18n.t('position.front-end-developer'),
-    bio: i18n.t('header.default.bio-end'),
+    bio: i18n.t('header.me.bio-end'),
     color: 'orange'
   },
   {
@@ -30,10 +30,10 @@ export const HeaderData = (): HeaderModel[] => [
     color: 'purple'
   },
   {
-    name: 'drawing',
-    picture: drawing,
+    name: 'default',
+    picture: husband,
     position: i18n.t('position.full-stack-developer'),
-    bio: i18n.t('header.drawing.bio-end'),
+    bio: i18n.t('header.default.bio-end'),
     color: 'cyan'
   },
   {
