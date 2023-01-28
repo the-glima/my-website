@@ -1,3 +1,10 @@
+# [2.16.0](https://github.com/the-glima/my-website/compare/v2.15.0...v2.16.0) (2023-01-28)
+
+
+### Features
+
+* fix header min width ([#108](https://github.com/the-glima/my-website/issues/108)) ([80e5160](https://github.com/the-glima/my-website/commit/80e51604a7484afb7b773eaa0a7c43652fe07d69))
+
 # [2.15.0](https://github.com/the-glima/my-website/compare/v2.14.0...v2.15.0) (2023-01-28)
 
 
