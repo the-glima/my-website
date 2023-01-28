@@ -1,9 +1,9 @@
 @value breakpoint-sm from '../../assets/styles/variables.css';
 @value breakpoint-lg from '../../assets/styles/variables.css';
 
-.section-header { 
+.section-header {
   padding-top: 3rem;
-  text-align: center; 
+  text-align: center;
 }
 
 .header {
@@ -51,20 +51,20 @@
   text-align: center;
 }
 
-.greeting {  
+.greeting {
   padding-top: 0.6rem;
   font-size: 1.2rem;
   line-height: 2rem;
 }
 
-.name { 
+.name {
   padding-top: 0.7rem;
   font-size: 2.4rem;
   font-weight: 600;
   line-height: 0.95;
 }
 
-.position { 
+.position {
   color: var(--color-primary);
   font-size: 1.45rem;
   line-height: 2.4rem;
@@ -96,14 +96,14 @@
 .personality-bio { color: var(--color-primary); }
 
 @media only screen and (min-width: breakpoint-sm) {
-  .section-header { 
+  .section-header {
     padding-top: 2rem;
   }
 
   .header {
     flex-direction: row;
     padding-top: 1.5rem;
-    min-width: 320px;
+    min-width: 420px;
   }
 
   .heading {
@@ -111,24 +111,24 @@
     margin-left: .6rem;
   }
 
-  .greeting {  
+  .greeting {
     padding: 0 0 0 0.3rem;
     font-size: 1.2rem;
     line-height: 1.4;
   }
 
-  .name { 
+  .name {
     padding-top: .4rem;
     font-size: 2.6rem;
     line-height: 2.7rem;
   }
 
-  .position { 
+  .position {
     padding-left: 0.2rem;
     font-size: 1.6rem;
     line-height: 2rem;
   }
-  
+
   .bio-wrapper { max-width: 78%; }
 }
 
@@ -137,7 +137,7 @@
     max-width: 70%;
     margin: 4rem auto;
   }
-  
+
   .punch-line {
     margin-bottom: 0.7rem;
     font-size: 2.26rem;
@@ -157,21 +157,21 @@
 @keyframes hint {
   0% {
     opacity: 0;
-    transform: 
-      scale(.2) 
+    transform:
+      scale(.2)
       rotate(-35deg)
       translate(0, 20px);
   }
   4%, 98% {
     opacity: 1;
-    transform: 
+    transform:
       rotate(-35deg)
       translate(0, -20px);
   }
   100% {
     opacity: 0;
-    transform: 
-      scale(0) 
+    transform:
+      scale(0)
       rotate(-35deg)
       translate(0, 20px);
   }
