@@ -18,13 +18,13 @@ export const HeaderData = (): HeaderModel[] => [
   {
     name: 'me',
     picture: me,
-    position: i18n.t('position.front-end-developer'),
+    position: i18n.t('position.senior-front-end-developer'),
     bio: i18n.t('header.me.bio-end'),
     color: 'orange'
   },
   {
-    name: 'headphones',
-    picture: headphones,
+    name: 'dude',
+    picture: dude,
     position: i18n.t('position.javascript-developer'),
     bio: i18n.t('header.headphones.bio-end'),
     color: 'purple'
@@ -32,14 +32,14 @@ export const HeaderData = (): HeaderModel[] => [
   {
     name: 'default',
     picture: husband,
-    position: i18n.t('position.full-stack-developer'),
+    position: i18n.t('position.front-end-engineer'),
     bio: i18n.t('header.default.bio-end'),
     color: 'cyan'
   },
   {
-    name: 'dude',
-    picture: dude,
-    position: i18n.t('position.software-developer'),
+    name: 'headphones',
+    picture: headphones,
+    position: i18n.t('position.ui-developer'),
     bio: i18n.t('header.dude.bio-end'),
     color: 'yellow'
   }
