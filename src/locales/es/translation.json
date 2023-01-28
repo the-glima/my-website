@@ -1,12 +1,13 @@
 {
   "position": {
     "senior-front-end-developer": "Sr. Desarrollador Front-end",
-    "software-developer": "Desarrollador de Software",
-    "full-stack-developer": "Desarrollador Full Stack",
+    "ui-developer": "Desarrollador UI",
+    "front-end-engineer": "Ingeniero Front-end",
     "javascript-developer": "Desarrollador Javascript",
     "front-end-developer": "Desarrollador Front-end"
   },
   "countries": {
+    "usa": "Estados Unidos",
     "brazil": "Brasil",
     "ireland": "Irlanda",
     "spain": "España"
@@ -23,7 +24,7 @@
     "headphones": {
       "bio-end": "¡Necesitamos más JS Frameworks!"
     },
-    "drawing": {
+    "me": {
       "bio-end": "Otra habilidad de Full-stack: cambiador de pañales ágil."
     },
     "dude": {
@@ -37,7 +38,7 @@
     "links": {
       "nexhealth": "Conectando pacientes, médicos y desarrolladores para acelerar la innovación en el cuidado de la salud",
       "has-health": "Conectando médicos y pacientes de forma segura desde cualquier lugar",
-      "payvision": "Proveedor de soluciones de pago global online especializado en comercio electrónico",
+      "ciklum": "Compañía de Soluciones Digitales Globales para Fortune 500 y organizaciones de rápido crecimiento por igual en todo el mundo",
        "website": {
          "title": "Sitio web personal",
          "description": "Sí, este. Échale un vistazo a las herramientas que he usado para construirlo."
@@ -50,9 +51,9 @@
     "see-more": "Mira mi perfil en LinkedIn",
     "journey": {
       "title": "Mi Experiencia",
-      "intro": "Empecé a trabajar con el desarrollo web en 2011, estudié Web y Multimedia, y siempre me encantó el diseño + código. Pero como ni siquiera soy Diseñador (mira el diseño de esta página web) me he convertido un <1>Desarrollador Front-end</1>.",
+      "intro": "Empecé a trabajar con el desarrollo web en 2011 <1>(10+ años de experiencia)</1> y siempre me encantó el diseño + código. Pero como ni siquiera soy Diseñador (mira el diseño de esta página web) me he convertido un <1>Desarrollador Front-end</1>.",
       "body": "<0>CSS y HTML </0> siempre han sido mis compañeros pero con <2>JavaScript</2> que la verdadera pasión floreció en mi corazón. Luego vinieron NodeJS, API RESTful y el desarrollo de Back-end se quedo más cerca que nunca. Los frameworks y las bibliotecas de test en JavaScript comenzaron a aparecer casi mensualmente, lo que creó la oportunidad de crear componentes de interfaz de usuario mejores y más inteactivos (para mi alegría), también hemos dejado de usar jQuery, ¿verdad?",
-      "conclusion": "Un día comencé a usar Linux y el terminal, ahora soy adicto a automatizar mi flujo de trabajo con Bash Scripts. Ahora, con el conocimiento de Docker y CI/ CD podría darme el derecho de ser <1>Desarrollador Full Stack</1>, pero no haré eso y en cambio me llamaré a mí mismo también como <3>Desarrollador de Infraestructura de Producto</3>, lo cual es mucho más genial."
+      "conclusion": "Un día comencé a usar Linux y el terminal y me convertí adicto a automatizar mi flujo de trabajo con Bash Scripts. Ahora, con el conocimiento de Docker y CI/ CD podría darme el derecho de ser <1>Desarrollador Full Stack</1>, pero no haré eso y en cambio me llamaré a mí mismo también como <3>Desarrollador de Infraestructura de Producto</3>, lo cual es mucho más genial."
     }
   },
   "gists": {

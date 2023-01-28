@@ -81,6 +81,17 @@
   border: 1px solid var(--box-shadow-color);
 }
 
+.list-item-remote {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.7rem;
+  color: white;
+  padding: 0 0.5rem;
+  background: var(--color-primary);
+}
+
 /* ----- List Card: circle ----- */
 .list-item-card::before {
   content: '';
@@ -137,7 +148,7 @@
   font-weight: 600;
 }
 
-.position { 
+.position {
   padding-top: .15rem;
   font-size: .8rem;
 }
@@ -181,9 +192,7 @@
 
   .list-item { margin-bottom: 2rem; }
 
-  .list-item-card {
-    height: 90px;
-  }
+  .list-item-card { height: 90px; }
 
   .list-item-card::before { top: -26px; }
 
