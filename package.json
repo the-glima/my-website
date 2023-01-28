@@ -1,6 +1,6 @@
 {
   "name": "my-website",
-  "version": "2.14.0",
+  "version": "2.15.0",
   "private": true,
   "description": "My personal website",
   "author": {
@@ -63,7 +63,7 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-mock-store": "^1.5.4",
-    "semantic-release": "^20.0.2",
+    "semantic-release": "^17.0.0",
     "serve": "^11.3.0",
     "typescript": "~3.7.2"
   },

@@ -65,10 +65,16 @@ const Work = ({t}: any) => {
                     <div className={styles.title}>{work.title}</div>
                     <div className={styles.position}>{work.position}</div>
                   </div>
+                  {work.remote &&
+                    <span className={`${styles['list-item-remote']}`}>REMOTE</span>
+                  }
                 </a>
                 <div className={styles['list-item-date']}>
                   <span>{work.year}</span>
-                  <span>{work.country}</span>
+                  <span>
+                    {work.country}
+                    {/* {work.remote && ' - Remote'} */}
+                  </span>
                 </div>
               </li>
             ))}

@@ -22,17 +22,17 @@ export const ProjectsData = (t: any): ProjectModel[] => [
     status: 'done'
   },
   {
+    name: 'Ciklum',
+    favicon: 'https://www.ciklum.com/hubfs/CIKLUM%20FAVICON.png',
+    url: 'https://www.ciklum.com/',
+    description: t('projects.links.ciklum'),
+    status: 'done'
+  },
+  {
     name: 'Has Health',
     favicon: 'https://www.hashealth.com/wp-content/uploads/2020/11/cropped-hashealth-favicon-2-32x32.png',
     url: 'https://www.hashealth.com/',
     description: t('projects.links.has-health'),
-    status: 'done'
-  },
-  {
-    name: 'Payvision',
-    favicon: 'https://www.payvision.com/assets/icons/favicons/favicon-64.png',
-    url: 'https://www.payvision.com/',
-    description: t('projects.links.payvision'),
     status: 'done'
   }
 ]
