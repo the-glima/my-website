@@ -1,3 +1,10 @@
+# [2.15.0](https://github.com/the-glima/my-website/compare/v2.14.0...v2.15.0) (2023-01-28)
+
+
+### Features
+
+* add remote flag, new info, new profile photo ([#107](https://github.com/the-glima/my-website/issues/107)) ([493c290](https://github.com/the-glima/my-website/commit/493c29040d0499f92f87453875e76d7a43b5067b))
+
 # [2.14.0](https://github.com/the-glima/my-website/compare/v2.13.0...v2.14.0) (2023-01-19)
 
 
