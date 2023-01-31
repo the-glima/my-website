@@ -30,6 +30,7 @@
   --color-bg: var(--color-white);
   --color-text: var(--color-black);
   --color-bg-section: var(--color-grey);
+  --color-bg-section-2: var(--color-grey-2);
   --color-card-text: var(--color-text);
   --color-card-background: var(--color-white);
   --color-card-border: transparent;

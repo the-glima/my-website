@@ -1,7 +1,7 @@
 @value breakpoint-md from '../../assets/styles/variables.css';
 @value breakpoint-lg from '../../assets/styles/variables.css';
 
-.section-projects { background-color: var(--color-bg-section); }
+.section-projects { background-color: var(--color-bg-section-2); }
 
 .list {
   display: grid;

@@ -31,6 +31,10 @@
       "bio-end": "Remember when we cared about IE6?"
     }
   },
+  "stack": {
+    "title": "Stack",
+    "subtitle": "Technologies that I have experience"
+  },
   "projects": {
     "title": "Projects",
     "subtitle": "Cool things that I've participated",
