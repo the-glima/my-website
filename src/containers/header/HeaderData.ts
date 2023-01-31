@@ -18,21 +18,21 @@ export const HeaderData = (): HeaderModel[] => [
   {
     name: 'me',
     picture: me,
-    position: i18n.t('position.senior-front-end-developer'),
+    position: i18n.t('position.senior-front-end-engineer'),
     bio: i18n.t('header.me.bio-end'),
     color: 'orange'
   },
   {
     name: 'dude',
     picture: dude,
-    position: i18n.t('position.javascript-developer'),
+    position: i18n.t('position.front-end-developer'),
     bio: i18n.t('header.headphones.bio-end'),
     color: 'purple'
   },
   {
     name: 'default',
     picture: husband,
-    position: i18n.t('position.front-end-engineer'),
+    position: i18n.t('position.javascript-developer'),
     bio: i18n.t('header.default.bio-end'),
     color: 'cyan'
   },
