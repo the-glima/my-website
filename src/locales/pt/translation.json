@@ -1,13 +1,12 @@
 {
   "position": {
-    "senior-front-end-developer": "Sr. Desenvolvedor Front-end",
+    "senior-front-end-engineer": "Sr. Engenheiro Front-end",
     "ui-developer": "Desenvolvedor UI",
-    "front-end-engineer": "Engenheiro Front-end",
     "javascript-developer": "Desenvolvedor Javascript",
     "front-end-developer": "Desenvolvedor Front-end"
   },
   "countries": {
-    "usa": "Estados Unidos",
+    "us": "EUA",
     "brazil": "Brasil",
     "ireland": "Irlanda",
     "spain": "Espanha"
@@ -29,6 +28,10 @@
     "dude": {
       "bio-end": "Lembra quando a gente dava suporte ao IE6?"
     }
+  },
+  "stack": {
+    "title": "Stack",
+    "subtitle": "Teconologias que tenho experiência"
   },
   "projects": {
     "title": "Projetos",

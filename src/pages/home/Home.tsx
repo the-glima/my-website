@@ -6,6 +6,7 @@ import Gists from '../../containers/gists/Gists'
 import Footer from '../../containers/footer/Footer'
 import Work from '../../containers/work/Work'
 import Projects from '../../containers/projects/Projects'
+import Stack from '../../containers/stack/Stack'
 
 import './Home.module.css'
 
@@ -21,8 +22,9 @@ const Home = ({t}: any) => {
   return (
     <div className={`home  ${fadeIntro ? 'home-initialized' : ''}`}>
       <Header />
-      <Projects />
+      <Stack />
       <Work />
+      <Projects />
       <Gists />
       <Footer />
     </div>

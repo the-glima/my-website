@@ -52,6 +52,15 @@ const Work = ({t}: any) => {
                 . <em>.</em> . <strong>.</strong> .
               </Trans>
             </p>
+
+            <p>
+              <Trans
+                i18nKey="work.journey.backend"
+                defaults="Along the years, I've worked on projects with various different backend technologies: <0>NodeJS, Ruby on Rails, Phyton, PHP, Magento, Java... and more.</0>"
+              >
+                <strong>.</strong> .
+              </Trans>
+            </p>
           </div>
 
           <ul className={`${styles.list}`}>
@@ -68,13 +77,13 @@ const Work = ({t}: any) => {
                   {work.remote &&
                     <span className={`${styles['list-item-remote']}`}>REMOTE</span>
                   }
+                  {work.hybrid &&
+                    <span className={`${styles['list-item-hybrid']}`}>HYBRID</span>
+                  }
                 </a>
                 <div className={styles['list-item-date']}>
                   <span>{work.year}</span>
-                  <span>
-                    {work.country}
-                    {/* {work.remote && ' - Remote'} */}
-                  </span>
+                  <span>{work.country}</span>
                 </div>
               </li>
             ))}

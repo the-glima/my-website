@@ -81,7 +81,8 @@
   border: 1px solid var(--box-shadow-color);
 }
 
-.list-item-remote {
+.list-item-remote,
+.list-item-hybrid {
   display: block;
   position: absolute;
   right: 0;

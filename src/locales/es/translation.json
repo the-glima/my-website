@@ -1,13 +1,12 @@
 {
   "position": {
-    "senior-front-end-developer": "Sr. Desarrollador Front-end",
+    "senior-front-end-engineer": "Sr. Ingeniero Front-end",
     "ui-developer": "Desarrollador UI",
-    "front-end-engineer": "Ingeniero Front-end",
     "javascript-developer": "Desarrollador Javascript",
     "front-end-developer": "Desarrollador Front-end"
   },
   "countries": {
-    "usa": "Estados Unidos",
+    "us": "EEUU",
     "brazil": "Brasil",
     "ireland": "Irlanda",
     "spain": "España"
@@ -30,6 +29,10 @@
     "dude": {
       "bio-end": "¿Recuerdas cuando nos preocupamos por IE6?"
     }
+  },
+  "stack": {
+    "title": "Stack",
+    "subtitle": "Tecnologías en las que tengo experiencia"
   },
   "projects": {
     "title": "Proyectos",
