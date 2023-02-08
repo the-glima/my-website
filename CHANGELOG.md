@@ -1,3 +1,10 @@
+# [2.17.0](https://github.com/the-glima/my-website/compare/v2.16.0...v2.17.0) (2023-02-08)
+
+
+### Features
+
+* add stack section ([#111](https://github.com/the-glima/my-website/issues/111)) ([0e47f61](https://github.com/the-glima/my-website/commit/0e47f619141d6d624697a0892cbec128fd7fc190))
+
 # [2.16.0](https://github.com/the-glima/my-website/compare/v2.15.0...v2.16.0) (2023-01-28)
 
 
