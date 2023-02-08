@@ -6,20 +6,21 @@ export interface WorkModel {
   year: string
   status?: string
   remote?: boolean
+  hybrid?: boolean
 }
 
 export const WorkData = (t: any): WorkModel[] => [
   {
     title: 'NexHealth',
-    position: t('position.senior-front-end-developer'),
-    country: t('countries.usa'),
+    position: t('position.senior-front-end-engineer'),
+    country: t('countries.us'),
     year: '2021',
     url: 'https://www.nexhealth.com/',
     remote: true
   },
   {
     title: 'Ciklum',
-    position: t('position.senior-front-end-developer'),
+    position: t('position.senior-front-end-engineer'),
     country: t('countries.spain'),
     year: '2020',
     url: 'https://www.ciklum.com/',
@@ -27,10 +28,11 @@ export const WorkData = (t: any): WorkModel[] => [
   },
   {
     title: 'Payvision',
-    position: t('position.senior-front-end-developer'),
+    position: t('position.senior-front-end-engineer'),
     country: t('countries.spain'),
     year: '2019',
-    url: 'https://www.payvision.com'
+    url: 'https://www.payvision.com',
+    hybrid: true
   },
   {
     title: 'Webdoctor',
