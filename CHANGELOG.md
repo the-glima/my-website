@@ -1,3 +1,10 @@
+## [2.17.1](https://github.com/the-glima/my-website/compare/v2.17.0...v2.17.1) (2023-02-08)
+
+
+### Bug Fixes
+
+* dark mode stack logos ([#112](https://github.com/the-glima/my-website/issues/112)) ([9773215](https://github.com/the-glima/my-website/commit/977321537ea13d30112d819fc2fbce8b3336911c))
+
 # [2.17.0](https://github.com/the-glima/my-website/compare/v2.16.0...v2.17.0) (2023-02-08)
 
 
