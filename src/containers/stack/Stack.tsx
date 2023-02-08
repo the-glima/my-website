@@ -60,7 +60,7 @@ const Stack = ({t}: any) => {
               {stackData.map((stack: StackModel, i: number) => (
                 <div key={i}>
                   <a className={styles.link} href={stack.url} title={stack.name}>
-                    <span className={`${styles.stack} ${styles[`logo-${stack.name.toLowerCase()}`]}`}>
+                    <span className={styles[`stack-logo-${stack.name.toLowerCase()}`]}>
                       <stack.logo />
                     </span>
                   </a>
