@@ -1,5 +1,5 @@
 import React from 'react'
-import {Trans, withNamespaces} from 'react-i18next'
+import {withNamespaces} from 'react-i18next'
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -16,14 +16,20 @@ const Stack = ({t}: any) => {
     dots: false,
     infinite: true,
     autoplay: true,
-    speed: 400,
-    slidesToShow: 5,
+    speed: 200,
+    slidesToShow: 7,
     slidesToScroll: 1,
     initialSlide: 0,
     pauseOnHover: true,
     responsive: [
       {
         breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+        }
+      },
+      {
+        breakpoint: 768,
         settings: {
           slidesToShow: 4,
         }
@@ -53,7 +59,7 @@ const Stack = ({t}: any) => {
             <Slider {...sliderSettings}>
               {stackData.map((stack: StackModel, i: number) => (
                 <div key={i}>
-                  <a className={styles.link} href={stack.url} title={stack.title}>
+                  <a className={styles.link} href={stack.url} title={stack.name}>
                     <span className={`${styles.stack} ${styles[`logo-${stack.name.toLowerCase()}`]}`}>
                       <stack.logo />
                     </span>

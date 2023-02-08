@@ -23,8 +23,8 @@ const Home = ({t}: any) => {
     <div className={`home  ${fadeIntro ? 'home-initialized' : ''}`}>
       <Header />
       <Stack />
-      <Projects />
       <Work />
+      <Projects />
       <Gists />
       <Footer />
     </div>

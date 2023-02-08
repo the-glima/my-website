@@ -1,7 +1,7 @@
 @value breakpoint-md from '../../assets/styles/variables.css';
 @value breakpoint-lg from '../../assets/styles/variables.css';
 
-.section-projects { background-color: var(--color-bg-section-2); }
+.section-projects { background-color: var(--color-bg-section); }
 
 .list {
   display: grid;
@@ -82,13 +82,5 @@
   .list {
     grid-template-columns: repeat(3, 1fr);
     max-width: 1200px;
-  }
-
-  .list li:first-child {
-    grid-column: 2;
-  }
-  
-  .list li:nth-child(2) {
-    grid-column: 1 / 1;
   }
 }

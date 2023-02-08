@@ -1,9 +1,9 @@
 @value breakpoint-lg from '../../assets/styles/variables.css';
 
-.section-gists { 
+.section-gists {
   position: relative;
   min-height: 300px;
-  background-color: var(--color-bg-section);
+  background-color: var(--color-bg-section-2);
 }
 
 .section-link {
@@ -13,7 +13,7 @@
 
 .gists-loading svg {
   width: 84px;
-  animation: loading-animation 1.5s infinite ease-in-out; 
+  animation: loading-animation 1.5s infinite ease-in-out;
   transition: var(--transition);
 }
 

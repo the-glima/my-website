@@ -29,6 +29,10 @@
       "bio-end": "Lembra quando a gente dava suporte ao IE6?"
     }
   },
+  "stack": {
+    "title": "Stack",
+    "subtitle": "Teconologias que tenho experiência"
+  },
   "projects": {
     "title": "Projetos",
     "subtitle": "Coisas legais em que eu participei",
