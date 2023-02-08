@@ -1,5 +1,7 @@
 @value breakpoint-md from '../../assets/styles/variables.css';
 
+.footer-section { background-color: var(--color-bg-section) }
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -19,7 +21,7 @@
 }
 
 .top-wrapper,
-.bottom-wrapper { 
+.bottom-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +29,7 @@
   text-align: center;
 }
 
-.copyright { 
+.copyright {
   margin-bottom: .5rem;
   font-size: .9rem;
 }
@@ -41,7 +43,7 @@
 
 @media only screen and (min-width: breakpoint-md) {
   .top-wrapper,
-  .bottom-wrapper { 
+  .bottom-wrapper {
     flex-direction: row;
   }
 
