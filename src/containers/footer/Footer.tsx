@@ -15,7 +15,7 @@ const Footer = ({t}: any) => {
   }, [year])
 
   return (
-    <footer className="section">
+    <footer className={`section ${styles['footer-section']}`}>
       <div className={`section-content ${styles.footer}`}>
         <div className={styles['top-wrapper']}>
           <Languages className={styles.languages} />

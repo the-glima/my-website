@@ -4,3 +4,9 @@
   text-align: center;
   padding: 5rem 0 0;
 }
+
+.stack-logo-nextjs,
+.stack-logo-cypress,
+.stack-logo-bash {
+  fill: var(--color-text);
+}
