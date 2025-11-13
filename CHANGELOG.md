@@ -1,3 +1,10 @@
+## [3.0.8](https://github.com/the-glima/my-website/compare/v3.0.7...v3.0.8) (2025-11-13)
+
+
+### Bug Fixes
+
+* gh actions ([#123](https://github.com/the-glima/my-website/issues/123)) ([e65589c](https://github.com/the-glima/my-website/commit/e65589c194ab46437b36879472cb18e508166c62))
+
 ## [3.0.7](https://github.com/the-glima/my-website/compare/v3.0.6...v3.0.7) (2025-11-13)
 
 
