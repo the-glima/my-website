@@ -24,7 +24,6 @@ jobs:
       #   run: npm test
 
       - name: Run Build
-        id: build_step
         run: npm run build
 
       - name: Upload Build Artifact
@@ -32,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-artifact
-          path: build
+          path: ./dist
 
   release:
     name: Release
