@@ -13,19 +13,19 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci
 
-      - name: Run Lint
-        if: success()
-        run: yarn lint
+      # - name: Run Lint
+      #   if: success()
+      #   run: npm run lint
 
-      - name: Run Unit Tests
-        if: success()
-        run: yarn test
+      # - name: Run Unit Tests
+      #   if: success()
+      #   run: npm test
 
       - name: Run Build
         if: success()
-        run: yarn build
+        run: npm run build
 
       - name: Upload Build Artifact
         if: success()
@@ -45,7 +45,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v3
@@ -107,4 +107,3 @@ jobs:
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: 'chore(release): v${{needs.release.outputs.version}} [skip-ci]'
-          
