@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/the-glima/my-website/compare/v3.0.0...v3.0.1) (2025-11-13)
+
+
+### Bug Fixes
+
+* release ([#119](https://github.com/the-glima/my-website/issues/119)) ([f81fc8b](https://github.com/the-glima/my-website/commit/f81fc8bebc4039bf8f514dda53554ce24746fca5))
+
 # [3.0.0](https://github.com/the-glima/my-website/compare/v2.17.1...v3.0.0) (2025-11-13)
 
 
