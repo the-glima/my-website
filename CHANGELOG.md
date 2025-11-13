@@ -1,3 +1,13 @@
+## [3.0.4](https://github.com/the-glima/my-website/compare/v3.0.3...v3.0.4) (2025-11-13)
+
+
+### Bug Fixes
+
+* **actions:** fix semantic release version ([68289c7](https://github.com/the-glima/my-website/commit/68289c7af767eecb133f988e5cc2c5ce4d1995a1))
+* deploy action ([a8917da](https://github.com/the-glima/my-website/commit/a8917da9ebda24621397d5aa4861f78582b77ab9))
+* projects typos ([713495a](https://github.com/the-glima/my-website/commit/713495a7d0153aa372bf01cc9b05fb6fdc03f950))
+* projects typos ([47e4dfa](https://github.com/the-glima/my-website/commit/47e4dfaeb70427f428385ac39266f8d4ccaf7737))
+
 ## [3.0.3](https://github.com/the-glima/my-website/compare/v3.0.2...v3.0.3) (2025-11-13)
 
 
