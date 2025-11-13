@@ -67,18 +67,18 @@ jobs:
           echo "::set-output name=version::${{ steps.semantic.outputs.new_release_version }}"
           echo "\nVersion ${{ steps.semantic.outputs.new_release_version }}" >> ./docs/README.md
 
-      - name: Upload README to Config Artifact
+      - name: Upload README Artifact
         if: steps.semantic.outputs.new_release_published
         uses: actions/upload-artifact@v4
         with:
-          name: config.artifact
+          name: readme.artifact
           path: ./docs/README.md
 
-      - name: Upload CHANGELOG to Config Artifact
+      - name: Upload CHANGELOG Artifact
         if: steps.semantic.outputs.new_release_published
         uses: actions/upload-artifact@v4
         with:
-          name: config.artifact
+          name: changelog.artifact
           path: CHANGELOG.md
 
   deploy:
@@ -92,10 +92,16 @@ jobs:
           name: build.artifact
           path: .
 
-      - name: Download Config Artifact
+      - name: Download README Artifact
         uses: actions/download-artifact@v4
         with:
-          name: config.artifact
+          name: readme.artifact
+          path: .
+
+      - name: Download CHANGELOG Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: changelog.artifact
           path: .
 
       - name: GitHub Pages action
