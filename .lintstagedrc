@@ -1,0 +1,6 @@
+{
+  "src/**/*.{js,ts}": [
+      "npm run format",
+      "git add"
+    ]
+}

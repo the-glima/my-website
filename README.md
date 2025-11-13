@@ -1,7 +1,5 @@
 ![CI CD](https://github.com/the-glima/my-website/workflows/Main/badge.svg)
 
-This project was bootstrapped with [Create React App](https://github.com/the-glima/my-website/blob/main/CRA.md).
-
 ## Tech Stack
 
 - TypeScript
@@ -13,7 +11,6 @@ This project was bootstrapped with [Create React App](https://github.com/the-gli
 - Prettier
 - Husky
 - ESLint
-- Yarn
 
 ## Getting my gists
 Soon...

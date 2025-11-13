@@ -1,8 +1,8 @@
 import React from 'react'
-import {withNamespaces} from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import styles from './ScrollUp.module.css'
 
-import {ReactComponent as ArrowUpIcon} from '../../../assets/images/icons/arrow-up.svg'
+import ArrowUpIcon from '../../../assets/images/icons/arrow-up.svg?react'
 
 const ScrollUp = ({t}: any) => {
   const scrollTop = () =>
@@ -20,4 +20,4 @@ const ScrollUp = ({t}: any) => {
   )
 }
 
-export default withNamespaces()(ScrollUp)
+export default withTranslation()(ScrollUp)

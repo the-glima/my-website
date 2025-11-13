@@ -1,5 +1,5 @@
 import React from 'react'
-import {Trans, withNamespaces} from 'react-i18next'
+import {Trans, withTranslation} from 'react-i18next'
 
 import styles from './Work.module.css'
 import {WorkData, WorkModel} from './WorkData'
@@ -94,4 +94,4 @@ const Work = ({t}: any) => {
   )
 }
 
-export default withNamespaces()(Work)
+export default withTranslation()(Work)

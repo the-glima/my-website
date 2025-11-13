@@ -56,11 +56,11 @@
 
 .circle.active img {
   border-color: transparent;
-  filter: grayscale(100%); 
+  filter: grayscale(100%);
 }
 
 .circle.active img {
-  transform: scale(.85); 
+  transform: scale(.85);
 }
 
 .picture {
@@ -109,25 +109,25 @@
     background: linear-gradient(90deg, var(--color-primary), var(--color-blue));
     animation: circle-rotation infinite linear;
   }
-  
+
   .circle:hover::after {
     animation-duration: .29s;
   }
-  
+
   .primary-color-purple.circle:hover::after {
     background: linear-gradient(90deg, var(--color-primary), var(--color-cyan));
   }
-  
+
   .primary-color-cyan.circle:hover::after {
     background: linear-gradient(90deg, var(--color-primary), var(--color-pink));
   }
-  
+
   .primary-color-yellow.circle:hover::after {
     background: linear-gradient(90deg, var(--color-primary), var(--color-blue));
   }
 
   .circle:hover img {
     border-color: transparent;
-    filter: grayscale(100%); 
+    filter: grayscale(100%);
   }
 }

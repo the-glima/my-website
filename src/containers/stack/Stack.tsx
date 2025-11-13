@@ -1,5 +1,5 @@
 import React from 'react'
-import {withNamespaces} from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -74,4 +74,4 @@ const Stack = ({t}: any) => {
   )
 }
 
-export default withNamespaces()(Stack)
+export default withTranslation()(Stack)

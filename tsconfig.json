@@ -18,10 +18,23 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "baseUrl": "./src"
+    "baseUrl": "./src",
+    "types": ["vite/client"],
+     "paths": {
+      "@api/*": ["./api/*"],
+      "@components/*": ["./components/*"],
+      "@config/*": ["./config/*"],
+      "@context/*": ["./context/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@pages/*": ["./pages/*"],
+      "@assets/*": ["./assets/*"],
+      "@utils/*": ["./utils/*"],
+      "@constants/*": ["./constants/*"]
+    }
   },
   "include": [
     "src",
-    "test"
+    "test",
+    "global.d.ts"
   ]
 }

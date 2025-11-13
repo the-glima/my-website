@@ -16,16 +16,16 @@
     "greeting": "Oi, meu nome é",
     "punch-line": "Eu desenvolvo para a web e amo o que faço",
     "bio": "Focado principalmente em <1>Desenvolvimento Front-end</1> com uma boa noção de <3>UI/UX</3>, mas sempre testando a aprendendo coisas diferentes.",
-    "default": {
+    "me": {
       "bio-end": "Falo 3 idiomas e também JavaScript."
     },
-    "headphones": {
+    "running": {
       "bio-end": "Precisamos de mais JS Frameworks!"
     },
-    "me": {
-      "bio-end": "Outra habilidade Full-stack: trocador de fraldas ágil."
+    "guitar": {
+      "bio-end": "Outra habilidade Full-stack: Magic The Gathering."
     },
-    "dude": {
+    "ai": {
       "bio-end": "Lembra quando a gente dava suporte ao IE6?"
     }
   },

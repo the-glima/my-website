@@ -1,11 +1,11 @@
 import React from 'react'
-import {withNamespaces} from 'react-i18next'
+import {withTranslation} from 'react-i18next'
 
 import styles from './Projects.module.css'
 import {ProjectsData, ProjectModel} from './ProjectsData'
 import Headings from '../../shared/components/headings/Headings'
 import SeeMore from '../../shared/components/see-more/SeeMore'
-import {ReactComponent as LinkIcon} from '../../assets/images/icons/link.svg'
+import LinkIcon from '../../assets/images/icons/link.svg?react'
 
 const Projects = ({t}: any) => {
   const projectsData = ProjectsData(t)
@@ -46,4 +46,4 @@ const Projects = ({t}: any) => {
   )
 }
 
-export default withNamespaces()(Projects)
+export default withTranslation()(Projects)

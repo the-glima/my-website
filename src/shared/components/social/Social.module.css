@@ -1,6 +1,6 @@
 @value breakpoint-md from '../../../assets/styles/variables.css';
 
-.list { 
+.list {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -8,13 +8,13 @@
   text-align: center;
 }
 
-.link { 
-  display: inherit; 
+.link {
+  display: inherit;
   position: relative;
 }
 
 .link,
-.social { 
+.social {
   width: 25px;
   height: 25px;
 }
@@ -34,5 +34,5 @@
 }
 
 @media (min-width: breakpoint-md) {
-  .list { max-width: 150px; }
+  .list { max-width: 100px; }
 }

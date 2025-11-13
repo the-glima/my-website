@@ -20,7 +20,7 @@
     box-shadow: none;
     background-color: var(--color-primary);
   }
-  
+
   .button:active {
     box-shadow: inset 2px 2px 2px var(--color-black);
     background-color: var(--color-primary);

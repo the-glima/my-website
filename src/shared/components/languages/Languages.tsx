@@ -1,6 +1,6 @@
 import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {withNamespaces} from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import i18n from '../../../i18n'
 import styles from './Languages.module.css'
 import {setLanguage} from './redux/LanguagesActions'
@@ -38,4 +38,4 @@ const Languages = (props: any) => {
   )
 }
 
-export default withNamespaces()(Languages)
+export default withTranslation()(Languages)

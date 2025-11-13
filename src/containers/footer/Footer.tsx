@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Trans, withNamespaces} from 'react-i18next'
+import {Trans, withTranslation} from 'react-i18next'
 import styles from './Footer.module.css'
 
 import Social from '../../shared/components/social/Social'
@@ -44,4 +44,4 @@ const Footer = ({t}: any) => {
   )
 }
 
-export default withNamespaces()(Footer)
+export default withTranslation()(Footer)

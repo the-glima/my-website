@@ -8,6 +8,13 @@ export interface ProjectModel {
 
 export const ProjectsData = (t: any): ProjectModel[] => [
   {
+    name: 'Standard Giving',
+    favicon: 'https://cdn.prod.website-files.com/6761eb85afa6020a7ac9af18/6761f31bfde75687a4444114_favicon-sg.png',
+    url: 'https://www.standardgiving.com/',
+    description: t('projects.links.standard-giving'),
+    status: 'done'
+  },
+  {
     name: 'NexHealth',
     favicon: 'https://assets.website-files.com/62f7955338a7286dd4b633cc/6384d406d54e4266fa6690a3_NexHealth-Webclip.png',
     url: 'https://www.nexhealth.com/',
@@ -20,13 +27,6 @@ export const ProjectsData = (t: any): ProjectModel[] => [
     url: 'https://github.com/the-glima/my-website',
     description: t('projects.links.website.description'),
     status: 'done'
-  },
-  {
-    name: 'Ciklum',
-    favicon: 'https://www.ciklum.com/hubfs/CIKLUM%20FAVICON.png',
-    url: 'https://www.ciklum.com/',
-    description: t('projects.links.ciklum'),
-    status: 'done'
   }
   // {
   //   name: 'Has Health',
@@ -34,5 +34,12 @@ export const ProjectsData = (t: any): ProjectModel[] => [
   //   url: 'https://www.hashealth.com/',
   //   description: t('projects.links.has-health'),
   //   status: 'done'
-  // }
+  // },
+  //   {
+  //   name: 'Ciklum',
+  //   favicon: 'https://www.ciklum.com/hubfs/CIKLUM%20FAVICON.png',
+  //   url: 'https://www.ciklum.com/',
+  //   description: t('projects.links.ciklum'),
+  //   status: 'done'
+  // },
 ]

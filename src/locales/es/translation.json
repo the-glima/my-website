@@ -17,16 +17,16 @@
     "name": "Gabriel Lima",
     "punch-line": "Construyo cosas para la web y amo lo que hago",
     "bio": "Enfocado principalmente en <1>Desarrollo Front-end</1> con un buen ojo de <3>UI/UX</3> y siempre intentando cosas diferentes.",
-    "default": {
+    "me": {
       "bio-end": "Hablo 3 idiomas y también JavaScript."
     },
-    "headphones": {
+    "running": {
       "bio-end": "¡Necesitamos más JS Frameworks!"
     },
-    "me": {
-      "bio-end": "Otra habilidad de Full-stack: cambiador de pañales ágil."
+    "guitar": {
+      "bio-end": "Otra habilidad de Full-stack: Magic The Gathering."
     },
-    "dude": {
+    "ai": {
       "bio-end": "¿Recuerdas cuando nos preocupamos por IE6?"
     }
   },

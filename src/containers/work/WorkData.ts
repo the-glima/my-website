@@ -11,10 +11,18 @@ export interface WorkModel {
 
 export const WorkData = (t: any): WorkModel[] => [
   {
+    title: 'Standard Giving',
+    position: t('position.senior-front-end-engineer'),
+    country: t('countries.us'),
+    year: '2024',
+    url: 'https://www.standardgiving.com/',
+    remote: true
+  },
+  {
     title: 'NexHealth',
     position: t('position.senior-front-end-engineer'),
     country: t('countries.us'),
-    year: '2021',
+    year: '2022',
     url: 'https://www.nexhealth.com/',
     remote: true
   },
