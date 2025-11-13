@@ -31,7 +31,7 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: build.artifact
+          name: build-artifact
           path: build
 
   release:
@@ -71,14 +71,14 @@ jobs:
         if: steps.semantic.outputs.new_release_published
         uses: actions/upload-artifact@v4
         with:
-          name: readme.artifact
+          name: readme-artifact
           path: ./docs/README.md
 
       - name: Upload CHANGELOG Artifact
         if: steps.semantic.outputs.new_release_published
         uses: actions/upload-artifact@v4
         with:
-          name: changelog.artifact
+          name: changelog-artifact
           path: CHANGELOG.md
 
   deploy:
@@ -89,19 +89,19 @@ jobs:
       - name: Download Build Artifact
         uses: actions/download-artifact@v4
         with:
-          name: build.artifact
+          name: build-artifact
           path: .
 
       - name: Download README Artifact
         uses: actions/download-artifact@v4
         with:
-          name: readme.artifact
+          name: readme-artifact
           path: .
 
       - name: Download CHANGELOG Artifact
         uses: actions/download-artifact@v4
         with:
-          name: changelog.artifact
+          name: changelog-artifact
           path: .
 
       - name: GitHub Pages action

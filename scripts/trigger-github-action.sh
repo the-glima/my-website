@@ -1,6 +1,6 @@
 # !/usr/bin/env bash
 
-GITHUB_TOKEN=$(grep GITHUB_TOKEN .env | cut -d '=' -f 2-)
+GITHUB_TOKEN=$(grep VITE_GH_TOKEN .env | cut -d '=' -f 2-)
 BRANCH_NAME="${1:-main}"
 
 function triggerGithubAction() {
