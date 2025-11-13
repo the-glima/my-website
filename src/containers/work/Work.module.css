@@ -135,6 +135,7 @@
   box-shadow: var(--box-shadow) var(--box-shadow-color);
 }
 
+.logo-standard-giving { background-position: -150px -50px; }
 .logo-nexhealth { background-position: -150px -50px; }
 .logo-ciklum { background-position: -150px 0; }
 .logo-payvision { background-position: 0 0; }
@@ -143,6 +144,7 @@
 .logo-div64 {  background-position: 0 -50px; }
 .logo-elogroup {  background-position: -50px -50px; }
 .logo-bolt-brasil {  background-position: -100px -50px; }
+.logo-standard-giving {  background-position: 0 -100px; }
 
 .title {
   font-size: .9rem;
@@ -254,7 +256,7 @@
     content: '';
     position: absolute;
     top: 50%;
-    right: -58px;
+    right: -61px;
     display: block;
     width: 58px;
     height: 2px;
@@ -270,11 +272,11 @@
   .list-item-card::before {
     top: 50%;
     right: 0;
-    left: calc(100% + 57px);
+    left: calc(100% + 60px);
     transform: translateY(-50%);
   }
 
-  .list-item-left .list-item-card::before { left: -67px; }
+  .list-item-left .list-item-card::before { left: -69px; }
 
   .list-item-left .list-item-date {
     order: 0;

@@ -2,10 +2,12 @@ import {envService} from '../../../shared/services/EnvService'
 import {APIService} from 'shared/services/APIService'
 import {GitHubAPIEnum} from '../models/GithubAPIEnum'
 
+import env from '@config/env'
+
 const getHeaders = (headersParams = {}) => ({
   ...(envService.isDevelopment() && {
     headers: {
-      Authorization: `token ${process.env.REACT_APP_GH_TOKEN}`,
+      Authorization: `token ${env.ghToken}`,
       ...headersParams
     }
   })

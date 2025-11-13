@@ -1,11 +1,12 @@
 import React, {useEffect} from 'react'
-import {withNamespaces} from 'react-i18next'
+import {useTranslation} from 'react-i18next'
 import {useSelector} from 'react-redux'
+import {withTranslation} from 'react-i18next'
 
 import Headings from '../../shared/components/headings/Headings'
 import SeeMore from '../../shared/components/see-more/SeeMore'
 import Loading from '../../shared/components/loading/Loading'
-import {ReactComponent as GitHubLogo} from '../../assets/images/social/github.svg'
+import GitHubLogo from '../../assets/images/social/github.svg?react'
 
 import {domService} from '../../shared/services/DOMService'
 import {GistsState} from './redux/GistsReducer'
@@ -15,7 +16,8 @@ import GistsList from './components/GistsList'
 import {useFetchGists} from './hooks/UseGists.hook'
 import { GistsEnum } from './models'
 
-const Gists = ({t}: any) => {
+const Gists = () => {
+  const { t } = useTranslation()
   const fetchGists = useFetchGists()
   const gistsState: GistsState = useSelector((state: any) => state.gists)
 
@@ -70,4 +72,4 @@ const Gists = ({t}: any) => {
   )
 }
 
-export default withNamespaces()(Gists)
+export default withTranslation()(Gists)

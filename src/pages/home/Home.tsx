@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {withNamespaces} from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 
 import Header from '../../containers/header/Header'
 import Gists from '../../containers/gists/Gists'
@@ -31,4 +31,4 @@ const Home = ({t}: any) => {
   )
 }
 
-export default withNamespaces()(Home)
+export default withTranslation()(Home)
