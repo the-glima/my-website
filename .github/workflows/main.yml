@@ -82,6 +82,8 @@ jobs:
   deploy:
     name: Deploy to GH-Pages
     needs: [build, release]
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Download Build Artifact
@@ -93,8 +95,8 @@ jobs:
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.PAT_TOKEN }}
-          publish_dir: ./build
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
           cname: gabriel-lima.com
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
