@@ -37,7 +37,7 @@ jobs:
   release:
     name: Release
     needs: build
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && needs.build.result == 'success'
     runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.update_version.outputs.version }}
@@ -83,7 +83,8 @@ jobs:
 
   deploy:
     name: Deploy to GH-Pages
-    needs: release
+    needs: [build, release]
+    if: always() && needs.build.result == 'success' && (needs.release.result == 'success' || needs.release.result == 'skipped')
     runs-on: ubuntu-latest
     steps:
       - name: Download Build Artifact
@@ -93,12 +94,14 @@ jobs:
           path: .
 
       - name: Download README Artifact
+        if: needs.release.outputs.version != ''
         uses: actions/download-artifact@v4
         with:
           name: readme-artifact
           path: .
 
       - name: Download CHANGELOG Artifact
+        if: needs.release.outputs.version != ''
         uses: actions/download-artifact@v4
         with:
           name: changelog-artifact
@@ -112,4 +115,4 @@ jobs:
           cname: gabriel-lima.com
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'chore(release): v${{needs.release.outputs.version}} [skip-ci]'
+          commit_message: "${{ needs.release.outputs.version && format('chore(release): v{0} [skip-ci]', needs.release.outputs.version) || 'chore: deploy [skip-ci]' }}"
