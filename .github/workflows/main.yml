@@ -24,14 +24,15 @@ jobs:
       #   run: npm test
 
       - name: Run Build
+        if: success()
         run: npm run build
 
       - name: Upload Build Artifact
-        if: steps.build_step.outcome == 'success'
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: build-artifact
-          path: ./dist
+          path: dist
 
   release:
     name: Release
@@ -82,8 +83,6 @@ jobs:
   deploy:
     name: Deploy to GH-Pages
     needs: [build, release]
-    permissions:
-      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Download Build Artifact
