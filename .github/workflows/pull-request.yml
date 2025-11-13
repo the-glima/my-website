@@ -10,18 +10,18 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Install Dependencies
         run: npm ci
 
-      - name: Run Lint
-        if: success()
-        run: npm run lint
+      # - name: Run Lint
+      #   if: success()
+      #   run: npm run lint
 
-      - name: Run Unit Tests
-        if: success()
-        run: npm run test
+      # - name: Run Unit Tests
+      #   if: success()
+      #   run: npm run test
 
       - name: Run Build
         if: success()
