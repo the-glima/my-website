@@ -24,11 +24,11 @@ jobs:
       #   run: npm test
 
       - name: Run Build
-        if: success()
+        id: build_step
         run: npm run build
 
       - name: Upload Build Artifact
-        if: success()
+        if: steps.build_step.outcome == 'success'
         uses: actions/upload-artifact@v4
         with:
           name: build-artifact
@@ -37,7 +37,6 @@ jobs:
   release:
     name: Release
     needs: build
-    if: github.ref == 'refs/heads/main' && needs.build.result == 'success' && !contains(github.event.head_commit.message, '[skip ci]')
     runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.update_version.outputs.version }}
@@ -83,8 +82,7 @@ jobs:
 
   deploy:
     name: Deploy to GH-Pages
-    needs: release
-    if: github.ref == 'refs/heads/main' && needs.build.result == 'success' && !contains(github.event.head_commit.message, '[skip ci]')
+    needs: [build, release]
     runs-on: ubuntu-latest
     steps:
       - name: Download Build Artifact
@@ -97,7 +95,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.PAT_TOKEN }}
-          publish_dir: .
+          publish_dir: ./build
           cname: gabriel-lima.com
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'

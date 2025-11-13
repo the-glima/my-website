@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "react-app"
+  ],
+  "plugins": [
+    "no-null"
+  ],
+  "rules": {
+    "no-null/no-null": 1,
+    "max-len": [ "warn", {
+      "code": 120,
+      "ignoreUrls": true,
+      "ignoreComments": false,
+      "ignoreRegExpLiterals": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": false
+    }]
+  }
+}
