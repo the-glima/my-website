@@ -1,3 +1,10 @@
+## [3.0.12](https://github.com/the-glima/my-website/compare/v3.0.11...v3.0.12) (2025-11-13)
+
+
+### Bug Fixes
+
+* deploy and main workflow ([260d473](https://github.com/the-glima/my-website/commit/260d4736f445ef3f0d943a68a726d1e44f8af764))
+
 ## [3.0.11](https://github.com/the-glima/my-website/compare/v3.0.10...v3.0.11) (2025-11-13)
 
 
