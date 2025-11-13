@@ -29,7 +29,7 @@ jobs:
 
       - name: Upload Build Artifact
         if: success()
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: build.artifact
           path: build
@@ -48,7 +48,7 @@ jobs:
         run: npm ci
 
       - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v3
+        uses: cycjimmy/semantic-release-action@v5
         id: semantic
         with:
           branch: main
@@ -69,14 +69,14 @@ jobs:
 
       - name: Upload README to Config Artifact
         if: steps.semantic.outputs.new_release_published
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: config.artifact
           path: ./docs/README.md
 
       - name: Upload CHANGELOG to Config Artifact
         if: steps.semantic.outputs.new_release_published
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: config.artifact
           path: CHANGELOG.md
@@ -87,19 +87,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download Build Artifact
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4
         with:
           name: build.artifact
           path: .
 
       - name: Download Config Artifact
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4
         with:
           name: config.artifact
           path: .
 
       - name: GitHub Pages action
-        uses: peaceiris/actions-gh-pages@v3.7.3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.PAT_TOKEN }}
           publish_dir: .
