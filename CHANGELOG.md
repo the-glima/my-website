@@ -1,3 +1,17 @@
+## [3.0.7](https://github.com/the-glima/my-website/compare/v3.0.6...v3.0.7) (2025-11-13)
+
+
+### Bug Fixes
+
+* deploy action ([#122](https://github.com/the-glima/my-website/issues/122)) ([576bb5c](https://github.com/the-glima/my-website/commit/576bb5c926c1ae02a9811821d38e7377b8ab0639))
+
+## [3.0.6](https://github.com/the-glima/my-website/compare/v3.0.5...v3.0.6) (2025-11-13)
+
+
+### Bug Fixes
+
+* deploy action ([5aee9f0](https://github.com/the-glima/my-website/commit/5aee9f08429ce1316693e190ba3e723055d587ec))
+
 ## [3.0.5](https://github.com/the-glima/my-website/compare/v3.0.4...v3.0.5) (2025-11-13)
 
 
