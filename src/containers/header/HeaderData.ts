@@ -1,10 +1,10 @@
-import husband from '../../assets/images/photos/husband.jpg'
-import headphones from '../../assets/images/photos/headphones.jpg'
+import ai from '../../assets/images/photos/ai.jpg'
 import me from '../../assets/images/photos/me.jpg'
-import dude from '../../assets/images/photos/dude.jpg'
+import guitar from '../../assets/images/photos/guitar.jpg'
+import running from '../../assets/images/photos/running.jpg'
 import i18n from '../../i18n'
 
-export type HeaderModelName = 'default' | 'headphones' | 'me' | 'dude'
+export type HeaderModelName = 'me' | 'running' | 'guitar' | 'ai'
 
 export interface HeaderModel {
   name: HeaderModelName
@@ -23,24 +23,24 @@ export const HeaderData = (): HeaderModel[] => [
     color: 'orange'
   },
   {
-    name: 'dude',
-    picture: dude,
+    name: 'running',
+    picture: running,
     position: i18n.t('position.front-end-developer'),
-    bio: i18n.t('header.headphones.bio-end'),
-    color: 'purple'
-  },
-  {
-    name: 'default',
-    picture: husband,
-    position: i18n.t('position.javascript-developer'),
-    bio: i18n.t('header.default.bio-end'),
+    bio: i18n.t('header.running.bio-end'),
     color: 'cyan'
   },
   {
-    name: 'headphones',
-    picture: headphones,
+    name: 'guitar',
+    picture: guitar,
+    position: i18n.t('position.javascript-developer'),
+    bio: i18n.t('header.guitar.bio-end'),
+    color: 'purple'
+  },
+  {
+    name: 'ai',
+    picture: ai,
     position: i18n.t('position.ui-developer'),
-    bio: i18n.t('header.dude.bio-end'),
+    bio: i18n.t('header.ai.bio-end'),
     color: 'yellow'
   }
 ]
