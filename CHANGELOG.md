@@ -1,3 +1,10 @@
+## [3.0.11](https://github.com/the-glima/my-website/compare/v3.0.10...v3.0.11) (2025-11-13)
+
+
+### Bug Fixes
+
+* gh page action ([7aa0288](https://github.com/the-glima/my-website/commit/7aa028844f3cd1870b7df1f2e09bdc7cbfa40ba5))
+
 ## [3.0.10](https://github.com/the-glima/my-website/compare/v3.0.9...v3.0.10) (2025-11-13)
 
 
