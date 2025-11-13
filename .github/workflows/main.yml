@@ -91,11 +91,23 @@ jobs:
           name: build-artifact
           path: .
 
+      - name: Download Readme Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: readme-artifact
+          path: .
+
+      - name: Download Changelog Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: changelog-artifact
+          path: .
+
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: .
           cname: gabriel-lima.com
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
