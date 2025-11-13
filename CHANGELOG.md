@@ -1,3 +1,20 @@
+# [3.0.0](https://github.com/the-glima/my-website/compare/v2.17.1...v3.0.0) (2025-11-13)
+
+
+* feat!: add sg work and remove rca ([#116](https://github.com/the-glima/my-website/issues/116)) ([f82db9e](https://github.com/the-glima/my-website/commit/f82db9e763c77036e4af964857353216236b32ab))
+
+
+### Bug Fixes
+
+* fix actions ([#118](https://github.com/the-glima/my-website/issues/118)) ([ad09c15](https://github.com/the-glima/my-website/commit/ad09c15fcce76be17f1156ea52589eebc8a1adb0))
+* update workflow to v4 ([#117](https://github.com/the-glima/my-website/issues/117)) ([ee10091](https://github.com/the-glima/my-website/commit/ee10091ce5f2d09597fae7ac63bc323c2ececca3))
+
+
+### BREAKING CHANGES
+
+* remove RCA, add Vite.
+Update dependencies.
+
 ## [2.17.1](https://github.com/the-glima/my-website/compare/v2.17.0...v2.17.1) (2023-02-08)
 
 
