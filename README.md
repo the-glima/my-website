@@ -1,6 +1,6 @@
 <p align="center"><img src="https://user-images.githubusercontent.com/1394578/87028626-2b818e00-c1df-11ea-8823-d52ef9fac65b.png" width="150" height="150"></p>
 <h2 align="center">Hi, I'm Gabriel Lima</h2>
-<h3 align="center">Front-end Developer</h3><br><br>
+<h3 align="center">Front-End Developer</h3><br><br>
 
 #### My Website
 This is my portfolio project: [gabriel-lima.com](https://www.gabriel-lima.com).
@@ -22,7 +22,7 @@ Some technologies tools that I'm using:
 - Bash Script
 
 #### Where you can find me
-On Twitter at [@__glima](https://twitter.com/__glima), where I tweet mostly about Front-end Development and Web Development. And on [LinkedIn](https://www.linkedin.com/in/gabriel--lima/). you can check my detailed work experience.
+On Twitter at [@__glima](https://twitter.com/__glima), where I tweet mostly about Front-End Development and Web Development. And on [LinkedIn](https://www.linkedin.com/in/gabriel--lima/). you can check my detailed work experience.
 
 #### Some facts :
 - ☕ &nbsp;I do like coffee but I'm not a typical (addicted) coffee lover like many developers claims to be
@@ -33,4 +33,4 @@ On Twitter at [@__glima](https://twitter.com/__glima), where I tweet mostly abou
 - 🏳️ &nbsp;In the JS famework war I support JavaScript
 - 🗣️ &nbsp;I speak 3 languages (English, Spanish and Portuguese) and also JavaScript.
 
-\nVersion 3.0.13
+\nVersion 3.1.0
