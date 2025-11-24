@@ -75,19 +75,19 @@
   align-items: center;
   order: 1;
   position: relative;
-  width: 272px;
+  width: 294px;
   margin: 0 auto;
-  padding: 0.7rem;
-  border: 1px solid var(--box-shadow-color);
+  /* FIX: compose styling is winning and padding is overridden */
+  /* Also check for multiple instances of the same class being applied */
+  padding: 0.7rem !important;
 }
 
-.list-item-remote,
-.list-item-hybrid {
+.list-item-badge {
   display: block;
   position: absolute;
   right: 0;
   top: 0;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   color: white;
   padding: 0 0.5rem;
   background: var(--color-primary);
@@ -123,37 +123,33 @@
 
 /* ----- List Card: content ----- */
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   margin-right: 0.8rem;
-  background-image: url('../../assets/images/jobs/jobs.jpg');
+  background-image: url('../../assets/images/work/work-logos.jpg');
   background-repeat: no-repeat;
-  background-size: 199px;
-  text-indent: 100%;
+  background-size: 276px;
   white-space: nowrap;
-  overflow: hidden;
+  font: 0/0;
+  color: transparent;
   box-shadow: var(--box-shadow) var(--box-shadow-color);
 }
 
-.logo-standard-giving { background-position: -150px -50px; }
-.logo-nexhealth { background-position: -150px -50px; }
-.logo-ciklum { background-position: -150px 0; }
+.logo-nexhealth { background-position: 0 -69px; }
 .logo-payvision { background-position: 0 0; }
-.logo-webdoctor { background-position: -50px 0; }
-.logo-neoway {  background-position: -100px 0; }
-.logo-div64 {  background-position: 0 -50px; }
-.logo-elogroup {  background-position: -50px -50px; }
-.logo-bolt-brasil {  background-position: -100px -50px; }
-.logo-standard-giving {  background-position: 0 -100px; }
+.logo-webdoctor { background-position: -69px 0; }
+.logo-neoway {  background-position: -140px 1px; }
+.logo-elogroup {  background-position: -69px -69px; }
+.logo-bolt-brasil {  background-position: -138px -69px; }
+.logo-standard-giving {  background-position: -207px 0px; }
+.logo-medihive {  background-position: -208px -69px; }
 
 .title {
-  font-size: .9rem;
   font-weight: 600;
 }
 
 .position {
-  padding-top: .15rem;
-  font-size: .8rem;
+  font-size: .7rem;
 }
 
 @media (hover: hover) {
@@ -226,8 +222,8 @@
   }
 
   .list::before {
-    top: 64px;
-    height: calc(100% - 110px);
+    top: 72px;
+    height: calc(100% - 126px);
   }
 
   .list-item {
@@ -244,7 +240,7 @@
   }
 
   .list-item-card {
-    width: 272px;
+    width: 300px;
     margin: 0;
   }
 
@@ -256,27 +252,27 @@
     content: '';
     position: absolute;
     top: 50%;
-    right: -61px;
+    right: -39px;
     display: block;
-    width: 58px;
+    width: 36px;
     height: 2px;
     background-color: var(--work-pseudo-color);
     transform: translateY(-50%);
   }
 
   .list-item-left .list-item-card::after {
-    left: -56px;
-    width: 56px;
+    left: -33px;
+    width: 32px;
   }
 
   .list-item-card::before {
     top: 50%;
     right: 0;
-    left: calc(100% + 60px);
+    left: calc(100% + 32px);
     transform: translateY(-50%);
   }
 
-  .list-item-left .list-item-card::before { left: -69px; }
+  .list-item-left .list-item-card::before { left: -40px; }
 
   .list-item-left .list-item-date {
     order: 0;

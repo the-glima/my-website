@@ -1,9 +1,10 @@
 {
   "position": {
-    "senior-front-end-engineer": "Sr. Ingeniero Front-end",
-    "ui-developer": "Desarrollador UI",
-    "javascript-developer": "Desarrollador Javascript",
-    "front-end-developer": "Desarrollador Front-end"
+    "senior-front-end-developer": "Senior Desarrollador Front-End",
+    "senior-full-stack-developer": "Senior Desarrollador Full-Stack",
+    "full-stack-developer": "Desarrollador Full-Stack",
+    "front-end-developer": "Desarrollador Front-End",
+    "ui-developer": "Desarrollador UI"
   },
   "countries": {
     "us": "EEUU",
@@ -16,7 +17,7 @@
     "greeting": "Hola, me llamo",
     "name": "Gabriel Lima",
     "punch-line": "Construyo cosas para la web y amo lo que hago",
-    "bio": "Enfocado principalmente en <1>Desarrollo Front-end</1> con un buen ojo de <3>UI/UX</3> y siempre intentando cosas diferentes.",
+    "bio": "Enfocado principalmente en <1>Desarrollo Front-End</1> con un buen ojo de <3>UI/UX</3> y siempre intentando cosas diferentes.",
     "me": {
       "bio-end": "Hablo 3 idiomas y también JavaScript."
     },
@@ -41,8 +42,8 @@
     "links": {
       "nexhealth": "Conectando pacientes, médicos y desarrolladores para acelerar la innovación en el cuidado de la salud",
       "has-health": "Conectando médicos y pacientes de forma segura desde cualquier lugar",
-      "ciklum": "Compañía de Soluciones Digitales Globales para Fortune 500 y organizaciones de rápido crecimiento por igual en todo el mundo",
-       "website": {
+      "standard-giving": "Ayudando a las personas con asistencia financiera proporcionando una plataforma diseñada para maximizar el impacto y la participación.",
+      "website": {
          "title": "Sitio web personal",
          "description": "Sí, este. Échale un vistazo a las herramientas que he usado para construirlo."
        }
@@ -54,8 +55,8 @@
     "see-more": "Mira mi perfil en LinkedIn",
     "journey": {
       "title": "Mi Experiencia",
-      "intro": "Empecé a trabajar con el desarrollo web en 2011 <1>(10+ años de experiencia)</1> y siempre me encantó el diseño + código. Pero como ni siquiera soy Diseñador (mira el diseño de esta página web) me he convertido un <1>Desarrollador Front-end</1>.",
-      "body": "<0>CSS y HTML </0> siempre han sido mis compañeros pero con <2>JavaScript</2> que la verdadera pasión floreció en mi corazón. Luego vinieron NodeJS, API RESTful y el desarrollo de Back-end se quedo más cerca que nunca. Los frameworks y las bibliotecas de test en JavaScript comenzaron a aparecer casi mensualmente, lo que creó la oportunidad de crear componentes de interfaz de usuario mejores y más inteactivos (para mi alegría), también hemos dejado de usar jQuery, ¿verdad?",
+      "intro": "Con más de una <1>década</1> de experiencia en desarrollo web, siempre me encantó el diseño + código. Pero como ni siquiera soy Diseñador (mira el diseño de esta página web) me he convertido un <1>Desarrollador Front-End</1>.",
+      "body": "<0>CSS y HTML </0> siempre han sido mis compañeros pero con <2>JavaScript</2> que la verdadera pasión floreció en mi corazón. Luego vinieron TypeScript, NodeJS, API RESTful y el desarrollo de Back-end se quedo más cerca que nunca. Los frameworks y las bibliotecas de test en JavaScript comenzaron a aparecer casi mensualmente, lo que creó la oportunidad de crear componentes de interfaz de usuario mejores y más inteactivos (para mi alegría), también hemos dejado de usar jQuery, ¿verdad?",
       "conclusion": "Un día comencé a usar Linux y el terminal y me convertí adicto a automatizar mi flujo de trabajo con Bash Scripts. Ahora, con el conocimiento de Docker y CI/ CD podría darme el derecho de ser <1>Desarrollador Full Stack</1>, pero no haré eso y en cambio me llamaré a mí mismo también como <3>Desarrollador de Infraestructura de Producto</3>, lo cual es mucho más genial."
     }
   },
@@ -78,7 +79,7 @@
   },
   "footer": {
     "copyright": "Todos los derechos reservados",
-    "quote": "Hecho con mucha ansiedad durante la <1>cuarentena del COVID-19</1>."
+    "quote": "Hecho durante la <1>cuarentena del COVID-19</1>."
   },
   "error": {
     "message": "¡Lo siento, algo salió mal! Por favor, intente nuevamente más tarde."

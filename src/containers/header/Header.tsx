@@ -2,11 +2,11 @@ import React, {useState, useEffect, useCallback} from 'react'
 import {Trans, withTranslation} from 'react-i18next'
 import {useDispatch, useSelector} from 'react-redux'
 
+import Personality from '../../shared/components/personality/Personality'
 import styles from './Header.module.css'
 import {HeaderData} from './HeaderData'
+import {HeaderEnum} from './models/HeaderEnum'
 import * as actions from './redux/HeaderActions'
-import Personality from '../../shared/components/personality/Personality'
-import { HeaderEnum } from './models/HeaderEnum'
 
 const Header = ({t}: any) => {
   const headerData = HeaderData()
@@ -21,7 +21,7 @@ const Header = ({t}: any) => {
 
     setTimeout(() => {
       setActive(undefined)
-      count < headerData.length - 1 ? setCount(count + 1) : setCount(0)
+      setCount(count < headerData.length - 1 ? count + 1 : 0)
     }, HeaderEnum.animationDelay)
   }, [count, headerData])
 
@@ -38,7 +38,6 @@ const Header = ({t}: any) => {
   useEffect(() => {
     dispatch(actions.getPersonality())
     togglePersonality(headerData[count])
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count, languageState])
 
   return (
@@ -54,7 +53,7 @@ const Header = ({t}: any) => {
               }}
               image={{
                 src: personalityState?.data?.picture,
-                alt: 'Gabriel Lima',
+                alt: 'Gabriel Lima'
               }}
             />
           </div>
@@ -73,7 +72,7 @@ const Header = ({t}: any) => {
           <p className={styles.bio}>
             <Trans
               i18nKey="header.bio"
-              defaults="Mainly focused on <1>Front-end Development</1> with a good
+              defaults="Mainly focused on <1>Front-End Development</1> with a good
               <3>UI/UX</3> eye and always trying different things."
             >
               .<strong>.</strong> . <strong>.</strong> .

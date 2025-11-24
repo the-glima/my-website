@@ -23,7 +23,7 @@
 
 @keyframes loading-animation {
   0% { color: var(--color-text); }
-  20% { color: var(--color-orange); }
+  20% { color: var(--color-red); }
   40% { color: var(--color-purple); }
   60% { color: var(--color-cyan); }
   80% { color: var(--color-gold); }
