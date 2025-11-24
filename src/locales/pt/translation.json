@@ -1,9 +1,10 @@
 {
   "position": {
-    "senior-front-end-engineer": "Sênior Engenheiro Front-End",
-    "ui-developer": "Desenvolvedor UI",
-    "javascript-developer": "Desenvolvedor Javascript",
-    "front-end-developer": "Desenvolvedor Front-End"
+    "senior-front-end-developer": "Sênior Desenvolvedor Front-End",
+    "senior-full-stack-developer": "Sênior Desenvolvedor Full-Stack",
+    "full-stack-developer": "Desenvolvedor Full-Stack",
+    "front-end-developer": "Desenvolvedor Front-End",
+    "ui-developer": "Desenvolvedor UI"
   },
   "countries": {
     "us": "EUA",
@@ -40,7 +41,7 @@
     "links": {
       "nexhealth": "Conectando pacientes, médicos e desenvolvedores para acelerar a inovação em saúde",
       "has-health": "Conectando doutors e pacientes de uma forma segura de qualquer lugar",
-      "ciklum": "Empresa global de soluções digitais para empresas da Fortune 500 e de rápido crescimento em todo o mundo",
+      "standard-giving": "Ajudando pessoas com assistência financeira, fornecendo uma plataforma criada para maximizar o impacto e o engajamento.",
       "website": {
         "title": "Site pessoal",
         "description": "Sim, este mesmo. Dá uma olhada nas coisas legais que usei para criá-lo"

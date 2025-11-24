@@ -132,17 +132,14 @@
   box-shadow: var(--box-shadow) var(--box-shadow-color);
 }
 
-.logo-standard-giving { background-position: -150px -50px; }
-.logo-nexhealth { background-position: -150px -50px; }
-.logo-ciklum { background-position: -150px 0; }
+.logo-nexhealth { background-position: -2px -50px; }
 .logo-payvision { background-position: 0 0; }
 .logo-webdoctor { background-position: -50px 0; }
 .logo-neoway {  background-position: -100px 0; }
-.logo-div64 {  background-position: 0 -50px; }
 .logo-elogroup {  background-position: -50px -50px; }
 .logo-bolt-brasil {  background-position: -100px -50px; }
-.logo-standard-giving {  background-position: -1px -100px; }
-.logo-medihive {  background-position: -50px -100px; }
+.logo-standard-giving {  background-position: -154px 0px; }
+.logo-medihive {  background-position: -154px -50px; }
 
 .title {
   font-size: .9rem;
