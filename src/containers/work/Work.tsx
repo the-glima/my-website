@@ -1,11 +1,11 @@
 import React from 'react'
 import {Trans, withTranslation} from 'react-i18next'
 
+import Headings from '../../shared/components/headings/Headings'
 import styles from './Work.module.css'
 import {WorkData, WorkModel} from './WorkData'
-import Headings from '../../shared/components/headings/Headings'
 
-const oddJob = (int: number): Boolean => Math.abs(int % 2) === 1
+const oddJob = (int: number): boolean => Math.abs(int % 2) === 1
 
 const Work = ({t}: any) => {
   const workData = WorkData(t)
@@ -22,7 +22,7 @@ const Work = ({t}: any) => {
               <Trans
                 i18nKey="work.journey.intro"
                 defaults="I started working with web development in 2011, studied Web and Multimedia, and always loved design +
-                code. But since I'm not as close as a Designer (look at the design of this website) I've become a <1>Front-end Developer</1>."
+                code. But since I'm not as close as a Designer (look at the design of this website) I've become a <1>Front-End Developer</1>."
               >
                 . <strong>.</strong>
               </Trans>
@@ -74,12 +74,11 @@ const Work = ({t}: any) => {
                     <div className={styles.title}>{work.title}</div>
                     <div className={styles.position}>{work.position}</div>
                   </div>
-                  {work.remote &&
-                    <span className={`${styles['list-item-remote']}`}>REMOTE</span>
-                  }
-                  {work.hybrid &&
-                    <span className={`${styles['list-item-hybrid']}`}>HYBRID</span>
-                  }
+                  <span className={`${styles['list-item-badge']}`}>
+                    {work.remote && 'REMOTE'}
+                    {work.hybrid && 'HYBRID'}
+                    {work.onSite && 'ON-SITE'}
+                  </span>
                 </a>
                 <div className={styles['list-item-date']}>
                   <span>{work.year}</span>

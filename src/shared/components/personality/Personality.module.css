@@ -25,12 +25,12 @@
   background-color: var(--color-primary);
   z-index: -1;
   border-radius: 50%;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-blue));
+  background: linear-gradient(90deg, var(--color-blue), var(--color-primary));
 }
 
 .circle.spinning::after,
 .circle.active::after {
-  background: linear-gradient(90deg, var(--color-primary), var(--color-blue));
+  background: linear-gradient(90deg, var(--color-blue), var(--color-primary));
   animation: circle-rotation infinite linear;
 }
 
@@ -75,8 +75,8 @@
   font-size: 1.2rem;
 }
 
-:global(.primary-color-orange) {
-  --color-primary: var(--color-orange);
+:global(.primary-color-red) {
+  --color-primary: var(--color-red);
 }
 
 :global(.primary-color-purple) {
@@ -106,7 +106,7 @@
 
 @media (hover: hover) {
   .circle:hover::after {
-    background: linear-gradient(90deg, var(--color-primary), var(--color-blue));
+    background: linear-gradient(90deg, var(--color-blue), var(--color-primary));
     animation: circle-rotation infinite linear;
   }
 

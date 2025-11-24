@@ -18,7 +18,7 @@
   flex-direction: column;
   position: relative;
   height: 100%;
-  padding-top: 0.9rem;
+  padding: 0.9rem;
   overflow: hidden;
 }
 

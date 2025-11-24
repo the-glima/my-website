@@ -77,17 +77,14 @@
   position: relative;
   width: 272px;
   margin: 0 auto;
-  padding: 0.7rem;
-  border: 1px solid var(--box-shadow-color);
 }
 
-.list-item-remote,
-.list-item-hybrid {
+.list-item-badge {
   display: block;
   position: absolute;
   right: 0;
   top: 0;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   color: white;
   padding: 0 0.5rem;
   background: var(--color-primary);
@@ -126,7 +123,7 @@
   width: 50px;
   height: 50px;
   margin-right: 0.8rem;
-  background-image: url('../../assets/images/jobs/jobs.jpg');
+  background-image: url('../../assets/images/work/work-logos.jpg');
   background-repeat: no-repeat;
   background-size: 199px;
   text-indent: 100%;
@@ -144,7 +141,8 @@
 .logo-div64 {  background-position: 0 -50px; }
 .logo-elogroup {  background-position: -50px -50px; }
 .logo-bolt-brasil {  background-position: -100px -50px; }
-.logo-standard-giving {  background-position: 0 -100px; }
+.logo-standard-giving {  background-position: -1px -100px; }
+.logo-medihive {  background-position: -50px -100px; }
 
 .title {
   font-size: .9rem;

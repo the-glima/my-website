@@ -28,12 +28,15 @@ const Personality = (props: Props) => {
           ${props.className || ''}
         `}
         onClick={props.events?.onClick}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            props.events?.onClick?.(e)
+          }
+        }}
+        role="button"
+        tabIndex={0}
       >
-        <img
-          className={styles.picture}
-          src={props.image?.src}
-          alt={props.image?.alt}
-        />
+        <img className={styles.picture} src={props.image?.src} alt={props.image?.alt} />
       </div>
       <p className={styles.text}>{props.text}</p>
     </div>
