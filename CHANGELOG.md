@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/the-glima/my-website/compare/v3.0.13...v3.1.0) (2025-11-24)
+
+
+### Features
+
+* add new work and photos ([#124](https://github.com/the-glima/my-website/issues/124)) ([5e0cff9](https://github.com/the-glima/my-website/commit/5e0cff98d7907554d9fc3db9845fb4e3b3b19f14))
+
 ## [3.0.13](https://github.com/the-glima/my-website/compare/v3.0.12...v3.0.13) (2025-11-13)
 
 
