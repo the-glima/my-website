@@ -67,9 +67,9 @@ const Work = ({t}: any) => {
             {workData.map((work: WorkModel, i: number) => (
               <li key={i} className={`${styles['list-item']} ${oddJob(i) ? styles['list-item-left'] : ''}`}>
                 <a className={styles['list-item-card']} href={work.url} title={work.title}>
-                  <span className={`${styles.logo} ${styles[`logo-${work.title.toLowerCase().split(' ').join('-')}`]}`}>
+                  <div className={`${styles.logo} ${styles[`logo-${work.title.toLowerCase().split(' ').join('-')}`]}`}>
                     {work.title}
-                  </span>
+                  </div>
                   <div>
                     <div className={styles.title}>{work.title}</div>
                     <div className={styles.position}>{work.position}</div>
