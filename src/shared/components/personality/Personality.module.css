@@ -75,8 +75,8 @@
   font-size: 1.2rem;
 }
 
-:global(.primary-color-red) {
-  --color-primary: var(--color-red);
+:global(.primary-color-orange) {
+  --color-primary: var(--color-orange);
 }
 
 :global(.primary-color-purple) {
@@ -95,8 +95,8 @@
   --color-primary: var(--color-cyan-dark-mode);
 }
 
-:global(.primary-color-yellow) {
-  --color-primary: var(--color-gold);
+:global(.primary-color-red) {
+  --color-primary: var(--color-red);
 }
 
 @keyframes circle-rotation {

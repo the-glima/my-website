@@ -1,17 +1,17 @@
-import ai from '../../assets/images/photos/ai.jpg'
-import guitar from '../../assets/images/photos/guitar.jpg'
-import me from '../../assets/images/photos/me.jpg'
-import running from '../../assets/images/photos/running.jpg'
-import i18n from '../../i18n'
+import ai from '../../assets/images/photos/ai.jpg';
+import guitar from '../../assets/images/photos/guitar.jpg';
+import me from '../../assets/images/photos/me.jpg';
+import running from '../../assets/images/photos/running.jpg';
+import i18n from '../../i18n';
 
-export type HeaderModelName = 'me' | 'running' | 'guitar' | 'ai'
+export type HeaderModelName = 'me' | 'running' | 'guitar' | 'ai';
 
 export interface HeaderModel {
-  name: HeaderModelName
-  picture: any
-  position: any
-  bio: any
-  color: string
+  name: HeaderModelName;
+  picture: any;
+  position: any;
+  bio: any;
+  color: string;
 }
 
 export const HeaderData = (): HeaderModel[] => [
@@ -20,7 +20,7 @@ export const HeaderData = (): HeaderModel[] => [
     picture: me,
     position: i18n.t('position.senior-front-end-developer'),
     bio: i18n.t('header.me.bio-end'),
-    color: 'red'
+    color: 'orange'
   },
   {
     name: 'running',
@@ -41,6 +41,6 @@ export const HeaderData = (): HeaderModel[] => [
     picture: ai,
     position: i18n.t('position.ui-developer'),
     bio: i18n.t('header.ai.bio-end'),
-    color: 'yellow'
+    color: 'red'
   }
-]
+];

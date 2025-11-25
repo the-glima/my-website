@@ -11,9 +11,3 @@
 - Prettier
 - Husky
 - ESLint
-
-## Getting my gists
-Soon...
-
-## GitHub Actions
-Soon...

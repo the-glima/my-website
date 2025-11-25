@@ -1,12 +1,11 @@
 import React from 'react'
-import { withTranslation } from 'react-i18next'
-import Slider from "react-slick";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import styles from './Stack.module.css'
+import {withTranslation} from 'react-i18next'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 import Headings from '../../shared/components/headings/Headings'
+import styles from './Stack.module.css'
 import {StackData, StackModel} from './StackData'
 
 const Stack = ({t}: any) => {
@@ -16,7 +15,7 @@ const Stack = ({t}: any) => {
     dots: false,
     infinite: true,
     autoplay: true,
-    speed: 200,
+    speed: 150,
     slidesToShow: 7,
     slidesToScroll: 1,
     initialSlide: 0,
@@ -59,7 +58,7 @@ const Stack = ({t}: any) => {
             <Slider {...sliderSettings}>
               {stackData.map((stack: StackModel, i: number) => (
                 <div key={i}>
-                  <a className={styles.link} href={stack.url} title={stack.name}>
+                  <a className={styles.link} href={stack.url} title={stack.name} aria-label={stack.name}>
                     <span className={styles[`stack-logo-${stack.name.toLowerCase()}`]}>
                       <stack.logo />
                     </span>
