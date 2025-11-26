@@ -1,3 +1,10 @@
+## [3.1.1](https://github.com/the-glima/my-website/compare/v3.1.0...v3.1.1) (2025-11-26)
+
+
+### Bug Fixes
+
+* fix carousel ([#125](https://github.com/the-glima/my-website/issues/125)) ([87a5baa](https://github.com/the-glima/my-website/commit/87a5baa9519e7e7d49a17801e5aadf6d116fc5c7))
+
 # [3.1.0](https://github.com/the-glima/my-website/compare/v3.0.13...v3.1.0) (2025-11-24)
 
 
