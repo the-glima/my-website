@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/the-glima/my-website/compare/v3.1.1...v3.2.0) (2025-11-26)
+
+
+### Features
+
+* save local language ([#126](https://github.com/the-glima/my-website/issues/126)) ([1df46b3](https://github.com/the-glima/my-website/commit/1df46b34d7f5c48870c5052c0e694f980984abb1))
+
 ## [3.1.1](https://github.com/the-glima/my-website/compare/v3.1.0...v3.1.1) (2025-11-26)
 
 
