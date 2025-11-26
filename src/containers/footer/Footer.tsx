@@ -14,7 +14,7 @@ const Footer = ({t}: any) => {
 
   useEffect(() => {
     setYear(new Date().getFullYear())
-  }, [year])
+  }, [])
 
   return (
     <footer className={`section ${styles['footer-section']}`}>
