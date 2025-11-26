@@ -80,7 +80,8 @@
   },
   "footer": {
     "copyright": "All rights reserved",
-    "quote": "Made during the <1>COVID-19's quarantine</1>."
+    "quote": "Made during the <1>COVID-19's quarantine</1>.",
+    "version": "Version"
   },
   "error": {
     "message": "Sorry, something went wrong! Please, try again later."
