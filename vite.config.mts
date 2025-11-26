@@ -7,6 +7,7 @@ import tsConfigPaths from 'vite-tsconfig-paths';
 export default defineConfig({
   resolve: {
     alias: {
+      '@src': '/src',
       '@assets': '/src/assets',
       '@css': '/src/assets/styles',
       '@images': '/src/assets/images',

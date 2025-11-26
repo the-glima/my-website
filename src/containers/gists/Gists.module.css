@@ -7,7 +7,6 @@
 }
 
 .section-link {
-  composes: link from '../../assets/styles/helpers.css';
   text-align: center;
 }
 

@@ -17,14 +17,13 @@
 }
 
 .link {
-  composes: link from '../../../assets/styles/helpers.css';
-  font-size: .9rem; 
+  font-size: .9rem;
   transition: var(--transition);
 }
 
 .tech-logo {
   width: 30px;
-  margin-right: .76rem; 
+  margin-right: .76rem;
 }
 
 @media (min-width: breakpoint-sm) {

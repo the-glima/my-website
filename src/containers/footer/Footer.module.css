@@ -37,7 +37,6 @@
 .quote { font-size: .8rem; }
 
 .quote-link {
-  composes: link from '../../assets/styles/helpers.css';
   font-style: italic;
 }
 

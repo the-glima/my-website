@@ -12,8 +12,6 @@
 }
 
 .link {
-  composes: card from '../../assets/styles/helpers.css';
-  composes: card-hover from '../../assets/styles/helpers.css';
   display: flex;
   flex-direction: column;
   position: relative;

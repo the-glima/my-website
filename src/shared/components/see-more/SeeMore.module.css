@@ -3,7 +3,6 @@
 .wrapper { text-align: center; }
 
 .section-link {
-  composes: link from '../../../assets/styles/helpers.css';
   font-size: 1.1rem;
   text-align: center;
 }

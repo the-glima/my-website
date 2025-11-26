@@ -15,6 +15,7 @@
   width: 130px;
   height: 130px;
   cursor: pointer;
+  z-index: 10;
 }
 
 .circle::after {
@@ -60,7 +61,8 @@
 }
 
 .circle.active img {
-  transform: scale(.85);
+  transform: scale(.8);
+  transition: transform .2s;
 }
 
 .picture {

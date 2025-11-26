@@ -12,7 +12,7 @@ interface ISeeMore {
 const SeeMore = ({t, url, text}: ISeeMore) => {
   return (
     <div className={styles.wrapper}>
-      <a className={styles['section-link']} href={url}>
+      <a className={`${styles['section-link']} link`} href={url}>
         {text || t('see-more.link')}
       </a>
     </div>
