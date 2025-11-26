@@ -25,7 +25,6 @@
 .about p { margin-bottom: 1.5rem; }
 
 .ad {
-  composes: link from '../../assets/styles/helpers.css';
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,16 +68,12 @@
 }
 
 .list-item-card {
-  composes: card from '../../assets/styles/helpers.css';
-  composes: card-hover from '../../assets/styles/helpers.css';
   display: flex;
   align-items: center;
   order: 1;
   position: relative;
   width: 294px;
   margin: 0 auto;
-  /* FIX: compose styling is winning and padding is overridden */
-  /* Also check for multiple instances of the same class being applied */
   padding: 0.7rem !important;
 }
 

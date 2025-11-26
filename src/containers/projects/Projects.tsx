@@ -1,9 +1,9 @@
 import React from 'react'
 import {withTranslation} from 'react-i18next'
 
-import LinkIcon from '../../assets/images/icons/link.svg?react'
-import Headings from '../../shared/components/headings/Headings'
-import SeeMore from '../../shared/components/see-more/SeeMore'
+import LinkIcon from '@assets/images/icons/link.svg?react'
+import Headings from '@shared/components/headings/Headings'
+import SeeMore from '@shared/components/see-more/SeeMore'
 import styles from './Projects.module.css'
 import {ProjectsData, ProjectModel} from './ProjectsData'
 
@@ -18,7 +18,7 @@ const Projects = ({t}: any) => {
         <ul className={`${styles.list}`}>
           {projectsData.map((project: ProjectModel, i: number) => (
             <li key={i} className={styles['list-item']}>
-              <a className={styles.link} href={project.url} title={project.name}>
+              <a className={`${styles.link} card`} href={project.url} title={project.name}>
                 {project.status === 'in-progress' && (
                   <span className={styles.status}>{project.status === 'in-progress' ? project.status : ''}</span>
                 )}

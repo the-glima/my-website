@@ -36,7 +36,7 @@ const Footer = ({t}: any) => {
             <Trans i18nKey="footer.quote">
               <span>Made during the </span>
               <a
-                className={styles['quote-link']}
+                className={`${styles['quote-link']} link`}
                 href="https://www.google.com/search?q=covid+19+march+in+2020+spain&rlz=1C1GCEA_enES841ES841&ei=7w1mYIilBsG45OUP4uWMyAk&oq=covid+19+march+in+2020+spain&gs_lcp=Cgdnd3Mtd2l6EAM6CQgAELADEAgQHjoGCAAQFhAeOggIIRAWEB0QHjoHCCEQChCgAVCYC1jbE2CrFWgCcAB4AIAB5wGIAf4LkgEFMC43LjGYAQCgAQGqAQdnd3Mtd2l6yAEIwAEB&sclient=gws-wiz&ved=0ahUKEwjI2PbQ093vAhVBHLkGHeIyA5kQ4dUDCA0&uact=5"
               >
                 COVID-19's quarantine.

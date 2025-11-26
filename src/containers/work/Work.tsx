@@ -28,7 +28,7 @@ const Work = ({t}: any) => {
               </Trans>
             </p>
 
-            <a className={styles.ad} href="https://www.linkedin.com/in/gabriel--lima/" title={t('work.see-more')}>
+            <a className={`${styles.ad} link`} href="https://www.linkedin.com/in/gabriel--lima/" title={t('work.see-more')}>
               <em>{t('work.see-more')}</em>
             </a>
 
@@ -66,7 +66,7 @@ const Work = ({t}: any) => {
           <ul className={`${styles.list}`}>
             {workData.map((work: WorkModel, i: number) => (
               <li key={i} className={`${styles['list-item']} ${oddJob(i) ? styles['list-item-left'] : ''}`}>
-                <a className={styles['list-item-card']} href={work.url} title={work.title}>
+                <a className={`${styles['list-item-card']} card`} href={work.url} title={work.title}>
                   <div className={`${styles.logo} ${styles[`logo-${work.title.toLowerCase().split(' ').join('-')}`]}`}>
                     {work.title}
                   </div>

@@ -25,7 +25,7 @@ const GistsList = (props: Props) => {
                 logoClassName={styles['tech-logo']}
                 source={gistLogosService.getLogo(props.logos, gist.language.toLowerCase())}
               />
-              <a className={styles.link} href={gist.url} title={`${gist.language}: ${gist.title}`}>
+              <a className={`${styles.link} link`} href={gist.url} title={`${gist.language}: ${gist.title}`}>
                 {gist.title}
               </a>
             </li>
