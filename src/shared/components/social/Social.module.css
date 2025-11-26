@@ -1,10 +1,10 @@
-@value breakpoint-md from '../../../assets/styles/variables.css';
+@value breakpoint-md from '@assets/styles/variables.css';
 
 .list {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 200px;
+  max-width: 140px;
   text-align: center;
 }
 
@@ -27,12 +27,7 @@
 
 @media (hover: hover) {
   .link:hover .social { top: 1px; }
-  .logo-twitter:hover { color: var(--color-twitter); }
   .logo-linkedin:hover { color: var(--color-linkedin); }
   .logo-github:hover { color: var(--color-github); }
   .logo-spotify:hover { color: var(--color-spotify); }
-}
-
-@media (min-width: breakpoint-md) {
-  .list { max-width: 100px; }
 }

@@ -1,11 +1,11 @@
 import React from 'react'
 import {withTranslation} from 'react-i18next'
 
-import styles from './Projects.module.css'
-import {ProjectsData, ProjectModel} from './ProjectsData'
+import LinkIcon from '../../assets/images/icons/link.svg?react'
 import Headings from '../../shared/components/headings/Headings'
 import SeeMore from '../../shared/components/see-more/SeeMore'
-import LinkIcon from '../../assets/images/icons/link.svg?react'
+import styles from './Projects.module.css'
+import {ProjectsData, ProjectModel} from './ProjectsData'
 
 const Projects = ({t}: any) => {
   const projectsData = ProjectsData(t)
@@ -35,12 +35,7 @@ const Projects = ({t}: any) => {
           ))}
         </ul>
 
-        <SeeMore
-          props={{
-            text: t('projects.see-more'),
-            url: 'https://github.com/the-glima'
-          }}
-        />
+        <SeeMore text={t('projects.see-more')} url="https://github.com/the-glima" />
       </div>
     </section>
   )

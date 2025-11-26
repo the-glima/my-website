@@ -1,4 +1,4 @@
-@value breakpoint-md from '../../assets/styles/variables.css';
+@value breakpoint-md from '@assets/styles/variables.css';
 
 .footer-section { background-color: var(--color-bg-section) }
 

@@ -57,12 +57,7 @@ const Gists = () => {
                   noGistsMessage={t('gists.no-gists')}
                 />
 
-                <SeeMore
-                  props={{
-                    url: 'https://gist.github.com/the-glima',
-                    text: t('gists.see-more')
-                  }}
-                />
+                <SeeMore text={t('projects.see-more')} url="https://gist.github.com/the-glima" />
               </>
             )}
           </>

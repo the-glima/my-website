@@ -123,26 +123,26 @@
 
 /* ----- List Card: content ----- */
 .logo {
-  width: 70px;
-  height: 70px;
+  width: 68px;
+  height: 68px;
   margin-right: 0.8rem;
   background-image: url('../../assets/images/work/work-logos.jpg');
   background-repeat: no-repeat;
-  background-size: 276px;
+  background-size: 280px;
   white-space: nowrap;
   font: 0/0;
   color: transparent;
   box-shadow: var(--box-shadow) var(--box-shadow-color);
 }
 
-.logo-nexhealth { background-position: 0 -69px; }
+.logo-nexhealth { background-position: 0 -72px; }
 .logo-payvision { background-position: 0 0; }
-.logo-webdoctor { background-position: -69px 0; }
-.logo-neoway {  background-position: -140px 1px; }
-.logo-elogroup {  background-position: -69px -69px; }
-.logo-bolt-brasil {  background-position: -138px -69px; }
-.logo-standard-giving {  background-position: -207px 0px; }
-.logo-medihive {  background-position: -208px -69px; }
+.logo-webdoctor { background-position: -72px 0; }
+.logo-neoway {  background-position: -142px 1px; }
+.logo-elogroup {  background-position: -72px -72px; }
+.logo-bolt-brasil {  background-position: -141px -72px; }
+.logo-standard-giving {  background-position: -210px 0px; }
+.logo-medihive {  background-position: -211px -72px; }
 
 .title {
   font-weight: 600;
