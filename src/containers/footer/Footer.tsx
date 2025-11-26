@@ -2,10 +2,10 @@ import React, {useState, useEffect} from 'react'
 import {Trans, withTranslation} from 'react-i18next'
 import styles from './Footer.module.css'
 
-import Social from '../../shared/components/social/Social'
-import Languages from '../../shared/components/languages/Languages'
-import Theme from '../../shared/components/theme/Theme'
-import ScrollUp from '../../shared/components/scroll-up/ScrollUp'
+import Social from '@shared/components/social/Social'
+import Languages from '@shared/components/languages/Languages'
+import Theme from '@shared/components/theme/Theme'
+import ScrollUp from '@shared/components/scroll-up/ScrollUp'
 
 const Footer = ({t}: any) => {
   const [year, setYear]: any = useState(0)
@@ -20,7 +20,7 @@ const Footer = ({t}: any) => {
         <div className={styles['top-wrapper']}>
           <Languages className={styles.languages} />
           <div className={styles.actions}>
-            <Social props={{className: styles.social}} />
+            <Social className={styles.social} />
             <Theme />
             <ScrollUp />
           </div>

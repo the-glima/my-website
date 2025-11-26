@@ -10,3 +10,11 @@
 .stack-logo-bash {
   fill: var(--color-text);
 }
+
+.swiper-pagination {
+  margin-top: 2rem;
+}
+
+.swiper-pagination-bullet-active {
+
+}

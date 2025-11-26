@@ -1,0 +1,12 @@
+.swiper-slide {
+  margin-bottom: 3rem;
+}
+
+.swiper-pagination {
+  bottom: 0px !important;
+  margin-top: 2rem;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--color-primary) !important;
+}

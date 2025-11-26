@@ -1,8 +1,10 @@
 import React from 'react'
 import {withTranslation} from 'react-i18next'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import './Swiper.css';
+import 'swiper/css/pagination';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 import Headings from '../../shared/components/headings/Headings'
 import styles from './Stack.module.css'
@@ -10,42 +12,35 @@ import {StackData, StackModel} from './StackData'
 
 const Stack = ({t}: any) => {
   const stackData = StackData(t)
-  const sliderSettings = {
-    arrows: false,
-    dots: false,
-    infinite: true,
-    autoplay: true,
-    speed: 150,
-    slidesToShow: 7,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 5,
-        }
+  const swiperSettings = {
+    className: 'stack-swiper',
+    slidesPerView: 2,
+    spaceBetween: 10,
+    loop: true,
+    grabCursor: true,
+    autoplay: {
+      pauseOnMouseEnter: true,
+      delay: 2000,
+    },
+    pagination: {
+      enabled: true,
+      dynamicBullets: true,
+    },
+    modules: [Autoplay, Pagination],
+    breakpoints: {
+      1024: {
+        slidesPerView: 5,
       },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 4,
-        }
+      768: {
+        slidesPerView: 4,
       },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 3,
-        }
+      600: {
+        slidesPerView: 3,
       },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2,
-        }
+      480: {
+        slidesPerView: 2,
       },
-    ]
+    },
   };
 
   return (
@@ -55,17 +50,17 @@ const Stack = ({t}: any) => {
 
         <div className={styles.content}>
           <div className={`${styles.list}`}>
-            <Slider {...sliderSettings}>
+            <Swiper {...swiperSettings}>
               {stackData.map((stack: StackModel, i: number) => (
-                <div key={i}>
+                <SwiperSlide key={i}>
                   <a className={styles.link} href={stack.url} title={stack.name} aria-label={stack.name}>
                     <span className={styles[`stack-logo-${stack.name.toLowerCase()}`]}>
                       <stack.logo />
                     </span>
                   </a>
-                </div>
+                </SwiperSlide>
               ))}
-            </Slider>
+            </Swiper>
           </div>
         </div>
       </div>

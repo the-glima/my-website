@@ -72,9 +72,9 @@
   "social": {
     "titles": {
       "linkedin": "Mira mi perfil en LinkedIn",
-      "twitter": "Sígueme en Twitter",
       "github": "Juzga mi código en GitHub",
-      "spotify": "Gran selección de músicas en Spotify"
+      "spotify": "Gran selección de músicas en Spotify",
+      "moxfield": "Mis decks de Magic The Gathering"
     }
   },
   "footer": {

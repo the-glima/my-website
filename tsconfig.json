@@ -20,16 +20,14 @@
     "jsx": "react",
     "baseUrl": "./src",
     "types": ["vite/client"],
-     "paths": {
-      "@api/*": ["./api/*"],
-      "@components/*": ["./components/*"],
-      "@config/*": ["./config/*"],
-      "@context/*": ["./context/*"],
-      "@hooks/*": ["./hooks/*"],
-      "@pages/*": ["./pages/*"],
+    "paths": {
       "@assets/*": ["./assets/*"],
-      "@utils/*": ["./utils/*"],
-      "@constants/*": ["./constants/*"]
+      "@config/*": ["./config/*"],
+      "@containers/*": ["./containers/*"],
+      "@locales/*": ["./locales/*"],
+      "@pages/*": ["./pages/*"],
+      "@redux/*": ["./redux/*"],
+      "@shared/*": ["./shared/*"],
     }
   },
   "include": [
