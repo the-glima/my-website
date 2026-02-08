@@ -40,4 +40,4 @@ Mainly focused on Front-end Development with a good UI/UX eye and always trying 
 - [Spotify](https://open.spotify.com/playlist/2nbyGPsu5UjhwzIwHkL1ZF?si=eLDVmJ8xSLOOA57mWuHDKQ&nd=1&dlsi=67398548bccc42d6)
 - [Moxfield](https://moxfield.com/users/HyperBolic)
 
-\nVersion 3.2.0
+\nVersion 
